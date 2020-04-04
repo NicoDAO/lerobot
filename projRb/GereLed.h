@@ -17,6 +17,7 @@ using namespace std;
 #include <pthread.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include "LitMemoireLinux.h"
 #include "config_du_system.h"
 #define AXI_SLV_REG0_OFFSET 0
 #define PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET 4
@@ -34,7 +35,7 @@ public:
 	void bagoteLed(char n);
 	void regleAdresse(u32);
 private:
-
+	LitMemoireLinux mem;
 	u32 adresseAXI;
 
 };

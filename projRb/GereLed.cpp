@@ -6,11 +6,11 @@
  */
 
 #include "GereLed.h"
-
+#include "config_du_system.h"
 GereLed::GereLed() {
 	// TODO Auto-generated constructor stub
-	xil_printf("le constructeur GereLed() \r\n");
-	xil_printf(".... \r\n");
+	printf("le constructeur GereLed() \r\n");
+	printf(".... \r\n");
 
 }
 
@@ -21,16 +21,16 @@ GereLed::~GereLed() {
 void GereLed::allumeLed(char num) {
 	switch (num) {
 	case 1:
-		Xil_Out32(0x43C00000 + AXI_SLV_REG0_OFFSET, 1); //reg0
+		mem.Xil_Out32(0x43C00000 + AXI_SLV_REG0_OFFSET, 1); //reg0
 		break;
 	case 2:
-		Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET, 1); //reg1
+		mem.Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET, 1); //reg1
 		break;
 	case 3:
-		Xil_Out32(0x43C00000 + AXI_SLV_REG2_OFFSET, 1); //reg2
+		mem.Xil_Out32(0x43C00000 + AXI_SLV_REG2_OFFSET, 1); //reg2
 		break;
 	case 4:
-		Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG3_OFFSET, 1); //reg3
+		mem.Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG3_OFFSET, 1); //reg3
 		break;
 	}
 }

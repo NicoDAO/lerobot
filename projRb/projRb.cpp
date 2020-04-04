@@ -39,8 +39,8 @@ GereCapteurDistance capteurDistance;
 
 char HWstring[15] = "Hello World";
 long RxtaskCntr = 0;
-GereLed GereLesLed;
- void *handlerGereAXI2(void *pvParameters);
+
+void *handlerGereAXI2(void *pvParameters);
 static void handlerGereAXI3(void *pvParameters);
 static void handlerGereMoteur1(void *pvParameters);
 static void handlerGereMoteur2(void *pvParameters);
@@ -51,13 +51,6 @@ Messager messageConsigneMoteur1;
 Messager messageConsigneMoteur2;
 Messager messageMesureDistanceCapteur;
 
-/*
- * The UART interrupt handler is defined in this file to provide more control,
- * but still uses parts of the Xilinx provided driver.
- */
-void prvUART_Handler(void *pvNotUsed);
-
-void conf_uart(void);
 
 int main() {
 	//configuation des messages
@@ -90,7 +83,7 @@ int main() {
 	//	lien1.setXUartPs(&Uart_Ps);
 #if 1
 	//unsigned long int *, const pthread_attr_t *, void * (*)(void *), void *
-	pthread_create(&GereAXI2,&attr,handlerGereAXI2,   &tinfo[0]);
+	pthread_create(&GereAXI2,&attr,handlerGereAXI2,   (void*)tinfo);
 
 #endif
 #if 0
@@ -117,7 +110,7 @@ int main() {
 
 void * handlerGereAXI2(void *pvParameters) {
 	printf("handlerGereAXI2 \r\n");
-
+	GereLed GereLesLed;
 	GereLesLed.regleAdresse(0x43C00000);
 	FIR1.RegleAdresseAxi(XPAR_FIR_0_S00_AXI_BASEADDR);
 	FIR1.SetGereLed(&GereLesLed);
@@ -159,6 +152,7 @@ void * handlerGereAXI2(void *pvParameters) {
 		FIR4.handler();
 
 	}
+	return NULL;
 }
 static void handlerGereAXI3(void *pvParameters) {
 	printf("handlerGereAXI3 \r\n");
@@ -170,9 +164,10 @@ static void handlerGereAXI3(void *pvParameters) {
 		Volume1.handler();
 	}
 }
-static void handlerGereMoteur1(void *pvParameters) {
+void handlerGereMoteur1(void *pvParameters) {
 	printf("handlerGereMoteur \r\n");
 	mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
+	//mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
 	mot1.setPeriod(109);
 	printf("	GereMoteur 1 \r\n");
 
@@ -180,7 +175,7 @@ static void handlerGereMoteur1(void *pvParameters) {
 		mot1.handler();
 	}
 }
-static void handlerGereMoteur2(void *pvParameters) {
+void handlerGereMoteur2(void *pvParameters) {
 	printf("handlerGereMoteur \r\n");
 	mot2.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
 	mot2.setPeriod(113);

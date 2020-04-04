@@ -21,7 +21,14 @@ LitMemoireLinux::LitMemoireLinux() {
 LitMemoireLinux::~LitMemoireLinux() {
 	// TODO Auto-generated destructor stub
 }
-u32 LitMemoireLinux::litAxi4Memoire(u32 adress){
+u32 LitMemoireLinux::Xil_Out32(u32 adress,u32 donnee)
+{
+	printf("pas encore developpe");
+	return 0;
+}
+
+
+u32 LitMemoireLinux::Xil_In32(u32 adress){
 	int offset;
 	int *data;
 	struct stat sbuf;

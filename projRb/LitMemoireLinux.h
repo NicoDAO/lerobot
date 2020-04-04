@@ -20,7 +20,8 @@ class LitMemoireLinux {
 public:
 	LitMemoireLinux();
 	virtual ~LitMemoireLinux();
-	u32 litAxi4Memoire(u32 adresse);
+	u32 Xil_In32(u32 adresse);
+	u32 Xil_Out32(u32 adresse, u32 valeur);
 };
 
 #endif /* LITMEMOIRELINUX_H_ */
