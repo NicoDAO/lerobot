@@ -33,6 +33,8 @@ GereMoteur mot1;
 GereMoteur mot2;
 GestionTraction traction;
 
+GereLed GereLesLed;
+
 GereCapteurDistance capteurDistance;
 //laxi2.
 //CagereAXI laxi3;
@@ -70,7 +72,7 @@ int main() {
 	mot1.SetMessage1(&messageConsigneMoteur1);
 	mot2.SetMessage1(&messageConsigneMoteur2);
 	capteurDistance.SetMessage1(&messageMesureDistanceCapteur);
-
+	GereLesLed.regleAdresse(0x43C00000);
 #if TEST_LUART == 1
 	//test_l_uart();
 	Test_lib_uart tt;
@@ -110,7 +112,6 @@ int main() {
 
 void * handlerGereAXI2(void *pvParameters) {
 	printf("handlerGereAXI2 \r\n");
-	GereLed GereLesLed;
 	GereLesLed.regleAdresse(0x43C00000);
 	FIR1.RegleAdresseAxi(XPAR_FIR_0_S00_AXI_BASEADDR);
 	FIR1.SetGereLed(&GereLesLed);

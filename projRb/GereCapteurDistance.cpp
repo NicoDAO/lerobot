@@ -30,12 +30,12 @@ void GereCapteurDistance::handler() {
 //	add++;
 		AMessage messCapteur;
 		messCapteur.distanceCapteur = lit_moy;
-		//xil_printf(">envoieMessage distance brut = %d  , moyenne = %d   taille %d \r\n", lit,lit_moy,leMessage1->Messager);
+		//printf(">envoieMessage distance brut = %d  , moyenne = %d   taille %d \r\n", lit,lit_moy,leMessage1->Messager);
 		int dispo = leMessage1->vecteurMessages.capacity();
 
 		int ret = leMessage1->envoieMessage(&messCapteur);
 #ifdef LOG_CAPTEUR
-		xil_printf(
+		printf(
 				"[%04d]Capteur : envoie message : distance : %d (taille classe = %d/%d)\r\n",
 				cpt_tache, lit_moy, sizeof(messCapteur), dispo);
 #endif
@@ -48,7 +48,7 @@ void GereCapteurDistance::handler() {
 		{
 			bargraf[u] = '*';
 		}
-		xil_printf("  %s\r\n",bargraf);
+		printf("  %s\r\n",bargraf);
 		for(u8 u = 0; u < dist_g; u++)
 				{
 					bargraf[u] = '*';
@@ -56,7 +56,7 @@ void GereCapteurDistance::handler() {
 #endif
 		lapause(0);
 	}else{
-		xil_printf("[%04d]Capteur : la queue est pleine \r\n");
+		printf("[%04d]Capteur : la queue est pleine \r\n");
 
 	}
 

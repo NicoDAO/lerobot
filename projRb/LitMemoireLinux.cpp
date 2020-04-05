@@ -40,7 +40,7 @@ u32 LitMemoireLinux::Xil_In32(u32 adress){
 	if (fd  == -1)
 		printf( "open");
 	// data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
-	data = mmap(NULL, pagesize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)adress);
+	data = static_cast<int*>(mmap(NULL, pagesize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)adress));
 	if (data == MAP_FAILED)
 	{
 		perror("mmap error");

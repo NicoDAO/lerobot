@@ -8,9 +8,9 @@
 #ifndef SRC_SensMoteur_H_
 #define SRC_SensMoteur_H_
 #include "config_du_system.h"
+#include "LitMemoireLinux.h"
 
-
-class SensMoteur {
+class SensMoteur : public LitMemoireLinux{
 public:
 	SensMoteur();
 	virtual ~SensMoteur();
@@ -18,7 +18,7 @@ public:
 	void RegleSens( u32 clocks);
 
 private :
-
+	LitMemoireLinux mem;
 
 	u32 baseAddr = 0;
 };

@@ -34,7 +34,7 @@ void CommandePWM::RegleRapportCyclique(u32 rc){
 	u32 rcloc = rc & 0x03FFFF;//on utilise que les 10 bits de poids faible
 	//rcloc |= 20000000;//dans l'IP, le bit 29 sert à router le PWM depuis le bus AXI
 	rcloc |= 0x20000000;
-	printf("pas encore implementé")
+	printf("pas encore implementé");
 	//Xil_Out32(this->baseAddr, rcloc); //allume l'ampli
 
 

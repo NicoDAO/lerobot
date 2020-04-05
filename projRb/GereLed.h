@@ -36,7 +36,7 @@ public:
 	void regleAdresse(u32);
 private:
 	LitMemoireLinux mem;
-	u32 adresseAXI;
+	u32 adresseAXI=0;
 
 };
 

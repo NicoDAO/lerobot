@@ -38,16 +38,16 @@ void GereLed::allumeLed(char num) {
 void GereLed::eteintLed(char num) {
 	switch (num) {
 	case 1:
-		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0); //reg0
+		mem.Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0); //reg0
 		break;
 	case 2:
-		Xil_Out32(this->adresseAXI  + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET, 0); //reg1
+		mem.Xil_Out32(this->adresseAXI  + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET, 0); //reg1
 		break;
 	case 3:
-		Xil_Out32(this->adresseAXI  + AXI_SLV_REG2_OFFSET, 0); //reg2
+		mem.Xil_Out32(this->adresseAXI  + AXI_SLV_REG2_OFFSET, 0); //reg2
 		break;
 	case 4:
-		Xil_Out32(this->adresseAXI  + PMOD_AUDIO_S00_AXI_SLV_REG3_OFFSET, 0); //reg3
+		mem.Xil_Out32(this->adresseAXI  + PMOD_AUDIO_S00_AXI_SLV_REG3_OFFSET, 0); //reg3
 		break;
 	}
 }

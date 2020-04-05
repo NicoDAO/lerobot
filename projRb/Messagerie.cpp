@@ -7,7 +7,6 @@
 
 #include "Messagerie.h"
 #include "stdio.h"
-#include "xil_printf.h"
 
 Messager::Messager() {
 	creeQueue();

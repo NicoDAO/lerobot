@@ -7,6 +7,7 @@
 
 #include "ConfigureVolumes.h"
 #include "config_du_system.h"
+#include <pthread.h>
 #define VOLUME1 1
 #define VOLUME2 2
 #define VOLUME3 3
@@ -28,7 +29,6 @@ ConfigureVolumes::~ConfigureVolumes() {
 }
 
 void ConfigureVolumes::handler() {
-	xLastWakeTime = xTaskGetTickCount();
 	char truc[200];
 
 	switch (etat) {
@@ -54,45 +54,45 @@ void ConfigureVolumes::handler() {
 				levol1/*0x8000*/); 	//Volume à 1
 
 		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
-		VOLUME1); 	//
+				VOLUME1); 	//
 
 		etat = etat_fini;
 		snprintf(truc, sizeof(truc), "1etat_reglageVol1 = %d\r\n", levol1);
 
-		xil_printf(truc);
+		printf(truc);
 		break;
 	case etat_reglageVol2:
 		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
 				levol2/*0x8000*/); 	//Volume à 1
 
 		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
-		VOLUME2); 	//
+				VOLUME2); 	//
 
 		etat = etat_fini;
 		snprintf(truc, sizeof(truc), "etat_reglageVol2 = %d\r\n", levol2);
-		xil_printf(truc);
+		printf(truc);
 		break;
 	case etat_reglageVol3:
 		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
 				levol3/*0x8000*/); 	//Volume à 1
 
 		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
-		VOLUME3); 	//
+				VOLUME3); 	//
 
 		etat = etat_fini;
 		snprintf(truc, sizeof(truc), "etat_reglageVol3 = %d\r\n", levol3);
-		xil_printf(truc);
+		printf(truc);
 		break;
 	case etat_reglageVol4:
 		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
 				levol4/*0x8000*/); 	//Volume à 1
 
 		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
-		VOLUME4); 	//
+				VOLUME4); 	//
 
 		etat = etat_fini;
 		snprintf(truc, sizeof(truc), "etat_reglageVol4 = %d\r\n", levol4);
-		xil_printf(truc);
+		printf(truc);
 
 		break;
 	case etat_fini:
@@ -102,7 +102,8 @@ void ConfigureVolumes::handler() {
 		break;
 	}
 
-	vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
+	//vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
+	sleep(xWakePeriod)
 }
 void ConfigureVolumes::calcul_volumes() {
 	char truc[400];
@@ -119,7 +120,7 @@ void ConfigureVolumes::calcul_volumes() {
 		GpioLu3 = (char) ((GpioLu & 0x4) >> 2);
 		GpioLu4 = (char) ((GpioLu & 0x8) >> 3);
 		snprintf(truc, sizeof(truc), "1etat_reglageVol1 = %08x\r\n", GpioLu);
-		xil_printf(truc);
+		printf(truc);
 		if (GpioLu1 != GpioLu1_avant) {
 			GpioLu1_avant = GpioLu1;
 			levol1 += 1000;

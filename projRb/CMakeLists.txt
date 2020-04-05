@@ -2,4 +2,8 @@ cmake_minimum_required (VERSION 2.6)
 
 project (projRb)
 
-add_executable(projRb projRb.cpp)
+file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "*.cpp")
+
+
+#add_executable(projRb projRb.cpp)
+add_executable(projRb ${SOURCES})

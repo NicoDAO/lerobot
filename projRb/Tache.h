@@ -11,7 +11,8 @@
 #include "GereLed.h"
 #include "Messagerie.h"
 #include "config_du_system.h"
-class Tache {
+#include "LitMemoireLinux.h"
+class Tache : public LitMemoireLinux {
 public:
 	Tache();
 	virtual ~Tache();

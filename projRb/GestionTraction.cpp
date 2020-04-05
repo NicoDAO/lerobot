@@ -6,7 +6,7 @@
  */
 
 #include "GestionTraction.h"
-
+#include <stdio.h>
 GestionTraction::GestionTraction() {
 	// TODO Auto-generated constructor stub
 
@@ -37,7 +37,7 @@ void GestionTraction::handler() {
 			//leMessage3->vecteurMessages.erase();
 			mesureDistance = tt.distanceCapteur;
 #ifdef LOG_CAPTEUR
-			xil_printf(
+			printf(
 					"\r\n[%04d]Cerveau : recoit message distance capteur : distance = %d , taille %d \r\n",
 					cpt_tache, mesureDistance,
 					leMessage3->vecteurMessages.size());
@@ -77,7 +77,7 @@ void GestionTraction::handler() {
 			mot1mess.puissance_moteur = 0;
 			//mot1mess.sens_moteur = 1;
 			mot2mess.puissance_moteur = 0;
-			xil_printf("[%04d]Traction : arret\r\n");
+			printf("[%04d]Traction : arret\r\n");
 
 			break;
 		case Robot_avant_lent:
@@ -90,13 +90,13 @@ void GestionTraction::handler() {
 			for (u8 u = 0; u < vitesse_g; u++) {
 				bargraf[u] = 'O';
 			}
-			xil_printf("  %s\r\n", bargraf);
+			printf("  %s\r\n", bargraf);
 #endif
 			mot1mess.puissance_moteur = vitesse_g + 500;
 			//mot1mess.sens_moteur = 1;
 			mot2mess.puissance_moteur = vitesse_g + 500;
 #ifdef LOG_MOTEUR
-			xil_printf("[%04d]Traction : marche avant\r\n");
+			printf("[%04d]Traction : marche avant\r\n");
 #endif
 			//mot1mess.sens_moteur = 0;
 			//	automate++;
@@ -132,12 +132,12 @@ void GestionTraction::handler() {
 	lapause(0);
 }
 void GestionTraction::RegleSens(u32 rc) {
-	//xil_printf("	RegleSens = %d /1000, this->baseAddr = %x \r",rc,this->baseAddr);
+	//printf("	RegleSens = %d /1000, this->baseAddr = %x \r",rc,this->baseAddr);
 
 	//u32 rcloc = rc & 0x03FFFF;//on utilise que les 10 bits de poids faible
 	//rcloc |= 20000000;//dans l'IP, le bit 29 sert à router le PWM depuis le bus AXI
 	//rcloc |= 0x20000000;
 	Xil_Out32(this->baseAddr, rc); //allume l'ampli
-	//xil_printf("	ok \r");
+	//printf("	ok \r");
 
 }
