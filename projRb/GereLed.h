@@ -26,7 +26,7 @@ using namespace std;
 
 
 
-class GereLed {
+class GereLed : public LitMemoireLinux{
 public:
 	GereLed();
 	virtual ~GereLed();
@@ -35,7 +35,7 @@ public:
 	void bagoteLed(char n);
 	void regleAdresse(u32);
 private:
-	LitMemoireLinux mem;
+//	LitMemoireLinux mem;
 	u32 adresseAXI=0;
 
 };

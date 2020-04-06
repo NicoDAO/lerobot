@@ -7,6 +7,7 @@
 
 #include "GestionTraction.h"
 #include <stdio.h>
+#include <iostream>
 GestionTraction::GestionTraction() {
 	// TODO Auto-generated constructor stub
 
@@ -77,14 +78,15 @@ void GestionTraction::handler() {
 			mot1mess.puissance_moteur = 0;
 			//mot1mess.sens_moteur = 1;
 			mot2mess.puissance_moteur = 0;
-			printf("[%04d]Traction : arret\r\n");
+			printf("Traction : arret\r\n");
 
 			break;
 		case Robot_avant_lent:
 
 			vitesse_g = mesureDistance / 1000;
 #ifdef LOG_BARGRAF
-			memset(bargraf, 0, sizeof(bargraf));
+			//memset(bargraf, 0, sizeof bargraf);
+			sprintf(bargraf,"\0");
 			if (vitesse_g >= sizeof(bargraf))
 				vitesse_g = sizeof(bargraf) - 1;
 			for (u8 u = 0; u < vitesse_g; u++) {

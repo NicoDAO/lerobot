@@ -21,16 +21,16 @@ GereLed::~GereLed() {
 void GereLed::allumeLed(char num) {
 	switch (num) {
 	case 1:
-		mem.Xil_Out32(0x43C00000 + AXI_SLV_REG0_OFFSET, 1); //reg0
+		Xil_Out32(0x43C00000 + AXI_SLV_REG0_OFFSET, 1); //reg0
 		break;
 	case 2:
-		mem.Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET, 1); //reg1
+		Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET, 1); //reg1
 		break;
 	case 3:
-		mem.Xil_Out32(0x43C00000 + AXI_SLV_REG2_OFFSET, 1); //reg2
+		Xil_Out32(0x43C00000 + AXI_SLV_REG2_OFFSET, 1); //reg2
 		break;
 	case 4:
-		mem.Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG3_OFFSET, 1); //reg3
+		Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG3_OFFSET, 1); //reg3
 		break;
 	}
 }
