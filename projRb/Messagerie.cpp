@@ -7,7 +7,7 @@
 
 #include "Messagerie.h"
 #include "stdio.h"
-
+//https://stackoverflow.com/questions/55437521/send-and-receive-a-struct-in-posix-message-queue
 Messager::Messager() {
 	creeQueue();
 }
@@ -15,17 +15,19 @@ Messager::Messager() {
 Messager::~Messager() {
 
 }
-
-QueueHandle_t * Messager::testQueue() {
+mqd_t * Messager::testQueue() {
+//QueueHandle_t * Messager::testQueue() {
 	return &laqueue__;
 }
 
 int Messager::envoieMessage(AMessage * txMessage) {
 	//laqueue__ = xQueueCreate(1, sizeof( AMessage )); //creation d'une queue contenant 10 messages
 
+
 	if (laqueue__ == 0)
 		return -1;
-	xQueueSend(laqueue__, txMessage, (TickType_t ) 0);
+	mq_send(laqueue__,(const char *) &meee, sizeof( AMessage ), 0);
+//	xQueueSend(laqueue__, txMessage, (TickType_t ) 0);
 	return 1;
 }
 
@@ -34,10 +36,11 @@ int Messager::recoitMessage() {
 		return -1;
 	AMessage rxMessage;
 
-	if (xQueueReceive(laqueue__, &(rxMessage), (TickType_t) 0) == pdTRUE) {
-		vecteurMessages.push_back(rxMessage);//si on a recu un nouveau message on l'ajoute dans la liste
-		return 1;
-	}
+    if (mq_receive(laqueue__, (char *) &meee, MAX_CACHE_REQUEST_LEN, NULL) == -1)
+    {
+        perror("process request: mq_receive");
+        exit(1);
+    }
 	return -2;
 }
 int Messager::effaceQueue(){
@@ -47,6 +50,6 @@ int Messager::effaceQueue(){
 }
 int Messager::creeQueue(){
 
-	laqueue__ = xQueueCreate(1, sizeof( AMessage )); //creation d'une queue contenant 10 messages
+	laqueue__ = mq_open((const char *)"eee", O_RDWR); //creation d'une queue contenant 10 messages
 
 }

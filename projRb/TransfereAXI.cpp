@@ -38,7 +38,7 @@ void CagereAXI::handler() {
 	u32 val;
 	u32 tt;
 	static u32 val_test = 0;
-	xLastWakeTime = xTaskGetTickCount();
+	//xLastWakeTime = xTaskGetTickCount();
 	switch (etat_automate) {
 
 	case EtatPasEncoreInitialise:
@@ -52,7 +52,7 @@ void CagereAXI::handler() {
 
 		snprintf(truc, sizeof(truc), "!!EtatPasEncoreInitialise  =%x\r\n",
 				etat_automate);
-		//	xil_printf(truc);
+		//	printf(truc);
 		Xil_Out32(0x43C00000 + AXI_SLV_REG0_OFFSET, 0x80000000); //allume l'ampli
 		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG3_OFFSET,
 				numFIR); //Regle le numéro du FIR concerné
@@ -69,7 +69,7 @@ void CagereAXI::handler() {
 			Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0x125); //
 			snprintf(truc, sizeof(truc), "FIR %d : mode chut activé\r\n",
 					this->numFIR);
-			xil_printf(truc);
+			printf(truc);
 			etat_automate = EtatInitFini;
 		} else {
 
@@ -77,10 +77,10 @@ void CagereAXI::handler() {
 			switch (EtatChargeCoef) {
 			case Nv_coef:
 				Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0x122); //RESET FIR à 1
-				vTaskDelay(1);
+				sleep(1);
 				Xil_Out32(this->adresseAXI + AXI_SLV_REG2_OFFSET, 0x0); //desactivation du mode transparent
 				Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0x125); //
-				vTaskDelay(1);
+				sleep(1);
 
 				Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
 						cpt_coef); //adresse
@@ -89,7 +89,7 @@ void CagereAXI::handler() {
 				Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0x123); //commande
 				EtatChargeCoef = charge_coef;
 				//snprintf(truc, sizeof(truc),"commande 0x123,adresse coef , %x, valeur : %x\n\r",cpt_coef,lescoefs[cpt_coef]);
-				//xil_printf(truc);
+				//printf(truc);
 
 				break;
 			case charge_coef:
@@ -98,7 +98,7 @@ void CagereAXI::handler() {
 				EtatChargeCoef = Nv_coef;
 				cpt_coef++;
 				//snprintf(truc, sizeof(truc),"commande 0x124,\n\r");
-				//	xil_printf(truc);
+				//	printf(truc);
 
 				if (cpt_coef >= this->taille_filtre) {
 					etat_automate = EtatInitFini;
@@ -106,7 +106,7 @@ void CagereAXI::handler() {
 							"EtatInitFini cpt_coef = %d/%d\r\n", cpt_coef,
 							this->taille_filtre);
 
-					xil_printf(truc);
+					printf(truc);
 				}
 				break;
 			case fin_charge:
@@ -126,7 +126,7 @@ void CagereAXI::handler() {
 				{
 					chut = (int) etat_bouton;
 					etat_ancien_bouton = etat_bouton;
-					xil_printf("FIR : %d : etat bouton = %x \r\n", this->numFIR,
+					printf("FIR : %d : etat bouton = %x \r\n", this->numFIR,
 							(int) etat_bouton);
 					etat_automate = EtatPasEncoreInitialise;
 				}

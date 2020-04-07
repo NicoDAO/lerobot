@@ -41,13 +41,18 @@ void ConfigureVolumes::handler() {
 		XGpio_SetDataDirection(&GpioInput, 1, 0xFFFFFFFF);
 #else
 
-
+#if 0  //voir comment on accede aux gpio
 		XGpioPs_Config *GPIOConfigPtr;
 		GPIOConfigPtr = XGpioPs_LookupConfig(XPAR_PS7_GPIO_0_DEVICE_ID);
 
 		status = XGpioPs_CfgInitialize(&GpioInput, GPIOConfigPtr, GPIOConfigPtr ->BaseAddr);
 #endif
+#endif
+#if 0
 		if (status == XST_SUCCESS)etat = etat_fini;
+#else
+		etat = etat_fini;
+#endif
 		break;
 	case etat_reglageVol1:
 		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
@@ -103,15 +108,16 @@ void ConfigureVolumes::handler() {
 	}
 
 	//vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
-	sleep(xWakePeriod)
+	sleep(xWakePeriod);
 }
 void ConfigureVolumes::calcul_volumes() {
 	char truc[400];
 #if UTILISE_GPIO_AXI == 1
 	GpioLu = XGpio_DiscreteRead(&GpioInput, 1);
 #else
+#if 0
 	GpioLu = XGpioPs_Read(&GpioInput, 2);//a tester
-
+#endif
 #endif
 	if (GpioLu != VieuGpioLut) {
 		VieuGpioLut = GpioLu;

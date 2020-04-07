@@ -14,6 +14,8 @@
 #include <vector>
 
 
+#define MAX_CACHE_REQUEST_LEN 1000
+/*
 class AMessage {
 public:
 	char ucMessageID;
@@ -23,9 +25,9 @@ public:
 	int sens_moteur = 0;
 	int distanceCapteur = 0;
 
-};
-/*
-struct AMessage {
+};*/
+
+typedef struct AMessage {
 
 	char ucMessageID;
 	char consigne[20];
@@ -34,12 +36,12 @@ struct AMessage {
 	int sens_moteur = 0;
 	int distanceCapteur = 0;
 
-};*/
+} ;
 class Messager {
 public:
 	Messager(void);
 	~Messager(void);
-
+	AMessage meee;
 	//QueueHandle  * testQueue(void);
 	mqd_t* testQueue(void);
 	int envoieMessage(AMessage *);
