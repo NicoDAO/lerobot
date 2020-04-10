@@ -108,7 +108,8 @@ void ConfigureVolumes::handler() {
 	}
 
 	//vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
-	sleep(xWakePeriod);
+	printf("volume");
+	sleep(/*xWakePeriod*/1);
 }
 void ConfigureVolumes::calcul_volumes() {
 	char truc[400];

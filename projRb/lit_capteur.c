@@ -8,6 +8,7 @@
 #include <errno.h>
 //https://www.poftut.com/mmap-tutorial-with-examples-in-c-and-cpp-programming-languages/
 //adresse capteur 43C70000h = 1137115136
+#if 0
 int main(int argc, char *argv[])
 {
     int offset;
@@ -47,3 +48,4 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
+#endif

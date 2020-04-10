@@ -27,7 +27,7 @@ public:
 
 };*/
 
-typedef struct AMessage {
+/*typedef*/ struct AMessage {
 
 	char ucMessageID;
 	char consigne[20];

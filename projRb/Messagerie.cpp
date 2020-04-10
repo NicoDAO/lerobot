@@ -7,6 +7,10 @@
 
 #include "Messagerie.h"
 #include "stdio.h"
+#include <fcntl.h>           /* For O_* constants */
+#include <sys/stat.h>        /* For mode constants */
+#include <mqueue.h>
+
 //https://stackoverflow.com/questions/55437521/send-and-receive-a-struct-in-posix-message-queue
 Messager::Messager() {
 	creeQueue();
@@ -16,7 +20,7 @@ Messager::~Messager() {
 
 }
 mqd_t * Messager::testQueue() {
-//QueueHandle_t * Messager::testQueue() {
+	//QueueHandle_t * Messager::testQueue() {
 	return &laqueue__;
 }
 
@@ -27,7 +31,7 @@ int Messager::envoieMessage(AMessage * txMessage) {
 	if (laqueue__ == 0)
 		return -1;
 	mq_send(laqueue__,(const char *) &meee, sizeof( AMessage ), 0);
-//	xQueueSend(laqueue__, txMessage, (TickType_t ) 0);
+	//	xQueueSend(laqueue__, txMessage, (TickType_t ) 0);
 	return 1;
 }
 
@@ -36,16 +40,16 @@ int Messager::recoitMessage() {
 		return -1;
 	AMessage rxMessage;
 
-    if (mq_receive(laqueue__, (char *) &meee, MAX_CACHE_REQUEST_LEN, NULL) == -1)
-    {
-        perror("process request: mq_receive");
-        exit(1);
-    }
+	if (mq_receive(laqueue__, (char *) &meee, MAX_CACHE_REQUEST_LEN, NULL) == -1)
+	{
+		perror("process request: mq_receive");
+		exit(1);
+	}
 	return -2;
 }
 int Messager::effaceQueue(){
 	//xQueueReset(laqueue__);
-//	vQueueDelete(laqueue__);
+	//	vQueueDelete(laqueue__);
 	//delete laqueue__;
 }
 int Messager::creeQueue(){

@@ -50,7 +50,7 @@ void CagereAXI::handler() {
 		etat_automate = EtatInitEnCours;
 		EtatChargeCoef = Nv_coef;
 
-		snprintf(truc, sizeof(truc), "!!EtatPasEncoreInitialise  =%x\r\n",
+		printf(truc, sizeof(truc), "!!EtatPasEncoreInitialise  =%x\r\n",
 				etat_automate);
 		//	printf(truc);
 		Xil_Out32(0x43C00000 + AXI_SLV_REG0_OFFSET, 0x80000000); //allume l'ampli

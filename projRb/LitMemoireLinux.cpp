@@ -23,7 +23,7 @@ LitMemoireLinux::~LitMemoireLinux() {
 }
 u32 LitMemoireLinux::Xil_Out32(u32 adress,u32 donnee)
 {
-	printf("pas encore developpe");
+	printf("	Xil_Out32 %08x    %08x\r\n",adress,donnee);
 	return 0;
 }
 
@@ -46,7 +46,7 @@ u32 LitMemoireLinux::Xil_In32(u32 adress){
 		perror("mmap error");
 	}
 
-	printf("distance capteur : %d\r\n", data[0]);
+	printf("Xil_In32 : %08x	%d\r\n",adress, data[0]);
 	munmap (data, pagesize);
 	return data[0];
 }

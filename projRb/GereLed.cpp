@@ -10,8 +10,6 @@
 GereLed::GereLed() {
 	// TODO Auto-generated constructor stub
 	printf("le constructeur GereLed() \r\n");
-	printf(".... \r\n");
-
 }
 
 GereLed::~GereLed() {
