@@ -5,3 +5,4 @@ La carte électronique est une carte Zybo, de Digilent avec quelques cartes d'ex
 Le principal composant de la Zybo est un Zynq7000 de Xilinx.
 La partie FPGA du Zynq permet de piloter les moteurs et le capteur de distance.
 Le logiciel tourne sur un Linux embarqué sur la carte.
+Dans ce répertoire n'est présent que le logiciel permettant de piloter le robot. Le hardware du FPGA n'y est pas pour le moment.
