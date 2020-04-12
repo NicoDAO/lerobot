@@ -49,9 +49,9 @@ void *handlerGereMoteur2(void *pvParameters);
 void *handlerGestionTraction(void *pvParameters);
 void *handlerCapteurDistance(void *pvParameters);
 
-Messager messageConsigneMoteur1;
-Messager messageConsigneMoteur2;
-Messager messageMesureDistanceCapteur;
+Messager messageConsigneMoteur1("queue1",12);
+Messager messageConsigneMoteur2("queue2",12);
+Messager messageMesureDistanceCapteur("queue3",12);
 
 
 int main() {
@@ -93,8 +93,8 @@ int main() {
 #if 1
 	pthread_create(&GereAXI3,NULL,handlerGereAXI3,   (void*)tinfo);
 #endif
-#if 0
-	pthread_create(&GereMoteur1, NULL,ndlerhaGereMoteur1,NULL);
+#if 1
+	pthread_create(&GereMoteur1, NULL,handlerGereMoteur1, (void*)tinfo);
 #endif
 #if 0
 	pthread_create	(&GereMoteur2, NULL,handlerGereMoteur2,NULL);

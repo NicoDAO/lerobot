@@ -35,11 +35,13 @@ public:
 	int puissance_moteur = 0;
 	int sens_moteur = 0;
 	int distanceCapteur = 0;
+	char message[100];
+	int priorie=10;
 
 } ;
 class Messager {
 public:
-	Messager(void);
+	Messager(char*,int);
 	~Messager(void);
 	AMessage meee;
 	//QueueHandle  * testQueue(void);
@@ -52,6 +54,7 @@ public:
 private:
 	//QueueHandle_t laqueue__;
 	mqd_t laqueue__;
+	char nomqueue[100];
 
 };
 
