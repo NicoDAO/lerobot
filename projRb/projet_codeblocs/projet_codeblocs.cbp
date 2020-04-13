@@ -32,6 +32,44 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../ConfigureFIRFPGA.cpp" />
+		<Unit filename="../ConfigureFIRFPGA.h" />
+		<Unit filename="../ConfigureVolumes.cpp" />
+		<Unit filename="../ConfigureVolumes.h" />
+		<Unit filename="../GereCapteurDistance.cpp" />
+		<Unit filename="../GereCapteurDistance.h" />
+		<Unit filename="../GereLed.cpp" />
+		<Unit filename="../GereLed.h" />
+		<Unit filename="../GereMoteur.cpp" />
+		<Unit filename="../GereMoteur.h" />
+		<Unit filename="../GereMoteur_test.cpp" />
+		<Unit filename="../GestionTraction.cpp" />
+		<Unit filename="../GestionTraction.h" />
+		<Unit filename="../LitMemoireLinux.cpp" />
+		<Unit filename="../LitMemoireLinux.h" />
+		<Unit filename="../Messagerie.cpp" />
+		<Unit filename="../Messagerie.h" />
+		<Unit filename="../MonPWM.cpp" />
+		<Unit filename="../MonPWM.h" />
+		<Unit filename="../MonPWM_test.cpp" />
+		<Unit filename="../README.txt" />
+		<Unit filename="../SensMoteur.cpp" />
+		<Unit filename="../SensMoteur.h" />
+		<Unit filename="../Tache.cpp" />
+		<Unit filename="../Tache.h" />
+		<Unit filename="../TransfereAXI.cpp" />
+		<Unit filename="../TransfertAXI.h" />
+		<Unit filename="../allezoncompiletouca.sh" />
+		<Unit filename="../compilesimone.sh" />
+		<Unit filename="../config_du_system.h" />
+		<Unit filename="../definitions_types.h" />
+		<Unit filename="../donnees_FIR.h" />
+		<Unit filename="../lit_capteur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../projRb.cpp" />
+		<Unit filename="../type.h" />
+		<Unit filename="../xparameters.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

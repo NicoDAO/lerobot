@@ -23,26 +23,28 @@ Messager::Messager(char* nom, int taille)
 {
     struct mq_attr	attr;
     ssize_t 		len_recv;
-    mqd_t 		My_MQ;
+//   mqd_t 		My_MQ;
     char 			*text;
     char 			recv[BUF_LEN];
     attr.mq_flags = 0;
     attr.mq_maxmsg = 10;
     attr.mq_msgsize = BUF_LEN;
     attr.mq_curmsgs = 0;
-    laqueue__ = mq_open(MQ_NAME, O_RDWR | O_CREAT, 0644, &attr);
-    if ((int) My_MQ == -1)
+    laqueue__ = mq_open(nom, O_RDWR | O_CREAT, 0644, &attr);
+    snprintf(nomqueue,sizeof(nomqueue),"%s",nom);
+    printf("creation messagerie ->%s<-\r\n",nomqueue);
+    if ((int) laqueue__ == -1)
     {
         perror("Error : mq_open failed !\n");
         exit(   1);
     }
     AMessage  txMessage;
     txMessage.priorie = 12;
-    snprintf(txMessage.message,sizeof(txMessage.consigne  ),"bonjour la queue");
-    envoieMessage( &txMessage);
-    txMessage.priorie = 13;
-    snprintf(txMessage.message,sizeof(txMessage.consigne  ),"super");
-    envoieMessage( &txMessage);
+    //  snprintf(txMessage.message,sizeof(txMessage.consigne  ),"bonjour la queue");
+    //  envoieMessage( &txMessage);
+//   txMessage.priorie = 13;
+    snprintf(txMessage.message,sizeof(txMessage.consigne  ),"supergenial");
+//   envoieMessage( &txMessage);
 #if 0
     printf("%s\n", "tournicoton priorite 42");
     text = strdup("tournicoti : 42 !");
@@ -102,18 +104,22 @@ mqd_t * Messager::testQueue()
 int Messager::envoieMessage(AMessage * txMessage)
 {
     //laqueue__ = xQueueCreate(1, sizeof( AMessage )); //creation d'une queue contenant 10 messages
-    printf(">   envoieMessage \r\n");
+    // printf(">   envoieMessage \r\n");
     if (laqueue__ == 0)
         return -1;
-    printf("envoieMessage\r\n");
+    printf("%s : envoieMessage\r\n",nomqueue);
     struct mq_attr	attr;
     ssize_t 		len_recv;
-    mqd_t 		My_MQ;
+    //  mqd_t 		My_MQ;
     char 			*text;
     char 			recv[BUF_LEN];
     text = strdup("tournicoti : 42 !");
-    mq_send(laqueue__, txMessage->message, strlen(txMessage->message), txMessage->priorie);
-    free(text);
+    mq_send(laqueue__, txMessage->consigne, strlen(txMessage->consigne), txMessage->priorie+10);
+    timespec taillemahout;
+    taillemahout.tv_sec = 4;
+    printf("    %s   envoieMessage : %s\r\n",nomqueue,txMessage->message);
+    //mq_timedsend(laqueue__, txMessage->message, strlen(txMessage->message), txMessage->priorie,&taillemahout);
+    //  free(text);
 #if 0
     text = strdup("tournicoton 21 !");
     mq_send(laqueue__, text, strlen(text), 21);
@@ -126,19 +132,23 @@ int Messager::recoitMessage()
 {
     if (laqueue__ == 0)
         return -1;
-    printf("hh mq_receive %s\n\r ",nomqueue);
+//   printf("recoitMessage de %s\n\r ",nomqueue);
     char recoitt[200];
     ssize_t 		len_recv;
     char 			*text;
     char 			recv[BUF_LEN];
     memset(recv, 0, BUF_LEN);
     len_recv = mq_receive(laqueue__, recv, BUF_LEN, NULL);
-    printf("Premier msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
-    memset(recv, 0, BUF_LEN);
-    len_recv = mq_receive(laqueue__, recv, BUF_LEN, NULL);
-    printf("Deuxieme msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
-    printf("   recoit  %s\n\r ",recoitt);
-    return -2;
+    printf("   %s : recu message :%s\n\r ",nomqueue,recv);
+    AMessage message ;
+    snprintf(message.consigne,sizeof(message.consigne),"%s",recv);
+    vecteurMessages.push_back(message);
+//   printf("Premier msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
+    //  memset(recv, 0, BUF_LEN);
+    //  len_recv = mq_receive(laqueue__, recv, BUF_LEN, NULL);
+    //  printf("Deuxieme msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
+   // printf(" %s  recoit :%s, taille %d\n\r ",nomqueue,message.consigne,vecteurMessages.size());
+    return 1;
 }
 int Messager::effaceQueue()
 {
