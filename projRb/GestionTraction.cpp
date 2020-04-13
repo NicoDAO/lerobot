@@ -29,9 +29,9 @@ void GestionTraction::handler()
     int mesureDistance = 0;
     u32 vitesse_g = 0;
     char bargraf[256];
-    static int num = 0;
+
 //test
-    snprintf(mot1mess.consigne,sizeof(mot1mess.consigne),":puissance demand %d",num++);
+    snprintf(mot1mess.consigne,sizeof(mot1mess.consigne),":puissanc =%d",num++);
     leMessage1->envoieMessage(&mot1mess);
     printf("GestionTraction : envoie %s sleep(%d)\r\n",mot1mess.consigne,this->xWakePeriod);
 //fin test

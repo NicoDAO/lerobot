@@ -23,14 +23,14 @@ Messager::Messager(char* nom, int taille)
 {
     struct mq_attr	attr;
     ssize_t 		len_recv;
-//   mqd_t 		My_MQ;
+    //mqd_t 		My_MQ;
     char 			*text;
     char 			recv[BUF_LEN];
     attr.mq_flags = 0;
     attr.mq_maxmsg = 10;
     attr.mq_msgsize = BUF_LEN;
     attr.mq_curmsgs = 0;
-    laqueue__ = mq_open(nom, O_RDWR | O_CREAT, 0644, &attr);
+    laqueue__ = mq_open(nom,O_NONBLOCK| O_RDWR | O_CREAT, 0644, &attr);
     snprintf(nomqueue,sizeof(nomqueue),"%s",nom);
     printf("creation messagerie ->%s<-\r\n",nomqueue);
     if ((int) laqueue__ == -1)
@@ -42,9 +42,9 @@ Messager::Messager(char* nom, int taille)
     txMessage.priorie = 12;
     //  snprintf(txMessage.message,sizeof(txMessage.consigne  ),"bonjour la queue");
     //  envoieMessage( &txMessage);
-//   txMessage.priorie = 13;
+    //  txMessage.priorie = 13;
     snprintf(txMessage.message,sizeof(txMessage.consigne  ),"supergenial");
-//   envoieMessage( &txMessage);
+    //   envoieMessage( &txMessage);
 #if 0
     printf("%s\n", "tournicoton priorite 42");
     text = strdup("tournicoti : 42 !");
@@ -64,32 +64,32 @@ Messager::Messager(char* nom, int taille)
     printf("Deuxieme msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
 #endif
     //mq_close(My_MQ);
-// mq_unlink(MQ_NAME);
-//    attr.mq_flags = 0;
-//    attr.mq_maxmsg = 1      ;
-//    attr.mq_msgsize = BUF_LEN;
-//    attr.mq_curmsgs = 0;
-//    memcpy(nomqueue,nom,sizeof(nomqueue));
-//
-//    laqueue__ = mq_open((const char *)nom, O_CREAT | O_RDWR, 0644, &attr); //creation d'une queue contenant 10 messages
-//    printf("cree la queue %s\r\n",nom);
-//    if(laqueue__!= -1)
-//    {
-//        perror("erreur creation queue");
-//        exit(1);
-//    }
-//    char mess[30];
-//    snprintf(mess, sizeof(mess),"coucou");
-//    mq_send(laqueue__, mess, strlen(mess),21);
-//    printf("   envoie message%s\r\n",mess);
-//
-//    char recoitt[200];
-//     if (mq_receive(laqueue__,  recoitt, BUF_LEN, NULL) == -1)
-//    {
-//        perror("process request: mq_receive =");
-//        exit(1);
-//    }
-//     printf("   mq_receive  %s\n\r ",recoitt);
+    // mq_unlink(MQ_NAME);
+    //    attr.mq_flags = 0;
+    //    attr.mq_maxmsg = 1      ;
+    //    attr.mq_msgsize = BUF_LEN;
+    //    attr.mq_curmsgs = 0;
+    //    memcpy(nomqueue,nom,sizeof(nomqueue));
+    //
+    //    laqueue__ = mq_open((const char *)nom, O_CREAT | O_RDWR, 0644, &attr); //creation d'une queue contenant 10 messages
+    //    printf("cree la queue %s\r\n",nom);
+    //    if(laqueue__!= -1)
+    //    {
+    //        perror("erreur creation queue");
+    //        exit(1);
+    //    }
+    //    char mess[30];
+    //    snprintf(mess, sizeof(mess),"coucou");
+    //    mq_send(laqueue__, mess, strlen(mess),21);
+    //    printf("   envoie message%s\r\n",mess);
+    //
+    //    char recoitt[200];
+    //     if (mq_receive(laqueue__,  recoitt, BUF_LEN, NULL) == -1)
+    //    {
+    //        perror("process request: mq_receive =");
+    //        exit(1);
+    //    }
+    //     printf("   mq_receive  %s\n\r ",recoitt);
 }
 
 Messager::~Messager()
@@ -119,7 +119,7 @@ int Messager::envoieMessage(AMessage * txMessage)
     taillemahout.tv_sec = 4;
     printf("    %s   envoieMessage : %s\r\n",nomqueue,txMessage->message);
     //mq_timedsend(laqueue__, txMessage->message, strlen(txMessage->message), txMessage->priorie,&taillemahout);
-    //  free(text);
+    //free(text);
 #if 0
     text = strdup("tournicoton 21 !");
     mq_send(laqueue__, text, strlen(text), 21);
@@ -132,22 +132,26 @@ int Messager::recoitMessage()
 {
     if (laqueue__ == 0)
         return -1;
-//   printf("recoitMessage de %s\n\r ",nomqueue);
+    //printf("recoitMessage de %s\n\r ",nomqueue);
     char recoitt[200];
     ssize_t 		len_recv;
     char 			*text;
     char 			recv[BUF_LEN];
     memset(recv, 0, BUF_LEN);
-    len_recv = mq_receive(laqueue__, recv, BUF_LEN, NULL);
-    printf("   %s : recu message :%s\n\r ",nomqueue,recv);
-    AMessage message ;
-    snprintf(message.consigne,sizeof(message.consigne),"%s",recv);
-    vecteurMessages.push_back(message);
-//   printf("Premier msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
+    // len_recv = mq_receive(laqueue__, recv, BUF_LEN, NULL);
+while(0 < mq_receive(laqueue__, recv, BUF_LEN, NULL))
+    {
+       // if( EAGAIN ==len_recv )printf("   mq vide %d",len_recv);
+        printf("   %s : recu message :%s\n\r ",nomqueue,recv);
+        AMessage message ;
+        snprintf(message.consigne,sizeof(message.consigne),"%s",recv);
+        vecteurMessages.push_back(message);
+    }
+    //   printf("Premier msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
     //  memset(recv, 0, BUF_LEN);
     //  len_recv = mq_receive(laqueue__, recv, BUF_LEN, NULL);
     //  printf("Deuxieme msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
-   // printf(" %s  recoit :%s, taille %d\n\r ",nomqueue,message.consigne,vecteurMessages.size());
+    // printf(" %s  recoit :%s, taille %d\n\r ",nomqueue,message.consigne,vecteurMessages.size());
     return 1;
 }
 int Messager::effaceQueue()

@@ -35,6 +35,7 @@ private :
 	s32 rapport_entre_2_consignes = 0;
 	u32 baseAddr = 0;
 	int mesureDistance_avant = 0;
+    int num = 0;
 };
 
 #endif /* SRC_MONPWM_H_ */

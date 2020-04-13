@@ -181,7 +181,7 @@ void *handlerGereMoteur1(void *pvParameters)
     printf("handlerGereMoteur \r\n");
     mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
     //mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
-    mot1.setPeriod(5);
+    mot1.setPeriod(1);
     printf("	GereMoteur 1 \r\n");
     for (;;)
     {
@@ -205,7 +205,7 @@ void *handlerGestionTraction(void *pvParameters)
 {
     printf("traction \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    traction.setPeriod(1);
+    traction.setPeriod(5);
     printf("	Gere traction \r\n");
     for (;;)
     {
