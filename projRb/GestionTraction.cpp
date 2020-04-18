@@ -29,16 +29,15 @@ void GestionTraction::handler()
     int mesureDistance = 0;
     u32 vitesse_g = 0;
     char bargraf[256];
-
 //test
-    snprintf(mot1mess.consigne,sizeof(mot1mess.consigne),":puissanc =%d",num++);
+    snprintf(mot1mess.message,sizeof(mot1mess.message),":puissanc  =%d",num++);
     leMessage1->envoieMessage(&mot1mess);
     printf("GestionTraction : envoie %s sleep(%d)\r\n",mot1mess.consigne,this->xWakePeriod);
 //fin test
-
-   #if 0
+#if 1
     if (leMessage3->recoitMessage() == 1)
     {
+        printf("GestionTraction : recoitt mesure distance");
         //int taille = leMessage3->vecteurMessages.size();
         //test logique
         if((mesureDistance <(mesureDistance_avant-2000)) || (mesureDistance >(mesureDistance_avant+2000)))
@@ -125,7 +124,7 @@ void GestionTraction::handler()
         	}
         */
     }
-    #endif // 0
+#endif
     //lapause(0);
     sleep(this->xWakePeriod);
 }

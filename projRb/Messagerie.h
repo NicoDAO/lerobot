@@ -12,12 +12,8 @@
 //#include "queue.h"
 #include <iostream>
 #include <vector>
-
-
 #include <sys/ipc.h>
 #include <sys/msg.h>
-
-
 #define MAX_CACHE_REQUEST_LEN 1000
 /*
 class AMessage {
@@ -30,37 +26,42 @@ public:
 	int distanceCapteur = 0;
 
 };*/
+struct mesg_buffer {
+    long mesg_type;
+    char mesg_text[100];
+} ;
+/*typedef*/ struct AMessage
+{
 
-/*typedef*/ struct AMessage {
+    char ucMessageID;
+    char consigne[20];
 
-	char ucMessageID;
-	char consigne[20];
-
-	int puissance_moteur = 0;
-	int sens_moteur = 0;
-	int distanceCapteur = 0;
-	char message[100];
-	int priorie=10;
+    int puissance_moteur = 0;
+    int sens_moteur = 0;
+    int distanceCapteur = 0;
+    char message[100];
+    int priorie=10;
 
 } ;
-class Messager {
+class Messager
+{
 public:
-	Messager(char*,int);
-	~Messager(void);
-	AMessage meee;
-	//QueueHandle  * testQueue(void);
-	//mqd_t* testQueue(void);
-	int envoieMessage(AMessage *);
-	int recoitMessage(void);
-	std::vector<AMessage> vecteurMessages;
-	int effaceQueue(void);
-	int creeQueue(void);
+    Messager(char*,int);
+    ~Messager(void);
+    AMessage meee;
+    //QueueHandle  * testQueue(void);
+    //mqd_t* testQueue(void);
+    int envoieMessage(AMessage *);
+    int recoitMessage(void);
+    std::vector<AMessage> vecteurMessages;
+    int effaceQueue(void);
+    int creeQueue(void);
 private:
-	//QueueHandle_t laqueue__;
-	//mqd_t laqueue__;
-	 key_t key;
+    //QueueHandle_t laqueue__;
+    //mqd_t laqueue__;
+    key_t key;
     int msgid;
-	char nomqueue[100];
+    char nomqueue[100];
 
 };
 

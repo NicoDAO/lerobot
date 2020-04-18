@@ -20,13 +20,15 @@ int main(int argc, char *argv[])
     size_t pagesize = 20;// sysconf(_SC_PAGE_SIZE);
     off_t page_base = (adress / pagesize) * pagesize;
     off_t page_offset = adress - page_base;
-    // printf("$$lecture memoire a l'adresse %x, taille = %d \n",adress,pagesize);
+    printf("$$lecture memoire a l'adresse %x, taille = %d \n",adress,pagesize);
     if (argc != 2)
     {
         printf( "usage: mmapdemo offset\n");
         exit(1);
     }
     int fd = open("/dev/mem", O_RDWR);
+  printf("ouverture  /dev/mem");
+ 
     if (fd  == -1)
         printf(1, "open");
     // data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);

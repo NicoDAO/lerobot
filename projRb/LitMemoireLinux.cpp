@@ -16,6 +16,7 @@
 #include <errno.h>
 LitMemoireLinux::LitMemoireLinux() {
 
+
 }
 
 LitMemoireLinux::~LitMemoireLinux() {
@@ -37,21 +38,27 @@ u32 LitMemoireLinux::Xil_In32(u32 adress){
 	off_t page_base = (adress / pagesize) * pagesize;
 	off_t page_offset = adress - page_base;
 
+
+		printf( "ouvre /dev/mem\r\n");
 	int fd = open("/dev/mem", O_RDWR);
 	if (fd  == -1)
 		printf( "open");
-	// data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
+
+
+
+    //data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
 	data = static_cast<int*>(mmap(NULL, pagesize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)adress));
 	if (data == MAP_FAILED)
 	{
 		perror("mmap error");
 	}
 
-//	printf("Xil_In32 : %08x	%d\r\n",adress, data[0]);
+	printf("Xil_In32 : %08x	%d\r\n",adress, data[0]);
 	//munmap (data, pagesize);
-	printf("fin nummap\r\n");
+	//printf("fin nummap\r\n");
+
 	return data[0];
-	#else
+#else
         printf("Xil_In32 bifon : %08x	\r\n",adress);
         return NULL;
 	#endif

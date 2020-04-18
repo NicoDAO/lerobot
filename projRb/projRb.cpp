@@ -50,15 +50,16 @@ void *handlerGestionTraction(void *pvParameters);
 void *handlerCapteurDistance(void *pvParameters);
 
 
-Messager messageConsigneMoteur2("/queue2",12);
-Messager messageMesureDistanceCapteur("/queue3",12);
+Messager messageConsigneMoteur2("/ConsigneMoteur",1);
+Messager messageMesureDistanceCapteur("/mesureDistance",2);
+Messager messageConsigneMoteur1("/consigneMoteur1",3);
+
 //#define LANCE_FIR
 
 int main()
 {
     //configuation des messages
     //Messager messageConsigneMoteur;
-    Messager messageConsigneMoteur1("/consigneMoteur1",12);
     pthread_t GereAXI2, GereAXI3,GereMoteur1,GereMoteur2,GestionTraction,CapteurDistance;
     pthread_attr_t attr;
     printf("main \r\n");
@@ -193,7 +194,7 @@ void *handlerGereMoteur2(void *pvParameters)
 {
     printf("handlerGereMoteur \r\n");
     mot2.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    mot2.setPeriod(113);
+    mot2.setPeriod(4);
     printf("	GereMoteur 2\r\n");
     for (;;)
     {
@@ -217,7 +218,7 @@ void *handlerCapteurDistance(void *pvParameters)
 {
     printf("capteurDistance \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    capteurDistance.setPeriod(0.5);
+    capteurDistance.setPeriod(4);
     capteurDistance.RegleAdresseAxi(
         XPAR_CAPTEURDISTANCEULTRA_0_S00_AXI_BASEADDR);
     for (;;)

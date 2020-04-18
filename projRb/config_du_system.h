@@ -15,7 +15,7 @@
 
 //#define LOG_MOTEUR
 //#define LOG_CAPTEUR
-#define LOG_BARGRAF
+//#define LOG_BARGRAF
 
 #ifdef UTILISE_GPIO_AXI
 #include "xgpio.h"
