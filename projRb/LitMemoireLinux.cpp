@@ -29,6 +29,7 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress,u32 donnee)
 
 
 u32 LitMemoireLinux::Xil_In32(u32 adress){
+	#if 1
 	int offset;
 	int *data;
 	struct stat sbuf;
@@ -46,8 +47,13 @@ u32 LitMemoireLinux::Xil_In32(u32 adress){
 		perror("mmap error");
 	}
 
-	printf("Xil_In32 : %08x	%d\r\n",adress, data[0]);
-	munmap (data, pagesize);
+//	printf("Xil_In32 : %08x	%d\r\n",adress, data[0]);
+	//munmap (data, pagesize);
+	printf("fin nummap\r\n");
 	return data[0];
+	#else
+        printf("Xil_In32 bifon : %08x	\r\n",adress);
+        return NULL;
+	#endif
 }
 

@@ -96,18 +96,18 @@ int main()
 #if 1
     pthread_create(&GereMoteur1, NULL,handlerGereMoteur1, (void*)tinfo);
 #endif
-#if 0
-    pthread_create	(&GereMoteur2, NULL,handlerGereMoteur2,NULL);
+#if 1
+    pthread_create(&GereMoteur2, NULL,handlerGereMoteur2,(void*)tinfo);
 #endif
 #if 1
     pthread_create(&GestionTraction,NULL, handlerGestionTraction,(void*)tinfo);
 #endif
-#if 0
-    pthread_create(&CapteurDistance, NULL,handlerCapteurDistance,NULL);
+#if 1
+    pthread_create(&CapteurDistance, NULL,handlerCapteurDistance,(void*)tinfo);
 #endif
     void *ret;
     //https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxbd00/ptjoin.htm
- #ifdef LANCE_FIR
+#ifdef LANCE_FIR
     if(pthread_join(GereAXI2,&ret) != 0)
     {
         perror("pthread_create() error");
@@ -217,7 +217,7 @@ void *handlerCapteurDistance(void *pvParameters)
 {
     printf("capteurDistance \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    capteurDistance.setPeriod(53);
+    capteurDistance.setPeriod(0.5);
     capteurDistance.RegleAdresseAxi(
         XPAR_CAPTEURDISTANCEULTRA_0_S00_AXI_BASEADDR);
     for (;;)

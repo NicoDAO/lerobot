@@ -8,14 +8,10 @@
 #ifndef SRC_MESSAGE_H_
 #define SRC_MESSAGE_H_
 //#include <sys/queue.h>
-//#include <mqueue.h>
+#include <mqueue.h>
 //#include "queue.h"
 #include <iostream>
 #include <vector>
-
-
-#include <sys/ipc.h>
-#include <sys/msg.h>
 
 
 #define MAX_CACHE_REQUEST_LEN 1000
@@ -49,7 +45,7 @@ public:
 	~Messager(void);
 	AMessage meee;
 	//QueueHandle  * testQueue(void);
-	//mqd_t* testQueue(void);
+	mqd_t* testQueue(void);
 	int envoieMessage(AMessage *);
 	int recoitMessage(void);
 	std::vector<AMessage> vecteurMessages;
@@ -57,9 +53,7 @@ public:
 	int creeQueue(void);
 private:
 	//QueueHandle_t laqueue__;
-	//mqd_t laqueue__;
-	 key_t key;
-    int msgid;
+	mqd_t laqueue__;
 	char nomqueue[100];
 
 };

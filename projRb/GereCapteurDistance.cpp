@@ -54,12 +54,11 @@ void GereCapteurDistance::handler() {
 					bargraf[u] = '*';
 				}
 #endif
-		lapause(0);
-	}else{
+		}else{
 		printf("[%04d]Capteur : la queue est pleine \r\n");
 
 	}
-
+     sleep(this->xWakePeriod);
 }
 
 void GereCapteurDistance::ajoute_mesure(int mesure) {
