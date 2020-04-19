@@ -15,21 +15,24 @@ int main(int argc, char *argv[])
     int *data;
     struct stat sbuf;
     int adress = 0;
+    int reg = 0;
     int donnee = 0;
+    
     //sscanf(argv[1],"%d",&adress);
     adress = strtoul(argv[1], NULL, 0);
     donnee = strtoul(argv[2], NULL, 0);
- printf("$$ecriture memoire a l'adresse %x, donnee = %x \n",adress,donnee);
-	donnee = donnee | 0x80000000;  //on force le bit de poid fort pour activer l'ampli
-donnee = donnee | 0x20000000;  //on force le bit de poid fort pour activer l'ampli
+    reg = strtoul(argv[3], NULL, 0);
+    printf("$$ecriture memoire a l'adresse %x, donnee = %x \n",adress,donnee);
+    donnee = donnee | 0x80000000;  //on force le bit de poid fort pour activer l'ampli
+    donnee = donnee | 0x20000000;  //on force le bit de poid fort pour activer l'ampli
 
 
     // Truncate offset to a multiple of the page size, or mmap will fail.
     size_t pagesize = 20;// sysconf(_SC_PAGE_SIZE);
     off_t page_base = (adress / pagesize) * pagesize;
     off_t page_offset = adress - page_base;
-    printf("$$ecriture memoire a l'adresse %x, donnee = %x \n",adress,donnee);
-    if (argc != 3	)
+    printf("$$ecriture memoire a l'adresse %x, donnee = %x registre axi : %d\n",adress,donnee,reg);
+    if (argc != 4	)
     {
         printf( "usage: mmapdemo offset\n");
         exit(1);
@@ -49,7 +52,7 @@ donnee = donnee | 0x20000000;  //on force le bit de poid fort pour activer l'amp
          {
            printf("[%lu]=%X ", i, data[i]);
          }*/
-	data[0] = donnee;
+	data[reg] = donnee;
         printf("distance capteur : %d\r\n", data[0]);
         munmap (data, pagesize);
 
