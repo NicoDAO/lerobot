@@ -1,0 +1,65 @@
+/*
+ * LaFifo.cpp
+ *
+ *  Created on: 6 août 2018
+ *      Author: nicolas
+ */
+#include <stdlib.h>
+#include "LaFifo.h"
+// queue::push/pop
+#include <queue>          // std::queue
+
+LaFifo::LaFifo() {
+	// TODO Auto-generated constructor stub
+
+
+}
+void LaFifo::setQueue(QueueHandle_t *q) {
+	// TODO Auto-generated constructor stub
+	this->xQueue = q;
+
+}
+
+LaFifo::~LaFifo() {
+	// TODO Auto-generated destructor stub
+}
+
+int LaFifo::rempli_fifo(int myint) {
+	//myqueue.push(myint);
+	 portBASE_TYPE qstatus;
+	 unsigned char dat[]="EmbeTronicX",i;
+	 while(1) {
+	 for(i=0;i<11;i++)
+		 qstatus=xQueueSendToBack(this->xQueue,&dat[i],0);
+
+	 if(qstatus!=pdPASS) {
+	 //sendsserial("\r\n");
+	 //vTaskDelay(10);
+	 }
+	 }
+	return 0;
+}
+int LaFifo::vide_fifo(int * sortie) {
+
+	unsigned char receivedValue;
+	portBASE_TYPE xStatus;
+
+	while (1) {
+		xStatus = xQueueReceive(this->xQueue, &receivedValue, 100);
+		if (xStatus == pdPASS) {
+			//sendserial(receivedValue);
+		}
+	}
+
+	char lit[100];
+
+	if (xQueueReceive(this->xQueue, &lit, portMAX_DELAY)) {
+
+	}
+/*	if (!myqueue.empty()) {
+		*sortie = myqueue.front();
+		myqueue.pop();
+	}
+*/
+	return 0;
+}

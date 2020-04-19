@@ -1,0 +1,38 @@
+/*
+ * MonPWM.cpp
+ *
+ *  Created on: 10 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "MonPWM.h"
+
+MonPWM::MonPWM() {
+	// TODO Auto-generated constructor stub
+
+}
+
+MonPWM::~MonPWM() {
+	// TODO Auto-generated destructor stub
+}
+
+
+
+void MonPWM::PWM_Set_Duty( u32 clocks, u32 pwmIndex)
+{
+	Xil_Out32(baseAddr + , clocks);
+}
+
+
+void MonPWM::PWM_Enable()
+{
+	Xil_Out32(baseAddr + PWM_AXI_CTRL_REG_OFFSET, 1);
+}
+
+void MonPWM::PWM_Disable()
+{
+	Xil_Out32(baseAddr + PWM_AXI_CTRL_REG_OFFSET, 0);
+}
+void MonPWM::setBaseAddr(u32 aa){
+	this->baseAddr = aa;
+}

@@ -1,0 +1,18 @@
+/*
+ * GereMoteur.cpp
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "GereMoteur.h"
+
+GereMoteur::GereMoteur() {
+	// TODO Auto-generated constructor stub
+
+}
+
+GereMoteur::~GereMoteur() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -1,0 +1,210 @@
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_types.h"
+#include "xil_io.h"
+#include "xil_printf.h"
+#include "xil_cache.h"
+#include "math.h"
+#include "FreeRTOS.h"
+#include "Testlibuart.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+#include "stdio.h"
+
+#include "Testlibuart.h"
+/* Xilinx includes. */
+#include "xuartps.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+#include "semphr.h"
+
+#include "TransfertAXI.h"
+#include "ConfigureFIRFPGA.h"
+#include "ConfigureVolumes.h"
+#include "config_du_system.h"
+#include "GereLed.h"
+#include "donnees_FIR.h"
+#include "GereMoteur.h"
+
+#define TEST_LUART 0
+
+#define TIMER_ID	1
+#define DELAY_10_SECONDS	10000UL
+#define DELAY_1_SECOND		1000UL
+#define DELAY_100_MSECOND		100UL
+#define DELAY_10_MSECOND		10UL
+#define DELAY_1_MSECOND		1UL
+#define TIMER_CHECK_THRESHOLD	9
+//https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/uartps/examples/xuartps_selftest_example.c
+//https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/uartps/examples/xuartps_intr_example.c
+/*			definition des bibs
+ */
+/* The UART interrupts of interest when receiving. */
+#define serRECEIVE_INTERRUPT_MASK	( XUARTPS_IXR_RXOVR | XUARTPS_IXR_RXFULL | XUARTPS_IXR_TOUT )
+/* The queue into which received key presses are placed.  NOTE THE COMMENTS AT
+ THE TOP OF THIS FILE REGARDING THE USE OF QUEUES FOR THIS PURPOSE. */
+
+/* The UART interrupts of interest when transmitting. */
+#define serTRANSMIT_IINTERRUPT_MASK ( XUARTPS_IXR_TXEMPTY )
+
+ConfigureFIR_FPGA FIR1;
+ConfigureFIR_FPGA FIR2;
+ConfigureFIR_FPGA FIR3;
+ConfigureFIR_FPGA FIR4;
+
+ConfigureVolumes Volume1;
+
+//laxi2.
+//CagereAXI laxi3;
+
+char HWstring[15] = "Hello World";
+long RxtaskCntr = 0;
+GereLed GereLesLed;
+static void handlerGereAXI2(void *pvParameters);
+static void handlerGereAXI3(void *pvParameters);
+static void handlerGereMoteur(void *pvParameters);
+int UartPsHelloWorldExample(u16 DeviceId);
+
+/* The interrupt controller is initialised in this file, and made available to
+ other modules. */
+XScuGic xInterruptController;
+/*
+ * The UART interrupt handler is defined in this file to provide more control,
+ * but still uses parts of the Xilinx provided driver.
+ */
+void prvUART_Handler(void *pvNotUsed);
+
+void conf_uart(void);
+int main() {
+#if TEST_LUART == 1
+	//test_l_uart();
+	Test_lib_uart tt;
+	tt.test_l_uart();
+#else
+	Test_lib_uart tt;
+	tt.test_l_uart();
+	//conf_uart();
+
+//	lien1.setXUartPs(&Uart_Ps);
+#if 1
+	xTaskCreate(handlerGereAXI2, (const char *) "AXI2",
+	configMINIMAL_STACK_SIZE + 400,
+	NULL,
+	tskIDLE_PRIORITY + 1, NULL);
+#endif
+#if 1
+	xTaskCreate(handlerGereAXI3, (const char *) "AXI3",
+	configMINIMAL_STACK_SIZE + 400,
+	NULL,
+	tskIDLE_PRIORITY + 2, NULL);
+#endif
+#if 1
+	xTaskCreate(handlerGereMoteur, (const char *) "AXI3",
+	configMINIMAL_STACK_SIZE + 400,
+	NULL,
+	tskIDLE_PRIORITY + 3, NULL);
+#endif
+
+	vTaskStartScheduler();
+
+	while (1)
+		;
+
+	return 0;
+#endif
+}
+
+static void handlerGereAXI2(void *pvParameters) {
+
+	GereLesLed.regleAdresse(0x43C00000);
+	FIR1.RegleAdresseAxi(XPAR_FIR_0_S00_AXI_BASEADDR);
+	FIR1.SetGereLed(&GereLesLed);
+	FIR1.setPeriod(1);
+	//FIR1.configure(&lien1);
+	FIR1.RegleNumeroBouton(0X00000001);
+	FIR1.RegleCoefFIR(coef_FIR_0, PROFONDEUR_FIR);
+
+	FIR2.RegleAdresseAxi(XPAR_FIR_1_S00_AXI_BASEADDR);
+	FIR2.SetGereLed(&GereLesLed);
+	FIR2.setPeriod(1);
+	//FIR2.configure(&lien1);
+	FIR2.RegleNumeroBouton(0x00000002);
+	FIR2.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
+
+	FIR3.RegleAdresseAxi(XPAR_FIR_2_S00_AXI_BASEADDR);
+	FIR3.SetGereLed(&GereLesLed);
+	FIR3.setPeriod(1);
+	//FIR3.configure(&lien1);
+	FIR3.RegleNumeroBouton(0x00000003);
+	FIR3.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
+
+	FIR4.RegleAdresseAxi(XPAR_FIR_3_S00_AXI_BASEADDR);
+	FIR4.SetGereLed(&GereLesLed);
+	FIR4.setPeriod(1);
+	//FIR4.configure(&lien1);
+	FIR4.RegleNumeroBouton(0x00000004);
+	FIR4.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
+
+	Volume1.setPeriod(100);
+	Volume1.RegleAdresseAxi(XPAR_GAINNVOIES_0_S00_AXI_BASEADDR);
+	Volume1.setPeriod(5);
+	Volume1.RegleNumeroBouton(1);
+
+	for (;;) {
+		FIR1.handler();
+		FIR2.handler();
+		FIR3.handler();
+		FIR4.handler();
+
+	}
+}
+static void handlerGereAXI3(void *pvParameters) {
+
+	Volume1.RegleAdresseAxi(XPAR_GAINNVOIES_0_S00_AXI_BASEADDR);
+	Volume1.setPeriod(10);
+
+	for (;;) {
+		Volume1.handler();
+	}
+}
+static void handlerGereMoteur(void *pvParameters) {
+	GereMoteur mot1;
+	mot1.setBaseAddr(0x43C00000);
+	mot1.setPeriod(100);
+	for (;;) {
+		mot1.PWM_Set_Period(23);
+	}
+}
+/*
+
+ static void handlerGereAXI3(void *pvParameters) {
+
+ laxi3.setPeriod(111);
+ laxi3.configure(&lien1);
+
+ for (;;) {
+ laxi3.handler();
+
+ }
+ }
+ */
+
+int UartPsHelloWorldExample(u16 DeviceId) {
+	u8 HelloWorld[] = "\rentree\r";
+	int SentCount = 0;
+	int Status;
+	XUartPs_Config *Config;
+
+	/*
+	 * Initialize the UART driver so that it's ready to use
+	 * Look up the configuration in the config table and then initialize it.
+	 */
+	Config = XUartPs_LookupConfig(DeviceId);
+	if (NULL == Config) {
+		return XST_FAILURE;
+	}
+
+	return SentCount;
+}
+

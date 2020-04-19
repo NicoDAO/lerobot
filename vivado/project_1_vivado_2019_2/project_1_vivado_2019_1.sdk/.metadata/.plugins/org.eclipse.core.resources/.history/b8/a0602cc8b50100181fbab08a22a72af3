@@ -1,0 +1,149 @@
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_types.h"
+#include "xil_io.h"
+#include "xil_printf.h"
+#include "xil_cache.h"
+#include "PmodOLED.h"
+#include "PmodALS.h"
+#include "PmodTMP3.h"
+#include "xparameters.h"
+//#include "IPMoi.h"
+
+ //#define CPU_CLOCK_FREQ_HZ (XPAR_PS7_CORTEXA9_1_CPU_CLK_FREQ_HZ_CPU_CLK_FREQ_HZ / 1000000)
+#define CPU_CLOCK_FREQ_HZ (XPAR_PS7_CORTEXA9_1_CPU_CLK_FREQ_HZ / 1000000)
+/* ------------------------------------------------------------ */
+/*				Global Variables								*/
+/* ------------------------------------------------------------ */
+
+PmodOLED myOLED;
+PmodTMP3 myTMP3;
+/* ------------------------------------------------------------ */
+/*				Forward Declarations							*/
+/* ------------------------------------------------------------ */
+
+void TMP3Initialize();
+double TMP3Run();
+void TMP3Cleanup();
+
+void OLEDInitialize();
+void OLEDRun(int,double);
+void OLEDCleanup();
+
+//to change betweeen PmodOLED and OnBoardOLED is to change Orientation
+unsigned char orientation = 0; //set up for Normal PmodOLED(false) vs normal Onboard OLED(true)
+unsigned char invert = 0; //true = whitebackground/black letters      false = black background /white letters
+
+#define COMM_VAL  (*(volatile unsigned long *)(0x10000))
+#define COMM_TAB  (*(volatile char *)(0xFF00))
+PmodALS ALS;
+int light = 0;
+#define MUTE_CODEC_MASQUE 0x00000002
+int main() {
+	Xil_ICacheDisable();
+	Xil_DCacheDisable();
+	ALS_begin(&ALS, XPAR_PMODALS_0_AXI_LITE_SPI_BASEADDR);
+	OLEDInitialize();
+	TMP3Initialize();
+	 int num=0;
+	 int commande_codex = 0x11; //RESET et MUTE
+	while (1) {
+		light = ALS_read(&ALS);
+		double temp = TMP3Run();
+	//	double temp = 32;
+		OLEDRun(light,temp);
+		OLED_Delay(1);
+		 Xil_Out32(0x43C00000, num++ | MUTE_CODEC_MASQUE );
+		// Xil_Out32(0x43C00000+num, num);
+	}
+	OLEDCleanup();
+	TMP3Cleanup();
+	return 0;
+}
+
+
+void OLEDInitialize() {
+	OLED_Begin(&myOLED, XPAR_PMODOLED_0_AXI_LITE_GPIO_BASEADDR,
+	XPAR_PMODOLED_0_AXI_LITE_SPI_BASEADDR, orientation, invert);
+}
+
+#define COMM_VAL  (*(volatile unsigned long *)(0x10000))
+#define COMM_TAB  (*(volatile char *)(0x100F0))
+void OLEDRun(int light,double temp) {
+static int cpt = 0;
+	int irow, ib, i;
+	u8 *pat;
+	char c;
+		//xil_printf("attend CPU1 %s\n\r",COMM_TAB);
+
+	//memset(COMM_TAB,0,100);
+		pat = OLED_GetStdPattern(0);
+		OLED_SetFillPattern(&myOLED, pat);
+		//Turn automatic updating off
+		OLED_SetCharUpdate(&myOLED, 0);
+		char luminosite[100];
+		char temperature[100];
+		snprintf(luminosite, sizeof(luminosite), "lum:%03d",light);
+		snprintf(temperature, sizeof(temperature), "	%.01f °C",temp);
+
+		//Draw a rectangle over writing then slide the rectangle
+		//down slowly displaying all writing
+		for (irow = 0; irow < OledRowMax; irow++) {
+		//OLED_ClearBuffer(&myOLED);
+			OLED_SetCursor(&myOLED, 0, 0);
+			OLED_PutString(&myOLED, COMM_TAB);
+			OLED_SetCursor(&myOLED, 0, 1);
+			OLED_PutString(&myOLED, luminosite);
+			OLED_SetCursor(&myOLED, 0, 2);
+			OLED_PutString(&myOLED, temperature);
+			OLED_Update(&myOLED);
+
+		}
+
+		COMM_VAL = 0;
+
+}
+
+void OLEDCleanup() {
+	OLED_End(&myOLED);
+}
+
+
+void TMP3Initialize()
+{
+
+	xil_printf("\x1B[H");//Move Terminal Cursor to top left
+	xil_printf("\x1B[1K");//Clear Terminal
+	xil_printf("Connected to PmodTMP3 Demo over UART\n\r");
+
+
+	TMP3_begin(&myTMP3, XPAR_PMODTMP3_0_AXI_LITE_IIC_BASEADDR, TMP3_ADDR, CPU_CLOCK_FREQ_HZ );
+
+
+
+
+
+	xil_printf("Connected to PmodTMP3 over IIC on JB\n\r\n\r");
+}
+
+double TMP3Run()
+{
+	double temp = 0.0;
+	double temp2 = 0.0;
+	double temp3 = 0.0;
+
+ 		temp = TMP3_getTemp(&myTMP3);
+		temp2 = TMP3_CtoF(temp);
+		temp3 = TMP3_FtoC(temp2);
+		//xil_printf("Temperature:  %.02lf  in Celcius\r", temp3 );//print double to 2 decimal places
+    	return temp3;
+
+}
+
+void TMP3Cleanup()
+{
+	TMP3_end(&myTMP3);
+	xil_printf("PmodTMP3 Disconnected\n\r");
+	xil_printf("Closing UART Connection\n\r");
+
+}

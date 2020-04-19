@@ -1,0 +1,31 @@
+/*
+ * GereMoteur.cpp
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "GereMoteur.h"
+
+#include "xil_io.h"
+#include "PWM.h"
+#include "gainNvoies.h"
+GereMoteur::GereMoteur() {
+	// TODO Auto-generated constructor stub
+	//PWM_Set_Period(0x43C00000,3000);
+
+		PWM_Enable(43434);
+
+
+		void * toto;
+		GAINNVOIES_Reg_SelfTest(toto);
+
+	//GAINNVOIES_Reg_SelfTest(44);
+
+
+}
+
+GereMoteur::~GereMoteur() {
+	// TODO Auto-generated destructor stub
+}
+

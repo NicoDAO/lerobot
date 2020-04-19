@@ -1,0 +1,30 @@
+/*
+ * GereMoteur.h
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#ifndef SRC_GEREMOTEUR_H_
+#define SRC_GEREMOTEUR_H_
+
+#include "config_du_system.h"
+
+class GereMoteur {
+public:
+	GereMoteur();
+	virtual ~GereMoteur();
+
+	void PWM_Set_Period( u32 clocks);
+	void PWM_Set_Duty(u32 baseAddr, u32 clocks, u32 pwmIndex);
+	u32 PWM_Get_Period(u32 baseAddr);
+	u32 PWM_Get_Duty(u32 baseAddr, u32 pwmIndex);
+	void PWM_Enable(u32 baseAddr);
+	void PWM_Disable(u32 baseAddr);
+	void setBaseAddr(u32 );
+private :
+	u32 baseAddr;
+};
+
+
+#endif /* SRC_GEREMOTEUR_H_ */

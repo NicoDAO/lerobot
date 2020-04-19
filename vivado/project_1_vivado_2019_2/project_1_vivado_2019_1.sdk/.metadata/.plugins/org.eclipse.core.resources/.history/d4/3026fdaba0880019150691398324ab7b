@@ -1,0 +1,18 @@
+/*
+ * ConfigureVolumes.h
+ *
+ *  Created on: 6 juin 2019
+ *      Author: nicolas
+ */
+
+#ifndef SRC_CONFIGUREVOLUMES_H_
+#define SRC_CONFIGUREVOLUMES_H_
+#include "Tache.h"
+
+class ConfigureVolumes : public Tache{
+public:
+	ConfigureVolumes();
+	virtual ~ConfigureVolumes();
+};
+
+#endif /* SRC_CONFIGUREVOLUMES_H_ */

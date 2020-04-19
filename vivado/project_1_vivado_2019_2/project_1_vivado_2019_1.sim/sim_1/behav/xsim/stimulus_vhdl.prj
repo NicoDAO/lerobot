@@ -1,0 +1,16 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Leds.ip_user_files/bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../../Leds.ip_user_files/bd/design_1/ipshared/6c6f/audio_pwm.vhd" \
+"../../../../Leds.ip_user_files/bd/design_1/ipshared/6c6f/hdl/pmod_audio_v1_0_S00_AXI.vhd" \
+"../../../../Leds.ip_user_files/bd/design_1/ipshared/6c6f/hdl/pmod_audio_v1_0.vhd" \
+"../../../../Leds.ip_user_files/bd/design_1/ip/design_1_pmod_audio_0_0/sim/design_1_pmod_audio_0_0.vhd" \
+"../../../../Leds.ip_user_files/bd/design_1/ipshared/08bd/entre_micro.vhd" \
+"../../../../Leds.ip_user_files/bd/design_1/ip/design_1_PmodMIC3_0_1/sim/design_1_PmodMIC3_0_1.vhd" \
+"../../../../Leds.ip_user_files/bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd" \
+"../../../../Leds.ip_user_files/bd/design_1/sim/design_1.vhd" \
+"../../../../Leds.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" \
+"../../../../Leds.srcs/sources_1/imports/new/stimulus.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,18 @@
+/*
+ * Pwm.h
+ *
+ *  Created on: 5 janv. 2020
+ *      Author: nicolas
+ */
+
+#ifndef MOTEURPWM_H_
+#define MOTEURPWM_H_
+#include "PWM.h"
+#include "config_du_system.h"
+class Pwm {
+public:
+	Pwm();
+	virtual ~Pwm();
+};
+
+#endif /* MOTEURPWM_H_ */

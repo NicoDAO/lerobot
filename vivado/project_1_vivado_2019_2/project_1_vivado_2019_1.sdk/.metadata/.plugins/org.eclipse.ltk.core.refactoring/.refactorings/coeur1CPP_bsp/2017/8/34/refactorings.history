@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;coeur1CPP_bsp/ps7_cortexa9_1/main_coeur1&apos; to &apos;main_coeur1.cpp&apos;" description="Rename resource &apos;main_coeur1&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ps7_cortexa9_1/main_coeur1" name="main_coeur1.cpp" stamp="1503345903056" updateReferences="true"/>
+</session>

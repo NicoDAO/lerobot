@@ -1,0 +1,24 @@
+/*
+ * Empty C++ Application
+ */
+#include <stdio.h>
+#include "xparameters.h"
+/*#include "xil_types.h"
+#include "xil_io.h"
+#include "xil_printf.h"
+#include "xil_cache.h"
+*/
+#include "xparameters.h"
+int main()
+{
+	char num = 0;
+	int temp = 0;
+	while(1){
+		Xil_Out32(0x43C00000, num++  );
+		for(temp = 0; temp<1000; temp++)
+		{
+
+		}
+	}
+	return 0;
+}

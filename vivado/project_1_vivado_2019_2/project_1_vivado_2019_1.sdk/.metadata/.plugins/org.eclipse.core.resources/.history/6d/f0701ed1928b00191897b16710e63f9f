@@ -1,0 +1,34 @@
+/*
+ * ConfigureVolumes.cpp
+ *
+ *  Created on: 6 juin 2019
+ *      Author: nicolas
+ */
+
+#include "ConfigureVolumes.h"
+
+ConfigureVolumes::ConfigureVolumes() {
+	// TODO Auto-generated constructor stub
+	etat = etat_pas_encore_init;
+}
+
+ConfigureVolumes::~ConfigureVolumes() {
+	// TODO Auto-generated destructor stub
+}
+
+void ConfigureVolumes::handler(){
+
+	switch(etat){
+	case etat_pas_encore_init:
+		break;
+	case etat_pas_encore:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG2_OFFSET,
+							0x1); 	//activation du mode transparent
+
+		break;
+	case etat_fini:
+		break;
+	}
+
+
+}

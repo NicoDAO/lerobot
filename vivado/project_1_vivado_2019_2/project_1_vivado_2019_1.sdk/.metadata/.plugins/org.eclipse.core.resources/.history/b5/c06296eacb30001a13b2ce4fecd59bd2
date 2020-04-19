@@ -1,0 +1,24 @@
+/*
+ * GereMoteur.cpp
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "GereMoteur.h"
+#include "PWM.h"
+#include "xil_io.h"
+GereMoteur::GereMoteur() {
+	// TODO Auto-generated constructor stub
+	//PWM_Set_Period(0x43C00000,3000);
+	PWM_Set_Period(43434,3000);
+	XGpioPs_Config *GPIOConfigPtr;
+		GPIOConfigPtr = XGpioPs_LookupConfig(XPAR_PS7_GPIO_0_DEVICE_ID);
+
+
+}
+
+GereMoteur::~GereMoteur() {
+	// TODO Auto-generated destructor stub
+}
+

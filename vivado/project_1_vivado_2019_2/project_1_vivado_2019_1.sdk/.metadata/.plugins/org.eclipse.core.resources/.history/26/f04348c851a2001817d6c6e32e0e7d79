@@ -1,0 +1,31 @@
+/*
+ * CgereAXI.cpp
+ *
+ *  Created on: 2 août 2018
+ *      Author: nicolas
+ */
+
+#include "CgereAXI.h"
+
+CagereAXI::CagereAXI() {
+	// TODO Auto-generated constructor stub
+
+}
+
+CagereAXI::~CagereAXI() {
+	// TODO Auto-generated destructor stub
+}
+
+
+void CagereAXI::handler(){
+	char ecrit[50];
+	snprintf(ecrit,sizeof(ecrit),"coucou");
+	//this->la_ls->(ecrit,4);
+	this->la_ls->envoie(ecrit, strlen(ecrit));
+
+}
+int CagereAXI::configure(Liaison* lz,QueueHandle_t *setQueue){
+	this->la_ls = lz;
+	//this->la_ls->LaFifo->(&setQueue);
+	return 1;
+}

@@ -1,0 +1,17 @@
+/*
+ * GereMoteur.h
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#ifndef SRC_GEREMOTEUR_H_
+#define SRC_GEREMOTEUR_H_
+
+class GereMoteur {
+public:
+	GereMoteur();
+	virtual ~GereMoteur();
+};
+
+#endif /* SRC_GEREMOTEUR_H_ */

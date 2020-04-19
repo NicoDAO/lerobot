@@ -1,0 +1,162 @@
+/*
+ * CgereAXI.cpp
+ *
+ *  Created on: 2 août 2018
+ *      Author: nicolas
+ */
+#include "pmod_audio.h"
+#include "stdio.h"
+#include "string.h"
+#include "xil_io.h"
+#define FIR_LA 0
+#define TEST_AXI 0
+#include "TransfertAXI.h"
+
+enum {
+	EtatPasEncoreInitialise = 0, EtatInitEnCours, EtatInitFini
+};
+enum {
+	Nv_coef = 0, charge_coef, fin_charge
+};
+
+CagereAXI::CagereAXI() {
+	xLastWakeTime = xTaskGetTickCount();
+	xWakePeriod = 1110;
+	truc_u8_recoit = (u8*) truc_recoit;
+	etat_automate = EtatPasEncoreInitialise;
+
+}
+
+CagereAXI::~CagereAXI() {
+}
+
+void CagereAXI::handler() {
+	char truc[100];
+	u32 val;
+	u32 tt;
+	static u32 val_test = 0;
+
+	switch (etat_automate) {
+
+	case EtatPasEncoreInitialise:
+
+
+#if FIR_LA == 1
+		etat_automate = EtatInitEnCours;
+		EtatChargeCoef = Nv_coef;
+#else
+
+#endif
+#if TEST_AXI == 1
+	    tt= (val_test++) % 4096 +  0xFF000000 ;
+		Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG0_OFFSET, tt); //eteind l'ampli + mode test
+	/*	snprintf(truc, sizeof(truc), "EtatPasEncoreInitialise =%08x\r\n",
+							tt);
+					xil_printf(truc);
+	 */
+#else
+		snprintf(truc, sizeof(truc), "EtatPasEncoreInitialise = =%x\r\n",
+					etat_automate);
+			xil_printf(truc);
+		Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG0_OFFSET, 0x80000000); //allume l'ampli
+		etat_automate =EtatInitEnCours;
+#endif
+		break;
+	case EtatInitEnCours:
+		 val = lescoefs[cpt_coef];
+
+		snprintf(truc, sizeof(truc),
+				"[%d]EtatInitEnCours automate cpt_coef = %d/%d, = %x\r\n",
+				EtatChargeCoef, cpt_coef, this->taille_filtre, val);
+
+		xil_printf(truc);
+		cpt_coef++;
+
+		switch (EtatChargeCoef) {
+		case Nv_coef:
+			Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG0_OFFSET,
+					0x123); //reg0
+			Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+					lescoefs[this->taille_filtre]); //reg0
+			EtatChargeCoef = charge_coef;
+			snprintf(truc, sizeof(truc),"[%d]nv coef %d\r\n", cpt_coef, val);
+			xil_printf(truc);
+
+			break;
+		case charge_coef:
+			//valide l'enregistrement du coef dans le filtre
+			Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG0_OFFSET,
+					0x124); //reg0
+			EtatChargeCoef = EtatChargeCoef;
+			snprintf(truc, sizeof(truc),"[%d]charge_coef %08x\r\n", cpt_coef, val);
+						xil_printf(truc);
+
+			break;
+		case fin_charge:
+			break;
+		}
+
+		if (cpt_coef > this->taille_filtre) {
+			etat_automate = EtatInitFini;
+			snprintf(truc, sizeof(truc), "EtatInitFini cpt_coef = %d/%d\r\n",
+					cpt_coef, this->taille_filtre);
+
+			xil_printf(truc);
+
+		}
+		break;
+	case EtatInitFini:
+
+		break;
+	}
+
+	//calc_handler();
+
+	u8* truc_u8;
+	truc_u8 = (u8*) truc;
+	this->GestionLed->bagoteLed(2);
+
+	//truc_u8 = (u8*) truc;
+	//if (strlen(truc_recoit) > 0) {
+	//	this->la_ls->envoie(truc_u8_recoit, strlen(truc_recoit));
+	//}
+	//snprintf(truc, sizeof(truc), "\n\r l'RxtaskCntr %lx,xWakePeriod %d :%x\r",
+			//this->RxtaskCntr++, this->xWakePeriod, truc_u8_recoit);
+	//this->la_ls->envoie(truc_u8, strlen(truc));
+	//this->la_ls->recoit(truc_u8_recoit, 1);
+	vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
+
+	/*char truc[100];
+	 u8* truc_u8;
+
+	 char truc_recoit[100];
+	 u8* truc_u8_recoit;
+
+	 snprintf(truc, sizeof(truc), "\n\r L'RxtaskCntr %lx,xWakePeriod %d\r",
+	 this->RxtaskCntr++, this->xWakePeriod);
+
+	 //truc_u8 =  (u8*)truc;
+	 //truc_u8_recoit =  (u8*)truc_recoit;
+
+	 //this->la_ls->recoit(truc_u8_recoit, strlen(truc_recoit));
+
+	 this->la_ls->envoie(truc_u8, strlen(truc));
+	 vTaskDelayUntil(&xLastWakeTime, xWakePeriod);*/
+}
+int CagereAXI::configure(Liaison* lz) {
+	printf("\r %d CagereAXI::configure liaison\r", xWakePeriod);
+	this->la_ls = lz;
+	//this->la_ls->LaFifo->(&setQueue);
+	this->la_ls->configure();
+	return 1;
+}
+
+void CagereAXI::SetAdresseRegistre(uint32 a) {
+	this->adresseRegistre = a;
+
+}
+
+void CagereAXI::RegleAdresseAxi(u32 a) {
+	this->adresseAXI = a;
+
+}

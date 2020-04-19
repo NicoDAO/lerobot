@@ -1,0 +1,21 @@
+/*
+ * ConfigureVolumes.cpp
+ *
+ *  Created on: 6 juin 2019
+ *      Author: nicolas
+ */
+
+#include "ConfigureVolumes.h"
+
+ConfigureVolumes::ConfigureVolumes() {
+	// TODO Auto-generated constructor stub
+
+}
+
+ConfigureVolumes::~ConfigureVolumes() {
+	// TODO Auto-generated destructor stub
+}
+
+void ConfigureVolumes:handler(){
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;rtos_core0_2019_1/src/données_FIR.h&apos; to &apos;donnees_FIR.h&apos;" description="Rename resource &apos;données_FIR.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/données_FIR.h" name="donnees_FIR.h" stamp="1549145225142" updateReferences="true"/>
+</session>

@@ -1,0 +1,28 @@
+/*
+ * GereMoteur.h
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#ifndef SRC_GEREMOTEUR_H_
+#define SRC_GEREMOTEUR_H_
+
+#include "config_du_system.h"
+#include "Tache.h"
+#include "MonPWM.h"
+class GereMoteur : public Tache{
+public:
+	GereMoteur();
+	virtual ~GereMoteur();
+
+	void handler(void);
+	void SetAdresseMoteur(u32);
+	void reglePuissanceMoteur(u32);
+private :
+	u32 AdresseMoteur;
+	MonPWM lpwm;
+};
+
+
+#endif /* SRC_GEREMOTEUR_H_ */

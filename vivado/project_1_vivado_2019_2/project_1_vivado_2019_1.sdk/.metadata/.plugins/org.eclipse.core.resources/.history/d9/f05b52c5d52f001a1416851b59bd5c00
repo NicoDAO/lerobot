@@ -1,0 +1,66 @@
+/*
+ * CgereAXI.h
+ *
+ *  Created on: 2 août 2018
+ *      Author: nicolas
+ */
+
+#ifndef SRC_TRANSFERTAXI_H_
+#define SRC_TRANSFERTAXI_H_
+
+#include "stdio.h"
+#include "Tache.h"
+#include "type.h"
+#include "config_du_system.h"
+#include "xparameters.h"
+#include "xbasic_types.h"
+
+#if UTILISE_GPIO_AXI==1
+#include "xgpio.h"
+#else
+#include "xgpiops.h"
+#endif
+#include "xstatus.h"
+
+
+
+class CagereAXI : public Tache {
+public:
+	CagereAXI();
+	virtual ~CagereAXI();
+	void handler(void);
+
+	void RegleNumeroBouton(uint32);
+	int taille_filtre;
+	unsigned int * lescoefs;
+	void RegleAdresseAxi(u32);
+
+private:
+
+	bool etat_ancien_bouton;
+	bool etat_bouton;
+	char truc_recoit[100];
+	u8* truc_u8_recoit;
+	uint32 numFIR;
+	Xuint32 DataRead;
+	u8 chut;
+	uint32 val_coef_test;
+protected:
+	int etat_automate;
+	int EtatChargeCoef;
+	int cpt_coef;
+#if UTILISE_GPIO_AXI == 1
+	XGpio GpioInput;
+#else
+	XGpioPs GpioInput;
+#endif
+	Xuint32 GpioLu;
+	Xuint32 VieuGpioLut;
+	Xuint32 status;
+	u32 adresseAXI;
+
+
+};
+
+
+#endif /* SRC_TRANSFERTAXI_H_ */

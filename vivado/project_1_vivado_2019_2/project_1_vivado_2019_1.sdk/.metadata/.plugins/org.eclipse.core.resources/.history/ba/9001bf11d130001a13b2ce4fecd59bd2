@@ -1,0 +1,19 @@
+/*
+ * Pwm.cpp
+ *
+ *  Created on: 5 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "MoteurPwm.h"
+
+Pwm::Pwm() {
+	// TODO Auto-generated constructor stub
+	PWM_Enable(43434);
+
+}
+
+Pwm::~Pwm() {
+	// TODO Auto-generated destructor stub
+}
+

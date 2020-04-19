@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="stimulus_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="stimulus" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="680266666667fs"></ZoomStartTime>
+      <ZoomEndTime time="750266666668fs"></ZoomEndTime>
+      <Cursor1Time time="693750000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="217"></NameColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject type="logic" fp_name="/stimulus/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/valeur_audio">
+      <obj_property name="ElementShortName">valeur_audio[15:0]</obj_property>
+      <obj_property name="ObjectShortName">valeur_audio[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/cs_mic_0_sim">
+      <obj_property name="ElementShortName">cs_mic_0_sim</obj_property>
+      <obj_property name="ObjectShortName">cs_mic_0_sim</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/sck_mic_0_sim">
+      <obj_property name="ElementShortName">sck_mic_0_sim</obj_property>
+      <obj_property name="ObjectShortName">sck_mic_0_sim</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/sdi_mic_0_sim">
+      <obj_property name="ElementShortName">sdi_mic_0_sim</obj_property>
+      <obj_property name="ObjectShortName">sdi_mic_0_sim</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/U0/audio_out_temp">
+      <obj_property name="ElementShortName">audio_out_temp[15:0]</obj_property>
+      <obj_property name="ObjectShortName">audio_out_temp[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/U0/audio_out">
+      <obj_property name="ElementShortName">audio_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">audio_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/cs_avant">
+      <obj_property name="ElementShortName">cs_avant</obj_property>
+      <obj_property name="ObjectShortName">cs_avant</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/U0/audio_valid">
+      <obj_property name="ElementShortName">audio_valid</obj_property>
+      <obj_property name="ObjectShortName">audio_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/s00_entree_fir">
+      <obj_property name="ElementShortName">s00_entree_fir[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_entree_fir[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/s00_sortie_fir">
+      <obj_property name="ElementShortName">s00_sortie_fir[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_sortie_fir[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/valeur_audio">
+      <obj_property name="ElementShortName">valeur_audio[15:0]</obj_property>
+      <obj_property name="ObjectShortName">valeur_audio[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/axi_gpio_0/gpio_io_i">
+      <obj_property name="ElementShortName">gpio_io_i[0:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio_io_i[0:0]</obj_property>
+   </wvobject>
+</wave_config>

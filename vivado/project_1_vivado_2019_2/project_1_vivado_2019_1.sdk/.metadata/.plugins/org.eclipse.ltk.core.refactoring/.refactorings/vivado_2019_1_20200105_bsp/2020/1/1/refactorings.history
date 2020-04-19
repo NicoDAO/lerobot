@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;vivado_2019_1_20200105_bsp/Pwm.cpp&apos; to &apos;MoteurPwm.cpp&apos;" description="Rename resource &apos;Pwm.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Pwm.cpp" name="MoteurPwm.cpp" stamp="1578265646223" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;vivado_2019_1_20200105_bsp/Pwm.h&apos; to &apos;MoteurPwm.h&apos;" description="Rename resource &apos;Pwm.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Pwm.h" name="MoteurPwm.h" stamp="1578265674424" updateReferences="true"/>
+</session>

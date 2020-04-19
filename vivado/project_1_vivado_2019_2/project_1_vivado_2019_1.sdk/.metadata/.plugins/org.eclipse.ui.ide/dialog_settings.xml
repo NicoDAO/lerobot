@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/nicolas/vivado/vivado/FPGA_xilinx/projetZybo/Leds.sdk/design_1_wrapper_hw_platform_2/drivers"/>
+		<item value="/home/nicolas/projet_xilinx/LedsOK/Leds.sdk/TCP_RTOS"/>
+		<item value="/home/nicolas/projet_xilinx/LedsOK/Leds.sdk/projet_pmods_bsp"/>
+		<item value="/home/nicolas/projet_xilinx/LedsOK/Leds.sdk/projet_pmods"/>
+		<item value="/home/nicolas/projet_xilinx/LedsOK/Leds.sdk/TCP_RTOS_bsp"/>
+		<item value="/home/nicolas/projet_xilinx/Leds/Leds.sdk/TCP_RTOS"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="662" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_ALL"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="508" key="DIALOG_HEIGHT"/>
+		<item value="441" key="DIALOG_X_ORIGIN"/>
+		<item value="103" key="DIALOG_Y_ORIGIN"/>
+		<item value="true" key="BUILD_NOW"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/nicolas/projet_xilinx/Leds20171030_2/Leds.sdk/tcp_core1"/>
+			<item value="/home/nicolas/projet_xilinx/Leds20171030_2/Leds.sdk/projet_pmods"/>
+			<item value="/home/nicolas/projet_xilinx/Leds20171030_2/Leds.sdk/tcp_core1_bsp"/>
+			<item value="C:\temp\Leds\Leds\Leds.sdk\projet_pmods_bsp"/>
+			<item value="C:\temp\Leds\Leds\Leds.sdk\TCP_RTOS"/>
+			<item value="C:\temp\Leds\Leds\Leds.sdk\projet_pmods"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="com.xilinx.sdk.appwiz.AppWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="com.xilinx.sdk.ui.category.newWizards"/>
+		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="525" key="DIALOG_WIDTH"/>
+		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="649" key="DIALOG_HEIGHT"/>
+		<item value="422" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,30 @@
+/*
+ * Liaison.h
+ *
+ *  Created on: 5 août 2018
+ *      Author: nicolas
+ */
+
+#ifndef SRC_LIAISON_H_
+#define SRC_LIAISON_H_
+//#include "LaFifo.h"
+#define TEST_BUFFER_SIZE 100
+
+class Liaison {
+public:
+	Liaison();
+	virtual ~Liaison();
+	virtual int envoie(u8*, int)=0;
+	virtual int recoit(u8*, int)=0;
+	virtual int configure(void)=0;
+
+	/*
+	 * The following buffers are used in this example to send and receive data
+	 * with the UART.
+	 */
+	//u8 SendBuffer[TEST_BUFFER_SIZE]; /* Buffer for Transmitting Data */
+	//u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+
+};
+
+#endif /* SRC_LIAISON_H_ */

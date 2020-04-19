@@ -1,0 +1,43 @@
+/*
+ * CgereAXI.h
+ *
+ *  Created on: 2 août 2018
+ *      Author: nicolas
+ */
+
+#ifndef SRC_TRANSFERTAXI_H_
+#define SRC_TRANSFERTAXI_H_
+#include "Liaison.h"
+#include "stdio.h"
+#include "Tache.h"
+#include "type.h"
+
+
+class CagereAXI : public Tache {
+public:
+	CagereAXI();
+	virtual ~CagereAXI();
+	void handler(void);
+	int configure(Liaison*);
+	void SetAdresseRegistre(uint32);
+	int taille_filtre;
+	int * lescoefs;
+	void RegleAdresseAxi(u32);
+
+private:
+	Liaison* la_ls;
+	u32 adresseAXI;
+
+	char truc_recoit[100];
+	u8* truc_u8_recoit;
+	uint32 adresseRegistre;
+
+protected:
+	int etat_automate;
+	int EtatChargeCoef;
+	int cpt_coef;
+
+};
+
+
+#endif /* SRC_TRANSFERTAXI_H_ */

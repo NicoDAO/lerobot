@@ -1,0 +1,27 @@
+/*
+ * MonPWM.cpp
+ *
+ *  Created on: 10 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "MonPWM.h"
+
+MonPWM::MonPWM() {
+	// TODO Auto-generated constructor stub
+
+}
+
+MonPWM::~MonPWM() {
+	// TODO Auto-generated destructor stub
+}
+
+void MonPWM::setBaseAddr(u32 aa){
+	this->baseAddr = aa;
+}
+
+void MonPWM::RegleRapportCyclique(u32 rc){
+	u16 rc = (u16)rc & 0x03FFFF;//on utilise que les 10 bits de poids faible
+	Xil_Out32(this->baseAddr, 0x80000000); //allume l'ampli
+
+}

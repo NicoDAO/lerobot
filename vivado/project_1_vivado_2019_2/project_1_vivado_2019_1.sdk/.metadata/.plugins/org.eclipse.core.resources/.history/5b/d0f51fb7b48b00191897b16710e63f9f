@@ -1,0 +1,62 @@
+/*
+ * ConfigureVolumes.cpp
+ *
+ *  Created on: 6 juin 2019
+ *      Author: nicolas
+ */
+
+#include "ConfigureVolumes.h"
+#define VOLUME1 1
+#define VOLUME2 2
+#define VOLUME3 3
+#define VOLUME4 4
+
+ConfigureVolumes::ConfigureVolumes() {
+	// TODO Auto-generated constructor stub
+	etat = etat_pas_encore_init;
+}
+
+ConfigureVolumes::~ConfigureVolumes() {
+	// TODO Auto-generated destructor stub
+}
+
+void ConfigureVolumes::handler(){
+
+	switch(etat){
+	case etat_pas_encore_init:
+		etat = etat_reglageVol1;
+		break;
+	case etat_reglageVol1:
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+				VOLUME1); 	//
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				0x8000); 	//Volume à 1
+		etat = etat_reglageVol2;
+		break;
+	case etat_reglageVol2:
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+				VOLUME2); 	//
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				0x8000); 	//Volume à 1
+		etat = etat_reglageVol3;
+		break;
+	case etat_reglageVol3:
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+				VOLUME3); 	//
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				0x8000); 	//Volume à 1
+		etat = etat_reglageVol4;
+		break;
+	case etat_reglageVol4:
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+				VOLUME4); 	//
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				0x8000); 	//Volume à 1
+		etat = etat_fini;
+		break;
+	case etat_fini:
+		break;
+	}
+
+
+}

@@ -1,0 +1,88 @@
+/*
+ * ConfigureVolumes.cpp
+ *
+ *  Created on: 6 juin 2019
+ *      Author: nicolas
+ */
+
+#include "ConfigureVolumes.h"
+#define VOLUME1 1
+#define VOLUME2 2
+#define VOLUME3 3
+#define VOLUME4 4
+
+ConfigureVolumes::ConfigureVolumes() {
+	// TODO Auto-generated constructor stub
+	etat = etat_pas_encore_init;
+
+	xWakePeriod = 1110;
+	levol=100000;
+}
+
+ConfigureVolumes::~ConfigureVolumes() {
+	// TODO Auto-generated destructor stub
+}
+
+void ConfigureVolumes::handler(){
+	xLastWakeTime = xTaskGetTickCount();
+	char truc[200];
+
+	switch(etat){
+
+	case etat_pas_encore_init:
+		etat = etat_reglageVol1;
+		break;
+	case etat_reglageVol1:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+						levol1/*0x8000*/); 	//Volume à 1
+
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+				VOLUME1); 	//
+
+		etat = etat_reglageVol2;
+		snprintf(truc, sizeof(truc),"1etat_reglageVol1 = %d\r\n",levol1);
+
+		//xil_printf(truc);
+		break;
+	case etat_reglageVol2:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+						levol2/*0x8000*/); 	//Volume à 1
+
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+				VOLUME2); 	//
+
+		etat = etat_reglageVol3;
+				snprintf(truc, sizeof(truc),"etat_reglageVol2 = %d\r\n",levol);
+		//		xil_printf(truc);
+		break;
+	case etat_reglageVol3:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+						levol3/*0x8000*/); 	//Volume à 1
+
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+				VOLUME3); 	//
+
+		etat = etat_reglageVol4;
+				snprintf(truc, sizeof(truc),"etat_reglageVol3 = %d\r\n",levol);
+		//xil_printf(truc);
+		break;
+	case etat_reglageVol4:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				levol4/*0x8000*/); 	//Volume à 1
+
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+				VOLUME4); 	//
+
+		etat = etat_reglageVol1;
+				snprintf(truc, sizeof(truc),"Vol4 = %d\r\n",levol);
+		xil_printf(truc);
+		levol+=100;
+		break;
+	case etat_fini:
+		break;
+	}
+
+
+	vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
+}
+

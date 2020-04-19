@@ -1,0 +1,37 @@
+/*
+ * LaFifo.h
+ *
+ *  Created on: 6 août 2018
+ *      Author: nicolas
+ */
+
+#ifndef SRC_LAFIFO_H_
+#define SRC_LAFIFO_H_
+// queue::push/pop
+#include <stdlib.h>
+#include <queue>          // std::queue
+//#include "FreeRTOS.h"
+#include <signal.h>
+#include "queue.h"
+
+
+class LaFifo {
+public:
+	LaFifo();
+	virtual ~LaFifo();
+
+
+	void setQueue(QueueHandle_t *q);
+	/* The queue into which received key presses are placed.  NOTE THE COMMENTS AT
+	THE TOP OF THIS FILE REGARDING THE USE OF QUEUES FOR THIS PURPOSE. */
+	static QueueHandle_t xRxQueue ;
+protected:
+	int rempli_fifo(int);
+	int vide_fifo(int *);
+private:
+	QueueHandle_t *xQueue;
+	std::queue<int> myqueue;
+	int taille_max=2000;
+};
+
+#endif /* SRC_LAFIFO_H_ */

@@ -1,0 +1,3 @@
+src/Liaison.o src/Liaison.o: ../src/Liaison.cpp ../src/Liaison.h
+
+../src/Liaison.h:

@@ -1,0 +1,143 @@
+/*
+ * ConfigureVolumes.cpp
+ *
+ *  Created on: 6 juin 2019
+ *      Author: nicolas
+ */
+
+#include "ConfigureVolumes.h"
+#define VOLUME1 1
+#define VOLUME2 2
+#define VOLUME3 3
+#define VOLUME4 4
+
+ConfigureVolumes::ConfigureVolumes() {
+	// TODO Auto-generated constructor stub
+	etat = etat_pas_encore_init;
+
+	xWakePeriod = 1110;
+	levol1 = 0;
+	levol2 = 0;
+	levol3 = 0;
+	levol4 = 0;
+}
+
+ConfigureVolumes::~ConfigureVolumes() {
+	// TODO Auto-generated destructor stub
+}
+
+void ConfigureVolumes::handler() {
+	xLastWakeTime = xTaskGetTickCount();
+	char truc[200];
+
+	switch (etat) {
+
+	case etat_pas_encore_init:
+		etat = etat_reglageVol1;
+		status = XGpio_Initialize(&GpioInput, XPAR_AXI_GPIO_0_DEVICE_ID);
+			// Set the direction for all signals to be inputs
+			XGpio_SetDataDirection(&GpioInput, 1, 0xFFFFFFFF);
+		break;
+	case etat_reglageVol1:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				levol1/*0x8000*/); 	//Volume à 1
+
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+		VOLUME1); 	//
+
+		etat = etat_fini;
+		snprintf(truc, sizeof(truc), "1etat_reglageVol1 = %d\r\n", levol1);
+
+		xil_printf(truc);
+		break;
+	case etat_reglageVol2:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				levol2/*0x8000*/); 	//Volume à 1
+
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+		VOLUME2); 	//
+
+		etat = etat_fini;
+		snprintf(truc, sizeof(truc), "etat_reglageVol2 = %d\r\n", levol2);
+		xil_printf(truc);
+		break;
+	case etat_reglageVol3:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				levol3/*0x8000*/); 	//Volume à 1
+
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+		VOLUME3); 	//
+
+		etat = etat_fini;
+		snprintf(truc, sizeof(truc), "etat_reglageVol3 = %d\r\n", levol3);
+		xil_printf(truc);
+		break;
+	case etat_reglageVol4:
+		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
+				levol4/*0x8000*/); 	//Volume à 1
+
+		Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET,
+		VOLUME4); 	//
+
+		etat = etat_fini;
+		snprintf(truc, sizeof(truc), "Vol4 = %d\r\n", levol4);
+		xil_printf(truc);
+
+		break;
+	case etat_fini:
+
+		calcul_volumes();
+
+		break;
+	}
+
+	vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
+}
+void ConfigureVolumes::calcul_volumes() {
+	char truc [400];
+	GpioLu = XGpio_DiscreteRead(&GpioInput, 1);
+
+	if (GpioLu != VieuGpioLut) {
+		snprintf(truc, sizeof(truc), "%x   %x\r\n", GpioLu,VieuGpioLut);
+		xil_printf(truc);
+		VieuGpioLut =GpioLu;
+		GpioLu1 = (char)( GpioLu & 1);
+		GpioLu2 = (char)(( GpioLu & 2 )>> 1);
+		GpioLu3 = (char)(( GpioLu & 4) >> 2);
+		GpioLu4 = (char) ((GpioLu & 8 )>> 3);
+
+		if (GpioLu1 != GpioLu1_avant) {
+			GpioLu1_avant = GpioLu1;
+			levol1 += 1000;
+			if (levol1 > 60000)
+				levol1 = 1;
+			etat = etat_reglageVol1;
+		}
+
+		if (GpioLu2 != GpioLu2_avant) {
+			GpioLu2_avant = GpioLu2;
+			levol2 += 1000;
+			if (levol2 > 60000)
+				levol2 = 1;
+			etat = etat_reglageVol2;
+		}
+
+		if (GpioLu3 != GpioLu3_avant) {
+			GpioLu3_avant = GpioLu3;
+			levol3 += 1000;
+			if (levol3 > 60000)
+				levol3 = 1;
+			etat = etat_reglageVol3;
+		}
+
+		if (GpioLu4 != GpioLu4_avant) {
+			GpioLu4_avant = GpioLu4;
+			levol4 += 1000;
+			if (levol4 > 60000)
+				levol4 = 1;
+			etat = etat_reglageVol4;
+		}
+
+	}
+
+}

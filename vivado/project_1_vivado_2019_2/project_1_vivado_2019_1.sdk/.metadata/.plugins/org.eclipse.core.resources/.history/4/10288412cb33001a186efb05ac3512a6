@@ -1,0 +1,18 @@
+/*
+ * monPWM.cpp
+ *
+ *  Created on: 10 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "monPWM.h"
+
+monPWM::monPWM() {
+	// TODO Auto-generated constructor stub
+
+}
+
+monPWM::~monPWM() {
+	// TODO Auto-generated destructor stub
+}
+

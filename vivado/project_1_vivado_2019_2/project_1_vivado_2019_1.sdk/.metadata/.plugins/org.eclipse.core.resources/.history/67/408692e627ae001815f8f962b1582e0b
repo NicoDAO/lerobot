@@ -1,0 +1,53 @@
+/*
+ * Testlibuart.cpp
+ *
+ *  Created on: 1 sept. 2018
+ *      Author: nicolas
+ */
+
+#include "Testlibuart.h"
+
+#include "xparameters.h"
+#include "xplatform_info.h"
+#include "xuartps.h"
+#include "xil_exception.h"
+#include "xil_printf.h"
+//#include "test_leuart.h"
+#ifdef XPAR_INTC_0_DEVICE_ID
+#include "xintc.h"
+#else
+#include "xscugic.h"
+#endif
+/************************** Constant Definitions **************************/
+
+/*
+ * The following constants map to the XPAR parameters created in the
+ * xparameters.h file. They are defined here such that a user can easily
+ * change all the needed parameters in one place.
+ */
+#ifdef XPAR_INTC_0_DEVICE_ID
+#define INTC		XIntc
+#define UART_DEVICE_ID		XPAR_XUARTPS_0_DEVICE_ID
+#define INTC_DEVICE_ID		XPAR_INTC_0_DEVICE_ID
+#define UART_INT_IRQ_ID		XPAR_INTC_0_UARTPS_0_VEC_ID
+#else
+#define INTC		XScuGic
+#define UART_DEVICE_ID		XPAR_XUARTPS_0_DEVICE_ID
+#define INTC_DEVICE_ID		XPAR_SCUGIC_SINGLE_DEVICE_ID
+#define UART_INT_IRQ_ID		XPAR_XUARTPS_1_INTR
+#endif
+/*
+ * The following constant controls the length of the buffers to be sent
+ * and received with the UART,
+ */
+#define TEST_BUFFER_SIZE	100
+
+Test_lib_uart::Test_lib_uart() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Test_lib_uart::~Test_lib_uart() {
+	// TODO Auto-generated destructor stub
+}
+

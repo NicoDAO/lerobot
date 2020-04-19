@@ -1,0 +1,49 @@
+/*
+ * GereMoteur.cpp
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "GereMoteur.h"
+
+#include "PWM.h"
+
+GereMoteur::GereMoteur() {
+	//PWM_Get_Period(44);
+}
+
+GereMoteur::~GereMoteur() {
+	// TODO Auto-generated destructor stub
+}
+
+void GereMoteur::PWM_Set_Period(u32 baseAddr, u32 clocks)
+{
+	Xil_Out32(baseAddr + PWM_AXI_PERIOD_REG_OFFSET, clocks);
+}
+
+void GereMoteur::PWM_Set_Duty(u32 baseAddr, u32 clocks, u32 pwmIndex)
+{
+	Xil_Out32(baseAddr + PWM_AXI_DUTY_REG_OFFSET + (4*pwmIndex), clocks);
+}
+
+u32 GereMoteur::PWM_Get_Period(u32 baseAddr)
+{
+	return Xil_In32(baseAddr + PWM_AXI_PERIOD_REG_OFFSET);
+}
+
+u32 GereMoteur::PWM_Get_Duty(u32 baseAddr, u32 pwmIndex)
+{
+	return Xil_In32(baseAddr + PWM_AXI_DUTY_REG_OFFSET + (4*pwmIndex));
+}
+
+void GereMoteur::PWM_Enable(u32 baseAddr)
+{
+	Xil_Out32(baseAddr + PWM_AXI_CTRL_REG_OFFSET, 1);
+}
+
+void GereMoteur::PWM_Disable(u32 baseAddr)
+{
+	Xil_Out32(baseAddr + PWM_AXI_CTRL_REG_OFFSET, 0);
+}
+void GereMoteur::

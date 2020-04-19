@@ -1,0 +1,19 @@
+00:48:33 **** Auto Build of configuration Debug for project rtos_core0_2019_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/ConfigureFIRFPGA.cpp
+Invoking: ARM v7 g++ compiler
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ConfigureFIRFPGA.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/ConfigureFIRFPGA.d" -MT"src/ConfigureFIRFPGA.o" -o "src/ConfigureFIRFPGA.o" "../src/ConfigureFIRFPGA.cpp"
+In file included from ../src/TransfertAXI.h:12,
+                 from ../src/ConfigureFIRFPGA.h:7,
+                 from ../src/ConfigureFIRFPGA.cpp:8:
+../src/Tache.h:11:10: fatal error: FreeRTOS.h: No such file or directory
+ #include "FreeRTOS.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [src/ConfigureFIRFPGA.o] Error 1
+src/subdir.mk:43: recipe for target 'src/ConfigureFIRFPGA.o' failed
+
+00:48:34 Build Finished (took 569ms)
+

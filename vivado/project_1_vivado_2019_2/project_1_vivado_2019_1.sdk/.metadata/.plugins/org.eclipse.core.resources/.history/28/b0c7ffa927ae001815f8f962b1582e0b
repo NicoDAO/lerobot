@@ -1,0 +1,18 @@
+/*
+ * Testlibuart.cpp
+ *
+ *  Created on: 1 sept. 2018
+ *      Author: nicolas
+ */
+
+#include "Testlibuart.h"
+
+Test_lib_uart::Test_lib_uart() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Test_lib_uart::~Test_lib_uart() {
+	// TODO Auto-generated destructor stub
+}
+

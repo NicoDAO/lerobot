@@ -1,0 +1,25 @@
+/*
+ * Liaison.cpp
+ *
+ *  Created on: 5 août 2018
+ *      Author: nicolas
+ */
+
+#include "Liaison.h"
+
+#include "stdio.h"
+
+Liaison::Liaison() {
+	// TODO Auto-generated constructor stub
+
+
+}
+
+Liaison::~Liaison() {
+	// TODO Auto-generated destructor stub
+}
+
+
+int Liaison::configure(){
+	return 1;
+}

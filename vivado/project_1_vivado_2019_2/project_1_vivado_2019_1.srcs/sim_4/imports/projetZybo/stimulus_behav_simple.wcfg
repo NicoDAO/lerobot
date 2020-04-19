@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="stimulus_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="stimulus" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="741445583334fs"></ZoomStartTime>
+      <ZoomEndTime time="4473737618918fs"></ZoomEndTime>
+      <Cursor1Time time="2967175000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="186"></NameColumnWidth>
+      <ValueColumnWidth column_width="163"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="23" />
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/sck_mic_0">
+      <obj_property name="ElementShortName">sck_mic_0</obj_property>
+      <obj_property name="ObjectShortName">sck_mic_0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/sdi_mic_0">
+      <obj_property name="ElementShortName">sdi_mic_0</obj_property>
+      <obj_property name="ObjectShortName">sdi_mic_0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/U0/audio_out_temp">
+      <obj_property name="ElementShortName">audio_out_temp[15:0]</obj_property>
+      <obj_property name="ObjectShortName">audio_out_temp[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/U0/audio_out">
+      <obj_property name="ElementShortName">audio_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">audio_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/ENTREEFIR">
+      <obj_property name="ElementShortName">ENTREEFIR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ENTREEFIR[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/din">
+      <obj_property name="ElementShortName">din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">din[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/wr">
+      <obj_property name="ElementShortName">wr</obj_property>
+      <obj_property name="ObjectShortName">wr</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/waddr">
+      <obj_property name="ElementShortName">waddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/raddr">
+      <obj_property name="ElementShortName">raddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">raddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/mem">
+      <obj_property name="ElementShortName">mem[49:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[49:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/num">
+      <obj_property name="ElementShortName">num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">num[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/taille_mem">
+      <obj_property name="ElementShortName">taille_mem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">taille_mem[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/taille_mot">
+      <obj_property name="ElementShortName">taille_mot[31:0]</obj_property>
+      <obj_property name="ObjectShortName">taille_mot[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/SORTIEFIR">
+      <obj_property name="ElementShortName">SORTIEFIR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">SORTIEFIR[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/audio_in0">
+      <obj_property name="ElementShortName">audio_in0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">audio_in0[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/audio_out">
+      <obj_property name="ElementShortName">audio_out</obj_property>
+      <obj_property name="ObjectShortName">audio_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/processing_system7_0_FCLK_RESET0_N">
+      <obj_property name="ElementShortName">processing_system7_0_FCLK_RESET0_N</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_FCLK_RESET0_N</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/inst/entier">
+      <obj_property name="ElementShortName">entier[15:0]</obj_property>
+      <obj_property name="ObjectShortName">entier[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/gainNvoies_0/U0/audio_in_1_pret">
+      <obj_property name="ElementShortName">audio_in_1_pret</obj_property>
+      <obj_property name="ObjectShortName">audio_in_1_pret</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/gainNvoies_0/U0/audio_in_1">
+      <obj_property name="ElementShortName">audio_in_1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">audio_in_1[15:0]</obj_property>
+   </wvobject>
+</wave_config>

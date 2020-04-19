@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;rtos_core0_2019_1/src/CgereAXI.cpp&apos; to &apos;TransfereAXI.cpp&apos;" description="Rename resource &apos;CgereAXI.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/CgereAXI.cpp" name="TransfereAXI.cpp" stamp="1548279230871" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;rtos_core0_2019_1/src/CgereAXI.h&apos; to &apos;TransfertAXI.h&apos;" description="Rename resource &apos;CgereAXI.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/CgereAXI.h" name="TransfertAXI.h" stamp="1548279257947" updateReferences="true"/>
+</session>

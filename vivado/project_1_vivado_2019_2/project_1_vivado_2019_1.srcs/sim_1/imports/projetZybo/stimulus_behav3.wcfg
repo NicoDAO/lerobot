@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="stimulus_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="stimulus" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="598282920000fs"></ZoomStartTime>
+      <ZoomEndTime time="698168634289fs"></ZoomEndTime>
+      <Cursor1Time time="248483333000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="22" />
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/TRANSPARENT">
+      <obj_property name="ElementShortName">TRANSPARENT</obj_property>
+      <obj_property name="ObjectShortName">TRANSPARENT</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/raddrRAM_audio">
+      <obj_property name="ElementShortName">raddrRAM_audio[7:0]</obj_property>
+      <obj_property name="ObjectShortName">raddrRAM_audio[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/dout1RAM">
+      <obj_property name="ElementShortName">dout1RAM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dout1RAM[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/clk_in">
+      <obj_property name="ElementShortName">clk_in</obj_property>
+      <obj_property name="ObjectShortName">clk_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/cs_mic">
+      <obj_property name="ElementShortName">cs_mic</obj_property>
+      <obj_property name="ObjectShortName">cs_mic</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/audio_out">
+      <obj_property name="ElementShortName">audio_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">audio_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/audio_out">
+      <obj_property name="ElementShortName">audio_out</obj_property>
+      <obj_property name="ObjectShortName">audio_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/valeur_audio">
+      <obj_property name="ElementShortName">valeur_audio[15:0]</obj_property>
+      <obj_property name="ObjectShortName">valeur_audio[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/valeur_audio">
+      <obj_property name="ElementShortName">valeur_audio[15:0]</obj_property>
+      <obj_property name="ObjectShortName">valeur_audio[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/ENTREEFIR">
+      <obj_property name="ElementShortName">ENTREEFIR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ENTREEFIR[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/audio_in0">
+      <obj_property name="ElementShortName">audio_in0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">audio_in0[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/audio_out">
+      <obj_property name="ElementShortName">audio_out</obj_property>
+      <obj_property name="ObjectShortName">audio_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/valeur_audio">
+      <obj_property name="ElementShortName">valeur_audio[15:0]</obj_property>
+      <obj_property name="ObjectShortName">valeur_audio[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/sdi_mic_0_sim">
+      <obj_property name="ElementShortName">sdi_mic_0_sim</obj_property>
+      <obj_property name="ObjectShortName">sdi_mic_0_sim</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/inst/SCLK">
+      <obj_property name="ElementShortName">SCLK</obj_property>
+      <obj_property name="ObjectShortName">SCLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/inst/sync">
+      <obj_property name="ElementShortName">sync</obj_property>
+      <obj_property name="ObjectShortName">sync</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/sdi_mic_0">
+      <obj_property name="ElementShortName">sdi_mic_0</obj_property>
+      <obj_property name="ObjectShortName">sdi_mic_0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/PmodMIC3_0/sdi_mic">
+      <obj_property name="ElementShortName">sdi_mic</obj_property>
+      <obj_property name="ObjectShortName">sdi_mic</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/inst/audio_out">
+      <obj_property name="ElementShortName">audio_out</obj_property>
+      <obj_property name="ObjectShortName">audio_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/inst/nv_echantillon1">
+      <obj_property name="ElementShortName">nv_echantillon1</obj_property>
+      <obj_property name="ObjectShortName">nv_echantillon1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/stimulus/design_1_wrapper_inst/design_1_i/interface_DAC8551_1/inst/LDAC">
+      <obj_property name="ElementShortName">LDAC</obj_property>
+      <obj_property name="ObjectShortName">LDAC</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/stimulus/valeur_audio">
+      <obj_property name="ElementShortName">valeur_audio[15:0]</obj_property>
+      <obj_property name="ObjectShortName">valeur_audio[15:0]</obj_property>
+   </wvobject>
+</wave_config>

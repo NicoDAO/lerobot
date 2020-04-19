@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="/home/nicolas/vivado/vivado2019_1/project_1_vivado_2019_1/project_1_vivado_2019_1.sdk/vivado_2019_1_20200105" key="bootgen_files_selection"/>
+	<item value="/home/nicolas/vivado_nv/vivado/FPGA_xilinx/projetZybo/Leds.sdk/rtos_core0_2019_1/Debug" key="tcf_debug_app_selection"/>
+	<item value="/home/nicolas/vivado/vivado/vivado2019_1/project_1_vivado_2019_1/project_1_vivado_2019_1.sdk/design_1_wrapper_hw_platform_0" key="program_fpga_view_bit_bmm_browse_key"/>
+	<item value="/home/nicolas/vivado/vivado/FPGA_xilinx/projetZybo/Leds.runs/impl_2" key="debug_files_selection"/>
+	<item value="/home/nicolas/vivado/vivado/FPGA_xilinx/projetZybo/Leds.runs/impl_2" key="hwspec_file_selection"/>
+	<item value="/home/nicolas/vivado/vivado2019_1/project_1_vivado_2019_1/project_1_vivado_2019_1.sdk/vivado_2019_1_20200105" key="zynq_flash_files_selection"/>
+	<item value="/home/nicolas/vivado/vivado2019_1/project_1_vivado_2019_1/project_1_vivado_2019_1.sdk/vivado_2019_1_20200105" key="last_stored_selection"/>
+</section>

@@ -1,0 +1,17 @@
+/*
+ * MonPWM.h
+ *
+ *  Created on: 10 janv. 2020
+ *      Author: nicolas
+ */
+
+#ifndef SRC_MONPWM_H_
+#define SRC_MONPWM_H_
+
+class MonPWM {
+public:
+	MonPWM();
+	virtual ~MonPWM();
+};
+
+#endif /* SRC_MONPWM_H_ */

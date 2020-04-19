@@ -1,0 +1,31 @@
+/*
+ * ConfigureVolumes.cpp
+ *
+ *  Created on: 6 juin 2019
+ *      Author: nicolas
+ */
+
+#include "ConfigureVolumes.h"
+
+ConfigureVolumes::ConfigureVolumes() {
+	// TODO Auto-generated constructor stub
+	etat = etat_pas_encore_init;
+}
+
+ConfigureVolumes::~ConfigureVolumes() {
+	// TODO Auto-generated destructor stub
+}
+
+void ConfigureVolumes::handler(){
+
+	switch(etat){
+	case etat_pas_encore_init:
+		break;
+	case etat_pas_encore:
+		break;
+	case etat_fini:
+		break;
+	}
+
+
+}

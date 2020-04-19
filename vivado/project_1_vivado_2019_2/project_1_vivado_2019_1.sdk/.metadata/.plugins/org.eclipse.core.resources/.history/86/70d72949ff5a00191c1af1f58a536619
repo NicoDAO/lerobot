@@ -1,0 +1,155 @@
+/*
+ * CgereAXI.cpp
+ *
+ *  Created on: 2 août 2018
+ *      Author: nicolas
+ */
+#include "pmod_audio.h"
+#include "stdio.h"
+#include "string.h"
+#include "xil_io.h"
+#define FIR_LA 1
+#define TEST_AXI 0
+#define FIR_TRANSPARENT 0
+
+
+#include "TransfertAXI.h"
+
+enum {
+	EtatPasEncoreInitialise = 0, EtatInitEnCours, EtatInitFini
+};
+enum {
+	Nv_coef = 0, charge_coef, fin_charge
+};
+//http://www.fpgadeveloper.com/2011/07/read-dip-switches-from-a-microblaze-application.html
+CagereAXI::CagereAXI() {
+	xLastWakeTime = xTaskGetTickCount();
+	xWakePeriod = 1110;
+	truc_u8_recoit = (u8*) truc_recoit;
+	etat_automate = EtatPasEncoreInitialise;
+
+
+}
+
+CagereAXI::~CagereAXI() {
+}
+
+void CagereAXI::handler() {
+	char truc[100];
+	u32 val;
+	u32 tt;
+	static u32 val_test = 0;
+
+	switch (etat_automate) {
+
+	case EtatPasEncoreInitialise:
+
+
+		status = XGpio_Initialize(&GpioInput, XPAR_AXI_GPIO_0_DEVICE_ID);
+		// Set the direction for all signals to be inputs
+		XGpio_SetDataDirection(&GpioInput, 1, 0xFFFFFFFF);
+
+		etat_automate = EtatInitEnCours;
+		EtatChargeCoef = Nv_coef;
+
+		snprintf(truc, sizeof(truc), "!!EtatPasEncoreInitialise = =%x\r\n",
+					etat_automate);
+			xil_printf(truc);
+		Xil_Out32(0x43C00000 + PMOD_AUDIO_S00_AXI_SLV_REG0_OFFSET, 0x80000000); //allume l'ampli
+		cpt_coef = 0;
+
+		//etat_automate =EtatInitFini;
+
+		break;
+	case EtatInitEnCours:
+
+		if( fir_transparent ==1){
+				Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG2_OFFSET,0x1); 	//activation du mode transparent
+				Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG0_OFFSET,0x125); //
+				snprintf(truc, sizeof(truc), "mode transparent activé\r\n");
+						xil_printf(truc);
+				etat_automate = EtatInitFini;
+		}
+		else {
+
+		val = lescoefs[cpt_coef];
+
+
+
+
+		switch (EtatChargeCoef) {
+				case Nv_coef:
+					Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG0_OFFSET,0x123); //commande
+					Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,cpt_coef); //adresse
+					Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG2_OFFSET,lescoefs[cpt_coef]); //valeur
+					EtatChargeCoef = charge_coef;
+					snprintf(truc, sizeof(truc),"[commande 0x123,adresse coef , %x, valeur : %x\n\r",cpt_coef,lescoefs[cpt_coef]);
+					xil_printf(truc);
+
+					break;
+				case charge_coef:
+					//valide l'enregistrement du coef dans le filtre
+					Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG0_OFFSET,0x124); //reg0
+					EtatChargeCoef = Nv_coef;
+					cpt_coef++;
+
+					break;
+				case fin_charge:
+					break;
+			}
+
+			if (cpt_coef > this->taille_filtre) {
+				etat_automate = EtatInitFini;
+				snprintf(truc, sizeof(truc), "EtatInitFini cpt_coef = %d/%d\r\n",
+						cpt_coef, this->taille_filtre);
+
+				xil_printf(truc);
+
+			}
+
+			break;
+		case EtatInitFini:
+			GpioLu = XGpio_DiscreteRead(&GpioInput,1);
+			 if(GpioLu != VieuGpioLut){
+			      xil_printf("DIP Switch settings: 0x%X\r\n", GpioLu);
+			      VieuGpioLut =  GpioLu ;
+
+			      if(GpioLu== 1){//on relance en mode transparent
+			    	  etat_automate = EtatPasEncoreInitialise;
+			    	  fir_transparent = 1;
+			      }else{		//on reconfigure le FIR
+			    	  etat_automate = EtatPasEncoreInitialise;
+			    	 fir_transparent = 0;
+			      }
+			 }
+
+			break;
+		}
+
+
+		u8* truc_u8;
+		truc_u8 = (u8*) truc;
+		this->GestionLed->bagoteLed(2);
+
+		vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
+
+
+		}
+}
+int CagereAXI::configure(Liaison* lz) {
+	printf("\r %d CagereAXI::configure liaison\r", xWakePeriod);
+	this->la_ls = lz;
+	//this->la_ls->LaFifo->(&setQueue);
+	this->la_ls->configure();
+	return 1;
+}
+
+void CagereAXI::SetAdresseRegistre(uint32 a) {
+	this->adresseRegistre = a;
+
+}
+
+void CagereAXI::RegleAdresseAxi(u32 a) {
+	this->adresseAXI = a;
+
+}

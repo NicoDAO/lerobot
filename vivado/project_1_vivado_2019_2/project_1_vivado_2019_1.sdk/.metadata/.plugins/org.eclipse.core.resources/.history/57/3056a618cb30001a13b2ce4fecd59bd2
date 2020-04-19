@@ -1,0 +1,18 @@
+/*
+ * GereMoteur.h
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#ifndef SRC_GEREMOTEUR_H_
+#define SRC_GEREMOTEUR_H_
+#include "config_du_system.h"
+#include "PWM.h"
+class GereMoteur {
+public:
+	GereMoteur();
+	virtual ~GereMoteur();
+};
+
+#endif /* SRC_GEREMOTEUR_H_ */

@@ -1,0 +1,18 @@
+/*
+ * Testlibuart.h
+ *
+ *  Created on: 1 sept. 2018
+ *      Author: nicolas
+ */
+
+#ifndef SRC_TESTLIBUART_H_
+#define SRC_TESTLIBUART_H_
+
+class Test_lib_uart {
+public:
+	Test_lib_uart();
+	virtual ~Test_lib_uart();
+	int Test_lib_uart::test_l_uart()
+};
+
+#endif /* SRC_TESTLIBUART_H_ */

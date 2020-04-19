@@ -1,0 +1,17 @@
+/*
+ * Pwm.h
+ *
+ *  Created on: 5 janv. 2020
+ *      Author: nicolas
+ */
+
+#ifndef PWM_H_
+#define PWM_H_
+
+class Pwm {
+public:
+	Pwm();
+	virtual ~Pwm();
+};
+
+#endif /* PWM_H_ */

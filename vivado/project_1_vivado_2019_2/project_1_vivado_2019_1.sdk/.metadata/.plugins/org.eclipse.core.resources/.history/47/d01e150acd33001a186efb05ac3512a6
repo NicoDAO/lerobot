@@ -1,0 +1,24 @@
+/*
+ * MonPWM.cpp
+ *
+ *  Created on: 10 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "MonPWM.h"
+
+MonPWM::MonPWM() {
+	// TODO Auto-generated constructor stub
+
+}
+
+MonPWM::~MonPWM() {
+	// TODO Auto-generated destructor stub
+}
+
+
+
+
+void MonPWM::setBaseAddr(u32 aa){
+	this->baseAddr = aa;
+}

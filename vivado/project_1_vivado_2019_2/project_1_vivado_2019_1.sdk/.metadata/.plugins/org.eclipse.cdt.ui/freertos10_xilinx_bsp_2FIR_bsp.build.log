@@ -1,0 +1,905 @@
+23:35:13 **** Build of project freertos10_xilinx_bsp_2FIR_bsp ****
+make -k all 
+Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_6/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_6/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/lwip202_v1_2/src
+make -C ps7_cortexa9_0/libsrc/lwip202_v1_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_8/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_8/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_10/src
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_4/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_5/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/FIR_v1_0/src
+make -C ps7_cortexa9_0/libsrc/FIR_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/pmod_audio_v1_0/src
+make -C ps7_cortexa9_0/libsrc/pmod_audio_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gainNvoies_v1_0/src
+make -C ps7_cortexa9_0/libsrc/gainNvoies_v1_0/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_2/src
+make -C ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_2/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+include
+Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling ddrps
+arm-none-eabi-ar: création de ../../../lib/libxil.a
+Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_6/src
+make -C ps7_cortexa9_0/libsrc/sdps_v3_6/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling sdps
+Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling dmaps
+Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling cpu_cortexa9
+Running Make libs in ps7_cortexa9_0/libsrc/lwip202_v1_2/src
+make -C ps7_cortexa9_0/libsrc/lwip202_v1_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling lwip src and adapter files
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/init.c:38:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/init.c:38:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/def.c:61:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/def.c:61:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/dns.c:85:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/dns.c:85:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/inet_chksum.c:48:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/inet_chksum.c:48:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ip.c:56:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ip.c:56:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/mem.c:56:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/mem.c:56:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/memp.c:46:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/memp.c:46:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/netif.c:51:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/netif.c:51:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/pbuf.c:112:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/pbuf.c:112:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/raw.c:48:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/raw.c:48:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/stats.c:39:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/stats.c:39:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/timeouts.h:41,
+                 from lwip-2.0.2/src/core/timeouts.c:45:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/timeouts.h:41,
+                 from lwip-2.0.2/src/core/timeouts.c:45:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/sys.c:77:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/sys.c:77:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/netif/ethernet.c:41:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/netif/ethernet.c:41:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/etharp.c:46:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/etharp.c:46:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/ip4_addr.c:39:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/ip4_addr.c:39:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/icmp.c:42:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/icmp.c:42:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/igmp.c:83:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/igmp.c:83:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/ip4.c:41:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/ip4.c:41:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/ip4_frag.c:41:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/ip4_frag.c:41:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/autoip.c:59:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/autoip.c:59:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/inet6.c:42:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/inet6.c:42:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/ip6_addr.c:43:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/ip6_addr.c:43:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/ip6_frag.c:42:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/ip6_frag.c:42:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/icmp6.c:42:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/icmp6.c:42:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/ip6.c:42:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/ip6.c:42:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/dhcp6.c:42:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/dhcp6.c:42:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/ethip6.c:42:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/ethip6.c:42:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/mld6.c:49:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/mld6.c:49:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/nd6.c:44:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv6/nd6.c:44:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/tcp.c:48:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/tcp.c:48:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/tcp_in.c:44:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/tcp_in.c:44:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/tcp_out.c:41:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/tcp_out.c:41:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/udp.c:48:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/udp.c:48:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/dhcp.c:63:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from lwip-2.0.2/src/core/ipv4/dhcp.c:63:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from contrib/ports/xilinx/sys_arch_raw.c:38:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from contrib/ports/xilinx/sys_arch_raw.c:38:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/mem.h:40,
+                 from contrib/ports/xilinx/netif/xadapter.c:42:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/mem.h:40,
+                 from contrib/ports/xilinx/netif/xadapter.c:42:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/netif.h:40,
+                 from ../../../include/netif/xemacpsif.h:39,
+                 from contrib/ports/xilinx/netif/xemacpsif_hw.c:31:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/netif.h:40,
+                 from ../../../include/netif/xemacpsif.h:39,
+                 from contrib/ports/xilinx/netif/xemacpsif_hw.c:31:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/netif.h:40,
+                 from ../../../include/netif/xemacpsif.h:39,
+                 from contrib/ports/xilinx/netif/xemacpsif_physpeed.c:108:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/netif.h:40,
+                 from ../../../include/netif/xemacpsif.h:39,
+                 from contrib/ports/xilinx/netif/xemacpsif_physpeed.c:108:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from contrib/ports/xilinx/netif/xemacpsif.c:37:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from contrib/ports/xilinx/netif/xemacpsif.c:31:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+contrib/ports/xilinx/netif/xemacpsif.c: In function 'xemacpsif_init':
+contrib/ports/xilinx/netif/xemacpsif.c:708:16: warning: assignment to 'netif_output_fn' {aka 'signed char (*)(struct netif *, struct pbuf *, const struct ip4_addr *)'} from incompatible pointer type 'err_t (*)(struct netif *, struct pbuf *, ip_addr_t *)' {aka 'signed char (*)(struct netif *, struct pbuf *, struct ip4_addr *)'} [-Wincompatible-pointer-types]
+  netif->output = xemacpsif_output;
+                ^
+In file included from ../../../include/arch/cc.h:47,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/stats.h:40,
+                 from contrib/ports/xilinx/netif/xemacpsif_dma.c:32:
+../../../include/arch/cpu.h:41: warning: "BYTE_ORDER" redefined
+ #define BYTE_ORDER LITTLE_ENDIAN
+ 
+In file included from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/sys/types.h:67,
+                 from /opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/stdio.h:61,
+                 from ../../../include/arch/cc.h:38,
+                 from ../../../include/lwip/arch.h:48,
+                 from ../../../include/lwip/debug.h:40,
+                 from ../../../include/lwip/opt.h:52,
+                 from ../../../include/lwip/stats.h:40,
+                 from contrib/ports/xilinx/netif/xemacpsif_dma.c:32:
+/opt/Xilinx/SDK/2019.1/gnu/aarch32/lin/gcc-arm-none-eabi/arm-none-eabi/libc/usr/include/machine/endian.h:20: note: this is the location of the previous definition
+ #define BYTE_ORDER _BYTE_ORDER
+ 
+In file included from ../../../include/xemacps.h:348,
+                 from ../../../include/netif/xemacpsif.h:57,
+                 from contrib/ports/xilinx/netif/xemacpsif_dma.c:37:
+contrib/ports/xilinx/netif/xemacpsif_dma.c: In function 'init_dma':
+../../../include/xemacps_hw.h:600:23: warning: 'bdrxterminate' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define XEmacPs_Out32 Xil_Out32
+                       ^~~~~~~~~
+contrib/ports/xilinx/netif/xemacpsif_dma.c:556:14: note: 'bdrxterminate' was declared here
+  XEmacPs_Bd *bdrxterminate;
+              ^~~~~~~~~~~~~
+In file included from ../../../include/xemacps.h:349,
+                 from ../../../include/netif/xemacpsif.h:57,
+                 from contrib/ports/xilinx/netif/xemacpsif_dma.c:37:
+../../../include/xemacps_bd.h:142:12: warning: 'bdtxterminate' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  (*(u32 *)((UINTPTR)((void*)(BaseAddress)) + (u32)(Offset)))
+            ^
+contrib/ports/xilinx/netif/xemacpsif_dma.c:555:14: note: 'bdtxterminate' was declared here
+  XEmacPs_Bd *bdtxterminate;
+              ^~~~~~~~~~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_8/src
+make -C ps7_cortexa9_0/libsrc/emacps_v3_8/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling emacps
+Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_10/src
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scugic
+Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_4/src
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpiops
+Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_5/src
+make -C ps7_cortexa9_0/libsrc/qspips_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling qspips
+Running Make libs in ps7_cortexa9_0/libsrc/FIR_v1_0/src
+make -C ps7_cortexa9_0/libsrc/FIR_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling FIR...
+FIR_selftest.c: In function 'FIR_Reg_SelfTest':
+FIR_selftest.c:52:52: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( FIR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                    ^~
+FIR_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/pmod_audio_v1_0/src
+make -C ps7_cortexa9_0/libsrc/pmod_audio_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling pmod_audio...
+pmod_audio_selftest.c: In function 'PMOD_AUDIO_Reg_SelfTest':
+pmod_audio_selftest.c:52:59: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( PMOD_AUDIO_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                           ^~
+pmod_audio_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling ttcps
+Running Make libs in ps7_cortexa9_0/libsrc/gainNvoies_v1_0/src
+make -C ps7_cortexa9_0/libsrc/gainNvoies_v1_0/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gainNvoies...
+gainNvoies_selftest.c: In function 'GAINNVOIES_Reg_SelfTest':
+gainNvoies_selftest.c:52:59: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+    if ( GAINNVOIES_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                           ^~
+gainNvoies_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling xadcps
+Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling devcfg
+Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling gpio
+Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scuwdt
+Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling uartps
+Running Make libs in ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_2/src
+make -C ps7_cortexa9_0/libsrc/freertos10_xilinx_v1_2/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling standalone
+Compiling FreeRTOS
+Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling usbps
+Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling coresightps_dcc
+Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=/bin/sh" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+Compiling scutimer
+Finished building libraries
+
+23:35:35 Build Finished (took 22s.124ms)
+

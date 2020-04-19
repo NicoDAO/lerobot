@@ -1,0 +1,17 @@
+/*
+ * monPWM.h
+ *
+ *  Created on: 10 janv. 2020
+ *      Author: nicolas
+ */
+
+#ifndef PS7_CORTEXA9_0_INCLUDE_MONPWM_H_
+#define PS7_CORTEXA9_0_INCLUDE_MONPWM_H_
+
+class monPWM {
+public:
+	monPWM();
+	virtual ~monPWM();
+};
+
+#endif /* PS7_CORTEXA9_0_INCLUDE_MONPWM_H_ */

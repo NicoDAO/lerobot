@@ -1,0 +1,15 @@
+/*
+ * données_FIR.h
+ *
+ *  Created on: Feb 2, 2019
+ *      Author: nicolas
+ */
+
+#ifndef SRC_DONNEES_FIR_H_
+#define SRC_DONNEES_FIR_H_
+#include "type.h"
+
+#define PROFONDEUR_FIR 50
+int coef_FIR_0[PROFONDEUR_FIR]={1,2,4,5,6,1,2,4,5,6,1,2,4,5,6,1,2,4,5,6,1,2,4,5,6,1,2,4,5,6,1,2,4,5,6,1,2,4,5,6,1,2,4,5,6,1,2,4,5,6,};
+
+#endif /* SRC_DONNEES_FIR_H_ */

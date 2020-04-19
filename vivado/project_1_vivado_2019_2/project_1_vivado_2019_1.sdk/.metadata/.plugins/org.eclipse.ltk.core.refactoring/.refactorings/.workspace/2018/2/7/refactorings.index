@@ -1,0 +1,7 @@
+1518561242283	Delete resource 'design_1_wrapper_hw_platform_0/drivers/codec_I2C_I2S_v1_0'
+1518562283112	Delete resource 'design_1_wrapper_hw_platform_0'
+1518562684236	Delete resource 'audio_pwm'
+1518562694402	Delete resource 'audio_pwm_bsp'
+1518562703792	Delete resource 'design_1_wrapper_hw_platform_0'
+1518563094136	Delete resource 'core1'
+1518824136635	Delete resource 'linux_zybo'

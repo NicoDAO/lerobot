@@ -1,0 +1,388 @@
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_types.h"
+#include "xil_io.h"
+#include "xil_printf.h"
+#include "xil_cache.h"
+#include "math.h"
+#include "FreeRTOS.h"
+#include "Testlibuart.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+#include "stdio.h"
+
+#include "Uart.h"
+#include "Testlibuart.h"
+/* Xilinx includes. */
+#include "xuartps.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+#include "semphr.h"
+
+#include "TransfertAXI.h"
+#include "ConfigureFIRFPGA.h"
+#include "ConfigureVolumes.h"
+#include "config_du_system.h"
+#include "GereLed.h"
+#include "donnees_FIR.h"
+#define TEST_LUART 0
+
+#define TIMER_ID	1
+#define DELAY_10_SECONDS	10000UL
+#define DELAY_1_SECOND		1000UL
+#define DELAY_100_MSECOND		100UL
+#define DELAY_10_MSECOND		10UL
+#define DELAY_1_MSECOND		1UL
+#define TIMER_CHECK_THRESHOLD	9
+//https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/uartps/examples/xuartps_selftest_example.c
+//https://github.com/Xilinx/embeddedsw/blob/master/XilinxProcessorIPLib/drivers/uartps/examples/xuartps_intr_example.c
+/*			definition des bibs
+ */
+/* The UART interrupts of interest when receiving. */
+#define serRECEIVE_INTERRUPT_MASK	( XUARTPS_IXR_RXOVR | XUARTPS_IXR_RXFULL | XUARTPS_IXR_TOUT )
+/* The queue into which received key presses are placed.  NOTE THE COMMENTS AT
+ THE TOP OF THIS FILE REGARDING THE USE OF QUEUES FOR THIS PURPOSE. */
+static QueueHandle_t xRxQueue = NULL;
+
+/* The UART interrupts of interest when transmitting. */
+#define serTRANSMIT_IINTERRUPT_MASK ( XUARTPS_IXR_TXEMPTY )
+
+/* The semaphore used to indicate the end of a transmission. */
+static SemaphoreHandle_t xTxCompleteSemaphore = NULL;
+
+ConfigureFIR_FPGA FIR1;
+ConfigureFIR_FPGA FIR2;
+ConfigureFIR_FPGA FIR3;
+ConfigureFIR_FPGA FIR4;
+
+ConfigureVolumes Volume1;
+
+//laxi2.
+//CagereAXI laxi3;
+LUart lien1;
+XUartPs Uart_Ps;
+
+QueueHandle_t xQueue;
+char HWstring[15] = "Hello World";
+long RxtaskCntr = 0;
+GereLed GereLesLed;
+static void handlerGereAXI2(void *pvParameters);
+static void handlerGereAXI3(void *pvParameters);
+int UartPsHelloWorldExample(u16 DeviceId);
+
+/* The interrupt controller is initialised in this file, and made available to
+ other modules. */
+XScuGic xInterruptController;
+/*
+ * The UART interrupt handler is defined in this file to provide more control,
+ * but still uses parts of the Xilinx provided driver.
+ */
+void prvUART_Handler(void *pvNotUsed);
+
+void conf_uart(void);
+int main() {
+#if TEST_LUART == 1
+	//test_l_uart();
+	Test_lib_uart tt;
+	tt.test_l_uart();
+#else
+	//conf_uart();
+
+//	lien1.setXUartPs(&Uart_Ps);
+
+	xTaskCreate(handlerGereAXI2, (const char *) "AXI2",
+	configMINIMAL_STACK_SIZE,
+	NULL,
+	tskIDLE_PRIORITY + 1, NULL);
+
+#if 1
+	xTaskCreate(handlerGereAXI3, (const char *) "AXI3",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY + 2, NULL);
+#endif
+
+	xQueue = xQueueCreate(110, sizeof(char));
+	lien1.setQueue(&xQueue);
+	configASSERT(xQueue);
+
+	vTaskStartScheduler();
+
+	while (1)
+		;
+
+	return 0;
+#endif
+}
+
+static void handlerGereAXI2(void *pvParameters) {
+
+	GereLesLed.regleAdresse(0x43C00000);
+	FIR1.RegleAdresseAxi(XPAR_FIR_0_S00_AXI_BASEADDR);
+	FIR1.SetGereLed(&GereLesLed);
+	FIR1.setPeriod(1);
+	FIR1.configure(&lien1);
+	FIR1.RegleNumeroBouton(0X00000001);
+	FIR1.RegleCoefFIR(coef_FIR_0, PROFONDEUR_FIR);
+
+	FIR2.RegleAdresseAxi(XPAR_FIR_1_S00_AXI_BASEADDR);
+	FIR2.SetGereLed(&GereLesLed);
+	FIR2.setPeriod(1);
+	FIR2.configure(&lien1);
+	FIR2.RegleNumeroBouton(0x00000002);
+	FIR2.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
+
+	FIR3.RegleAdresseAxi(XPAR_FIR_2_S00_AXI_BASEADDR);
+	FIR3.SetGereLed(&GereLesLed);
+	FIR3.setPeriod(1);
+	FIR3.configure(&lien1);
+	FIR3.RegleNumeroBouton(0x00000003);
+	FIR3.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
+
+	FIR4.RegleAdresseAxi(XPAR_FIR_3_S00_AXI_BASEADDR);
+	FIR4.SetGereLed(&GereLesLed);
+	FIR4.setPeriod(1);
+	FIR4.configure(&lien1);
+	FIR4.RegleNumeroBouton(0x00000004);
+	FIR4.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
+
+	Volume1.setPeriod(100);
+	Volume1.RegleAdresseAxi(XPAR_GAINNVOIES_0_S00_AXI_BASEADDR);
+	Volume1.setPeriod(100);
+
+
+	for (;;) {
+		FIR1.handler();
+		FIR2.handler();
+		FIR3.handler();
+		FIR4.handler();
+
+		Volume1.handler();
+
+	}
+}
+static void handlerGereAXI3(void *pvParameters) {
+
+
+
+	Volume1.setPeriod(100);
+	Volume1.RegleAdresseAxi(XPAR_GAINNVOIES_0_S00_AXI_BASEADDR);
+	Volume1.setPeriod(100);
+
+
+	for (;;) {
+
+		Volume1.handler();
+
+	}
+}
+/*
+
+ static void handlerGereAXI3(void *pvParameters) {
+
+ laxi3.setPeriod(111);
+ laxi3.configure(&lien1);
+
+ for (;;) {
+ laxi3.handler();
+
+ }
+ }
+ */
+
+int UartPsHelloWorldExample(u16 DeviceId) {
+	u8 HelloWorld[] = "\rentree\r";
+	int SentCount = 0;
+	int Status;
+	XUartPs_Config *Config;
+
+	/*
+	 * Initialize the UART driver so that it's ready to use
+	 * Look up the configuration in the config table and then initialize it.
+	 */
+	Config = XUartPs_LookupConfig(DeviceId);
+	if (NULL == Config) {
+		return XST_FAILURE;
+	}
+
+	Status = XUartPs_CfgInitialize(&Uart_Ps, Config, Config->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XUartPs_SetBaudRate(&Uart_Ps, 115200);
+
+	while (SentCount < (sizeof(HelloWorld) - 1)) {
+		/* Transmit the data */
+		SentCount += XUartPs_Send(&Uart_Ps, &HelloWorld[SentCount], 1);
+	}
+
+	return SentCount;
+}
+
+void conf_uart() {
+	/* Ensure interrupts start clear. */
+	XUartPs_WriteReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_ISR_OFFSET,
+			XUARTPS_IXR_MASK);
+
+	/* Enable the UART interrupt within the GIC. */
+	//XScuGic_Enable( &xInterruptController, XPAR_XUARTPS_1_INTR );
+	/* Enable the interrupts of interest in the UART. */
+	//XUartPs_SetInterruptMask( &Uart_Ps, XUARTPS_IXR_RXFULL | XUARTPS_IXR_RXOVR | XUARTPS_IXR_TOUT | XUARTPS_IXR_TXEMPTY );
+	/*
+	 * Setup the handlers for the UART that will be called from the
+	 * interrupt context when data has been sent and received, specify
+	 * a pointer to the UART driver instance as the callback reference
+	 * so the handlers are able to access the instance data
+	 */
+	XUartPs_SetHandler(&Uart_Ps, (XUartPs_Handler) prvUART_Handler, &Uart_Ps);
+
+}
+/*-----------------------------------------------------------*/
+u32 XUartPs_SendBuffer(XUartPs *InstancePtr);
+
+void prvUART_Handler(void *pvNotUsed) {
+
+	uint32_t ulActiveInterrupts, ulChannelStatusRegister;
+	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+	char cChar;
+
+	/* Read the interrupt ID register to see which interrupt is active. */
+	ulActiveInterrupts = XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR,
+			XUARTPS_IMR_OFFSET);
+	ulActiveInterrupts &= XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR,
+			XUARTPS_ISR_OFFSET);
+
+	/* Are any receive events of interest active? */
+	if ((ulActiveInterrupts & serRECEIVE_INTERRUPT_MASK) != 0) {
+		/* Read the Channel Status Register to determine if there is any data in
+		 the RX FIFO. */
+		ulChannelStatusRegister = XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR,
+				XUARTPS_SR_OFFSET);
+
+		/* Move data from the Rx FIFO to the Rx queue.  NOTE THE COMMENTS AT THE
+		 TOP OF THIS FILE ABOUT USING QUEUES FOR THIS PURPSOE. */
+		while ((ulChannelStatusRegister & XUARTPS_SR_RXEMPTY) == 0) {
+			cChar = XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR,
+					XUARTPS_FIFO_OFFSET);
+
+			/* If writing to the queue unblocks a task, and the unblocked task
+			 has a priority above the currently running task (the task that this
+			 interrupt interrupted), then xHigherPriorityTaskWoken will be set
+			 to pdTRUE inside the xQueueSendFromISR() function.
+			 xHigherPriorityTaskWoken is then passed to portYIELD_FROM_ISR() at
+			 the end of this interrupt handler to request a context switch so the
+			 interrupt returns directly to the (higher priority) unblocked
+			 task. */
+			xQueueSendFromISR(xRxQueue, &cChar, &xHigherPriorityTaskWoken);
+			ulChannelStatusRegister = XUartPs_ReadReg(XPAR_PS7_UART_1_BASEADDR,
+					XUARTPS_SR_OFFSET);
+		}
+	}
+
+	/* Are any transmit events of interest active? */
+	if ((ulActiveInterrupts & serTRANSMIT_IINTERRUPT_MASK) != 0) {
+		if (Uart_Ps.SendBuffer.RemainingBytes == 0) {
+			/* Give back the semaphore to indicate that the tranmission is
+			 complete.  If giving the semaphore unblocks a task, and the
+			 unblocked task has a priority above the currently running task (the
+			 task that this interrupt interrupted), then xHigherPriorityTaskWoken
+			 will be set	to pdTRUE inside the xSemaphoreGiveFromISR() function.
+			 xHigherPriorityTaskWoken is then passed to portYIELD_FROM_ISR() at
+			 the end of this interrupt handler to request a context switch so the
+			 interrupt returns directly to the (higher priority) unblocked
+			 task. */
+			xSemaphoreGiveFromISR(xTxCompleteSemaphore,
+					&xHigherPriorityTaskWoken);
+
+			/* No more data to transmit. */
+			XUartPs_WriteReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_IDR_OFFSET,
+					XUARTPS_IXR_TXEMPTY);
+		} else {
+			/* More data to send. */
+			XUartPs_SendBuffer(&Uart_Ps);
+		}
+	}
+
+	/* portYIELD_FROM_ISR() will request a context switch if executing this
+	 interrupt handler caused a task to leave the blocked state, and the task
+	 that left the blocked state has a higher priority than the currently running
+	 task (the task this interrupt interrupted).  See the comment above the calls
+	 to xSemaphoreGiveFromISR() and xQueueSendFromISR() within this function. */
+	portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+
+	/* Clear the interrupt status. */
+	XUartPs_WriteReg(XPAR_PS7_UART_1_BASEADDR, XUARTPS_ISR_OFFSET,
+			ulActiveInterrupts);
+}
+/****************************************************************************/
+/*
+ *
+ * This function sends a buffer that has been previously specified by setting
+ * up the instance variables of the instance. This function is an internal
+ * function for the XUartPs driver such that it may be called from a shell
+ * function that sets up the buffer or from an interrupt handler.
+ *
+ * This function sends the specified buffer in either polled or interrupt
+ * driven modes. This function is non-blocking.
+ *
+ * In a polled mode, this function only sends as much data as the TX FIFO
+ * can buffer. The application may need to call it repeatedly to send the
+ * entire buffer.
+ *
+ * In interrupt mode, this function starts the sending of the buffer, if not
+ * the entire buffer has been sent, then the interrupt handler continues the
+ * sending until the entire buffer has been sent. A callback function, as
+ * specified by the application, will be called to indicate the completion of
+ * sending.
+ *
+ * @param	InstancePtr is a pointer to the XUartPs instance
+ *
+ * @return	The number of bytes actually sent
+ *
+ * @note		None.
+ *
+ *****************************************************************************/
+u32 XUartPs_SendBuffer(XUartPs *InstancePtr) {
+	u32 SentCount = 0U;
+	u32 ImrRegister;
+
+	/*
+	 * If the TX FIFO is full, send nothing.
+	 * Otherwise put bytes into the TX FIFO unil it is full, or all of the
+	 * data has been put into the FIFO.
+	 */
+	while ((!XUartPs_IsTransmitFull(InstancePtr->Config.BaseAddress))
+			&& (InstancePtr->SendBuffer.RemainingBytes > SentCount)) {
+
+		/* Fill the FIFO from the buffer */
+		XUartPs_WriteReg(InstancePtr->Config.BaseAddress, XUARTPS_FIFO_OFFSET,
+				((u32 )InstancePtr->SendBuffer.NextBytePtr[SentCount]));
+
+		/* Increment the send count. */
+		SentCount++;
+	}
+
+	/* Update the buffer to reflect the bytes that were sent from it */
+	InstancePtr->SendBuffer.NextBytePtr += SentCount;
+	InstancePtr->SendBuffer.RemainingBytes -= SentCount;
+
+	/*
+	 * If interrupts are enabled as indicated by the receive interrupt, then
+	 * enable the TX FIFO empty interrupt, so further action can be taken
+	 * for this sending.
+	 */
+	ImrRegister = XUartPs_ReadReg(InstancePtr->Config.BaseAddress,
+			XUARTPS_IMR_OFFSET);
+	if (((ImrRegister & XUARTPS_IXR_RXFULL) != (u32) 0)
+			|| ((ImrRegister & XUARTPS_IXR_RXEMPTY) != (u32) 0)
+			|| ((ImrRegister & XUARTPS_IXR_RXOVR) != (u32) 0)) {
+
+		XUartPs_WriteReg(InstancePtr->Config.BaseAddress, XUARTPS_IER_OFFSET,
+				ImrRegister | (u32)XUARTPS_IXR_TXEMPTY);
+	}
+
+	return SentCount;
+}
+

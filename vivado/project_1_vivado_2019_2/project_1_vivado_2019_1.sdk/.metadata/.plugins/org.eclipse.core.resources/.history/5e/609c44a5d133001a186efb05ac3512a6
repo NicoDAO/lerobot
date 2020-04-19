@@ -1,0 +1,31 @@
+/*
+ * GereMoteur.cpp
+ *
+ *  Created on: 6 janv. 2020
+ *      Author: nicolas
+ */
+
+#include "GereMoteur.h"
+
+#include "MonPWM.h"
+
+GereMoteur::GereMoteur() {
+
+}
+
+GereMoteur::~GereMoteur() {
+
+}
+
+void GereMoteur::handler() {
+	static u32 rp = 0;
+	rp +=5;
+	lpwm.RegleRapportCyclique(rp );//test
+	if (rp == 1024) rp = 0;
+	xil_printf("rapport cyclique moteur = %d ",rp);
+	lapause(0);
+}
+
+void GereMoteur::SetAdresseMoteur(u32 add) {
+	lpwm.setBaseAddr(add); // on regle l'adresse du PWM
+}

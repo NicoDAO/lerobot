@@ -1,0 +1,20 @@
+/*
+ * Testlibuart.h
+ *
+ *  Created on: 1 sept. 2018
+ *      Author: nicolas
+ */
+
+#ifndef SRC_TESTLIBUART_H_
+#define SRC_TESTLIBUART_H_
+
+class Test_lib_uart {
+public:
+	Test_lib_uart();
+	virtual ~Test_lib_uart();
+	int test_l_uart(void);
+	int UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
+				u16 DeviceId, u16 UartIntrId);
+};
+
+#endif /* SRC_TESTLIBUART_H_ */

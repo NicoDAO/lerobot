@@ -1,0 +1,183 @@
+/*
+ * Empty C++ Application
+ */
+//DOC
+//http://senstools.gforge.inria.fr/doku.php?id=os:freertos:examples
+//https://embetronicx.com/tutorials/rtos/freertos/freertos-queue-tutorial-using-lpc2148/
+
+#include <stdio.h>
+#include "xparameters.h"
+#include "xil_types.h"
+#include "xil_io.h"
+#include "xil_printf.h"
+#include "xil_cache.h"
+#include "math.h"
+#include "FreeRTOS.h"
+#include "CgereAXI.h"
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+#include "stdio.h"
+/* Global Variables */
+
+/* include des differentes libs appli*/
+#include "Uart.h"
+
+#define COMM_VAL  (*(volatile unsigned long *)(0x10000))
+//#define COMM_TAB  (*(volatile char *)( 0xFF00))
+
+#define TIMER_ID	1
+#define DELAY_10_SECONDS	10000UL
+#define DELAY_1_SECOND		1000UL
+#define DELAY_100_MSECOND		100UL
+#define DELAY_10_MSECOND		10UL
+#define DELAY_1_MSECOND		1UL
+#define TIMER_CHECK_THRESHOLD	9
+/*-----------------------------------------------------------*/
+/*			definition des taches							 */
+/* The Tx and Rx tasks as described at the top of this file. */
+static void prvTxTask(void *pvParameters);
+static void bruitTache(void *pvParameters);
+static void handlerGereAXI(void *pvParameters);
+/*-----------------------------------------------------------*/
+/*			definition des bibs					  		     */
+/*															 */
+//CagereAXI laxi2;
+
+/*-----------------------------------------------------------*/
+/*			definition des liens							 */
+/*			lien											 */
+//
+LUart lienSerie;
+
+/* The queue used by the Tx and Rx tasks, as described at the top of this
+ file. */
+static TaskHandle_t xTxTask;
+static TaskHandle_t xRxTask;
+QueueHandle_t xQueue;
+char HWstring[15] = "Hello World";
+long RxtaskCntr = 0;
+uint32_t slv_reg0 = 0x43C20000;
+uint32_t slv_reg1 = slv_reg0 + 4;
+uint32_t slv_reg2 = slv_reg0 + 8;
+uint32_t slv_reg3 = slv_reg0 + 16;
+
+int main(void) {
+
+	Xil_ICacheDisable();
+	Xil_DCacheDisable();
+	while(1);
+	xTaskCreate(prvTxTask, /* The function that implements the task. */
+	(const char *) "Tx", /* Text name for the task, provided to assist debugging only. */
+	configMINIMAL_STACK_SIZE, /* The stack allocated to the task. */
+	NULL, /* The task parameter is not used, so set to NULL. */
+	tskIDLE_PRIORITY, /* The task runs at the idle priority. */
+	&xTxTask);
+
+	xTaskCreate(bruitTache, (const char *) "GB",
+	configMINIMAL_STACK_SIZE,
+	NULL,
+	tskIDLE_PRIORITY + 1, &xRxTask);
+
+	//handlerGereAXI
+	xTaskCreate(handlerGereAXI, (const char *) "AXI",
+	configMINIMAL_STACK_SIZE,
+	NULL,
+	tskIDLE_PRIORITY + 2, NULL);
+
+	xQueue = xQueueCreate(11, sizeof(char));
+#if 1
+	lienSerie.setQueue(&xQueue);
+#endif
+	/* Check the queue was created. */
+	//configASSERT(xQueue);
+
+	/* Start the tasks and timer running. */
+	vTaskStartScheduler();
+
+	for (;;)
+		;
+}
+
+/*-----------------------------------------------------------*/
+static void prvTxTask(void *pvParameters) {
+	const TickType_t x1second = pdMS_TO_TICKS(1);
+	//static int t = 0;
+	static int cpt = 0;
+	static int cpt2 = 0;
+	for (;;) {
+		/* Delay for 1 second. */
+		//
+		static double val = 0;
+		static double t = 0;
+		static double pas = 0.01;
+		unsigned int env;
+
+		if ((cpt2++ % 1000) == 0)
+			pas += 0.001;
+		if (pas > 0.3)
+			pas = 0.01;
+
+		t = t + pas;
+
+		val = (cos(t) + 1) * 100;
+		//env = (int) val | 0xF0000000;
+		env = (int) val;
+		env = (env & 0x0000FFFF) | 0x80000000;
+		if (cpt++ >= 254)
+			cpt = 0;
+		Xil_Out32(0x43C20000, env);
+		vTaskDelay(x1second);
+		RxtaskCntr++;
+	}
+}
+
+/*-----------------------------------------------------------*/
+static void bruitTache(void *pvParameters) {
+	char Recdstring[15] = "";
+	static int cpt = 0;
+	const TickType_t x1second = pdMS_TO_TICKS(1);
+	for (;;) {
+		/* Block to wait for data arriving on the queue. */
+		xQueueReceive(xQueue, /* The queue being read. */
+		Recdstring, /* Data is read into this address. */
+		portMAX_DELAY); /* Wait without a timeout for data. */
+		static int val = 0;
+
+		if ((cpt >= 0) && (cpt < 100)) {
+			val++;
+		}
+		if ((cpt >= 100) && (cpt < 200)) {
+			val--;
+		}
+		if (cpt++ >= 200)
+			cpt = 0;
+		//Xil_Out32(0x43C00000, val);
+		RxtaskCntr++;
+		/* Block the task for the defined time */
+		vTaskDelay(x1second);
+	}
+}
+
+static void handlerGereAXI(void *pvParameters) {
+	char Recdstring[15] = "";
+	static int cpt = 0;
+	TickType_t xLastWakeTime = xTaskGetTickCount();
+	const uint16_t xWakePeriod = 1000;
+#if 0
+	for (;;) {
+		laxi2.handler();
+		/* Block to wait for data arriving on the queue. */
+		xQueueReceive(xQueue, /* The queue being read. */
+		Recdstring, /* Data is read into this address. */
+		portMAX_DELAY); /* Wait without a timeout for data. */
+
+		RxtaskCntr++;
+		/* Block until xWakePeriod ticks since previous call */
+		vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
+	}
+#endif
+}
+
