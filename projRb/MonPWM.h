@@ -8,9 +8,9 @@
 #ifndef SRC_MONPWM_H_
 #define SRC_MONPWM_H_
 #include "config_du_system.h"
+#include "LitMemoireLinux.h"
 
-
-class CommandePWM {
+class CommandePWM :public LitMemoireLinux{
 public:
 	CommandePWM();
 	virtual ~CommandePWM();

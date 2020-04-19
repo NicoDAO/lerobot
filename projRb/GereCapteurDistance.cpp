@@ -24,26 +24,20 @@ void GereCapteurDistance::handler()
     static u32 add = 0;
     static int num = 0;
     printf("\r\nGereCapteurDistance::handler() entree\r\n");
-    if (leMessage1->vecteurMessages.empty())
-    {
+ //   if (leMessage1->vecteurMessages.empty())
+ //   {
         u32 lit = 0, lit_moy = 0;
         u32 add1 = this->adresseAXI + add;
         lit = Xil_In32(add1);
-        ajoute_mesure(lit);
-        lit_moy = calculeMesureMoyenne();
+ //      ajoute_mesure(lit);
+  //      lit_moy = calculeMesureMoyenne();
 //	add++;
-        printf("capteur distance : %d (moy %d)\r\n",lit,lit_moy);
+        printf("capteur distance : %d \r\n",lit);
         AMessage messCapteur;
-        messCapteur.distanceCapteur = lit_moy;
-        snprintf(messCapteur.message,sizeof(messCapteur.message),"distance %d/%d",lit,lit_moy);
-        //printf(">envoieMessage distance brut = %d  , moyenne = %d   taille %d \r\n", lit,lit_moy,leMessage1->Messager);
-      //  int dispo = leMessage1->vecteurMessages.capacity();
+     //   messCapteur.distanceCapteur = lit_moy;
+        snprintf(messCapteur.message,sizeof(messCapteur.message),"distance %d",lit);
         int ret = leMessage1->envoieMessage(&messCapteur);
-#ifdef LOG_CAPTEUR
-        printf(
-            "[%04d]Capteur : envoie message : distance : %d (taille classe = %d/%d)\r\n",
-            cpt_tache, lit_moy, sizeof(messCapteur), dispo);
-#endif
+
 #ifdef LOG_BARGRAF		//dessin du bargraf
         u8 dist_g = lit_moy/1000;
         char bargraf [256];
@@ -59,12 +53,12 @@ void GereCapteurDistance::handler()
             bargraf[u] = '*';
         }
 #endif
-    }
-    else
-    {
-        printf("[%04d]Capteur : la queue est pleine \r\n");
-    }
-    printf("Capteur handler sleep %d sortie\r\n\r\n",this->xWakePeriod);
+//    }
+//    else
+//    {
+//        printf("Capteur : la queue est pleine \r\n");
+//    }
+//    printf("Capteur handler sleep %d sortie\r\n\r\n",this->xWakePeriod);
     sleep(this->xWakePeriod);
 }
 

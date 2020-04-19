@@ -206,7 +206,7 @@ void *handlerGestionTraction(void *pvParameters)
 {
     printf("traction \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    traction.setPeriod(5);
+    traction.setPeriod(1);
     printf("	Gere traction \r\n");
     for (;;)
     {
