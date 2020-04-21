@@ -30,9 +30,6 @@ void GestionTraction::handler()
     u32 vitesse_g = 0;
     char bargraf[256];
 //test
-    snprintf(mot1mess.message,sizeof(mot1mess.message),":puissanc  =%d",num++);
-    leMessage1->envoieMessage(&mot1mess);
-    printf("GestionTraction : envoie %s sleep(%d)\r\n",mot1mess.consigne,this->xWakePeriod);
 //fin test
 #if 1
     if (leMessage3->recoitMessage() == 1)
@@ -71,9 +68,8 @@ void GestionTraction::handler()
         switch (automate)
         {
         case Robot_arret:
-            mot1mess.puissance_moteur = 0;
-            //mot1mess.sens_moteur = 1;
-            mot2mess.puissance_moteur = 0;
+            snprintf(mot1mess.message,sizeof(mot1mess.message),"Robot_arret");
+            snprintf(mot2mess.message,sizeof(mot1mess.message),"Robot_arret");
             printf("Traction : arret\r\n");
             break;
         case Robot_avant_lent:
@@ -89,9 +85,8 @@ void GestionTraction::handler()
             }
             printf("  %s\r\n", bargraf);
 #endif
-            mot1mess.puissance_moteur = vitesse_g + 500;
-            //mot1mess.sens_moteur = 1;
-            mot2mess.puissance_moteur = vitesse_g + 500;
+            snprintf(mot1mess.message,sizeof(mot1mess.message),"vitesse %d",vitesse_g + 500);
+            snprintf(mot2mess.message,sizeof(mot2mess.message),"vitesse %d",vitesse_g + 500);
 #ifdef LOG_MOTEUR
             printf("[%04d]Traction : marche avant\r\n");
 #endif
@@ -99,41 +94,30 @@ void GestionTraction::handler()
             //	automate++;
             break;
         case Robot_arriere_lent:
-            mot1mess.puissance_moteur = 100;
-            //mot1mess.sens_moteur = 0;
-            mot2mess.puissance_moteur = 300;
-            //mot1mess.sens_moteur = 1;
-            //	automate++;
+            snprintf(mot1mess.message,sizeof(mot1mess.message),"recule vitesse %d",100);
+            snprintf(mot2mess.message,sizeof(mot2mess.message),"recule vitesse %d",200);
             break;
         case Robot_tourne_droite_arriere:
-            mot1mess.puissance_moteur = 10;
-            mot1mess.sens_moteur = 0;
-            mot2mess.puissance_moteur = 10;
-            mot1mess.sens_moteur = 1;
+            snprintf(mot1mess.message,sizeof(mot1mess.message),"avance vitesse %d",10);
+            snprintf(mot2mess.message,sizeof(mot2mess.message),"recule vitesse %d",10);
             //	automate++;
             break;
         default:
             automate = 0;
             break;
         }
-        /*	if (leMessage1->vecteurMessages.empty()) {
-        		leMessage1->envoieMessage(&mot1mess);
-        	}
-        	if (leMessage2->vecteurMessages.empty()) {
-        		leMessage2->envoieMessage(&mot2mess);
-        	}
-        */
     }
 #endif
+    snprintf(mot1mess.message,sizeof(mot1mess.message),":puissanc  =%d",num++);
+    leMessage1->envoieMessage(&mot1mess);
+    leMessage2->envoieMessage(&mot2mess);
+    //TODO faire pareil pour le moteur 2
+    printf("GestionTraction 1 : envoie %s\r\n",mot1mess.message);
+    printf("GestionTraction 2 : envoie %s\r\n",mot2mess.message);
     //lapause(0);
     sleep(this->xWakePeriod);
 }
 void GestionTraction::RegleSens(u32 rc)
 {
-    //printf("	RegleSens = %d /1000, this->baseAddr = %x \r",rc,this->baseAddr);
-    //u32 rcloc = rc & 0x03FFFF;//on utilise que les 10 bits de poids faible
-    //rcloc |= 20000000;//dans l'IP, le bit 29 sert à router le PWM depuis le bus AXI
-    //rcloc |= 0x20000000;
-    Xil_Out32(this->baseAddr, rc); //allume l'ampli
-    //printf("	ok \r");
+
 }

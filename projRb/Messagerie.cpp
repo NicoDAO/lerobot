@@ -31,16 +31,13 @@ Messager::Messager(char* nom, int taille)
 {
     ssize_t 		len_recv;
     //mqd_t 		My_MQ;
-     // ftok to generate unique key
+    // ftok to generate unique key
     key = ftok(nom, taille);
     // msgget creates a message queue
     // and returns identifier
     msgid = msgget(key, 0666 | IPC_CREAT);
     snprintf(nomqueue,sizeof(nomqueue),"%s",nom);
     printf("Creation messagerie ->%s<-, key : %d  msgid : %d\r\n",nomqueue,key,msgid);
-    AMessage  txMessage;
-    txMessage.priorie = 12;
-
 }
 
 Messager::~Messager()
@@ -51,18 +48,18 @@ int Messager::envoieMessage(AMessage * txMessage)
 {
     //laqueue__ = xQueueCreate(1, sizeof( AMessage )); //creation d'une queue contenant 10 messages
     printf(">   envoieMessage : debut \r\n");
-    ssize_t 		len_recv;
+  //  ssize_t 		len_recv;
     //  mqd_t 		My_MQ;
-    char 			recv[BUF_LEN];
+ //   char 			recv[BUF_LEN];
     // msgsnd to send message
-    mesg_buffer message;
-
-    message.mesg_type = 1;
-    snprintf(message.mesg_text,sizeof(message.mesg_text),"mess %s",txMessage->message);
-    msgsnd(msgid, &message, sizeof(message), 0);
+//   mesg_buffer message;
+//    message.mesg_type = 1;
+//    snprintf(txMessage->mesg_text,sizeof(message.mesg_text),"mess %s",txMessage->message);
+    txMessage->mesg_type = 1;
+    msgsnd(msgid, txMessage, BUF_LEN /*sizeof(txMessage)*/, 0);
     timespec taillemahout;
     taillemahout.tv_sec = 4;
-    printf("    %s   envoieMessage (id %d): %s\r\n",nomqueue,msgid,txMessage->message);
+    printf("    envoieMessage : fin %s(id %d): %s\r\n",nomqueue,msgid,txMessage->message);
     //mq_timedsend(laqueue__, txMessage->message, strlen(txMessage->message), txMessage->priorie,&taillemahout);
     //free(text);
 #if 0
@@ -81,22 +78,12 @@ int Messager::recoitMessage()
     char 			*text;
     char 			recv[BUF_LEN];
     memset(recv, 0, BUF_LEN);
-    // len_recv = mq_receive(laqueue__, recv, BUF_LEN, NULL);
-    // msgrcv to receive message
     printf("    attend message  id:%x\n\r ",msgid);
-     mesg_buffer message;
-    msgrcv(msgid, &message, sizeof(message), 1, 0);
-    // if( EAGAIN ==len_recv )printf("   mq vide %d",len_recv);
-    printf("    recu message :%s\n\r ",message.mesg_text);
     AMessage messagea ;
-
-    snprintf(messagea.message,sizeof(messagea.message),"%s",message.mesg_text);
+    msgrcv(msgid, &messagea, BUF_LEN /*sizeof(messagea)*/, 1, 0);
+    printf("    recu message :%s\n\r ",messagea.message
+    );
     vecteurMessages.push_back(messagea);
-    //   printf("Premier msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
-    //  memset(recv, 0, BUF_LEN);
-    //  len_recv = mq_receive(laqueue__, recv, BUF_LEN, NULL);
-    //  printf("Deuxieme msg recu (len : %u) : %s\n", (unsigned int) len_recv, recv);
-    // printf(" %s  recoit :%s, taille %d\n\r ",nomqueue,message.consigne,vecteurMessages.size());
     return 1;
 }
 int Messager::effaceQueue()

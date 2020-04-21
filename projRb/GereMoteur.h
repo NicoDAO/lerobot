@@ -23,6 +23,7 @@ public:
 	void SetAdresseMoteur(u32);
 	void reglePuissanceMoteur(u32);
 	void met_marcheAvant(void);
+	void met_marcheArriere(void);
 	void SetNomMoteur(char*, unsigned char taille);
 private:
 	u32 AdresseMoteur;

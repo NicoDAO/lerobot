@@ -91,7 +91,7 @@ int main()
     pthread_create(&GereAXI2,NULL,handlerGereAXI2,   (void*)tinfo);
     printf("sortie\r\n");
 #endif
-#if 1
+#if 0
     pthread_create(&GereAXI3,NULL,handlerGereAXI3,   (void*)tinfo);
 #endif
 #if 1
@@ -126,7 +126,7 @@ int main()
 
 void * handlerGereAXI2(void *pvParameters)
 {
-    printf("handlerGereAXI2 \r\n");
+    printf("     \r\n");
     GereLesLed.regleAdresse(0x43C00000);
     FIR1.RegleAdresseAxi(XPAR_FIR_0_S00_AXI_BASEADDR);
     FIR1.SetGereLed(&GereLesLed);

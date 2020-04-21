@@ -32,15 +32,13 @@ struct mesg_buffer {
 } ;
 /*typedef*/ struct AMessage
 {
+    long mesg_type;
+     char message[100];
+ //  int puissance_moteur = 0;
+  //  int sens_moteur = 0;
+ //   int distanceCapteur = 0;
 
-    char ucMessageID;
-    char consigne[20];
-
-    int puissance_moteur = 0;
-    int sens_moteur = 0;
-    int distanceCapteur = 0;
-    char message[100];
-    int priorie=10;
+ //   int priorie=10;
 
 } ;
 class Messager

@@ -21,30 +21,17 @@ GereMoteur::~GereMoteur()
 void GereMoteur::handler()
 {
     u32 rapport_cyclique = 1024;
-    printf("GereMoteur::handler taille  %d\r\n",leMessage1->vecteurMessages.size());
+    //printf("GereMoteur::handler taille  %d\r\n",leMessage1->vecteurMessages.size());
     if (leMessage1->recoitMessage() == 1)
     {
-       // for (unsigned i=0; i<leMessage1->vecteurMessages.size() ; i++)
-
+        // for (unsigned i=0; i<leMessage1->vecteurMessages.size() ; i++)
 #if 1
         while (!leMessage1->vecteurMessages.empty())
         {
-           //  printf("     messages[%d]: %s\r\n",i,leMessage1->vecteurMessages[i].consigne);
+            //  printf("     messages[%d]: %s\r\n",i,leMessage1->vecteurMessages[i].consigne);
             AMessage tt = leMessage1->vecteurMessages.back();
-            printf("     messages: %s,    sleep(%d)\r\n",tt.consigne,this->xWakePeriod);
+            printf("messages: %s\r\n",tt.message);
             leMessage1->vecteurMessages.pop_back();
-            sens = tt.sens_moteur;
-            /*puissance_m*/consigne_puissance = tt.puissance_moteur; //la puissance vas de -1000 à +1000
-            //rapport_entre_2_consignes = (consigne_puissance - puissance_m);
-            //rapport_entre_2_consignes = (rapport_entre_2_consignes / 20) + 1;
-            //if (rapport_entre_2_consignes < 0)
-            //	rapport_entre_2_consignes = 0 - rapport_entre_2_consignes;
-#ifdef LOG_MOTEUR
-            xil_printf(
-                "[%04d]Moteur  : %s consigne_puissance %d, pas = %d \r\n",
-                cpt_tache, this->nom_moteur, consigne_puissance,
-                rapport_entre_2_consignes);
-#endif
         }
         leMessage1->effaceQueue(); //on efface la queue
         /*if (puissance_m < consigne_puissance) {
@@ -83,7 +70,7 @@ void GereMoteur::handler()
 void GereMoteur::SetAdresseMoteur(uint32 add)
 {
     puissanceMoteur.setBaseAddr(add); // on regle l'adresse du PWM
-    lsensMoteur.setBaseAddr(add + 4);
+//F    lsensMoteur.setBaseAddr(add + 4);
 }
 
 void GereMoteur::reglePuissanceMoteur(u32 p)
@@ -98,7 +85,11 @@ void GereMoteur::reglePuissanceMoteur(u32 p)
 
 void GereMoteur::met_marcheAvant()
 {
-    lsensMoteur.RegleSens(1);
+    lsensMoteur.RegleSens(Marche_avant);
+}
+void GereMoteur::met_marcheArriere()
+{
+    lsensMoteur.RegleSens(Marche_arriere);
 }
 
 void GereMoteur::SetNomMoteur(char * nom, unsigned char taille)

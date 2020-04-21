@@ -9,6 +9,8 @@
 #define SRC_MONPWM_H_
 #include "config_du_system.h"
 #include "LitMemoireLinux.h"
+#include "xparameters.h"
+
 
 class CommandePWM :public LitMemoireLinux{
 public:

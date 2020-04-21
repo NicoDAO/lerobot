@@ -6,7 +6,7 @@
  */
 
 #include "SensMoteur.h"
-
+#include "xparameters.h"
 SensMoteur::SensMoteur() {
 	// TODO Auto-generated constructor stub
 
@@ -22,7 +22,7 @@ void SensMoteur::setBaseAddr(u32 aa){
 
 void SensMoteur::RegleSens(u32 rc){
 
-	Xil_Out32(this->baseAddr, rc); //allume l'ampli
+	Xil_Out32(this->baseAddr,REGISTRE_SENS_ROTATION, rc); //allume l'ampli
 
 
 

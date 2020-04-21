@@ -23,7 +23,7 @@ void GereCapteurDistance::handler()
     //https://www.xilinx.com/support/documentation/ip_documentation/axi_dma/v7_1/pg021_axi_dma.pdf
     static u32 add = 0;
     static int num = 0;
-    printf("\r\nGereCapteurDistance::handler() entree\r\n");
+  //  printf("\r\nGereCapteurDistance::handler() entree\r\n");
  //   if (leMessage1->vecteurMessages.empty())
  //   {
         u32 lit = 0, lit_moy = 0;

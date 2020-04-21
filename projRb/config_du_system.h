@@ -13,6 +13,16 @@
 #define UTILISE_GPIO_ZYNQ
 
 
+
+
+enum{
+    Marche_arriere =0,
+    Marche_avant
+
+};
+
+
+
 //#define LOG_MOTEUR
 //#define LOG_CAPTEUR
 //#define LOG_BARGRAF
