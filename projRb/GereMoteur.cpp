@@ -11,7 +11,7 @@
 
 GereMoteur::GereMoteur()
 {
-    snprintf(this->nom_moteur, sizeof(this->nom_moteur), "moteur????");
+    log_info(this->nom_moteur, sizeof(this->nom_moteur), "moteur????");
 }
 
 GereMoteur::~GereMoteur()
@@ -21,16 +21,16 @@ GereMoteur::~GereMoteur()
 void GereMoteur::handler()
 {
     u32 rapport_cyclique = 1024;
-    //printf("GereMoteur::handler taille  %d\r\n",leMessage1->vecteurMessages.size());
+    //log_info("GereMoteur::handler taille  %d\r\n",leMessage1->vecteurMessages.size());
     if (leMessage1->recoitMessage() == 1)
     {
         // for (unsigned i=0; i<leMessage1->vecteurMessages.size() ; i++)
 #if 1
         while (!leMessage1->vecteurMessages.empty())
         {
-            //  printf("     messages[%d]: %s\r\n",i,leMessage1->vecteurMessages[i].consigne);
+            //  log_info("     messages[%d]: %s\r\n",i,leMessage1->vecteurMessages[i].consigne);
             AMessage tt = leMessage1->vecteurMessages.back();
-            printf("messages: %s\r\n",tt.message);
+            log_info("messages: %s\r\n",tt.message);
             leMessage1->vecteurMessages.pop_back();
         }
         leMessage1->effaceQueue(); //on efface la queue
@@ -56,7 +56,7 @@ void GereMoteur::handler()
             puissanceMoteur.RegleRapportCyclique(rapport_cyclique); //test
         }
 #ifdef LOG_MOTEUR
-        xil_printf(
+        xil_log_info(
             "[%04d]moteur :  %s  sens : %d  p= %d, rapport cycl = %d ,  consigne %d\r\n",
             cpt_tache, this->nom_moteur, sens, puissance_m,
             rapport_cyclique, consigne_puissance);
@@ -75,10 +75,10 @@ void GereMoteur::SetAdresseMoteur(uint32 add)
 
 void GereMoteur::reglePuissanceMoteur(u32 p)
 {
-    //xil_printf("->PuissanceMoteur = \r", p);
+    //xil_log_info("->PuissanceMoteur = \r", p);
     puissanceMoteur.RegleRapportCyclique(p); //test
 #ifdef LOG_MOTEUR
-    xil_printf("  %s   puissance du moteur = %d /1000 \r\n", this->nom_moteur,
+    xil_log_info("  %s   puissance du moteur = %d /1000 \r\n", this->nom_moteur,
                p);
 #endif
 }
@@ -94,6 +94,6 @@ void GereMoteur::met_marcheArriere()
 
 void GereMoteur::SetNomMoteur(char * nom, unsigned char taille)
 {
-    snprintf(this->nom_moteur, sizeof(this->nom_moteur), "%s", nom);
+    log_info(this->nom_moteur, sizeof(this->nom_moteur), "%s", nom);
 }
 

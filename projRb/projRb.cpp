@@ -1,4 +1,3 @@
-#include <iostream>
 using namespace std;
 
 #include <iostream>
@@ -62,15 +61,15 @@ int main()
     //Messager messageConsigneMoteur;
     pthread_t GereAXI2, GereAXI3,GereMoteur1,GereMoteur2,GestionTraction,CapteurDistance;
     pthread_attr_t attr;
-    printf("main \r\n");
+    log_info("main \r\n");
     struct thread_info *tinfo;
     traction.SetMessage1(&messageConsigneMoteur1);
     traction.SetMessage2(&messageConsigneMoteur2);
     traction.SetMessage3(&messageMesureDistanceCapteur);
     char nom[40];
-    snprintf(nom, sizeof(nom), "moteur1");
+    log_info(nom, sizeof(nom), "moteur1");
     mot1.SetNomMoteur(nom, 0);
-    snprintf(nom, sizeof(nom), "moteur2");
+    log_info(nom, sizeof(nom), "moteur2");
     mot2.SetNomMoteur(nom, 0);
     mot1.SetMessage1(&messageConsigneMoteur1);
     mot2.SetMessage1(&messageConsigneMoteur2);
@@ -87,9 +86,9 @@ int main()
     //	lien1.setXUartPs(&Uart_Ps);
 #ifdef LANCE_FIR
     //unsigned long int *, const pthread_attr_t *, void * (*)(void *), void *
-    printf("pthread_create\r\n");
+    log_info("pthread_create\r\n");
     pthread_create(&GereAXI2,NULL,handlerGereAXI2,   (void*)tinfo);
-    printf("sortie\r\n");
+    log_info("sortie\r\n");
 #endif
 #if 0
     pthread_create(&GereAXI3,NULL,handlerGereAXI3,   (void*)tinfo);
@@ -126,7 +125,7 @@ int main()
 
 void * handlerGereAXI2(void *pvParameters)
 {
-    printf("     \r\n");
+    log_info("     \r\n");
     GereLesLed.regleAdresse(0x43C00000);
     FIR1.RegleAdresseAxi(XPAR_FIR_0_S00_AXI_BASEADDR);
     FIR1.SetGereLed(&GereLesLed);
@@ -158,7 +157,7 @@ void * handlerGereAXI2(void *pvParameters)
     Volume1.RegleNumeroBouton(1);
     for (;;)
     {
-        printf("FIR handler \r\n");
+        log_info("FIR handler \r\n");
         FIR1.handler();
         FIR2.handler();
         FIR3.handler();
@@ -168,7 +167,7 @@ void * handlerGereAXI2(void *pvParameters)
 }
 void * handlerGereAXI3(void *pvParameters)
 {
-    printf("handlerGereAXI3 \r\n");
+    log_info("handlerGereAXI3 \r\n");
     Volume1.RegleAdresseAxi(XPAR_GAINNVOIES_0_S00_AXI_BASEADDR);
     Volume1.setPeriod(10);
     for (;;)
@@ -179,11 +178,11 @@ void * handlerGereAXI3(void *pvParameters)
 }
 void *handlerGereMoteur1(void *pvParameters)
 {
-    printf("handlerGereMoteur \r\n");
+    log_info("handlerGereMoteur \r\n");
     mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
     //mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
     mot1.setPeriod(1);
-    printf("	GereMoteur 1 \r\n");
+    log_info("	GereMoteur 1 \r\n");
     for (;;)
     {
         mot1.handler();
@@ -192,10 +191,10 @@ void *handlerGereMoteur1(void *pvParameters)
 }
 void *handlerGereMoteur2(void *pvParameters)
 {
-    printf("handlerGereMoteur \r\n");
+    log_info("handlerGereMoteur \r\n");
     mot2.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
     mot2.setPeriod(4);
-    printf("	GereMoteur 2\r\n");
+    log_info("	GereMoteur 2\r\n");
     for (;;)
     {
         mot2.handler();
@@ -204,10 +203,10 @@ void *handlerGereMoteur2(void *pvParameters)
 }
 void *handlerGestionTraction(void *pvParameters)
 {
-    printf("traction \r\n");
+    log_info("traction \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
     traction.setPeriod(1);
-    printf("	Gere traction \r\n");
+    log_info("	Gere traction \r\n");
     for (;;)
     {
         traction.handler();
@@ -216,7 +215,7 @@ void *handlerGestionTraction(void *pvParameters)
 }
 void *handlerCapteurDistance(void *pvParameters)
 {
-    printf("capteurDistance \r\n");
+    log_info("capteurDistance \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
     capteurDistance.setPeriod(4);
     capteurDistance.RegleAdresseAxi(

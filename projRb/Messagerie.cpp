@@ -7,6 +7,7 @@
 
 #include "Messagerie.h"
 #include "stdio.h"
+#include "config_du_system.h"
 //#include <fcntl.h>           /* For O_* constants */
 #include <sys/stat.h>        /* For mode constants */
 //#include <mqueue.h>
@@ -36,8 +37,8 @@ Messager::Messager(char* nom, int taille)
     // msgget creates a message queue
     // and returns identifier
     msgid = msgget(key, 0666 | IPC_CREAT);
-    snprintf(nomqueue,sizeof(nomqueue),"%s",nom);
-    printf("Creation messagerie ->%s<-, key : %d  msgid : %d\r\n",nomqueue,key,msgid);
+    log_info(nomqueue,sizeof(nomqueue),"%s",nom);
+    log_info("Creation messagerie ->%s<-, key : %d  msgid : %d\r\n",nomqueue,key,msgid);
 }
 
 Messager::~Messager()
@@ -47,19 +48,19 @@ Messager::~Messager()
 int Messager::envoieMessage(AMessage * txMessage)
 {
     //laqueue__ = xQueueCreate(1, sizeof( AMessage )); //creation d'une queue contenant 10 messages
-    printf(">   envoieMessage : debut \r\n");
+    log_info(">   envoieMessage : debut \r\n");
   //  ssize_t 		len_recv;
     //  mqd_t 		My_MQ;
  //   char 			recv[BUF_LEN];
     // msgsnd to send message
 //   mesg_buffer message;
 //    message.mesg_type = 1;
-//    snprintf(txMessage->mesg_text,sizeof(message.mesg_text),"mess %s",txMessage->message);
+//    log_info(txMessage->mesg_text,sizeof(message.mesg_text),"mess %s",txMessage->message);
     txMessage->mesg_type = 1;
     msgsnd(msgid, txMessage, BUF_LEN /*sizeof(txMessage)*/, 0);
     timespec taillemahout;
     taillemahout.tv_sec = 4;
-    printf("    envoieMessage : fin %s(id %d): %s\r\n",nomqueue,msgid,txMessage->message);
+    log_info("    envoieMessage : fin %s(id %d): %s\r\n",nomqueue,msgid,txMessage->message);
     //mq_timedsend(laqueue__, txMessage->message, strlen(txMessage->message), txMessage->priorie,&taillemahout);
     //free(text);
 #if 0
@@ -72,16 +73,17 @@ int Messager::envoieMessage(AMessage * txMessage)
 
 int Messager::recoitMessage()
 {
-    printf("recoitMessage (id : %d) %s\n\r ",msgid,nomqueue);
+  //  log_info("recoitMessage (id : %d) %s\n\r ",msgid,nomqueue);
+    log_info("recoitMessage (id : %d) %s\n\r ",msgid,nomqueue);
     char recoitt[200];
     ssize_t 		len_recv;
     char 			*text;
     char 			recv[BUF_LEN];
     memset(recv, 0, BUF_LEN);
-    printf("    attend message  id:%x\n\r ",msgid);
+    log_info("    attend message  id:%x\n\r ",msgid);
     AMessage messagea ;
     msgrcv(msgid, &messagea, BUF_LEN /*sizeof(messagea)*/, 1, 0);
-    printf("    recu message :%s\n\r ",messagea.message
+    log_info("    recu message :%s\n\r ",messagea.message
     );
     vecteurMessages.push_back(messagea);
     return 1;

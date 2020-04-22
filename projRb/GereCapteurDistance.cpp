@@ -9,7 +9,7 @@
 #include "config_du_system.h"
 GereCapteurDistance::GereCapteurDistance()
 {
-    //snprintf(this->nom_moteur, sizeof(this->nom_moteur), "moteur????");
+    //log_info(this->nom_moteur, sizeof(this->nom_moteur), "moteur????");
     memset(tabMesure, 0, sizeof(tabMesure));
 }
 
@@ -23,7 +23,7 @@ void GereCapteurDistance::handler()
     //https://www.xilinx.com/support/documentation/ip_documentation/axi_dma/v7_1/pg021_axi_dma.pdf
     static u32 add = 0;
     static int num = 0;
-  //  printf("\r\nGereCapteurDistance::handler() entree\r\n");
+  //  log_info("\r\nGereCapteurDistance::handler() entree\r\n");
  //   if (leMessage1->vecteurMessages.empty())
  //   {
         u32 lit = 0, lit_moy = 0;
@@ -32,10 +32,10 @@ void GereCapteurDistance::handler()
  //      ajoute_mesure(lit);
   //      lit_moy = calculeMesureMoyenne();
 //	add++;
-        printf("capteur distance : %d \r\n",lit);
+        log_info("capteur distance : %d \r\n",lit);
         AMessage messCapteur;
      //   messCapteur.distanceCapteur = lit_moy;
-        snprintf(messCapteur.message,sizeof(messCapteur.message),"distance %d",lit);
+        log_info(messCapteur.message,sizeof(messCapteur.message),"distance %d",lit);
         int ret = leMessage1->envoieMessage(&messCapteur);
 
 #ifdef LOG_BARGRAF		//dessin du bargraf
@@ -47,7 +47,7 @@ void GereCapteurDistance::handler()
         {
             bargraf[u] = '*';
         }
-        printf("  %s\r\n",bargraf);
+        log_info("  %s\r\n",bargraf);
         for(u8 u = 0; u < dist_g; u++)
         {
             bargraf[u] = '*';
@@ -56,9 +56,9 @@ void GereCapteurDistance::handler()
 //    }
 //    else
 //    {
-//        printf("Capteur : la queue est pleine \r\n");
+//        log_info("Capteur : la queue est pleine \r\n");
 //    }
-//    printf("Capteur handler sleep %d sortie\r\n\r\n",this->xWakePeriod);
+//    log_info("Capteur handler sleep %d sortie\r\n\r\n",this->xWakePeriod);
     sleep(this->xWakePeriod);
 }
 

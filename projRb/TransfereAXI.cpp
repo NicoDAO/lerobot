@@ -51,9 +51,9 @@ void CagereAXI::handler()
         //XGpio_SetDataDirection(&GpioInput, 1, 0xFFFFFFFF);
         etat_automate = EtatInitEnCours;
         EtatChargeCoef = Nv_coef;
-        printf(truc, sizeof(truc), "!!EtatPasEncoreInitialise  =%x\r\n",
+        log_info(truc, sizeof(truc), "!!EtatPasEncoreInitialise  =%x\r\n",
                etat_automate);
-        //	printf(truc);
+        //	log_info(truc);
         Xil_Out32(0x43C00000 + AXI_SLV_REG0_OFFSET, 0x80000000); //allume l'ampli
         Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG3_OFFSET,
                   numFIR); //Regle le numéro du FIR concerné
@@ -66,9 +66,9 @@ void CagereAXI::handler()
         {
             Xil_Out32(this->adresseAXI + AXI_SLV_REG2_OFFSET, 0x1); //activation du mode transparent
             Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0x125); //
-            snprintf(truc, sizeof(truc), "FIR %d : mode chut activé\r\n",
+            log_info(truc, sizeof(truc), "FIR %d : mode chut activé\r\n",
                      this->numFIR);
-            printf(truc);
+            log_info(truc);
             etat_automate = EtatInitFini;
         }
         else
@@ -88,23 +88,23 @@ void CagereAXI::handler()
                           lescoefs[cpt_coef]); //valeur
                 Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0x123); //commande
                 EtatChargeCoef = charge_coef;
-                //snprintf(truc, sizeof(truc),"commande 0x123,adresse coef , %x, valeur : %x\n\r",cpt_coef,lescoefs[cpt_coef]);
-                //printf(truc);
+                //log_info(truc, sizeof(truc),"commande 0x123,adresse coef , %x, valeur : %x\n\r",cpt_coef,lescoefs[cpt_coef]);
+                //log_info(truc);
                 break;
             case charge_coef:
                 //valide l'enregistrement du coef dans le filtre
                 Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0x124); //reg0
                 EtatChargeCoef = Nv_coef;
                 cpt_coef++;
-                //snprintf(truc, sizeof(truc),"commande 0x124,\n\r");
-                //	printf(truc);
+                //log_info(truc, sizeof(truc),"commande 0x124,\n\r");
+                //	log_info(truc);
                 if (cpt_coef >= this->taille_filtre)
                 {
                     etat_automate = EtatInitFini;
-                    snprintf(truc, sizeof(truc),
+                    log_info(truc, sizeof(truc),
                              "EtatInitFini cpt_coef = %d/%d\r\n", cpt_coef,
                              this->taille_filtre);
-                    printf(truc);
+                    log_info(truc);
                 }
                 break;
             case fin_charge:
@@ -121,7 +121,7 @@ void CagereAXI::handler()
                 {
                     chut = (int) etat_bouton;
                     etat_ancien_bouton = etat_bouton;
-                    printf("FIR : %d : etat bouton = %x \r\n", this->numFIR,
+                    log_info("FIR : %d : etat bouton = %x \r\n", this->numFIR,
                            (int) etat_bouton);
                     etat_automate = EtatPasEncoreInitialise;
                 }

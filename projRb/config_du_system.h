@@ -4,6 +4,11 @@
  *  Created on: Jan 24, 2019
  *      Author: nicolas
  */
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include "log.h"
+
 
 #ifndef SRC_CONFIG_DU_SYSTEM_H_
 #define SRC_CONFIG_DU_SYSTEM_H_
@@ -11,7 +16,6 @@
 #include "definitions_types.h"
 //#define UTILISE_GPIO_AXI
 #define UTILISE_GPIO_ZYNQ
-
 
 
 

@@ -1,0 +1,10 @@
+
+#ifndef LOG_FIC___
+#define LOG_FIC___
+
+void log_error(const char* message, ...);
+void log_info(const char* message, ...);
+void log_debug(const char* message, ...);
+
+
+  #endif
