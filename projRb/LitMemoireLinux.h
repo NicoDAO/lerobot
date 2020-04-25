@@ -16,7 +16,8 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include "config_du_system.h"
-class LitMemoireLinux {
+#include "mode_fonctionnement.h"
+class LitMemoireLinux : public mode_foncionnel  {
 public:
 	LitMemoireLinux();
 	virtual ~LitMemoireLinux();

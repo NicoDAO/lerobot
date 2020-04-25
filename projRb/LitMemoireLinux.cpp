@@ -26,36 +26,39 @@ LitMemoireLinux::~LitMemoireLinux()
 }
 u32 LitMemoireLinux::Xil_Out32  (u32 adress,u32 donnee,u32 registre)
 {
-   log_memoire("Xil_Out 32 : ecrit memoire adresse : %08x, donne: %d,	registre :%d\r\n",adress,donnee,registre  );
-
-    #ifndef TEST_PC// __i386__
-    int offset;
-    int *data;
-    struct stat sbuf;
-    size_t pagesize = 20;// sysconf(_SC_PAGE_SIZE);
-    off_t page_base = (adress / pagesize) * pagesize;
-    off_t page_offset = adress - page_base;
-    log_info( "   ouvre /dev/mem\r\n");
-    int fd = open("/dev/mem", O_RDWR);
-    if (fd  == -1)
-        log_info( "open");
-    //data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
-    data = static_cast<int*>(mmap(NULL, pagesize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)adress));
-    if (data == MAP_FAILED)
+    if(estCequonestenmodeRobot()==1)
     {
-        perror("mmap error");
+        log_memoire("Xil_Out 32 : ecrit memoire adresse : %08x, donne: %d,	registre :%d\r\n",adress,donnee,registre  );
+        int offset;
+        int *data;
+        struct stat sbuf;
+        size_t pagesize = 20;// sysconf(_SC_PAGE_SIZE);
+        off_t page_base = (adress / pagesize) * pagesize;
+        off_t page_offset = adress - page_base;
+        log_info( "   ouvre /dev/mem\r\n");
+        int fd = open("/dev/mem", O_RDWR);
+        if (fd  == -1)
+            log_info( "open");
+        //data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
+        data = static_cast<int*>(mmap(NULL, pagesize, PROT_READ | PROT_WRITE, MAP_SHARED, fd, (off_t)adress));
+        if (data == MAP_FAILED)
+        {
+            perror("mmap error");
+        }
+        data[registre] = donnee;
+        log_info("                           OK\r\n");
+        munmap (data, pagesize);
+        //log_info("fin nummap\r\n");
+        // return data[0];
     }
-    data[registre] = donnee;
-    log_info("                           OK\r\n");
-    munmap (data, pagesize);
-    //log_info("fin nummap\r\n");
-   // return data[0];
-#else
-
-    log_capteur("Xil_In32 bidon : %08x	\r\n",trs++);
-    return trs;
-#endif
-
+    else
+    {
+        if(estCequonestenmodeSimu()==1)
+        {
+            log_capteur("Xil_In32 bidon : %08x	\r\n",trs++);
+            return trs;
+        }
+    }
     return 0;
 }
 
@@ -70,7 +73,6 @@ u32 LitMemoireLinux::Xil_In32(u32 adress)
     off_t page_base = (adress / pagesize) * pagesize;
     off_t page_offset = adress - page_base;
     log_info("Xil_In32  : lit memoire adresse : %08x\r\n",adress);
-
     log_info( "ouvre /dev/mem\r\n");
     int fd = open("/dev/mem", O_RDWR);
     if (fd  == -1)

@@ -20,6 +20,7 @@ using namespace std;
 #include "Messagerie.h"
 #include "GereCapteurDistance.h"
 #include "xparameters.h"
+#include "mode_fonctionnement.h"
 
 ConfigureFIR_FPGA FIR1;
 ConfigureFIR_FPGA FIR2;
@@ -55,10 +56,35 @@ Messager messageConsigneMoteur1("/consigneMoteur1",3);
 
 //#define LANCE_FIR
 
-int main()
+int main(int argc, char *argv[])
 {
     //configuation des messages
     //Messager messageConsigneMoteur;
+    char nom[40];
+    log_info("entree  prog principa" );
+    int mode_fonctionnement =MODE_ROBOT;;
+    for (int i = 0; i < argc; ++i)
+    {
+        log_info("argument %s \r\n",argv[i]) ;
+        if (NULL !=strstr(argv[i],"test") )
+        {
+            log_info("on est en mode truc" );
+        }
+        if (NULL !=strstr(argv[i],"simuPC") )
+        {
+            log_info("Mode SIMULATION\r\n" );
+            mode_fonctionnement =MODE_PC_SIMULATION;
+        }
+    }
+    if(mode_fonctionnement == MODE_PC_SIMULATION)   //le mode PC_SIMULATION sert à simuler le fonctionnement du robot sur un PC
+    {                                               // comme il n'y a pas de capteur ni d'actionneur, on met des valeurs simulées
+                                                    // de tous les périphériques
+        mot1.metEnmodeSimu();
+        mot2.metEnmodeSimu();
+        capteurDistance.metEnmodeSimu();
+    }
+
+
     pthread_t GereAXI2, GereAXI3,GereMoteur1,GereMoteur2,GestionTraction,CapteurDistance;
     pthread_attr_t attr;
     log_info("main \r\n");
@@ -66,10 +92,9 @@ int main()
     traction.SetMessage1(&messageConsigneMoteur1);
     traction.SetMessage2(&messageConsigneMoteur2);
     traction.SetMessage3(&messageMesureDistanceCapteur);
-    char nom[40];
-    log_info(nom, sizeof(nom), "moteur1");
+    snprintf(nom, sizeof(nom), "moteur1");
     mot1.SetNomMoteur(nom, 0);
-    log_info(nom, sizeof(nom), "moteur2");
+    snprintf(nom, sizeof(nom), "moteur2");
     mot2.SetNomMoteur(nom, 0);
     mot1.SetMessage1(&messageConsigneMoteur1);
     mot2.SetMessage1(&messageConsigneMoteur2);
