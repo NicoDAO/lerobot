@@ -29,12 +29,19 @@ void GestionTraction::handler()
     int mesureDistance = 0;
     u32 vitesse_g = 0;
     char bargraf[256];
+        int puissance_moteur1 = 0;
+    int puissance_moteur2 = 0;
 //test
 //fin test
 #if 1
-    if (leMessage3->recoitMessage() == 1)
+    leMessage3->recoitMessage();
+    //  {
+    log_traction("GestionTraction : recoit %d message\r\n",leMessage3->vecteurMessages.size()     );
+    for (unsigned i=0; i<leMessage3->vecteurMessages.size() ; i++)
     {
-        log_info("GestionTraction : recoitt mesure distance");
+        char mmmm[MSGLEN];
+        snprintf(mmmm,sizeof(mmmm),"%s",leMessage3->vecteurMessages[i].message);
+        log_traction("[%d]GestionTraction : recoit mesure distance : %s",i,     mmmm);
         //int taille = leMessage3->vecteurMessages.size();
         //test logique
         if((mesureDistance <(mesureDistance_avant-2000)) || (mesureDistance >(mesureDistance_avant+2000)))
@@ -68,56 +75,55 @@ void GestionTraction::handler()
         switch (automate)
         {
         case Robot_arret:
-            log_info(mot1mess.message,sizeof(mot1mess.message),"Robot_arret");
-            log_info(mot2mess.message,sizeof(mot1mess.message),"Robot_arret");
-            log_info("Traction : arret\r\n");
+            log_traction("robot arret\r\n");
+            puissance_moteur1 = 0;
+            puissance_moteur2 = 0;
             break;
         case Robot_avant_lent:
+          log_traction("robot avance lentement\r\n");
+
             vitesse_g = mesureDistance / 1000;
-#ifdef LOG_BARGRAF
-            //memset(bargraf, 0, sizeof bargraf);
-            slog_info(bargraf,"\0");
-            if (vitesse_g >= sizeof(bargraf))
-                vitesse_g = sizeof(bargraf) - 1;
-            for (u8 u = 0; u < vitesse_g; u++)
-            {
-                bargraf[u] = 'O';
-            }
-            log_info("  %s\r\n", bargraf);
-#endif
-            log_info(mot1mess.message,sizeof(mot1mess.message),"vitesse %d",vitesse_g + 500);
-            log_info(mot2mess.message,sizeof(mot2mess.message),"vitesse %d",vitesse_g + 500);
-#ifdef LOG_MOTEUR
-            log_info("[%04d]Traction : marche avant\r\n");
-#endif
+            puissance_moteur1 = 10;
+            puissance_moteur2 = 10;
             //mot1mess.sens_moteur = 0;
             //	automate++;
             break;
         case Robot_arriere_lent:
-            log_info(mot1mess.message,sizeof(mot1mess.message),"recule vitesse %d",100);
-            log_info(mot2mess.message,sizeof(mot2mess.message),"recule vitesse %d",200);
+          log_traction("robot recule lentement\r\n");
+
+            puissance_moteur1 = -10;
+            puissance_moteur2 = -10;
             break;
         case Robot_tourne_droite_arriere:
-            log_info(mot1mess.message,sizeof(mot1mess.message),"avance vitesse %d",10);
-            log_info(mot2mess.message,sizeof(mot2mess.message),"recule vitesse %d",10);
+            log_traction("robot tourne arriere droite\r\n");
+
+
+            log_traction(mot1mess.message,sizeof(mot1mess.message),"avance vitesse %d",10);
+            log_traction(mot2mess.message,sizeof(mot2mess.message),"recule vitesse %d",10);
+            puissance_moteur1 =  10;
+            puissance_moteur2 = -10;
+
             //	automate++;
             break;
         default:
+              log_traction("robot etat indeterminé\r\n");
+
             automate = 0;
             break;
         }
     }
 #endif
-    log_info(mot1mess.message,sizeof(mot1mess.message),":puissanc  =%d",num++);
+    leMessage3->effaceQueue();
+    snprintf(mot1mess.message,sizeof(mot1mess.message),":puissanc  =%d",puissance_moteur1);
+    snprintf(mot2mess.message,sizeof(mot1mess.message),":puissanc  =%d",puissance_moteur2);
+ //   log_traction("GestionTraction 1 : envoie %s\r\n",mot1mess.message);
+//    log_traction("GestionTraction 2 : envoie %s\r\n",mot2mess.message);
     leMessage1->envoieMessage(&mot1mess);
     leMessage2->envoieMessage(&mot2mess);
     //TODO faire pareil pour le moteur 2
-    log_info("GestionTraction 1 : envoie %s\r\n",mot1mess.message);
-    log_info("GestionTraction 2 : envoie %s\r\n",mot2mess.message);
     //lapause(0);
     sleep(this->xWakePeriod);
 }
 void GestionTraction::RegleSens(u32 rc)
 {
-
 }

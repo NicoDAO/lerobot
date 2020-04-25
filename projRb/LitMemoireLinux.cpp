@@ -26,7 +26,7 @@ LitMemoireLinux::~LitMemoireLinux()
 }
 u32 LitMemoireLinux::Xil_Out32  (u32 adress,u32 donnee,u32 registre)
 {
-   log_info("Xil_Out 32 : ecrit memoire adresse : %08x, donne: %d,	registre :%d\r\n",adress,donnee,registre  );
+   log_memoire("Xil_Out 32 : ecrit memoire adresse : %08x, donne: %d,	registre :%d\r\n",adress,donnee,registre  );
 
     #ifndef TEST_PC// __i386__
     int offset;
@@ -51,8 +51,9 @@ u32 LitMemoireLinux::Xil_Out32  (u32 adress,u32 donnee,u32 registre)
     //log_info("fin nummap\r\n");
    // return data[0];
 #else
-    log_info("Xil_In32 bifon : %08x	\r\n",adress);
-    return NULL;
+
+    log_capteur("Xil_In32 bidon : %08x	\r\n",trs++);
+    return trs;
 #endif
 
     return 0;
@@ -80,13 +81,13 @@ u32 LitMemoireLinux::Xil_In32(u32 adress)
     {
         perror("mmap error");
     }
-    log_info("Xil_In32 : %08x	%d\r\n",adress, data[0]);
+    log_memoire("Xil_In32 : %08x	%d\r\n",adress, data[0]);
     //munmap (data, pagesize);
     //log_info("fin nummap\r\n");
     return data[0];
 #else
-    log_info("Xil_In32 bifon : %08x	\r\n",adress);
-    return NULL;
+    log_memoire("Xil_In32 bifon : %08x	\r\n",adress);
+    return trs++;
 #endif
 }
 

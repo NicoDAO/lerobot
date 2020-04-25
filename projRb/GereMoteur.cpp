@@ -30,7 +30,7 @@ void GereMoteur::handler()
         {
             //  log_info("     messages[%d]: %s\r\n",i,leMessage1->vecteurMessages[i].consigne);
             AMessage tt = leMessage1->vecteurMessages.back();
-            log_info("messages: %s\r\n",tt.message);
+            log_moteur("messages: %s\r\n",tt.message);
             leMessage1->vecteurMessages.pop_back();
         }
         leMessage1->effaceQueue(); //on efface la queue
@@ -94,6 +94,6 @@ void GereMoteur::met_marcheArriere()
 
 void GereMoteur::SetNomMoteur(char * nom, unsigned char taille)
 {
-    log_info(this->nom_moteur, sizeof(this->nom_moteur), "%s", nom);
+    log_moteur(this->nom_moteur, sizeof(this->nom_moteur), "%s", nom);
 }
 

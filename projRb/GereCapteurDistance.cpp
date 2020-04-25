@@ -32,10 +32,10 @@ void GereCapteurDistance::handler()
  //      ajoute_mesure(lit);
   //      lit_moy = calculeMesureMoyenne();
 //	add++;
-        log_info("capteur distance : %d \r\n",lit);
+        log_capteur("capteur distance : %d \r\n",lit);
         AMessage messCapteur;
      //   messCapteur.distanceCapteur = lit_moy;
-        log_info(messCapteur.message,sizeof(messCapteur.message),"distance %d",lit);
+        snprintf(messCapteur.message,sizeof(messCapteur.message),"distance = %d",lit);
         int ret = leMessage1->envoieMessage(&messCapteur);
 
 #ifdef LOG_BARGRAF		//dessin du bargraf

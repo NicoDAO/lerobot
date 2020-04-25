@@ -36,9 +36,10 @@ Messager::Messager(char* nom, int taille)
     key = ftok(nom, taille);
     // msgget creates a message queue
     // and returns identifier
+    snprintf(nomqueue,sizeof(nomqueue),"%s",nom);
     msgid = msgget(key, 0666 | IPC_CREAT);
-    log_info(nomqueue,sizeof(nomqueue),"%s",nom);
-    log_info("Creation messagerie ->%s<-, key : %d  msgid : %d\r\n",nomqueue,key,msgid);
+    //log_message(nomqueue,sizeof(nomqueue),"%s",nom);
+    log_message("Creation messagerie ->%s<-, key : %d  msgid : %d\r\n",nomqueue,key,msgid);
 }
 
 Messager::~Messager()
@@ -48,7 +49,7 @@ Messager::~Messager()
 int Messager::envoieMessage(AMessage * txMessage)
 {
     //laqueue__ = xQueueCreate(1, sizeof( AMessage )); //creation d'une queue contenant 10 messages
-    log_info(">   envoieMessage : debut \r\n");
+   // log_message(">   envoieMessage : debut \r\n");
   //  ssize_t 		len_recv;
     //  mqd_t 		My_MQ;
  //   char 			recv[BUF_LEN];
@@ -60,7 +61,7 @@ int Messager::envoieMessage(AMessage * txMessage)
     msgsnd(msgid, txMessage, BUF_LEN /*sizeof(txMessage)*/, 0);
     timespec taillemahout;
     taillemahout.tv_sec = 4;
-    log_info("    envoieMessage : fin %s(id %d): %s\r\n",nomqueue,msgid,txMessage->message);
+    log_message("%s envoieMessage : fin (id %d): %s\r\n",nomqueue,msgid,txMessage->message);
     //mq_timedsend(laqueue__, txMessage->message, strlen(txMessage->message), txMessage->priorie,&taillemahout);
     //free(text);
 #if 0
@@ -74,17 +75,16 @@ int Messager::envoieMessage(AMessage * txMessage)
 int Messager::recoitMessage()
 {
   //  log_info("recoitMessage (id : %d) %s\n\r ",msgid,nomqueue);
-    log_info("recoitMessage (id : %d) %s\n\r ",msgid,nomqueue);
+   // log_message("recoitMessage (id : %d) %s\n\r ",msgid,nomqueue);
     char recoitt[200];
     ssize_t 		len_recv;
     char 			*text;
     char 			recv[BUF_LEN];
     memset(recv, 0, BUF_LEN);
-    log_info("    attend message  id:%x\n\r ",msgid);
+    log_message("    attend message  id:%x\n\r ",msgid);
     AMessage messagea ;
     msgrcv(msgid, &messagea, BUF_LEN /*sizeof(messagea)*/, 1, 0);
-    log_info("    recu message :%s\n\r ",messagea.message
-    );
+    log_message("%s    recu message :%s\n\r ",nomqueue,messagea.message );
     vecteurMessages.push_back(messagea);
     return 1;
 }
@@ -93,6 +93,7 @@ int Messager::effaceQueue()
     //xQueueReset(laqueue__);
     //	vQueueDelete(laqueue__);
     //delete laqueue__;
+    vecteurMessages.clear();
 }
 int Messager::creeQueue()
 {
