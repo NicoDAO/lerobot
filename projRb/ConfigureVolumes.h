@@ -18,7 +18,7 @@ enum {
 	etat_fini
 };
 
-class ConfigureVolumes: public CagereAXI {
+class ConfigureVolumes: public CagereAXI{
 public:
 	ConfigureVolumes();
 	virtual ~ConfigureVolumes();

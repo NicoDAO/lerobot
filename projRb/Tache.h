@@ -14,7 +14,7 @@
 #include "LitMemoireLinux.h"
 
 
-class Tache : public LitMemoireLinux {
+class Tache  {
 public:
 	Tache();
 	virtual ~Tache();

@@ -79,7 +79,7 @@ void GereMoteur::reglePuissanceMoteur(u32 p)
     puissanceMoteur.RegleRapportCyclique(p); //test
 #ifdef LOG_MOTEUR
     xil_log_info("  %s   puissance du moteur = %d /1000 \r\n", this->nom_moteur,
-               p);
+                 p);
 #endif
 }
 
@@ -94,6 +94,12 @@ void GereMoteur::met_marcheArriere()
 
 void GereMoteur::SetNomMoteur(char * nom, unsigned char taille)
 {
-    log_moteur(this->nom_moteur, sizeof(this->nom_moteur), "%s", nom);
+    snprintf(this->nom_moteur, sizeof(this->nom_moteur), "%s", nom);
 }
 
+void GereMoteur::metEnmodeSimu(){
+    log_moteur("met moteur (%s) en mode simu",nom_moteur);
+    puissanceMoteur.metEnmodeSimu();
+    lsensMoteur.metEnmodeSimu();
+
+}

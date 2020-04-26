@@ -21,6 +21,7 @@ class LitMemoireLinux : public mode_foncionnel  {
 public:
 	LitMemoireLinux();
 	virtual ~LitMemoireLinux();
+
 protected:
 	u32 Xil_In32(u32 adresse);
 	u32 Xil_Out32(u32 adresse, u32 valeur, u32 registre=0);

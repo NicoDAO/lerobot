@@ -72,19 +72,9 @@ int main(int argc, char *argv[])
         }
         if (NULL !=strstr(argv[i],"simuPC") )
         {
-            log_info("Mode SIMULATION\r\n" );
             mode_fonctionnement =MODE_PC_SIMULATION;
         }
     }
-    if(mode_fonctionnement == MODE_PC_SIMULATION)   //le mode PC_SIMULATION sert à simuler le fonctionnement du robot sur un PC
-    {                                               // comme il n'y a pas de capteur ni d'actionneur, on met des valeurs simulées
-                                                    // de tous les périphériques
-        mot1.metEnmodeSimu();
-        mot2.metEnmodeSimu();
-        capteurDistance.metEnmodeSimu();
-    }
-
-
     pthread_t GereAXI2, GereAXI3,GereMoteur1,GereMoteur2,GestionTraction,CapteurDistance;
     pthread_attr_t attr;
     log_info("main \r\n");
@@ -100,6 +90,26 @@ int main(int argc, char *argv[])
     mot2.SetMessage1(&messageConsigneMoteur2);
     capteurDistance.SetMessage1(&messageMesureDistanceCapteur);
     GereLesLed.regleAdresse(0x43C00000);
+    if(mode_fonctionnement == MODE_PC_SIMULATION)   //le mode PC_SIMULATION sert à simuler le fonctionnement du robot sur un PC
+    {
+        // comme il n'y a pas de capteur ni d'actionneur, on met des valeurs simulées
+        // de tous les périphériques
+        log_info("Mode SIMULATION\r\n" );
+        //    mot1.metEnmodeSimu();
+        //  mot1.getPuissanceMoteur()->metEnmodeSimu();
+        //   mot1.getPuissanceMoteur()->estCequonestenmodeSimu();
+        //   mot2.getPuissanceMoteur()->metEnmodeSimu();
+        //   mot2.getPuissanceMoteur()->estCequonestenmodeSimu();
+        mot1.metEnmodeSimu();
+        mot2.metEnmodeSimu();
+        capteurDistance.metEnmodeSimu();
+        log_info("1 ");
+        log_info("2" );
+        log_info("3" );
+        log_info("4" );
+        log_info("5" );
+        log_info("6 " );
+    }
 #if TEST_LUART == 1
     //test_l_uart();
     Test_lib_uart tt;
@@ -150,7 +160,7 @@ int main(int argc, char *argv[])
 
 void * handlerGereAXI2(void *pvParameters)
 {
-    log_info("     \r\n");
+    log_info("handlerGereAXI2        \r\n");
     GereLesLed.regleAdresse(0x43C00000);
     FIR1.RegleAdresseAxi(XPAR_FIR_0_S00_AXI_BASEADDR);
     FIR1.SetGereLed(&GereLesLed);

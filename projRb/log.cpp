@@ -96,3 +96,12 @@ void log_memoire(const char* message, ...)
     va_end(args);
 
 }
+void log_simumemoire(const char* message, ...)
+ {
+
+    va_list args;
+    va_start(args, message);
+    log_format("simu mem", message, args);
+    va_end(args);
+
+}

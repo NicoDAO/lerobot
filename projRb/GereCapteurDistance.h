@@ -12,6 +12,7 @@
 #include "Tache.h"
 
 #include "Messagerie.h"
+#include "LitMemoireLinux.h"
 #include <cstring>
 class GereCapteurDistance: public CagereAXI {
 public:

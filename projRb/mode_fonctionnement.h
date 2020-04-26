@@ -24,7 +24,7 @@ public :
     int estCequonestenmodeSimu(void);
 
 
-private :
+protected :
 
     int mode = MODE_ROBOT;
 

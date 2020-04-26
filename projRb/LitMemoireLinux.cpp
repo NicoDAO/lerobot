@@ -28,7 +28,7 @@ u32 LitMemoireLinux::Xil_Out32  (u32 adress,u32 donnee,u32 registre)
 {
     if(estCequonestenmodeRobot()==1)
     {
-        log_memoire("Xil_Out 32 : ecrit memoire adresse : %08x, donne: %d,	registre :%d\r\n",adress,donnee,registre  );
+        log_memoire("ROBO 32 : ecrit memoire adresse : %08x, donne: %d,	registre :%d\r\n",adress,donnee,registre  );
         int offset;
         int *data;
         struct stat sbuf;
@@ -49,13 +49,13 @@ u32 LitMemoireLinux::Xil_Out32  (u32 adress,u32 donnee,u32 registre)
         log_info("                           OK\r\n");
         munmap (data, pagesize);
         //log_info("fin nummap\r\n");
-        // return data[0];
+         return data[0];
     }
     else
     {
         if(estCequonestenmodeSimu()==1)
         {
-            log_capteur("Xil_In32 bidon : %08x	\r\n",trs++);
+            log_simumemoire("SIMULATION %d   r\n",trs++);
             return trs;
         }
     }
@@ -88,7 +88,7 @@ u32 LitMemoireLinux::Xil_In32(u32 adress)
     //log_info("fin nummap\r\n");
     return data[0];
 #else
-    log_memoire("Xil_In32 bifon : %08x	\r\n",adress);
+    log_simumemoire("Xil_In32 bifon : %08x	\r\n",adress);
     return trs++;
 #endif
 }

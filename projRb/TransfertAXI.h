@@ -19,9 +19,9 @@
 
 //#include "xstatus.h"
 
+#include "LitMemoireLinux.h"
 
-
-class CagereAXI : public Tache {
+class CagereAXI : public Tache, public LitMemoireLinux {
 public:
 	CagereAXI();
 	virtual ~CagereAXI();

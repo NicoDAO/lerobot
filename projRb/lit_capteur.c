@@ -21,15 +21,15 @@ int main(int argc, char *argv[])
     size_t pagesize = 20;// sysconf(_SC_PAGE_SIZE);
     off_t page_base = (adress / pagesize) * pagesize;
     off_t page_offset = adress - page_base;
-    // printf("$$lecture memoire a l'adresse %x, taille = %d \n",adress,pagesize);
+    // log_info("$$lecture memoire a l'adresse %x, taille = %d \n",adress,pagesize);
     if (argc != 2)
     {
-        printf( "usage: mmapdemo offset\n");
+        log_info( "usage: mmapdemo offset\n");
         exit(1);
     }
     int fd = open("/dev/mem", O_RDWR);
     if (fd  == -1)
-        printf(1, "open");
+        log_info(1, "open");
     // data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
     while(1)
     {
@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
         }
         /*  for(int i = 0; i < 10; i++)
          {
-           printf("[%lu]=%X ", i, data[i]);
+           log_info("[%lu]=%X ", i, data[i]);
          }*/
-        printf("distance capteur : %d\r\n", data[0]);
+        log_info("distance capteur : %d\r\n", data[0]);
         munmap (data, pagesize);
         sleep(1);
     }
