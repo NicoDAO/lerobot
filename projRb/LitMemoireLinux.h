@@ -17,6 +17,7 @@
 #include <errno.h>
 #include "config_du_system.h"
 #include "mode_fonctionnement.h"
+#include "Simulation.h"
 class LitMemoireLinux : public mode_foncionnel  {
 public:
 	LitMemoireLinux();
@@ -27,6 +28,8 @@ protected:
 	u32 Xil_Out32(u32 adresse, u32 valeur, u32 registre=0);
 	int fd ;
 	unsigned int trs = 0;
+private:
+	Simulation simu;
 };
 
 #endif /* LITMEMOIRELINUX_H_ */

@@ -23,7 +23,7 @@ void log_error(const char* message, ...)
 
 void log_info(const char* message, ...)
 {
-    #ifdef LOG_INFO
+    #if 0
     va_list args;
     va_start(args, message);
     log_format("info", message, args);
@@ -43,7 +43,7 @@ void log_debug(const char* message, ...)
 
 void log_message(const char* message, ...)
  {
-   #ifdef LOG_MESSAGE
+   #if 0
     va_list args;
     va_start(args, message);
     log_format("message", message, args);
@@ -52,7 +52,7 @@ void log_message(const char* message, ...)
 }
 void log_capteur(const char* message, ...)
  {
-   #ifdef LOG_MESSAGE
+   #if 0
     va_list args;
     va_start(args, message);
     log_format("capteur", message, args);
@@ -62,39 +62,40 @@ void log_capteur(const char* message, ...)
 
 void log_traction(const char* message, ...)
  {
-
+	#if 0
     va_list args;
     va_start(args, message);
     log_format("traction", message, args);
     va_end(args);
+	#endif
 
 }
 void log_moteur(const char* message, ...)
  {
-
+#if 0
     va_list args;
     va_start(args, message);
     log_format("moteur", message, args);
     va_end(args);
-
+#endif
 }
 void log_pwm(const char* message, ...)
  {
-
+#if 0
     va_list args;
     va_start(args, message);
     log_format("pwm", message, args);
     va_end(args);
-
+#endif
 }
 void log_memoire(const char* message, ...)
  {
-
+#if 0
     va_list args;
     va_start(args, message);
     log_format("mem", message, args);
     va_end(args);
-
+#endif
 }
 void log_simumemoire(const char* message, ...)
  {
@@ -105,3 +106,14 @@ void log_simumemoire(const char* message, ...)
     va_end(args);
 
 }
+
+void log_fichiersimu(const char* message, ...)
+ {
+
+    va_list args;
+    va_start(args, message);
+    log_format("fichier simu", message, args);
+    va_end(args);
+
+}
+
