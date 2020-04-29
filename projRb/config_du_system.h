@@ -17,7 +17,7 @@
 //#define UTILISE_GPIO_AXI
 #define UTILISE_GPIO_ZYNQ
 
-#define MSGLEN 100
+#define MSGLEN 150
 
 enum{
     Marche_arriere =0,

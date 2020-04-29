@@ -240,7 +240,7 @@ void *handlerGestionTraction(void *pvParameters)
 {
     log_info("traction \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    traction.setPeriod(1);
+    traction.setPeriod(4);
     log_info("	Gere traction \r\n");
     for (;;)
     {
@@ -252,7 +252,7 @@ void *handlerCapteurDistance(void *pvParameters)
 {
     log_info("capteurDistance \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    capteurDistance.setPeriod(4);
+    capteurDistance.setPeriod(2);
     capteurDistance.RegleAdresseAxi(
         XPAR_CAPTEURDISTANCEULTRA_0_S00_AXI_BASEADDR);
     for (;;)

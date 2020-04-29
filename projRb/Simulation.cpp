@@ -19,13 +19,6 @@ Simulation::~Simulation() {
 
 int Simulation::ouvrFichierSimu() {
 
-	/* Create input file descriptor */
-	fp = open("simu.txt", O_RDONLY);
-	if (fp == -1) {
-		perror("open");
-		return 2;
-	}
-	log_fichiersimu("fichier simu ouvert");
 }
 int Simulation::litFichierSimu() {
 
@@ -35,18 +28,28 @@ int Simulation::litFichierSimu() {
 	ssize_t read;
 
 	fp = fopen("simu.txt", "r");
-	if (fp == NULL){
+	if (fp == NULL) {
 		log_fichiersimu("ouverture impossible");
 
 		exit(EXIT_FAILURE);
 	}
-	while ((read = getline(&line, &len, fp)) != -1) {
-		log_fichiersimu("Retrieved line of length %zu :\n", read);
-		log_fichiersimu("%s", line);
+	if (fichier_lu == 0) {
+		while ((read = getline(&line, &len, fp)) != -1) {
+			log_fichiersimu("Retrieved line of length %zu :\n", read);
+			int var = atoi(line);
+			log_fichiersimu("%s  -> %d", line, var);
+			fichier_lu = 1;
+			simul.push_back(var);
+		}
+		free(line);
 	}
+	int retour=0;
+	if((index_simu>= 0)&& (index_simu < simul.size())){
+		retour = simul.at(index_simu);
 
-	free(line);
-
+	}
+	if(++index_simu> simul.size())index_simu = 0;
+	log_fichiersimu("valeur index[%d]= %d",index_simu, retour);
+	return retour;
 }
-
 

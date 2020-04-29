@@ -52,7 +52,7 @@ void log_message(const char* message, ...)
 }
 void log_capteur(const char* message, ...)
  {
-   #if 0
+   #if 1
     va_list args;
     va_start(args, message);
     log_format("capteur", message, args);
@@ -62,7 +62,7 @@ void log_capteur(const char* message, ...)
 
 void log_traction(const char* message, ...)
  {
-	#if 0
+	#if 1
     va_list args;
     va_start(args, message);
     log_format("traction", message, args);
@@ -72,7 +72,7 @@ void log_traction(const char* message, ...)
 }
 void log_moteur(const char* message, ...)
  {
-#if 0
+#if 1
     va_list args;
     va_start(args, message);
     log_format("moteur", message, args);
@@ -99,21 +99,21 @@ void log_memoire(const char* message, ...)
 }
 void log_simumemoire(const char* message, ...)
  {
-
+#if 0
     va_list args;
     va_start(args, message);
     log_format("simu mem", message, args);
     va_end(args);
-
+#endif
 }
 
 void log_fichiersimu(const char* message, ...)
  {
-
+#if 0
     va_list args;
     va_start(args, message);
     log_format("fichier simu", message, args);
     va_end(args);
-
+#endif
 }
 

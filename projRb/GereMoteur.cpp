@@ -30,7 +30,9 @@ void GereMoteur::handler()
         {
             //  log_info("     messages[%d]: %s\r\n",i,leMessage1->vecteurMessages[i].consigne);
             AMessage tt = leMessage1->vecteurMessages.back();
-            log_moteur("messages: %s\r\n",tt.message);
+            consigne_puissance = atoi(tt.message);
+
+            log_moteur("messages: %s ->%d\r\n",tt.message,consigne_puissance);
             leMessage1->vecteurMessages.pop_back();
         }
         leMessage1->effaceQueue(); //on efface la queue
@@ -40,6 +42,7 @@ void GereMoteur::handler()
          if (puissance_m > consigne_puissance) {
          puissance_m -= rapport_entre_2_consignes;
          }*/
+
         if (consigne_puissance < 0)
         {
             sens = 0;
@@ -52,7 +55,7 @@ void GereMoteur::handler()
         }
         {
             //il n'y a plus de probleme de sens
-            lsensMoteur.RegleSens(sens);
+			//lsensMoteur.RegleSens(sens);
             puissanceMoteur.RegleRapportCyclique(rapport_cyclique); //test
         }
 #ifdef LOG_MOTEUR
@@ -70,7 +73,7 @@ void GereMoteur::handler()
 void GereMoteur::SetAdresseMoteur(uint32 add)
 {
     puissanceMoteur.setBaseAddr(add); // on regle l'adresse du PWM
-//F    lsensMoteur.setBaseAddr(add + 4);
+ lsensMoteur.setBaseAddr(add + 4);
 }
 
 void GereMoteur::reglePuissanceMoteur(u32 p)

@@ -15,16 +15,22 @@
 #include <unistd.h>
 #include <string.h>
 #include "log.h"
+#include <vector>
+
 class Simulation {
 public:
 	Simulation();
 	virtual ~Simulation();
 
 	int litFichierSimu(void);
+	 std::vector<int> simul;
+
 private:
 	int ouvrFichierSimu(void);
 	 FILE *fichier;
 	int fp=-1;
+	int fichier_lu = 0;
+	unsigned int index_simu= 0;
 
 };
 

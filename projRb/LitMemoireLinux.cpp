@@ -33,7 +33,8 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 		size_t pagesize = 20; // sysconf(_SC_PAGE_SIZE);
 		off_t page_base = (adress / pagesize) * pagesize;
 		off_t page_offset = adress - page_base;
-		log_info("   ouvre /dev/mem\r\n");
+		log_memoire("   ouvre /dev/mem\r\n");
+
 		int fd = open("/dev/mem", O_RDWR);
 		if (fd == -1)
 			log_info("open");
@@ -43,14 +44,17 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 		if (data == MAP_FAILED) {
 			perror("mmap error");
 		}
+#if 1
 		data[registre] = donnee;
 		log_info("                           OK\r\n");
-		munmap(data, pagesize);
+		//munmap(data, pagesize);
+		//close(fd);
 		//log_info("fin nummap\r\n");
+#endif
 		return data[0];
 	} else {
 		if (estCequonestenmodeSimu() == 1) {
-			log_simumemoire("SIMULATION %d   r\n", trs++);
+			//log_simumemoire("SIMULATION %d   r\n", trs++);
 			return trs;
 		}
 	}
@@ -65,8 +69,8 @@ u32 LitMemoireLinux::Xil_In32(u32 adress) {
 		size_t pagesize = 20; // sysconf(_SC_PAGE_SIZE);
 		off_t page_base = (adress / pagesize) * pagesize;
 		off_t page_offset = adress - page_base;
-		log_info("Xil_In32  : lit memoire adresse : %08x\r\n", adress);
-		log_info("ouvre /dev/mem\r\n");
+		log_memoire("Xil_In32  : lit memoire adresse : %08x\r\n", adress);
+		log_memoire("ouvre /dev/mem\r\n");
 		int fd = open("/dev/mem", O_RDWR);
 		if (fd == -1)
 			log_info("open");
@@ -78,12 +82,12 @@ u32 LitMemoireLinux::Xil_In32(u32 adress) {
 		}
 		log_memoire("Xil_In32 : %08x	%d\r\n", adress, data[0]);
 		//munmap (data, pagesize);
-		//log_info("fin nummap\r\n");
+		//log_memoire("fin nummap\r\n");
 		return data[0];
 	} else {
-		simu.litFichierSimu();
-		log_simumemoire("Xil_In32 bifon : %08x	\r\n", adress);
-		return trs++;
+		int l = simu.litFichierSimu();
+		log_simumemoire("Xil_In32 lit : %08d	\r\n", l);
+		return l;
 	}
 }
 
