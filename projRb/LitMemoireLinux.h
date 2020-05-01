@@ -26,10 +26,11 @@ public:
 protected:
 	u32 Xil_In32(u32 adresse);
 	u32 Xil_Out32(u32 adresse, u32 valeur, u32 registre=0);
-	int fd ;
+	//int fd ;
 	unsigned int trs = 0;
 private:
 	Simulation simu;
+	int fd = -1 ;
 };
 
 #endif /* LITMEMOIRELINUX_H_ */
