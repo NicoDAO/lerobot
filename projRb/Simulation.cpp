@@ -18,7 +18,7 @@ Simulation::~Simulation() {
 }
 
 int Simulation::ouvrFichierSimu() {
-
+return 1;
 }
 int Simulation::litFichierSimu() {
 
