@@ -94,7 +94,9 @@ int Messager::effaceQueue()
     //	vQueueDelete(laqueue__);
     //delete laqueue__;
     vecteurMessages.clear();
+    return 1;
 }
 int Messager::creeQueue()
 {
+	return 0;
 }

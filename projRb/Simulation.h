@@ -27,7 +27,7 @@ public:
 
 private:
 	int ouvrFichierSimu(void);
-	 FILE *fichier;
+	// FILE *fichier;
 	int fp=-1;
 	int fichier_lu = 0;
 	unsigned int index_simu= 0;
