@@ -164,31 +164,31 @@ void * handlerGereAXI2(void *pvParameters)
     GereLesLed.regleAdresse(0x43C00000);
     FIR1.RegleAdresseAxi(XPAR_FIR_0_S00_AXI_BASEADDR);
     FIR1.SetGereLed(&GereLesLed);
-    FIR1.setPeriod(1);
+    FIR1.setPeriod(1000000);
     //FIR1.configure(&lien1);
     FIR1.RegleNumeroBouton(0X00000001);
     FIR1.RegleCoefFIR(coef_FIR_0, PROFONDEUR_FIR);
     FIR2.RegleAdresseAxi(XPAR_FIR_1_S00_AXI_BASEADDR);
     FIR2.SetGereLed(&GereLesLed);
-    FIR2.setPeriod(1);
+    FIR2.setPeriod(1000000);
     //FIR2.configure(&lien1);
     FIR2.RegleNumeroBouton(0x00000002);
     FIR2.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
     FIR3.RegleAdresseAxi(XPAR_FIR_2_S00_AXI_BASEADDR);
     FIR3.SetGereLed(&GereLesLed);
-    FIR3.setPeriod(1);
+    FIR3.setPeriod(1000000);
     //FIR3.configure(&lien1);
     FIR3.RegleNumeroBouton(0x00000003);
     FIR3.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
     FIR4.RegleAdresseAxi(XPAR_FIR_3_S00_AXI_BASEADDR);
     FIR4.SetGereLed(&GereLesLed);
-    FIR4.setPeriod(1);
+    FIR4.setPeriod(1000000);
     //FIR4.configure(&lien1);
     FIR4.RegleNumeroBouton(0x00000004);
     FIR4.RegleCoefFIR(coef_FIR_1, PROFONDEUR_FIR);
-    Volume1.setPeriod(100);
+    Volume1.setPeriod(1000000);
     Volume1.RegleAdresseAxi(XPAR_GAINNVOIES_0_S00_AXI_BASEADDR);
-    Volume1.setPeriod(5);
+    Volume1.setPeriod(5000000);
     Volume1.RegleNumeroBouton(1);
     for (;;)
     {
@@ -204,7 +204,7 @@ void * handlerGereAXI3(void *pvParameters)
 {
     log_info("handlerGereAXI3 \r\n");
     Volume1.RegleAdresseAxi(XPAR_GAINNVOIES_0_S00_AXI_BASEADDR);
-    Volume1.setPeriod(10);
+    Volume1.setPeriod(10000000);
     for (;;)
     {
         Volume1.handler();
@@ -216,7 +216,7 @@ void *handlerGereMoteur1(void *pvParameters)
     log_info("handlerGereMoteur \r\n");
     mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
     //mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
-    mot1.setPeriod(1);
+    mot1.setPeriod(100000);
     log_info("	GereMoteur 1 \r\n");
     for (;;)
     {
@@ -228,7 +228,7 @@ void *handlerGereMoteur2(void *pvParameters)
 {
     log_info("handlerGereMoteur \r\n");
     mot2.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    mot2.setPeriod(4);
+    mot2.setPeriod(100000);//100ms
     log_info("	GereMoteur 2\r\n");
     for (;;)
     {
@@ -240,7 +240,7 @@ void *handlerGestionTraction(void *pvParameters)
 {
     log_info("traction \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    traction.setPeriod(4);
+    traction.setPeriod(100000);
     log_info("	Gere traction \r\n");
     for (;;)
     {
@@ -252,7 +252,7 @@ void *handlerCapteurDistance(void *pvParameters)
 {
     log_info("capteurDistance \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    capteurDistance.setPeriod(2);
+    capteurDistance.setPeriod(1000001);//seconde
     capteurDistance.RegleAdresseAxi(
         XPAR_CAPTEURDISTANCEULTRA_0_S00_AXI_BASEADDR);
     for (;;)
