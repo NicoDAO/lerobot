@@ -34,8 +34,9 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 		off_t page_base = (adress / pagesize) * pagesize;
 		off_t page_offset = adress - page_base;
 		log_memoire("   ouvre /dev/mem\r\n");
-
-		int fd = open("/dev/mem", O_RDWR);
+		if (fd == -1){
+		fd = open("/dev/mem", O_RDWR);
+		}
 		if (fd == -1)
 			log_info("open");
 		//data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
@@ -47,7 +48,7 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 #if 1
 		data[registre] = donnee;
 		log_info("                           OK\r\n");
-		//munmap(data, pagesize);
+	//	munmap(data, pagesize);
 		//close(fd);
 		//log_info("fin nummap\r\n");
 #endif
@@ -71,7 +72,9 @@ u32 LitMemoireLinux::Xil_In32(u32 adress) {
 		off_t page_offset = adress - page_base;
 		log_memoire("Xil_In32  : lit memoire adresse : %08x\r\n", adress);
 		log_memoire("ouvre /dev/mem\r\n");
-		int fd = open("/dev/mem", O_RDWR);
+		if (fd == -1){
+		fd = open("/dev/mem", O_RDWR);
+		}
 		if (fd == -1)
 			log_info("open");
 		//data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
@@ -81,7 +84,7 @@ u32 LitMemoireLinux::Xil_In32(u32 adress) {
 			perror("mmap error");
 		}
 		log_memoire("Xil_In32 : %08x	%d\r\n", adress, data[0]);
-		//munmap (data, pagesize);
+	//	munmap (data, pagesize);
 		//log_memoire("fin nummap\r\n");
 		return data[0];
 	} else {

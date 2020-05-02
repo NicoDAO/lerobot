@@ -34,7 +34,7 @@ void Tache::lapause(u32 lp){
 
 	//vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
 	cpt_tache++;
-	sleep(lp);
+	usleep(lp);
 
 }
 void Tache::SetMessage1(Messager* lm){

@@ -59,7 +59,7 @@ void GereCapteurDistance::handler()
 //        log_info("Capteur : la queue est pleine \r\n");
 //    }
 //    log_info("Capteur handler sleep %d sortie\r\n\r\n",this->xWakePeriod);
-    sleep(this->xWakePeriod);
+    usleep(this->xWakePeriod);
 }
 
 void GereCapteurDistance::ajoute_mesure(int mesure)

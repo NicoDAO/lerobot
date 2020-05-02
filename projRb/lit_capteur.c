@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
          }*/
         log_info("distance capteur : %d\r\n", data[0]);
         munmap (data, pagesize);
-        sleep(1);
+        usleep(1000);
     }
     return 0;
 }
