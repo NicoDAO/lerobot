@@ -21,7 +21,7 @@ void Tache::calc_handler(void)
 
 }
 
-void Tache::setPeriod( uint16_t wpt)
+void Tache::setPeriod( uint32_t wpt)
 {
 	this->xWakePeriod = wpt;
 }

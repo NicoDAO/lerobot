@@ -125,7 +125,7 @@ void GestionTraction::handler() {
 	//lapause(0);
 
 	//	sleep(this->xWakePeriod);
-	usleep(this->xWakePeriod *1000000 );
+	usleep(this->xWakePeriod);
 
 }
 void GestionTraction::RegleSens(u32 rc) {

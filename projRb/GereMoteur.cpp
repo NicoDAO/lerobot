@@ -27,7 +27,7 @@ void GereMoteur::handler() {
 			AMessage tt = leMessage1->vecteurMessages.back();
 			consigne_puissance = atoi(tt.message);
 
-			log_moteur("%s  messages: %s ->%d\r\n",nom_moteur, tt.message, consigne_puissance);
+			log_moteur("recoit message :%s  messages: %s ->%d\r\n",nom_moteur, tt.message, consigne_puissance);
 			leMessage1->vecteurMessages.pop_back();
 		}
 		leMessage1->effaceQueue(); //on efface la queue

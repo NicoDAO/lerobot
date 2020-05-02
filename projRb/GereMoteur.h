@@ -38,7 +38,7 @@ public:
            return &lsensMoteur;
        };
 protected:
-    u32 AdresseMoteur;
+    u32 AdresseMoteur = 0;
     CommandePWM puissanceMoteur;
     SensMoteur lsensMoteur;
 private:

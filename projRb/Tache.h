@@ -18,11 +18,11 @@ class Tache  {
 public:
 	Tache();
 	virtual ~Tache();
-	void SetxWakePeriod(uint16_t);
+	void SetxWakePeriod(uint32_t);
 	//TickType_t GetxLastWakeTime(void);
 	long RxtaskCntr;
 	void init(void);
-	void setPeriod(uint16_t);
+	void setPeriod(uint32_t);
 	void SetGereLed(GereLed*);
 	virtual void handler(void)=0;
 	void SetMessage1(Messager*);
@@ -30,7 +30,7 @@ public:
 	void SetMessage3(Messager*);
 	u32 cpt_tache=0;
 protected:
-	uint16_t xWakePeriod;
+	uint32_t xWakePeriod;
 	//TickType_t xLastWakeTime;
 	void calc_handler(void);
 	// GereLed* GestionLed;

@@ -57,7 +57,8 @@ int main(int argc, char *argv[]) {
 	//configuation des messages
 	//Messager messageConsigneMoteur;
 	char nom[40];
-	log_info("entree  prog principa");
+
+	printf("compile %s %s",__DATE__ ,__TIME__);
 	int mode_fonctionnement = MODE_ROBOT;
 	;
 	for (int i = 0; i < argc; ++i) {
@@ -255,7 +256,7 @@ void *handlerCapteurDistance(void *pvParameters)
 {
     log_info("capteurDistance \r\n");
     //traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-    capteurDistance.setPeriod(1000001);//seconde
+    capteurDistance.setPeriod(4000001);//seconde
     capteurDistance.RegleAdresseAxi(
         XPAR_CAPTEURDISTANCEULTRA_0_S00_AXI_BASEADDR);
     for (;;)
