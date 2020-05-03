@@ -20,23 +20,15 @@ void GereMoteur::handler() {
 	u32 rapport_cyclique = 1024;
 	//log_info("GereMoteur::handler taille  %d\r\n",leMessage1->vecteurMessages.size());
 	if (leMessage1->recoitMessage() == 1) {
-		// for (unsigned i=0; i<leMessage1->vecteurMessages.size() ; i++)
-#if 1
 		while (!leMessage1->vecteurMessages.empty()) {
 			//  log_info("     messages[%d]: %s\r\n",i,leMessage1->vecteurMessages[i].consigne);
 			AMessage tt = leMessage1->vecteurMessages.back();
 			consigne_puissance = atoi(tt.message);
 
-			log_moteur("recoit message :%s  messages: %s ->%d\r\n",nom_moteur, tt.message, consigne_puissance);
+			log_moteur("Recoit message :%s  messages: %s ->%d",nom_moteur, tt.message, consigne_puissance);
 			leMessage1->vecteurMessages.pop_back();
 		}
 		leMessage1->effaceQueue(); //on efface la queue
-		/*if (puissance_m < consigne_puissance) {
-		 puissance_m += rapport_entre_2_consignes;
-		 }
-		 if (puissance_m > consigne_puissance) {
-		 puissance_m -= rapport_entre_2_consignes;
-		 }*/
 
 		if (consigne_puissance < 0) {
 			sens = 0;
@@ -51,16 +43,9 @@ void GereMoteur::handler() {
 			lsensMoteur.RegleSens(sens);
 			puissanceMoteur.RegleRapportCyclique(rapport_cyclique); //test
 		}
-#ifdef LOG_MOTEUR
-        xil_log_info(
-            "[%04d]moteur :  %s  sens : %d  p= %d, rapport cycl = %d ,  consigne %d\r\n",
-            cpt_tache, this->nom_moteur, sens, puissance_m,
-            rapport_cyclique, consigne_puissance);
-#endif
-#endif
 	}
 	usleep(this->xWakePeriod );
-	//lapause(0);
+
 }
 
 void GereMoteur::SetAdresseMoteur(uint32 add) {
@@ -69,12 +54,12 @@ void GereMoteur::SetAdresseMoteur(uint32 add) {
 }
 
 void GereMoteur::reglePuissanceMoteur(u32 p) {
-	//xil_log_info("->PuissanceMoteur = \r", p);
-	puissanceMoteur.RegleRapportCyclique(p); //test
-#ifdef LOG_MOTEUR
-    xil_log_info("  %s   puissance du moteur = %d /1000 \r\n", this->nom_moteur,
+
+    log_moteur("  %s   puissance du moteur = %d /1000", this->nom_moteur,
                  p);
-#endif
+    puissanceMoteur.RegleRapportCyclique(p); //test
+
+
 }
 
 void GereMoteur::met_marcheAvant() {

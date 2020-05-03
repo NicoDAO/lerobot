@@ -121,7 +121,7 @@ void CagereAXI::handler()
                 {
                     chut = (int) etat_bouton;
                     etat_ancien_bouton = etat_bouton;
-                    log_info("FIR : %d : etat bouton = %x \r\n", this->numFIR,
+                    log_info("FIR : %d : etat bouton = %x", this->numFIR,
                            (int) etat_bouton);
                     etat_automate = EtatPasEncoreInitialise;
                 }

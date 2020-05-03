@@ -32,7 +32,7 @@ void GereCapteurDistance::handler()
  //      ajoute_mesure(lit);
   //      lit_moy = calculeMesureMoyenne();
 //	add++;
-        log_capteur("capteur distance : %d \r\n",lit);
+        log_capteur("capteur distance : %d ",lit);
         AMessage messCapteur;
      //   messCapteur.distanceCapteur = lit_moy;
         snprintf(messCapteur.message,sizeof(messCapteur.message),"%d",lit);
@@ -47,7 +47,7 @@ void GereCapteurDistance::handler()
         {
             bargraf[u] = '*';
         }
-        log_info("  %s\r\n",bargraf);
+        log_info("  %s",bargraf);
         for(u8 u = 0; u < dist_g; u++)
         {
             bargraf[u] = '*';

@@ -62,7 +62,7 @@ void ConfigureVolumes::handler() {
 				VOLUME1); 	//
 
 		etat = etat_fini;
-		log_info(truc, sizeof(truc), "1etat_reglageVol1 = %d\r\n", levol1);
+		log_info(truc, sizeof(truc), "1etat_reglageVol1 = %d", levol1);
 
 		log_info(truc);
 		break;
@@ -74,7 +74,7 @@ void ConfigureVolumes::handler() {
 				VOLUME2); 	//
 
 		etat = etat_fini;
-		log_info(truc, sizeof(truc), "etat_reglageVol2 = %d\r\n", levol2);
+		log_info(truc, sizeof(truc), "etat_reglageVol2 = %d", levol2);
 		log_info(truc);
 		break;
 	case etat_reglageVol3:
@@ -85,7 +85,7 @@ void ConfigureVolumes::handler() {
 				VOLUME3); 	//
 
 		etat = etat_fini;
-		log_info(truc, sizeof(truc), "etat_reglageVol3 = %d\r\n", levol3);
+		log_info(truc, sizeof(truc), "etat_reglageVol3 = %d", levol3);
 		log_info(truc);
 		break;
 	case etat_reglageVol4:
@@ -96,7 +96,7 @@ void ConfigureVolumes::handler() {
 				VOLUME4); 	//
 
 		etat = etat_fini;
-		log_info(truc, sizeof(truc), "etat_reglageVol4 = %d\r\n", levol4);
+		log_info(truc, sizeof(truc), "etat_reglageVol4 = %d", levol4);
 		log_info(truc);
 
 		break;
@@ -108,7 +108,7 @@ void ConfigureVolumes::handler() {
 	}
 
 	//vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
-	log_info("volume\r\n");
+	log_info("volume");
 	usleep(/*xWakePeriod*/1);
 }
 void ConfigureVolumes::calcul_volumes() {
@@ -126,7 +126,7 @@ void ConfigureVolumes::calcul_volumes() {
 		GpioLu2 = (char) ((GpioLu & 0x2) >> 1);
 		GpioLu3 = (char) ((GpioLu & 0x4) >> 2);
 		GpioLu4 = (char) ((GpioLu & 0x8) >> 3);
-		log_info(truc, sizeof(truc), "1etat_reglageVol1 = %08x\r\n", GpioLu);
+		log_info(truc, sizeof(truc), "1etat_reglageVol1 = %08x", GpioLu);
 		log_info(truc);
 		if (GpioLu1 != GpioLu1_avant) {
 			GpioLu1_avant = GpioLu1;

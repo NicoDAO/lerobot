@@ -32,7 +32,7 @@ void GestionTraction::handler() {
 #if 1
 	leMessage3->recoitMessage();
 	//  {
-	log_traction("GestionTraction : recoit %d message\r\n",
+	log_traction("GestionTraction : recoit %d message",
 			leMessage3->vecteurMessages.size());
 	for (unsigned i = 0; i < leMessage3->vecteurMessages.size(); i++) {
 		mesureDistance = atoi(leMessage3->vecteurMessages[i].message);
@@ -59,18 +59,18 @@ void GestionTraction::handler() {
 		}
 		switch (automate) {
 		case Robot_arret:
-			log_traction("robot arret\r\n");
+			log_traction("robot arret");
 			puissance_moteur1 = 0;
 			puissance_moteur2 = 0;
 			break;
 		case Robot_avant_rapide:
-			log_traction("Robot_avant_rapide \r\n");
+			log_traction("Robot_avant_rapide ");
 
 			puissance_moteur1 = 900;
 			puissance_moteur2 = 900;
 			break;
 		case Robot_avant_lent:
-			log_traction("robot avance lentement\r\n");
+			log_traction("robot avance lentement");
 
 			vitesse_g = mesureDistance / 1000;
 			puissance_moteur1 = 100;
@@ -79,7 +79,7 @@ void GestionTraction::handler() {
 			//	automate++;
 			break;
 		case Robot_avant_tranquilou:
-			log_traction("robot avance tranquilou\r\n");
+			log_traction("robot avance tranquilou");
 
 			vitesse_g = mesureDistance / 1000;
 			puissance_moteur1 = 300;
@@ -88,13 +88,13 @@ void GestionTraction::handler() {
 			//	automate++;
 			break;
 		case Robot_arriere_lent:
-			log_traction("robot recule lentement\r\n");
+			log_traction("robot recule lentement");
 
 			puissance_moteur1 = -100;
 			puissance_moteur2 = -100;
 			break;
 		case Robot_tourne_droite_arriere:
-			log_traction("robot tourne arriere droite\r\n");
+			log_traction("robot tourne arriere droite");
 
 			log_traction(mot1mess.message, sizeof(mot1mess.message),
 					"avance vitesse %d", 10);
@@ -106,7 +106,7 @@ void GestionTraction::handler() {
 			//	automate++;
 			break;
 		default:
-			log_traction("robot etat indeterminé\r\n");
+			log_traction("robot etat indeterminé");
 
 
 			automate = 0;
