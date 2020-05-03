@@ -30,7 +30,10 @@ protected:
 	unsigned int trs = 0;
 private:
 	Simulation simu;
-	int fd = -1 ;
+	int fd_ecriture = -1 ;
+	int fd_lecture = -1 ;
+	int *data_ecriture =  NULL;
+	int *data_lecture =  NULL;
 };
 
 #endif /* LITMEMOIRELINUX_H_ */

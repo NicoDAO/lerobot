@@ -39,18 +39,16 @@ void GestionTraction::handler() {
 		char mmmm[MSGLEN];
 		snprintf(mmmm, sizeof(mmmm), "%s ->%d",
 				leMessage3->vecteurMessages[i].message, mesureDistance);
-		log_traction("[%d]GestionTraction : Recoit mesure distance : %s", i,
-				mmmm);
-		//int taille = leMessage3->vecteurMessages.size();
-		//test logique
-		if (mesureDistance < 1000) {
-
+		log_traction("[%d]GestionTraction : Recoit mesure distance : %s", i,mmmm);
+		if (mesureDistance <= 100) {
+			automate = Robot_arret;
+		}
+		if ((mesureDistance > 100)&&(mesureDistance <= 1000)) {
 			automate = Robot_arriere_lent;
 		}
 		if ((mesureDistance > 1000) && (mesureDistance <= 10000)) {
 			automate = Robot_avant_lent;
 		}
-
 		if ((mesureDistance > 10000) && (mesureDistance <= 20000)) {
 			automate = Robot_avant_tranquilou;
 		}
@@ -65,13 +63,11 @@ void GestionTraction::handler() {
 			break;
 		case Robot_avant_rapide:
 			log_traction("Robot_avant_rapide ");
-
 			puissance_moteur1 = 900;
 			puissance_moteur2 = 900;
 			break;
 		case Robot_avant_lent:
 			log_traction("robot avance lentement");
-
 			vitesse_g = mesureDistance / 1000;
 			puissance_moteur1 = 100;
 			puissance_moteur2 = 100;
@@ -80,53 +76,42 @@ void GestionTraction::handler() {
 			break;
 		case Robot_avant_tranquilou:
 			log_traction("robot avance tranquilou");
-
 			vitesse_g = mesureDistance / 1000;
 			puissance_moteur1 = 300;
 			puissance_moteur2 = 300;
-			//mot1mess.sens_moteur = 0;
-			//	automate++;
 			break;
 		case Robot_arriere_lent:
 			log_traction("robot recule lentement");
-
 			puissance_moteur1 = -100;
 			puissance_moteur2 = -100;
 			break;
 		case Robot_tourne_droite_arriere:
 			log_traction("robot tourne arriere droite");
-
 			log_traction(mot1mess.message, sizeof(mot1mess.message),
 					"avance vitesse %d", 10);
 			log_traction(mot2mess.message, sizeof(mot2mess.message),
 					"recule vitesse %d", 10);
 			puissance_moteur1 = 500;
 			puissance_moteur2 = -500;
-
 			//	automate++;
 			break;
 		default:
 			log_traction("robot etat indeterminé");
-
-
 			automate = 0;
 			break;
 		}
 	}
 #endif
 	leMessage3->effaceQueue();
-	snprintf(mot1mess.message, sizeof(mot1mess.message), "%d",puissance_moteur1);
-	snprintf(mot2mess.message, sizeof(mot1mess.message), "%d",puissance_moteur2);
+	snprintf(mot1mess.message, sizeof(mot1mess.message), "%d",
+			puissance_moteur1);
+	snprintf(mot2mess.message, sizeof(mot1mess.message), "%d",
+			puissance_moteur2);
 	//   log_traction("GestionTraction 1 : envoie %s\r\n",mot1mess.message);
-//    log_traction("GestionTraction 2 : envoie %s\r\n",mot2mess.message);
+	//    log_traction("GestionTraction 2 : envoie %s\r\n",mot2mess.message);
 	leMessage1->envoieMessage(&mot1mess);
 	leMessage2->envoieMessage(&mot2mess);
-	//TODO faire pareil pour le moteur 2
-	//lapause(0);
-
-	//	sleep(this->xWakePeriod);
 	usleep(this->xWakePeriod);
-
 }
 void GestionTraction::RegleSens(u32 rc) {
 }

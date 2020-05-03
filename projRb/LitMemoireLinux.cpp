@@ -24,35 +24,39 @@ LitMemoireLinux::~LitMemoireLinux() {
 }
 u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 	if (estCequonestenmodeRobot() == 1) {
-		log_memoire(
-				"ROBO 32 : ecrit memoire adresse : %08x, donne: %d,	registre :%d\r\n",
-				adress, donnee, registre);
 		int offset;
-		int *data;
+
 		struct stat sbuf;
 		size_t pagesize = 20; // sysconf(_SC_PAGE_SIZE);
 		off_t page_base = (adress / pagesize) * pagesize;
 		off_t page_offset = adress - page_base;
-		log_memoire("   ouvre /dev/mem\r\n");
-		if (fd == -1){
-		fd = open("/dev/mem", O_RDWR);
+		if (fd_ecriture == -1) {
+			log_memoire("ouvre /dev/mem");
+
+			fd_ecriture = open("/dev/mem", O_RDWR);
+			data_ecriture = static_cast<int*>(mmap(NULL, pagesize,
+					PROT_READ | PROT_WRITE, MAP_SHARED, fd_ecriture,
+					(off_t) adress));
 		}
-		if (fd == -1)
-			log_info("open");
-		//data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
-		data = static_cast<int*>(mmap(NULL, pagesize, PROT_READ | PROT_WRITE,
-				MAP_SHARED, fd, (off_t) adress));
-		if (data == MAP_FAILED) {
+		if (fd_ecriture == -1)
+			log_memoire("open");
+		if (data_ecriture == MAP_FAILED) {
 			perror("mmap error");
+			return 1;
 		}
-#if 1
-		data[registre] = donnee;
-		log_info("                           OK\r\n");
-	//	munmap(data, pagesize);
+
+		if (data_ecriture != NULL) {
+			log_memoire(
+					"ROBO 32 : ecrit memoire adresse : %08x, registre %x,	donnee:%08X",
+					adress,registre, donnee);
+
+			data_ecriture[registre] = donnee;
+		}
+		//	munmap(data, pagesize);
 		//close(fd);
 		//log_info("fin nummap\r\n");
-#endif
-		return data[0];
+
+		return data_ecriture[0];
 	} else {
 		if (estCequonestenmodeSimu() == 1) {
 			//log_simumemoire("SIMULATION %d   r\n", trs++);
@@ -65,31 +69,30 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 u32 LitMemoireLinux::Xil_In32(u32 adress) {
 	if (estCequonestenmodeRobot() == 1) {
 		int offset;
-		int *data;
+
 		struct stat sbuf;
 		size_t pagesize = 20; // sysconf(_SC_PAGE_SIZE);
 		off_t page_base = (adress / pagesize) * pagesize;
 		off_t page_offset = adress - page_base;
-		log_memoire("Xil_In32  : lit memoire adresse : %08x\r\n", adress);
-		log_memoire("ouvre /dev/mem\r\n");
-		if (fd == -1){
-		fd = open("/dev/mem", O_RDWR);
+		if (fd_lecture == -1) {
+			log_memoire("ouvre /dev/mem en lecture");
+
+			fd_lecture = open("/dev/mem", O_RDWR);
+			data_lecture = static_cast<int*>(mmap(NULL, pagesize,
+					PROT_READ | PROT_WRITE, MAP_SHARED, fd_lecture,
+					(off_t) adress));
 		}
-		if (fd == -1)
-			log_info("open");
-		//data = mmap(adress,pagesize	,PROT_READ | PROT_WRITE, MAP_SHARED | MAP_PRIVATE | MAP_POPULATE,     fd, 0);
-		data = static_cast<int*>(mmap(NULL, pagesize, PROT_READ | PROT_WRITE,
-				MAP_SHARED, fd, (off_t) adress));
-		if (data == MAP_FAILED) {
-			perror("mmap error");
+		if (data_lecture == MAP_FAILED) {
+			log_memoire("mmap error");
+			return 1;
 		}
-		log_memoire("Xil_In32 : %08x	%d\r\n", adress, data[0]);
-	//	munmap (data, pagesize);
+		log_memoire("Xil_In32 : %08x	%d", adress, data_lecture[0]);
+		//	munmap (data, pagesize);
 		//log_memoire("fin nummap\r\n");
-		return data[0];
+		return data_lecture[0];
 	} else {
 		int l = simu.litFichierSimu();
-		log_simumemoire("Xil_In32 lit : %08d	\r\n", l);
+		log_simumemoire("Xil_In32 lit : %08d", l);
 		return l;
 	}
 }
