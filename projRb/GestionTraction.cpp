@@ -46,8 +46,11 @@ void GestionTraction::handler() {
 		if ((mesureDistance > 100)&&(mesureDistance <= 1000)) {
 			automate = Robot_arriere_lent;
 		}
-		if ((mesureDistance > 1000) && (mesureDistance <= 10000)) {
+		if ((mesureDistance > 1000) && (mesureDistance <= 5000)) {
 			automate = Robot_avant_lent;
+		}
+		if ((mesureDistance > 5000) && (mesureDistance <= 10000)) {
+			automate = Robot_arriere_tranquilou;
 		}
 		if ((mesureDistance > 10000) && (mesureDistance <= 20000)) {
 			automate = Robot_avant_tranquilou;
@@ -79,6 +82,12 @@ void GestionTraction::handler() {
 			vitesse_g = mesureDistance / 1000;
 			puissance_moteur1 = 300;
 			puissance_moteur2 = 300;
+			break;
+		case Robot_arriere_tranquilou:
+			log_traction("robot arriere tranquilou");
+			vitesse_g = mesureDistance / 1000;
+			puissance_moteur1 = -300;
+			puissance_moteur2 = -300;
 			break;
 		case Robot_arriere_lent:
 			log_traction("robot recule lentement");

@@ -15,6 +15,7 @@ enum{
 	Robot_arret = 0,
 	Robot_avant_lent,
 	Robot_avant_tranquilou,
+	Robot_arriere_tranquilou,
 	Robot_avant_rapide,
 	Robot_arriere_lent,
 	Robot_tourne_gauche_avant,

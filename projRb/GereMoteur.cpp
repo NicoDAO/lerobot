@@ -40,8 +40,10 @@ void GereMoteur::handler() {
 		}
 		{
 			//il n'y a plus de probleme de sens
-			lsensMoteur.RegleSens(sens);
-			puissanceMoteur.RegleRapportCyclique(rapport_cyclique); //test
+			puissanceMoteur.RegleMoteur(rapport_cyclique,sens);
+		//	puissanceMoteur.RegleRapportCyclique(rapport_cyclique); //test
+			//lsensMoteur.RegleSens(sens);
+
 		}
 	}
 	usleep(this->xWakePeriod );

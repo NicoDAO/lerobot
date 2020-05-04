@@ -26,6 +26,7 @@ public:
 protected:
 	u32 Xil_In32(u32 adresse);
 	u32 Xil_Out32(u32 adresse, u32 valeur, u32 registre=0);
+	u32 Xil_Out32_tab(u32 adresse, u32 *valeur, u32 taille=0);
 	//int fd ;
 	unsigned int trs = 0;
 private:

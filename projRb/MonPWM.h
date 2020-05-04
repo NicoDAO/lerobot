@@ -18,6 +18,7 @@ public:
 	virtual ~CommandePWM();
 	void setBaseAddr(u32 );
 	void RegleRapportCyclique( u32 clocks);
+	void RegleMoteur( u32 vitesse, u32 sens);
 
 private :
 
