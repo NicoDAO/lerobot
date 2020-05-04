@@ -37,6 +37,7 @@ public:
        {
            return &lsensMoteur;
        };
+    void Reglecalibre(float cal);
 protected:
     u32 AdresseMoteur = 0;
     CommandePWM puissanceMoteur;
@@ -52,6 +53,7 @@ private:
     s32 consigne_puissance = 0;
     s32 consigne_puissance_avant = 0;
     s32 rapport_entre_2_consignes = 0;
+    float calibre = 1;
 };
 
 #endif /* SRC_GEREMOTEUR_H_ */

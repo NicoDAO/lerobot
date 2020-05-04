@@ -221,6 +221,7 @@ void *handlerGereMoteur1(void *pvParameters)
     mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
     //mot1.SetAdresseMoteur(XPAR_PMOD_AUDIO_0_S00_AXI_BASEADDR);
     mot1.setPeriod(100000);
+    mot1.Reglecalibre(0.6);
     log_info("	GereMoteur 1");
     for (;;)
     {
@@ -233,6 +234,7 @@ void *handlerGereMoteur2(void *pvParameters)
     log_info("handlerGereMoteur");
     mot2.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
     mot2.setPeriod(100000);//100ms
+    mot2.Reglecalibre(1);
     log_info("	GereMoteur 2");
     for (;;)
     {

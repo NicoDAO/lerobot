@@ -40,10 +40,9 @@ void GereMoteur::handler() {
 		}
 		{
 			//il n'y a plus de probleme de sens
-			puissanceMoteur.RegleMoteur(rapport_cyclique,sens);
-		//	puissanceMoteur.RegleRapportCyclique(rapport_cyclique); //test
-			//lsensMoteur.RegleSens(sens);
+			float valeur_calibre = ((float)rapport_cyclique ) * calibre;
 
+			puissanceMoteur.RegleMoteur((u32)valeur_calibre ,sens);
 		}
 	}
 	usleep(this->xWakePeriod );
@@ -57,11 +56,8 @@ void GereMoteur::SetAdresseMoteur(uint32 add) {
 
 void GereMoteur::reglePuissanceMoteur(u32 p) {
 
-    log_moteur("  %s   puissance du moteur = %d /1000", this->nom_moteur,
-                 p);
+    log_moteur("  %s   puissance du moteur = %d /1000", this->nom_moteur, p);
     puissanceMoteur.RegleRapportCyclique(p); //test
-
-
 }
 
 void GereMoteur::met_marcheAvant() {
@@ -79,5 +75,9 @@ void GereMoteur::metEnmodeSimu() {
 	log_moteur("met moteur (%s) en mode simu", nom_moteur);
 	puissanceMoteur.metEnmodeSimu();
 	lsensMoteur.metEnmodeSimu();
-
 }
+void GereMoteur::Reglecalibre(float cal){
+	calibre = cal;
+}
+
+
