@@ -14,6 +14,7 @@
 #include "SensMoteur.h"
 #include "Messagerie.h"
 #include "TransfertAXI.h"
+#include "LectureFichier.h"
 #include <cstring>
 class GereMoteur: public CagereAXI
 {
@@ -29,6 +30,7 @@ public:
     void SetNomMoteur(char*, unsigned char taille);
     //  	void metEnmodeRobot(void);
     void metEnmodeSimu(void);
+    void SetfichierCalib(std::string);
     CommandePWM * getPuissanceMoteur()
     {
         return &puissanceMoteur;
@@ -37,12 +39,13 @@ public:
        {
            return &lsensMoteur;
        };
-    void Reglecalibre(float cal);
+
 protected:
     u32 AdresseMoteur = 0;
     CommandePWM puissanceMoteur;
     SensMoteur lsensMoteur;
 private:
+    void Reglecalibre(float cal);
     u8 sens_moteur = 0;
     char nom_moteur[50];
     s32 puissance_m = 1023;
@@ -54,6 +57,7 @@ private:
     s32 consigne_puissance_avant = 0;
     s32 rapport_entre_2_consignes = 0;
     float calibre = 1;
+    std::string fichier_calibre = "pasdefini";
 };
 
 #endif /* SRC_GEREMOTEUR_H_ */

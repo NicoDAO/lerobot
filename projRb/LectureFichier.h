@@ -5,32 +5,35 @@
  *      Author: nicolas
  */
 
-#ifndef SIMULATION_H_
-#define SIMULATION_H_
+#ifndef LECTUREFICHIER_H_
+#define LECTUREFICHIER_H_
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <errno.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <string.h>
+#include <string>
 #include "log.h"
 #include <vector>
 
-class Simulation {
+class LectureFichier {
 public:
-	Simulation();
-	virtual ~Simulation();
+	LectureFichier();
+	LectureFichier(std::string fichier);
+	virtual ~LectureFichier();
 
 	int litFichierSimu(void);
-	 std::vector<int> simul;
+	std::vector<int> simul;
 
 private:
 	int ouvrFichierSimu(void);
+	int ouvrFichierSimu(std::string nom);
 	int fp=-1;
 	int fichier_lu = 0;
 	unsigned int index_simu= 0;
+	std::string nom_fichier ="simu.txt";
 
 };
 
-#endif /* SIMULATION_H_ */
+#endif /* LECTUREFICHIER_H_ */

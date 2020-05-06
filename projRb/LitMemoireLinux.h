@@ -16,8 +16,8 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include "config_du_system.h"
+#include "LectureFichier.h"
 #include "mode_fonctionnement.h"
-#include "Simulation.h"
 class LitMemoireLinux : public mode_foncionnel  {
 public:
 	LitMemoireLinux();
@@ -30,7 +30,7 @@ protected:
 	//int fd ;
 	unsigned int trs = 0;
 private:
-	Simulation simu;
+	LectureFichier simu;
 	int fd_ecriture = -1 ;
 	int fd_lecture = -1 ;
 	int *data_ecriture =  NULL;

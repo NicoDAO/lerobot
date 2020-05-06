@@ -79,5 +79,7 @@ void GereMoteur::metEnmodeSimu() {
 void GereMoteur::Reglecalibre(float cal){
 	calibre = cal;
 }
-
+void GereMoteur::SetfichierCalib(std::string tt){
+	this->fichier_calibre = tt;
+}
 
