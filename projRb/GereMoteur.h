@@ -58,6 +58,7 @@ private:
     s32 rapport_entre_2_consignes = 0;
     float calibre = 1;
     std::string fichier_calibre = "pasdefini";
+    LectureFichier calibration;
 };
 
 #endif /* SRC_GEREMOTEUR_H_ */

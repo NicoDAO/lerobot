@@ -18,4 +18,5 @@ void log_simumoteur(const char* message, ...);
 void log_simupwm(const char* message, ...);
 void log_simumemoire(const char* message, ...);
 void log_fichiersimu(const char* message, ...);
+void log_calibre(const char* message, ...);
   #endif

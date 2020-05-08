@@ -25,10 +25,10 @@ public:
 
 	int litFichierSimu(void);
 	std::vector<int> simul;
-
+	int ouvrFichierSimu(std::string nom);
 private:
 	int ouvrFichierSimu(void);
-	int ouvrFichierSimu(std::string nom);
+
 	int fp=-1;
 	int fichier_lu = 0;
 	unsigned int index_simu= 0;

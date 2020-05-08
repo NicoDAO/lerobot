@@ -80,6 +80,8 @@ void GereMoteur::Reglecalibre(float cal){
 	calibre = cal;
 }
 void GereMoteur::SetfichierCalib(std::string tt){
-	this->fichier_calibre = tt;
+	//this->fichier_calibre = tt;
+	//this->calibration.
+	this->calibration.ouvrFichierSimu(tt);
 }
 

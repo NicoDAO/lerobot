@@ -39,9 +39,9 @@ int LectureFichier::litFichierSimu() {
 	}
 	if (fichier_lu == 0) {
 		while ((read = getline(&line, &len, fp)) != -1) {
-			log_fichiersimu("Retrieved line of length %zu :\n", read);
+			//log_fichiersimu("Retrieved line of length %zu :\n", read);
 			int var = atoi(line);
-			log_fichiersimu("%s  -> %d", line, var);
+			log_fichiersimu("fichier %s / %s  -> %d", nom_fichier.c_str(),line, var);
 			fichier_lu = 1;
 			simul.push_back(var);
 		}
@@ -63,7 +63,7 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 	size_t len = 0;
 	ssize_t read;
 
-	fp = fopen(nom_fichier.c_str(), "r");
+	fp = fopen(nom.c_str(), "r");
 	if (fp == NULL) {
 		log_fichiersimu("ouverture impossible");
 
@@ -71,9 +71,8 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 	}
 	if (fichier_lu == 0) {
 		while ((read = getline(&line, &len, fp)) != -1) {
-			log_fichiersimu("Retrieved line of length %zu :\n", read);
 			int var = atoi(line);
-			log_fichiersimu("%s  -> %d", line, var);
+			log_fichiersimu("fichier %s : %s  -> %d", nom.c_str(),line, var);
 			fichier_lu = 1;
 			simul.push_back(var);
 		}
