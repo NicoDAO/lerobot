@@ -249,6 +249,7 @@ void* handlerCapteurDistance(void *pvParameters) {
 	log_info("capteurDistance");
 	//traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
 	capteurDistance.setPeriod(1000001);	//seconde
+	capteurDistance.SetfichierCalib("capteur_distance.calib");
 	capteurDistance.RegleAdresseAxi(
 	XPAR_CAPTEURDISTANCEULTRA_0_S00_AXI_BASEADDR);
 	for (;;) {

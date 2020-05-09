@@ -10,11 +10,11 @@
 #include "TransfertAXI.h"
 #include "config_du_system.h"
 #include "Tache.h"
-
+#include "Calibrage.h"
 #include "Messagerie.h"
 #include "LitMemoireLinux.h"
 #include <cstring>
-class GereCapteurDistance: public CagereAXI {
+class GereCapteurDistance: public CagereAXI , public Calibrage {
 public:
 	GereCapteurDistance();
 	virtual ~GereCapteurDistance();
@@ -28,6 +28,7 @@ private:
 	int tabMesure[10];
 	u8 indexMesure = 0;
 	u8 coef_moyenne = 10;
+	int appliqueCalibre(int val);
 
 };
 

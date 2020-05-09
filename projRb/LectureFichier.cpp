@@ -37,23 +37,23 @@ int LectureFichier::litFichierSimu() {
 
 		exit(EXIT_FAILURE);
 	}
-	if (fichier_lu == 0) {
+	if (fichier_lu == 0) {//on lit le fichier de paramtrage en en l'enregistre dans un vecteur
 		while ((read = getline(&line, &len, fp)) != -1) {
 			//log_fichiersimu("Retrieved line of length %zu :\n", read);
 			int var = atoi(line);
 			log_fichiersimu("fichier %s / %s  -> %d", nom_fichier.c_str(),line, var);
 			fichier_lu = 1;
-			simul.push_back(var);
+			parametrage.push_back(var);
 		}
 		free(line);
 	}
 	int retour=0;
-	if((index_simu>= 0)&& (index_simu < simul.size())){
-		retour = simul.at(index_simu);
+	if((index_fichier>= 0)&& (index_fichier < parametrage.size())){
+		retour = parametrage.at(index_fichier);
 
 	}
-	if(++index_simu> simul.size())index_simu = 0;
-	log_fichiersimu("valeur index[%d]= %d",index_simu, retour);
+	if(++index_fichier> parametrage.size())index_fichier = 0;
+	log_fichiersimu("valeur index[%d]= %d",index_fichier, retour);
 	return retour;
 }
 int LectureFichier::ouvrFichierSimu(std::string nom) {
@@ -74,17 +74,17 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 			int var = atoi(line);
 			log_fichiersimu("fichier %s : %s  -> %d", nom.c_str(),line, var);
 			fichier_lu = 1;
-			simul.push_back(var);
+			parametrage.push_back(var);
 		}
 		free(line);
 	}
 	int retour=0;
-	if((index_simu>= 0)&& (index_simu < simul.size())){
-		retour = simul.at(index_simu);
+	if((index_fichier>= 0)&& (index_fichier < parametrage.size())){
+		retour = parametrage.at(index_fichier);
 
 	}
-	if(++index_simu> simul.size())index_simu = 0;
-	log_fichiersimu("valeur index[%d]= %d",index_simu, retour);
+	if(++index_fichier> parametrage.size())index_fichier = 0;
+	log_fichiersimu("valeur index[%d]= %d",index_fichier, retour);
 	return retour;
 }
 

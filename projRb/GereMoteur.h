@@ -15,8 +15,9 @@
 #include "Messagerie.h"
 #include "TransfertAXI.h"
 #include "LectureFichier.h"
+#include "Calibrage.h"
 #include <cstring>
-class GereMoteur: public CagereAXI
+class GereMoteur: public CagereAXI, public Calibrage
 {
 public:
     GereMoteur();
@@ -30,7 +31,7 @@ public:
     void SetNomMoteur(char*, unsigned char taille);
     //  	void metEnmodeRobot(void);
     void metEnmodeSimu(void);
-    void SetfichierCalib(std::string);
+
     CommandePWM * getPuissanceMoteur()
     {
         return &puissanceMoteur;
@@ -58,7 +59,7 @@ private:
     s32 rapport_entre_2_consignes = 0;
     float calibre = 1;
     std::string fichier_calibre = "pasdefini";
-    LectureFichier calibration;
+    int appliqueCalibre(int val);
 };
 
 #endif /* SRC_GEREMOTEUR_H_ */

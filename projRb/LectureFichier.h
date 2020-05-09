@@ -24,15 +24,15 @@ public:
 	virtual ~LectureFichier();
 
 	int litFichierSimu(void);
-	std::vector<int> simul;
+	std::vector<float> parametrage;
 	int ouvrFichierSimu(std::string nom);
 private:
 	int ouvrFichierSimu(void);
 
 	int fp=-1;
 	int fichier_lu = 0;
-	unsigned int index_simu= 0;
-	std::string nom_fichier ="simu.txt";
+	unsigned int index_fichier= 0;
+	std::string nom_fichier ="simu_capteur_distance.txt";
 
 };
 
