@@ -31,7 +31,7 @@ void log_error(const char *message, ...) {
 }
 
 void log_info(const char *message, ...) {
-#if 0
+#if 1
     va_list args;
     va_start(args, message);
     log_format("info", message, args);
@@ -57,7 +57,7 @@ void log_message(const char *message, ...) {
     #endif
 }
 void log_capteur(const char *message, ...) {
-#if 1
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("capteur", message, args);
@@ -66,7 +66,7 @@ void log_capteur(const char *message, ...) {
 }
 
 void log_traction(const char *message, ...) {
-#if 1
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("traction", message, args);
@@ -75,7 +75,7 @@ void log_traction(const char *message, ...) {
 
 }
 void log_moteur(const char *message, ...) {
-#if 1
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("moteur", message, args);
@@ -83,7 +83,7 @@ void log_moteur(const char *message, ...) {
 #endif
 }
 void log_pwm(const char *message, ...) {
-#if 1
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("pwm", message, args);

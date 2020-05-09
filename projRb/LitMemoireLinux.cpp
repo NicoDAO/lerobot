@@ -124,12 +124,11 @@ u32 LitMemoireLinux::Xil_Out32_tab(u32 adress, u32 *donnee, u32 taille) {
 			return 1;
 		}
 		log_memoire("Xil_In32 : %08x	%d", adress, data_lecture[0]);
-//	munmap (data, pagesize);
-//log_memoire("fin nummap\r\n");
+
 		return data_lecture[0];
 	} else {
 		int l = simu.litFichierSimu();
-		log_simumemoire("Xil_In32 lit : %08d", l);
+		log_simumemoire("Xil_In32 lit mode simulation : %08d", l);
 		return l;
 	}
 }

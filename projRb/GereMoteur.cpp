@@ -25,7 +25,8 @@ void GereMoteur::handler() {
 			AMessage tt = leMessage1->vecteurMessages.back();
 			consigne_puissance = atoi(tt.message);
 
-			log_moteur("Recoit message :%s  messages: %s ->%d",nom_moteur, tt.message, consigne_puissance);
+			log_moteur("Recoit message :%s  messages: %s ->%d", nom_moteur,
+					tt.message, consigne_puissance);
 			leMessage1->vecteurMessages.pop_back();
 		}
 		leMessage1->effaceQueue(); //on efface la queue
@@ -42,23 +43,25 @@ void GereMoteur::handler() {
 			//il n'y a plus de probleme de sens
 			//float valeur_calibre = ((float)rapport_cyclique ) * calibre;
 			reglePuissanceMoteur(rapport_cyclique);
-		//	puissanceMoteur.RegleMoteur((u32)valeur_calibre ,sens);
+			//	puissanceMoteur.RegleMoteur((u32)valeur_calibre ,sens);
 		}
 	}
-	usleep(this->xWakePeriod );
+	usleep(this->xWakePeriod);
 
 }
 
 void GereMoteur::SetAdresseMoteur(uint32 add) {
 	puissanceMoteur.setBaseAddr(add); // on regle l'adresse du PWM
-	lsensMoteur.setBaseAddr(add );
+	lsensMoteur.setBaseAddr(add);
 }
 
 void GereMoteur::reglePuissanceMoteur(u32 p) {
 
-    log_moteur("  %s   puissance du moteur = %d /1000", this->nom_moteur, p);
-   u32 val_calibre = appliqueCalibre((int) p);
-    puissanceMoteur.RegleRapportCyclique(val_calibre); //test
+	u32 val_calibre = appliqueCalibre((int) p);
+	log_moteur("  %s   puissance brute = %d, puissance calibre = %d",
+			this->nom_moteur, p, val_calibre);
+
+	puissanceMoteur.RegleRapportCyclique(val_calibre); //test
 }
 
 void GereMoteur::met_marcheAvant() {
@@ -77,13 +80,14 @@ void GereMoteur::metEnmodeSimu() {
 	puissanceMoteur.metEnmodeSimu();
 	lsensMoteur.metEnmodeSimu();
 }
-void GereMoteur::Reglecalibre(float cal){
+void GereMoteur::Reglecalibre(float cal) {
 	calibre = cal;
 }
 
-int GereMoteur::appliqueCalibre(int val){
+int GereMoteur::appliqueCalibre(int val) {
 	float cal = parametrage.at(0);
-	int valeur_calibre = ((float)val ) * cal;
-	log_calibre("on applique  le calibrage (%f) moteur %d ",cal,valeur_calibre);
-	return valeur_calibre	;
+	int valeur_calibre = ((float) val) * cal;
+	log_calibre("on calibre le moteur (%d) , coef  = %f ,commande moteur %d ", val, cal,
+			valeur_calibre);
+	return valeur_calibre;
 }
