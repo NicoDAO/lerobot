@@ -40,19 +40,19 @@ void GestionTraction::handler() {
 		snprintf(mmmm, sizeof(mmmm), "%s ->%d",
 				leMessage3->vecteurMessages[i].message, mesureDistance);
 		log_traction("[%d]GestionTraction : Recoit mesure distance : %s", i,mmmm);
-		if (mesureDistance <= 100) {
+		if (mesureDistance <= 10) {  //on recoit les mesures en cm
 			automate = Robot_arret;
 		}
-		if ((mesureDistance > 100)&&(mesureDistance <= 1000)) {
+		if ((mesureDistance > 10)&&(mesureDistance <= 100)) {
 			automate = Robot_arriere_lent;
 		}
-		if ((mesureDistance > 1000) && (mesureDistance <= 5000)) {
+		if ((mesureDistance > 100) && (mesureDistance <= 500)) {
 			automate = Robot_avant_lent;
 		}
-		if ((mesureDistance > 5000) && (mesureDistance <= 10000)) {
+		if ((mesureDistance > 500) && (mesureDistance <= 1000)) {
 			automate = Robot_arriere_tranquilou;
 		}
-		if ((mesureDistance > 10000) && (mesureDistance <= 20000)) {
+		if ((mesureDistance > 1000) && (mesureDistance <= 2000)) {
 			automate = Robot_avant_tranquilou;
 		}
 		if ((mesureDistance > 20000)) {

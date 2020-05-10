@@ -21,11 +21,11 @@ void GereCapteurDistance::handler() {
 	u32 lit = 0, lit_moy = 0;
 	u32 add1 = this->adresseAXI + add;
 	lit = Xil_In32(add1);
-	appliqueCalibre((int) lit);
+	u32 distance_calibree = (int)appliqueCalibre((int) lit);
 
-	log_capteur("capteur distance : %d ", lit);
+	log_capteur("capteur distance brute %d = %d cm",lit, distance_calibree);
 	AMessage messCapteur;
-	snprintf(messCapteur.message, sizeof(messCapteur.message), "%d", lit);
+	snprintf(messCapteur.message, sizeof(messCapteur.message), "%d", distance_calibree);
 	int ret = leMessage1->envoieMessage(&messCapteur);
 
 	usleep(this->xWakePeriod);
