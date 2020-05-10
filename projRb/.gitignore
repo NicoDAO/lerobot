@@ -1,2 +1,4 @@
 /build/
 *.o
+*.tmp
+/project_1_vivado_2019_1.cache/

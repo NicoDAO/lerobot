@@ -25,7 +25,7 @@ public:
 
     void handler(void);
     void SetAdresseMoteur(u32);
-    void reglePuissanceMoteur(u32);
+    void reglePuissanceMoteur(u32,u8 sens);
     void met_marcheAvant(void);
     void met_marcheArriere(void);
     void SetNomMoteur(char*, unsigned char taille);

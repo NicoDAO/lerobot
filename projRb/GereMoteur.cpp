@@ -42,7 +42,7 @@ void GereMoteur::handler() {
 		{
 			//il n'y a plus de probleme de sens
 			//float valeur_calibre = ((float)rapport_cyclique ) * calibre;
-			reglePuissanceMoteur(rapport_cyclique);
+			reglePuissanceMoteur(rapport_cyclique,sens);
 			//	puissanceMoteur.RegleMoteur((u32)valeur_calibre ,sens);
 		}
 	}
@@ -55,13 +55,13 @@ void GereMoteur::SetAdresseMoteur(uint32 add) {
 	lsensMoteur.setBaseAddr(add);
 }
 
-void GereMoteur::reglePuissanceMoteur(u32 p) {
+void GereMoteur::reglePuissanceMoteur(u32 p,u8 sens) {
 
 	u32 val_calibre = appliqueCalibre((int) p);
 	log_moteur("  %s   puissance brute = %d, puissance calibre = %d",
 			this->nom_moteur, p, val_calibre);
 
-	puissanceMoteur.RegleRapportCyclique(val_calibre); //test
+	puissanceMoteur.RegleMoteur(val_calibre,(u32)sens); //test
 }
 
 void GereMoteur::met_marcheAvant() {
@@ -87,7 +87,7 @@ void GereMoteur::Reglecalibre(float cal) {
 int GereMoteur::appliqueCalibre(int val) {
 	float cal = parametrage.at(0);
 	int valeur_calibre = ((float) val) * cal;
-	log_calibre("on calibre le moteur (%d) , coef  = %f ,commande moteur %d ", val, cal,
+	log_calibre("on calibre %s (%d) , coef  = %f ,commande %d ", nom_moteur, val, cal,
 			valeur_calibre);
 	return valeur_calibre;
 }
