@@ -1,8 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
---https://www.realdigital.org/doc/a9fee931f7a172423e1ba73f66ca4081
-entity capteurDistanceUltrason_v1_0_S00_AXI is
+
+entity mongyrocopse_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
 
@@ -16,8 +16,7 @@ entity capteurDistanceUltrason_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-        S_TRIG: out std_logic ;
-        E_ECHO: in std_logic ;
+
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -82,11 +81,10 @@ entity capteurDistanceUltrason_v1_0_S00_AXI is
     		-- accept the read data and response information.
 		S_AXI_RREADY	: in std_logic
 	);
-end capteurDistanceUltrason_v1_0_S00_AXI;
+end mongyrocopse_v1_0_S00_AXI;
 
-architecture arch_imp of capteurDistanceUltrason_v1_0_S00_AXI is
+architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 
-   signal distance_dd: std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -121,14 +119,15 @@ architecture arch_imp of capteurDistanceUltrason_v1_0_S00_AXI is
 	signal aw_en	: std_logic;
 
 begin
+
+ --   S_TRIG: out std_logic ;
+ --       E_ECHO: in std_logic ;
+
+    	-- I/O Connections assignments
+    spi_gyro_inst : entity work.spi_gyro port map(sdi_gyro=>E_ECHO,sdo_gyro=>S_TRIG , cs_gyro=>S_TRIG, clk_gyro=>S_TRIG,int1_gyro=>E_ECHO, int2_gyro=>E_ECHO );
+
 	-- I/O Connections assignments
-  capteur_inst : entity work.piloteHC_SR04 port map( entree_echo=>E_ECHO,sortie_trig=>S_TRIG,horloge=>S_AXI_ACLK, reset=>S_AXI_ARESETN ,distance=>distance_dd );
- -- capteur_inst : entity work.piloteHC_SR04 port map( entree_echo=>E_ECHO,sortie_trig=>S_TRIG,horloge=>S_AXI_ACLK, reset=>S_AXI_ARESETN ,distance=>axi_rdata );
-  
-    -- entree_echo : in STD_LOGIC;
-    --     sortie_trig : out STD_LOGIC;
-    --     horloge : in STD_LOGIC;
-    --    distance : out std_logic_vector(7 downto 0)
+
 	S_AXI_AWREADY	<= axi_awready;
 	S_AXI_WREADY	<= axi_wready;
 	S_AXI_BRESP	<= axi_bresp;
@@ -361,7 +360,7 @@ begin
 	    loc_addr := axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
 	    case loc_addr is
 	      when b"00" =>
-	       reg_data_out <= slv_reg0;-- <= distance;--slv_reg0;
+	        reg_data_out <= slv_reg0;
 	      when b"01" =>
 	        reg_data_out <= slv_reg1;
 	      when b"10" =>
@@ -385,29 +384,15 @@ begin
 	        -- acceptance of read address by the slave (axi_arready), 
 	        -- output the read dada 
 	        -- Read address mux
-	          axi_rdata <= distance_dd;     -- register read data
+	          axi_rdata <= reg_data_out;     -- register read data
 	      end if;   
 	    end if;
 	  end if;
 	end process;
 
 
---	ma lecture 
---process( S_AXI_ACLK ) is
---begin
---  if (rising_edge (S_AXI_ACLK)) then
---    if ( S_AXI_ARESETN = '0' ) then
---     -- axi_rdata  <= (others => '0');
---    else
---      if (slv_reg_rden = '1') then
---        slv_reg0   <="00000000000000000000000000100011";--distance;
---        slv_reg1   <="00000000000000000000001001000011";--distance;
---        slv_reg2   <="00000000000000000001000000000011";--distance;
---        slv_reg3   <="00000000000000000001000000000011";--distance;
---        end if;   
---    end if;
---  end if;
--- end process;
+	-- Add user logic here
+
 	-- User logic ends
 
 end arch_imp;

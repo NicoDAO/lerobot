@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity capteurDistanceUltrason_v1_0 is
+entity mongyrocopse_v1_0 is
 	generic (
 		-- Users to add parameters here
 
@@ -16,6 +16,8 @@ entity capteurDistanceUltrason_v1_0 is
 	);
 	port (
 		-- Users to add ports here
+	-- Users to add ports here
+	-- Users to add ports here
         sortie_trig: out std_logic ;
         entree_echo: in std_logic ;
 		-- User ports ends
@@ -45,18 +47,18 @@ entity capteurDistanceUltrason_v1_0 is
 		s00_axi_rvalid	: out std_logic;
 		s00_axi_rready	: in std_logic
 	);
-end capteurDistanceUltrason_v1_0;
+end mongyrocopse_v1_0;
 
-architecture arch_imp of capteurDistanceUltrason_v1_0 is
+architecture arch_imp of mongyrocopse_v1_0 is
 
 	-- component declaration
-	component capteurDistanceUltrason_v1_0_S00_AXI is
+	component mongyrocopse_v1_0_S00_AXI is
 		generic (
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 4
 		);
 		port (
-		S_TRIG : out std_logic;
+			S_TRIG : out std_logic;
         E_ECHO : in std_logic;
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
@@ -80,21 +82,21 @@ architecture arch_imp of capteurDistanceUltrason_v1_0 is
 		S_AXI_RVALID	: out std_logic;
 		S_AXI_RREADY	: in std_logic
 		);
-	end component capteurDistanceUltrason_v1_0_S00_AXI;
+	end component mongyrocopse_v1_0_S00_AXI;
 
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
-capteurDistanceUltrason_v1_0_S00_AXI_inst : capteurDistanceUltrason_v1_0_S00_AXI
+mongyrocopse_v1_0_S00_AXI_inst : mongyrocopse_v1_0_S00_AXI
 	generic map (
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
 	
-	    S_TRIG => sortie_trig ,
-        E_ECHO => entree_echo ,
-		S_AXI_ACLK	=> s00_axi_aclk,
+	-- Users to add ports here
+ 	    S_TRIG => sortie_trig ,
+        E_ECHO => entree_echo ,		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
 		S_AXI_AWPROT	=> s00_axi_awprot,
