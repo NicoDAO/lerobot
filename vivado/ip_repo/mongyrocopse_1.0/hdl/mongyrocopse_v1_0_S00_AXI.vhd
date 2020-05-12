@@ -16,9 +16,16 @@ entity mongyrocopse_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-
+	
+        SDIGYRO : out std_logic;
+        SDOGYRO : in std_logic;
+        CSGYRO : out std_logic;
+        CLKGYRO : out std_logic;
+        INT1GYRO : in std_logic;
+        INT2GYRO : in std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
+--  spi_gyro_inst : entity work.spi_gyro port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO );
 
 		-- Global Clock Signal
 		S_AXI_ACLK	: in std_logic;
@@ -84,6 +91,12 @@ entity mongyrocopse_v1_0_S00_AXI is
 end mongyrocopse_v1_0_S00_AXI;
 
 architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
+ --  signal sdi_gyro :std_logic;
+--   signal sdo_gyro :std_logic;
+ --  signal cs_gyro :std_logic;
+ --  signal clk_gyr :std_logic;
+ --  signal int1_gyro :std_logic;
+ --  signal int2_gyro :std_logic;
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -119,12 +132,8 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 	signal aw_en	: std_logic;
 
 begin
-
- --   S_TRIG: out std_logic ;
- --       E_ECHO: in std_logic ;
-
-    	-- I/O Connections assignments
-    spi_gyro_inst : entity work.spi_gyro port map(sdi_gyro=>E_ECHO,sdo_gyro=>S_TRIG , cs_gyro=>S_TRIG, clk_gyro=>S_TRIG,int1_gyro=>E_ECHO, int2_gyro=>E_ECHO );
+    -- I/O Connections assignments
+    spi_gyro_inst : entity work.spi_gyro port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO );
 
 	-- I/O Connections assignments
 

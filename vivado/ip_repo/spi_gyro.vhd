@@ -32,8 +32,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity spi_gyro is
-    Port ( sdi_gyro : in STD_LOGIC;
-           sdo_gyro : out STD_LOGIC;
+    Port ( sdi_gyro : out STD_LOGIC;
+           sdo_gyro : in STD_LOGIC;
            cs_gyro : out STD_LOGIC;
            clk_gyro : out STD_LOGIC;
            int1_gyro : in STD_LOGIC;

@@ -18,10 +18,14 @@ entity mongyrocopse_v1_0 is
 		-- Users to add ports here
 	-- Users to add ports here
 	-- Users to add ports here
-        sortie_trig: out std_logic ;
-        entree_echo: in std_logic ;
-		-- User ports ends
-		-- Do not modify the ports beyond this line
+        sdi_gyro   : out std_logic;     
+        sdo_gyro   : in std_logic;        
+        cs_gyro    : out std_logic;      
+        clk_gyr    : out std_logic;
+        int1_gyro  : in std_logic;
+        int2_gyro  : in std_logic;
+        -- User ports ends
+    -- Do not modify the ports beyond this line
 
 
 		-- Ports of Axi Slave Bus Interface S00_AXI
@@ -58,8 +62,14 @@ architecture arch_imp of mongyrocopse_v1_0 is
 		C_S_AXI_ADDR_WIDTH	: integer	:= 4
 		);
 		port (
-			S_TRIG : out std_logic;
-        E_ECHO : in std_logic;
+	
+        SDIGYRO : out std_logic;     
+        SDOGYRO : in std_logic;          
+        CSGYRO : out std_logic;          
+        CLKGYRO : out std_logic;           
+        INT1GYRO: in std_logic;        
+        INT2GYRO : in std_logic;   
+           
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -95,8 +105,14 @@ mongyrocopse_v1_0_S00_AXI_inst : mongyrocopse_v1_0_S00_AXI
 	port map (
 	
 	-- Users to add ports here
- 	    S_TRIG => sortie_trig ,
-        E_ECHO => entree_echo ,		S_AXI_ACLK	=> s00_axi_aclk,
+ 	     SDIGYRO => sdi_gyro,        
+        SDOGYRO =>sdo_gyro,           
+        CSGYRO  =>cs_gyro,           
+        CLKGYRO =>clk_gyr,            
+        INT1GYRO=>int1_gyro,          
+        INT2GYRO =>int2_gyro,       
+        
+        S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
 		S_AXI_AWPROT	=> s00_axi_awprot,
