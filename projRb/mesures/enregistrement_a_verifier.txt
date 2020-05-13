@@ -355,7 +355,7 @@ pb le robot ne recule pas
 98454;Sat Apr 18 05:37:27 2020; 63607; [info];on est en mode ROBO
 98455;Sat Apr 18 05:37:27 2020; 63670; [calibre];on applique  le calibrage (0.870000) capteur 19273 
 98456;Sat Apr 18 05:37:27 2020; 63766; [traction];GestionTraction : recoit 1 message
-98457;Sat Apr 18 05:37:27 2020; 63835; [traction];[0]GestionTraction : Recoit mesure distance : 22154 ->22154
+98457;Sat Apr 18 05:37:27 2020; 63835; [traction];[0]GestionTraction : Recoit mesure distance : 22154 ->	
 98458;Sat Apr 18 05:37:27 2020; 63880; [traction];Robot_avant_rapide 
 98459;Sat Apr 18 05:37:27 2020; 63975; [moteur];Recoit message :moteur1  messages: 900 ->900
 98461;Sat Apr 18 05:37:27 2020; 64070; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
