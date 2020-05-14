@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity mongyrocopse_v1_0 is
+entity capteurDistanceUltrason_v1_0 is
 	generic (
 		-- Users to add parameters here
 
@@ -16,16 +16,10 @@ entity mongyrocopse_v1_0 is
 	);
 	port (
 		-- Users to add ports here
-	-- Users to add ports here
-	-- Users to add ports here
-        sdi_gyro   : in std_logic;     
-        sdo_gyro   : out std_logic;        
-        cs_gyro    : in std_logic;      
-        clk_gyr    : in std_logic;
-        int1_gyro  : out std_logic;
-        int2_gyro  : out std_logic;
-        -- User ports ends
-    -- Do not modify the ports beyond this line
+        sortie_trig: out std_logic ;
+        entree_echo: in std_logic ;
+		-- User ports ends
+		-- Do not modify the ports beyond this line
 
 
 		-- Ports of Axi Slave Bus Interface S00_AXI
@@ -51,25 +45,19 @@ entity mongyrocopse_v1_0 is
 		s00_axi_rvalid	: out std_logic;
 		s00_axi_rready	: in std_logic
 	);
-end mongyrocopse_v1_0;
+end capteurDistanceUltrason_v1_0;
 
-architecture arch_imp of mongyrocopse_v1_0 is
+architecture arch_imp of capteurDistanceUltrason_v1_0 is
 
 	-- component declaration
-	component mongyrocopse_v1_0_S00_AXI is
+	component capteurDistanceUltrason_v1_0_S00_AXI is
 		generic (
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 4
 		);
 		port (
-	
-        SDIGYRO : in std_logic;     
-        SDOGYRO : out std_logic;          
-        CSGYRO : in std_logic;          
-        CLKGYRO : in std_logic;           
-        INT1GYRO: out std_logic;        
-        INT2GYRO : out std_logic;   
-           
+		S_TRIG : out std_logic;
+        E_ECHO : in std_logic;
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -92,27 +80,21 @@ architecture arch_imp of mongyrocopse_v1_0 is
 		S_AXI_RVALID	: out std_logic;
 		S_AXI_RREADY	: in std_logic
 		);
-	end component mongyrocopse_v1_0_S00_AXI;
+	end component capteurDistanceUltrason_v1_0_S00_AXI;
 
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
-mongyrocopse_v1_0_S00_AXI_inst : mongyrocopse_v1_0_S00_AXI
+capteurDistanceUltrason_v1_0_S00_AXI_inst : capteurDistanceUltrason_v1_0_S00_AXI
 	generic map (
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
 	
-	-- Users to add ports here
- 	     SDIGYRO => sdi_gyro,        
-        SDOGYRO =>sdo_gyro,           
-        CSGYRO  =>cs_gyro,           
-        CLKGYRO =>clk_gyr,            
-        INT1GYRO=>int1_gyro,          
-        INT2GYRO =>int2_gyro,       
-        
-        S_AXI_ACLK	=> s00_axi_aclk,
+	    S_TRIG => sortie_trig ,
+        E_ECHO => entree_echo ,
+		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
 		S_AXI_AWPROT	=> s00_axi_awprot,

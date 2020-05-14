@@ -133,7 +133,7 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 
 begin
     -- I/O Connections assignments
-    spi_gyro_inst : entity work.spi_gyro port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO ,horloge=>S_AXI_ACLK, reset_n=>S_AXI_ARESETN);
+    spi_gyro_inst : entity work.spi_gyro port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO );
 
 	-- I/O Connections assignments
 
