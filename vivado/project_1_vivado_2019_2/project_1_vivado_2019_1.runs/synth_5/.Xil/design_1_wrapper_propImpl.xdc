@@ -1,5 +1,5 @@
-set_property SRC_FILE_INFO {cfile:/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc rfile:../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:design_1_i/processing_system7_0/inst} [current_design]
-set_property SRC_FILE_INFO {cfile:/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc rfile:../../../project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc rfile:../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:design_1_i/processing_system7_0/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc rfile:../../../project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc id:2} [current_design]
 current_instance design_1_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.48
@@ -312,3 +312,17 @@ set_property src_info {type:XDC file:2 line:72 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN V15 [get_ports  sortie_trig_0]
 set_property src_info {type:XDC file:2 line:78 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN T11 [get_ports  entree_echo_0]
+set_property src_info {type:XDC file:2 line:83 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN E9 [get_ports  sdi_gyro_0]#JF2
+set_property src_info {type:XDC file:2 line:85 export:INPUT save:INPUT read:READ} [current_design]
+set_property IOSTANDARD LVCMOS33 [get_ports  clk_gyro_0]
+set_property src_info {type:XDC file:2 line:86 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN D9 [get_ports  clk_gyro_0]#JF4
+set_property src_info {type:XDC file:2 line:89 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C6 [get_ports  sdo_gyro_0] #JF3
+set_property src_info {type:XDC file:2 line:92 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN E6 [get_ports  int1_gyro_0]#JF7
+set_property src_info {type:XDC file:2 line:95 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN B5 [get_ports  int2_gyro_0]#JF8
+set_property src_info {type:XDC file:2 line:98 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN E8 [get_ports  cs_gyro_0]#JF1

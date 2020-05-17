@@ -127,10 +127,15 @@ vlog -work xil_defaultlib -64 -incr "+incdir+../../../../project_1_vivado_2019_1
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/design_1/ip/design_1_pmod_audio_0_1/sim/design_1_pmod_audio_0_1.vhd" \
-"../../../bd/design_1/ipshared/5f0c/hdl/piloteHC-SR04.vhd" \
-"../../../bd/design_1/ipshared/5f0c/hdl/capteurDistanceUltrason_v1_0_S00_AXI.vhd" \
-"../../../bd/design_1/ipshared/5f0c/hdl/capteurDistanceUltrason_v1_0.vhd" \
-"../../../bd/design_1/ip/design_1_capteurDistanceUltra_0_0/sim/design_1_capteurDistanceUltra_0_0.vhd" \
+"../../../bd/design_1/ipshared/fd1c/hdl/piloteHC-SR04.vhd" \
+"../../../bd/design_1/ipshared/fd1c/hdl/capteurDistanceUltrason_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/fd1c/hdl/capteurDistanceUltrason_v1_0.vhd" \
+"../../../bd/design_1/ip/design_1_GyrocsopeSPI_0_0/sim/design_1_GyrocsopeSPI_0_0.vhd" \
+"../../../../project_1_vivado_2019_1.srcs/sources_1/bd/inerface_spi.vhd" \
+"../../../bd/design_1/ipshared/spi_gyro.vhd" \
+"../../../bd/design_1/ipshared/c546/hdl/mongyrocopse_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/c546/hdl/mongyrocopse_v1_0.vhd" \
+"../../../bd/design_1/ip/design_1_mongyrocopse_1_0/sim/design_1_mongyrocopse_1_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_20 -64 -incr "+incdir+../../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/2d50/hdl" "+incdir+../../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/opt/Xilinx/Vivado/2019.2/data/xilinx_vip/include" \
 "../../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

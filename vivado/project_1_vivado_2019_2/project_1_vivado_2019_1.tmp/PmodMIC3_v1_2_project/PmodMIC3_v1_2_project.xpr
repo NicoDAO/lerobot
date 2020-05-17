@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.tmp/PmodMIC3_v1_2_project/PmodMIC3_v1_2_project.xpr">
+<Project Version="7" Minor="44" Path="/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.tmp/PmodMIC3_v1_2_project/PmodMIC3_v1_2_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="8ae29705626c46dabc3975a4d82f7bb7"/>
+    <Option Name="Id" Val="7ad4e8488b594c08b738e222f8089551"/>
     <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -20,24 +20,25 @@
     <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val=""/>
     <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../../../.Xilinx/Vivado/2019.2/xhub/board_store"/>
-    <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../projetZybo/vivado-boards-master/vivado-boards-master/old/board_parts/zynq/zybo/1.0"/>
+    <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/projetZybo/vivado-boards-master/vivado-boards-master/old/board_parts/zynq/zybo/1.0"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip_repo/capteurDistanceUltrason_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/gainNvoies_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/melangeurNvoies_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/melangeur_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/filtre/src/FIR_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/FIR_RAM_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/PmodMIC3_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/pmod_audio_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/audio_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/codec_I2C_I2S_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../ip_repo/traitement_audio_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../vivado-library-master"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../IPs"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip_repo/mongyrocopse_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/vivado2019_2/ip_repo/capteurDistanceUltrason_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/gainNvoies_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/melangeurNvoies_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/melangeur_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/filtre/src/FIR_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/FIR_RAM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/PmodMIC3_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/pmod_audio_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/audio_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/codec_I2C_I2S_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/traitement_audio_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/vivado-library-master"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/IPs"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -75,20 +76,20 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../../ip_repo/PmodMIC3_1.0/entre_micro.vhd">
+      <File Path="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/PmodMIC3_1.0/entre_micro.vhd">
         <FileInfo>
           <Attr Name="Library" Val=""/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../ip_repo/PmodMIC3_1.0/component.xml">
+      <File Path="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/PmodMIC3_1.0/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="entre_micro"/>
-        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../ip_repo/PmodMIC3_1.0/entre_micro.vhd"/>
+        <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../../vivado/vivado/FPGA_xilinx/ip_repo/PmodMIC3_1.0/entre_micro.vhd"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

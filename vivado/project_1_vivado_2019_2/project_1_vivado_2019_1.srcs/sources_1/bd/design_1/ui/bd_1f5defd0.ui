@@ -1,100 +1,114 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.737265",
-   "Default View_TopLeft":"1048,-258",
+   "Default View_ScaleFactor":"0.64065",
+   "Default View_TopLeft":"595,1945",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 10 -x 4680 -y 920 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 9 -x 4440 -y 1470 -defaultsOSRD -bot
-preplace port gain_ampli_0 -pg 1 -lvl 10 -x 4680 -y 570 -defaultsOSRD
-preplace port sortie_pwm_0 -pg 1 -lvl 10 -x 4680 -y 550 -defaultsOSRD
-preplace port shd_ampli_0 -pg 1 -lvl 10 -x 4680 -y 530 -defaultsOSRD
-preplace port sck_mic_0 -pg 1 -lvl 10 -x 4680 -y 220 -defaultsOSRD
-preplace port cs_mic_0 -pg 1 -lvl 10 -x 4680 -y 180 -defaultsOSRD
-preplace port sdi_mic_0 -pg 1 -lvl 0 -x -210 -y 0 -defaultsOSRD
-preplace port LDAC_0 -pg 1 -lvl 10 -x 4680 -y 590 -defaultsOSRD
-preplace port sortie_pwm_1 -pg 1 -lvl 10 -x 4680 -y 380 -defaultsOSRD
-preplace port DIR_MOTEUR1 -pg 1 -lvl 10 -x 4680 -y 60 -defaultsOSRD
-preplace port DIR_MOTEUR2 -pg 1 -lvl 10 -x 4680 -y 280 -defaultsOSRD
-preplace port entree_echo_0 -pg 1 -lvl 0 -x -210 -y -180 -defaultsOSRD
-preplace port sortie_trig_0 -pg 1 -lvl 10 -x 4680 -y -170 -defaultsOSRD
-preplace portBus LedC -pg 1 -lvl 10 -x 4680 -y 1000 -defaultsOSRD
-preplace portBus gpio_io_i_0 -pg 1 -lvl 0 -x -210 -y 910 -defaultsOSRD
-preplace portBus s_pwm -pg 1 -lvl 10 -x 4680 -y 870 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 350 -y 930 -defaultsOSRD -orient R90
-preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 350 -y 560 -defaultsOSRD
-preplace inst interface_DAC8551_1 -pg 1 -lvl 9 -x 4470 -y 560 -defaultsOSRD
-preplace inst FIR_0 -pg 1 -lvl 6 -x 3315 -y 200 -defaultsOSRD
-preplace inst FIR_1 -pg 1 -lvl 6 -x 3315 -y 400 -defaultsOSRD
-preplace inst FIR_2 -pg 1 -lvl 6 -x 3315 -y 620 -defaultsOSRD
-preplace inst FIR_3 -pg 1 -lvl 6 -x 3315 -y 820 -defaultsOSRD
-preplace inst melangeur_0 -pg 1 -lvl 8 -x 4150 -y 530 -defaultsOSRD
-preplace inst gainNvoies_0 -pg 1 -lvl 7 -x 3750 -y 530 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -x 1460 -y 330 -defaultsOSRD
-preplace inst pmod_audio_0 -pg 1 -lvl 2 -x 810 -y 120 -defaultsOSRD
-preplace inst pmod_audio_1 -pg 1 -lvl 2 -x 810 -y 340 -defaultsOSRD
-preplace inst PmodMIC3_0 -pg 1 -lvl 5 -x 2855 -y 520 -defaultsOSRD
-preplace inst capteurDistanceUltra_0 -pg 1 -lvl 4 -x 1790 -y -170 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 9 -180 1140N 620 460 1020 30 1640 30 N 30 3010 70 3560 370 3980 380 4320
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 5 -170 660N 610 470 990 70 NJ 70 1930
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 8 600 490 980 -40 1650 -40 1980 10 3020J 940 3580J 690 3990 680 4310
-preplace netloc PmodMIC3_0_sck_mic 1 5 5 2990J 90 3580J 220 NJ 220 NJ 220 NJ
-preplace netloc PmodMIC3_0_cs_mic 1 5 5 2980J 80 3590J 180 NJ 180 NJ 180 NJ
-preplace netloc sdi_mic_0_1 1 0 5 NJ 0 580J -10 N -10 NJ -10 1940
-preplace netloc interface_DAC8551_1_LDAC 1 9 1 N 590
-preplace netloc interface_DAC8551_1_SCLK 1 9 1 N 530
-preplace netloc interface_DAC8551_1_sync 1 9 1 N 550
-preplace netloc interface_DAC8551_1_audio_out 1 9 1 N 570
-preplace netloc PmodMIC3_0_audio_out 1 5 1 3070 190n
-preplace netloc PmodMIC3_0_audio_valid1 1 5 1 3080 210n
-preplace netloc processing_system7_0_FCLK_CLK2 1 1 5 590 -30 N -30 NJ -30 1970 290 3060J
-preplace netloc melangeur_0_audio_out 1 8 1 4310 520n
-preplace netloc melangeur_0_audio_valid_out 1 8 1 4300 540n
-preplace netloc FIR_0_s00_sortie_fir 1 6 1 3570 190n
-preplace netloc FIR_1_s00_sortie_fir 1 6 1 3520 390n
-preplace netloc FIR_2_s00_sortie_fir 1 6 1 3520 490n
-preplace netloc FIR_3_s00_sortie_fir 1 6 1 3540 510n
-preplace netloc FIR_3_s00_traitement_fini 1 6 1 3570 590n
-preplace netloc FIR_2_s00_traitement_fini 1 6 1 3550 570n
-preplace netloc FIR_1_s00_traitement_fini 1 6 1 3510 410n
-preplace netloc FIR_0_s00_traitement_fini 1 6 1 3530 210n
-preplace netloc gainNvoies_0_audio_out_1 1 7 1 3980 460n
-preplace netloc gainNvoies_0_audio_out_2 1 7 1 3970 480n
-preplace netloc gainNvoies_0_audio_out_3 1 7 1 3960 500n
-preplace netloc gainNvoies_0_audio_out_4 1 7 1 3950 520n
-preplace netloc gainNvoies_0_sortie_out_1_pret 1 7 1 3940 540n
-preplace netloc gainNvoies_0_sortie_out_2_pret 1 7 1 3930 560n
-preplace netloc gainNvoies_0_sortie_out_3_pret 1 7 1 3920 580n
-preplace netloc gainNvoies_0_sortie_out_4_pret 1 7 1 3910 600n
-preplace netloc gpio_io_i_0_1 1 0 1 -190 720n
-preplace netloc processing_system7_0_GPIO_O 1 1 9 N 670 N 670 NJ 670 1970 920 2980J 1020 NJ 1020 NJ 1020 4320J 1000 NJ
-preplace netloc pmod_audio_0_sortie_pwm 1 2 8 960J 20 NJ 20 N 20 NJ 20 NJ 20 NJ 20 NJ 20 4620
-preplace netloc pmod_audio_1_sortie_pwm 1 2 8 1010J 60 NJ 60 N 60 NJ 60 NJ 60 NJ 60 NJ 60 4600J
-preplace netloc pmod_audio_0_out1 1 2 8 970J 40 NJ 40 N 40 NJ 40 NJ 40 NJ 40 NJ 40 4630J
-preplace netloc pmod_audio_1_out1 1 2 8 1000J 50 NJ 50 N 50 NJ 50 NJ 50 NJ 50 NJ 50 4610J
-preplace netloc entree_echo_0_1 1 0 4 NJ -180 NJ -180 NJ -180 NJ
-preplace netloc capteurDistanceUltra_0_sortie_trig 1 4 6 NJ -170 NJ -170 NJ -170 NJ -170 NJ -170 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 1 8 NJ 690 N 690 NJ 690 1930 1010 NJ 1010 NJ 1010 NJ 1010 4310J
-preplace netloc ps7_0_axi_periph_M03_AXI 1 3 3 N 320 1960 350 NJ
-preplace netloc ps7_0_axi_periph_M00_AXI 1 1 3 640 0 NJ 0 1610
-preplace netloc ps7_0_axi_periph_M04_AXI 1 3 3 NJ 340 1950 360 3050
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 640 480 1030
-preplace netloc ps7_0_axi_periph_M05_AXI 1 3 3 NJ 360 1920 370 3030
-preplace netloc ps7_0_axi_periph_M06_AXI 1 3 4 N 380 N 380 3040 510 3500
-preplace netloc ps7_0_axi_periph_M07_AXI 1 3 1 1630 -200n
-preplace netloc ps7_0_axi_periph_M01_AXI 1 3 3 NJ 280 N 280 3000
-preplace netloc ps7_0_axi_periph_M02_AXI 1 1 3 630 -20 NJ -20 1620
-preplace netloc processing_system7_0_DDR 1 1 9 NJ 680 N 680 NJ 680 1950 930 NJ 930 3590J 920 NJ 920 NJ 920 NJ
-levelinfo -pg 1 -210 350 810 1460 1790 2855 3315 3750 4150 4470 4680
-pagesize -pg 1 -db -bbox -sgen -380 -480 4840 1580
+preplace port DDR -pg 1 -lvl 6 -x 2050 -y 1290 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 1 -x 80 -y 2350 -defaultsOSRD -bot
+preplace port gain_ampli_0 -pg 1 -lvl 6 -x 2050 -y 350 -defaultsOSRD
+preplace port sortie_pwm_0 -pg 1 -lvl 6 -x 2050 -y 330 -defaultsOSRD
+preplace port shd_ampli_0 -pg 1 -lvl 6 -x 2050 -y 310 -defaultsOSRD
+preplace port sck_mic_0 -pg 1 -lvl 6 -x 2050 -y 1360 -defaultsOSRD
+preplace port cs_mic_0 -pg 1 -lvl 6 -x 2050 -y 1380 -defaultsOSRD
+preplace port sdi_mic_0 -pg 1 -lvl 0 -x -30 -y 1750 -defaultsOSRD
+preplace port LDAC_0 -pg 1 -lvl 6 -x 2050 -y 370 -defaultsOSRD
+preplace port sortie_pwm_1 -pg 1 -lvl 6 -x 2050 -y 2050 -defaultsOSRD
+preplace port DIR_MOTEUR1 -pg 1 -lvl 6 -x 2050 -y 1730 -defaultsOSRD
+preplace port DIR_MOTEUR2 -pg 1 -lvl 6 -x 2050 -y 1950 -defaultsOSRD
+preplace port entree_echo_0 -pg 1 -lvl 0 -x -30 -y 1960 -defaultsOSRD
+preplace port sortie_trig_0 -pg 1 -lvl 6 -x 2050 -y 1490 -defaultsOSRD
+preplace port sdi_gyro_0 -pg 1 -lvl 0 -x -30 -y 2190 -defaultsOSRD
+preplace port cs_gyro_0 -pg 1 -lvl 0 -x -30 -y 2210 -defaultsOSRD
+preplace port clk_gyr_0 -pg 1 -lvl 0 -x -30 -y 2230 -defaultsOSRD
+preplace port sdo_gyro_0 -pg 1 -lvl 6 -x 2050 -y 2200 -defaultsOSRD
+preplace port int1_gyro_0 -pg 1 -lvl 6 -x 2050 -y 2220 -defaultsOSRD
+preplace port int2_gyro_0 -pg 1 -lvl 6 -x 2050 -y 2240 -defaultsOSRD
+preplace portBus LedC -pg 1 -lvl 6 -x 2050 -y 1470 -defaultsOSRD
+preplace portBus gpio_io_i_0 -pg 1 -lvl 0 -x -30 -y 1320 -defaultsOSRD
+preplace portBus s_pwm -pg 1 -lvl 6 -x 2050 -y 1830 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 270 -y 1530 -defaultsOSRD -orient R90
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 270 -y 1850 -defaultsOSRD
+preplace inst interface_DAC8551_1 -pg 1 -lvl 5 -x 1900 -y 340 -defaultsOSRD
+preplace inst FIR_0 -pg 1 -lvl 3 -x 1210 -y 690 -defaultsOSRD
+preplace inst FIR_1 -pg 1 -lvl 3 -x 1210 -y 470 -defaultsOSRD
+preplace inst FIR_2 -pg 1 -lvl 3 -x 1210 -y 920 -defaultsOSRD
+preplace inst FIR_3 -pg 1 -lvl 3 -x 1210 -y 1140 -defaultsOSRD
+preplace inst melangeur_0 -pg 1 -lvl 4 -x 1610 -y 160 -defaultsOSRD
+preplace inst gainNvoies_0 -pg 1 -lvl 3 -x 1210 -y 180 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 700 -y 1630 -defaultsOSRD
+preplace inst pmod_audio_0 -pg 1 -lvl 3 -x 1210 -y 1790 -defaultsOSRD
+preplace inst pmod_audio_1 -pg 1 -lvl 3 -x 1210 -y 2010 -defaultsOSRD
+preplace inst PmodMIC3_0 -pg 1 -lvl 4 -x 1610 -y 1390 -defaultsOSRD
+preplace inst GyrocsopeSPI_0 -pg 1 -lvl 3 -x 1210 -y 1410 -defaultsOSRD
+preplace inst mongyrocopse_1 -pg 1 -lvl 3 -x 1210 -y 2220 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 30 1740N 520 1300 930 1260 1450 310 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 10 1270N 520J 1260 920J 1310 1430
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 4 530 1310 910 1280 1460 370 NJ
+preplace netloc PmodMIC3_0_sck_mic 1 4 2 NJ 1360 NJ
+preplace netloc PmodMIC3_0_cs_mic 1 4 2 NJ 1380 NJ
+preplace netloc sdi_mic_0_1 1 0 4 0J 1260 510J 1270 860J 1320 1410J
+preplace netloc interface_DAC8551_1_LDAC 1 5 1 NJ 370
+preplace netloc interface_DAC8551_1_SCLK 1 5 1 NJ 310
+preplace netloc interface_DAC8551_1_sync 1 5 1 NJ 330
+preplace netloc interface_DAC8551_1_audio_out 1 5 1 NJ 350
+preplace netloc PmodMIC3_0_audio_out 1 2 3 1020 1030 NJ 1030 1760
+preplace netloc PmodMIC3_0_audio_valid1 1 2 3 1030 810 NJ 810 1770
+preplace netloc processing_system7_0_FCLK_CLK2 1 1 3 500 1240 970 1300 1450
+preplace netloc melangeur_0_audio_out 1 4 1 1770 150n
+preplace netloc melangeur_0_audio_valid_out 1 4 1 1760 170n
+preplace netloc FIR_0_s00_sortie_fir 1 2 2 980 1250 1410
+preplace netloc FIR_1_s00_sortie_fir 1 2 2 1030 20 1400
+preplace netloc FIR_2_s00_sortie_fir 1 2 2 990 580 1400
+preplace netloc FIR_3_s00_sortie_fir 1 2 2 1000 800 1390
+preplace netloc FIR_3_s00_traitement_fini 1 2 2 1030 360 1430
+preplace netloc FIR_2_s00_traitement_fini 1 2 2 1020 350 1420
+preplace netloc FIR_1_s00_traitement_fini 1 2 2 1010 340 1390
+preplace netloc FIR_0_s00_traitement_fini 1 2 2 1020 10 1440
+preplace netloc gainNvoies_0_audio_out_1 1 3 1 N 110
+preplace netloc gainNvoies_0_audio_out_2 1 3 1 N 130
+preplace netloc gainNvoies_0_audio_out_3 1 3 1 N 150
+preplace netloc gainNvoies_0_audio_out_4 1 3 1 N 170
+preplace netloc gainNvoies_0_sortie_out_1_pret 1 3 1 N 190
+preplace netloc gainNvoies_0_sortie_out_2_pret 1 3 1 N 210
+preplace netloc gainNvoies_0_sortie_out_3_pret 1 3 1 N 230
+preplace netloc gainNvoies_0_sortie_out_4_pret 1 3 1 N 250
+preplace netloc gpio_io_i_0_1 1 0 1 NJ 1320
+preplace netloc processing_system7_0_GPIO_O 1 1 5 NJ 1280 900J 1270 NJ 1270 NJ 1270 2030J
+preplace netloc pmod_audio_0_sortie_pwm 1 3 3 NJ 1830 NJ 1830 NJ
+preplace netloc pmod_audio_1_sortie_pwm 1 3 3 NJ 2050 NJ 2050 NJ
+preplace netloc pmod_audio_0_out1 1 3 3 NJ 1730 NJ 1730 NJ
+preplace netloc pmod_audio_1_out1 1 3 3 NJ 1950 NJ 1950 NJ
+preplace netloc entree_echo_0_1 1 0 3 -10J 1250 NJ 1250 950J
+preplace netloc GyrocsopeSPI_0_sortie_trig 1 3 3 1390J 1490 NJ 1490 NJ
+preplace netloc sdi_gyro_0_1 1 0 3 NJ 2190 NJ 2190 NJ
+preplace netloc cs_gyro_0_1 1 0 3 NJ 2210 NJ 2210 NJ
+preplace netloc clk_gyr_0_1 1 0 3 NJ 2230 NJ 2230 NJ
+preplace netloc mongyrocopse_1_int1_gyro 1 3 3 NJ 2220 NJ 2220 NJ
+preplace netloc mongyrocopse_1_int2_gyro 1 3 3 NJ 2240 NJ 2240 NJ
+preplace netloc mongyrocopse_1_sdo_gyro 1 3 3 N 2200 NJ 2200 NJ
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 890 640n
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 1 960 1090n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 860 1570n
+preplace netloc processing_system7_0_FIXED_IO 1 0 1 20 1310n
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 940 870n
+preplace netloc ps7_0_axi_periph_M06_AXI 1 2 1 870 80n
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 510 1310n
+preplace netloc ps7_0_axi_periph_M07_AXI 1 2 1 850 1670n
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 880 420n
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 1290 NJ 1290 NJ 1290 NJ 1290 NJ
+preplace netloc ps7_0_axi_periph_M08_AXI 1 2 1 1020 1380n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 900 1530n
+levelinfo -pg 1 -30 270 700 1210 1610 1900 2050
+pagesize -pg 1 -db -bbox -sgen -200 0 2210 2460
 "
 }
 {
-   "da_axi4_cnt":"56",
+   "da_axi4_cnt":"61",
    "da_board_cnt":"6",
-   "da_clkrst_cnt":"11",
+   "da_clkrst_cnt":"13",
    "da_ps7_cnt":"1"
 }

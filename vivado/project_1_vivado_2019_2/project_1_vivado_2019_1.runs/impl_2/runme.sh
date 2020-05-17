@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/impl_2'
+HD_PWD='/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/impl_2'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

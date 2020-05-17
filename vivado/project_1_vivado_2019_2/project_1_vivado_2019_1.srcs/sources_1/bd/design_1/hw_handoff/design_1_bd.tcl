@@ -165,13 +165,19 @@ proc create_root_design { parentCell } {
   set DIR_MOTEUR2 [ create_bd_port -dir O DIR_MOTEUR2 ]
   set LDAC_0 [ create_bd_port -dir O LDAC_0 ]
   set LedC [ create_bd_port -dir O -from 3 -to 0 LedC ]
+  set clk_gyr_0 [ create_bd_port -dir I clk_gyr_0 ]
+  set cs_gyro_0 [ create_bd_port -dir I cs_gyro_0 ]
   set cs_mic_0 [ create_bd_port -dir O cs_mic_0 ]
   set entree_echo_0 [ create_bd_port -dir I entree_echo_0 ]
   set gain_ampli_0 [ create_bd_port -dir O gain_ampli_0 ]
   set gpio_io_i_0 [ create_bd_port -dir I -from 3 -to 0 gpio_io_i_0 ]
+  set int1_gyro_0 [ create_bd_port -dir O int1_gyro_0 ]
+  set int2_gyro_0 [ create_bd_port -dir O int2_gyro_0 ]
   set s_pwm [ create_bd_port -dir O -from 0 -to 0 s_pwm ]
   set sck_mic_0 [ create_bd_port -dir O sck_mic_0 ]
+  set sdi_gyro_0 [ create_bd_port -dir I sdi_gyro_0 ]
   set sdi_mic_0 [ create_bd_port -dir I sdi_mic_0 ]
+  set sdo_gyro_0 [ create_bd_port -dir O sdo_gyro_0 ]
   set shd_ampli_0 [ create_bd_port -dir O shd_ampli_0 ]
   set sortie_pwm_0 [ create_bd_port -dir O sortie_pwm_0 ]
   set sortie_pwm_1 [ create_bd_port -dir O sortie_pwm_1 ]
@@ -201,11 +207,11 @@ proc create_root_design { parentCell } {
    CONFIG.numero {0} \
  ] $FIR_3
 
+  # Create instance: GyrocsopeSPI_0, and set properties
+  set GyrocsopeSPI_0 [ create_bd_cell -type ip -vlnv user.org:user:capteurDistance:1.0 GyrocsopeSPI_0 ]
+
   # Create instance: PmodMIC3_0, and set properties
   set PmodMIC3_0 [ create_bd_cell -type ip -vlnv moi.org:user:PmodMIC3:1.2 PmodMIC3_0 ]
-
-  # Create instance: capteurDistanceUltra_0, and set properties
-  set capteurDistanceUltra_0 [ create_bd_cell -type ip -vlnv user.org:user:capteurDistanceUltrason:1.0 capteurDistanceUltra_0 ]
 
   # Create instance: gainNvoies_0, and set properties
   set gainNvoies_0 [ create_bd_cell -type ip -vlnv user.org:user:gainNvoies:1.1 gainNvoies_0 ]
@@ -215,6 +221,9 @@ proc create_root_design { parentCell } {
 
   # Create instance: melangeur_0, and set properties
   set melangeur_0 [ create_bd_cell -type ip -vlnv user.org:user:melangeur:1.0 melangeur_0 ]
+
+  # Create instance: mongyrocopse_1, and set properties
+  set mongyrocopse_1 [ create_bd_cell -type ip -vlnv user.org:user:mongyrocopse:1.0 mongyrocopse_1 ]
 
   # Create instance: pmod_audio_0, and set properties
   set pmod_audio_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:pmod_audio:1.4 pmod_audio_0 ]
@@ -1033,7 +1042,7 @@ proc create_root_design { parentCell } {
   # Create instance: ps7_0_axi_periph, and set properties
   set ps7_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 ps7_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {8} \
+   CONFIG.NUM_MI {11} \
  ] $ps7_0_axi_periph
 
   # Create instance: rst_ps7_0_100M, and set properties
@@ -1050,7 +1059,8 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins FIR_2/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M04_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M05_AXI [get_bd_intf_pins FIR_3/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M05_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M06_AXI [get_bd_intf_pins gainNvoies_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M06_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M07_AXI [get_bd_intf_pins capteurDistanceUltra_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M07_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M07_AXI [get_bd_intf_pins mongyrocopse_1/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M07_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M08_AXI [get_bd_intf_pins GyrocsopeSPI_0/S00_AXI] [get_bd_intf_pins ps7_0_axi_periph/M08_AXI]
 
   # Create port connections
   connect_bd_net -net FIR_0_s00_sortie_fir [get_bd_pins FIR_0/s00_sortie_fir] [get_bd_pins gainNvoies_0/audio_in_1]
@@ -1061,12 +1071,14 @@ proc create_root_design { parentCell } {
   connect_bd_net -net FIR_2_s00_traitement_fini [get_bd_pins FIR_2/s00_traitement_fini] [get_bd_pins gainNvoies_0/audio_in_3_pret]
   connect_bd_net -net FIR_3_s00_sortie_fir [get_bd_pins FIR_3/s00_sortie_fir] [get_bd_pins gainNvoies_0/audio_in_4]
   connect_bd_net -net FIR_3_s00_traitement_fini [get_bd_pins FIR_3/s00_traitement_fini] [get_bd_pins gainNvoies_0/audio_in_4_pret]
+  connect_bd_net -net GyrocsopeSPI_0_sortie_trig [get_bd_ports sortie_trig_0] [get_bd_pins GyrocsopeSPI_0/sortie_trig]
   connect_bd_net -net PmodMIC3_0_audio_out [get_bd_pins FIR_0/s00_entree_fir] [get_bd_pins FIR_1/s00_entree_fir] [get_bd_pins FIR_2/s00_entree_fir] [get_bd_pins FIR_3/s00_entree_fir] [get_bd_pins PmodMIC3_0/audio_out]
   connect_bd_net -net PmodMIC3_0_audio_valid1 [get_bd_pins FIR_0/s00_nouvel_echantillon] [get_bd_pins FIR_1/s00_nouvel_echantillon] [get_bd_pins FIR_2/s00_nouvel_echantillon] [get_bd_pins FIR_3/s00_nouvel_echantillon] [get_bd_pins PmodMIC3_0/audio_valid]
   connect_bd_net -net PmodMIC3_0_cs_mic [get_bd_ports cs_mic_0] [get_bd_pins PmodMIC3_0/cs_mic]
   connect_bd_net -net PmodMIC3_0_sck_mic [get_bd_ports sck_mic_0] [get_bd_pins PmodMIC3_0/sck_mic]
-  connect_bd_net -net capteurDistanceUltra_0_sortie_trig [get_bd_ports sortie_trig_0] [get_bd_pins capteurDistanceUltra_0/sortie_trig]
-  connect_bd_net -net entree_echo_0_1 [get_bd_ports entree_echo_0] [get_bd_pins capteurDistanceUltra_0/entree_echo]
+  connect_bd_net -net clk_gyr_0_1 [get_bd_ports clk_gyr_0] [get_bd_pins mongyrocopse_1/clk_gyr]
+  connect_bd_net -net cs_gyro_0_1 [get_bd_ports cs_gyro_0] [get_bd_pins mongyrocopse_1/cs_gyro]
+  connect_bd_net -net entree_echo_0_1 [get_bd_ports entree_echo_0] [get_bd_pins GyrocsopeSPI_0/entree_echo]
   connect_bd_net -net gainNvoies_0_audio_out_1 [get_bd_pins gainNvoies_0/audio_out_1] [get_bd_pins melangeur_0/audio_in_1]
   connect_bd_net -net gainNvoies_0_audio_out_2 [get_bd_pins gainNvoies_0/audio_out_2] [get_bd_pins melangeur_0/audio_in_2]
   connect_bd_net -net gainNvoies_0_audio_out_3 [get_bd_pins gainNvoies_0/audio_out_3] [get_bd_pins melangeur_0/audio_in_3]
@@ -1082,15 +1094,19 @@ proc create_root_design { parentCell } {
   connect_bd_net -net interface_DAC8551_1_sync [get_bd_ports sortie_pwm_0] [get_bd_pins interface_DAC8551_1/sync]
   connect_bd_net -net melangeur_0_audio_out [get_bd_pins interface_DAC8551_1/audio_in0] [get_bd_pins melangeur_0/audio_out]
   connect_bd_net -net melangeur_0_audio_valid_out [get_bd_pins interface_DAC8551_1/nv_echantillon1] [get_bd_pins melangeur_0/audio_valid_out]
+  connect_bd_net -net mongyrocopse_1_int1_gyro [get_bd_ports int1_gyro_0] [get_bd_pins mongyrocopse_1/int1_gyro]
+  connect_bd_net -net mongyrocopse_1_int2_gyro [get_bd_ports int2_gyro_0] [get_bd_pins mongyrocopse_1/int2_gyro]
+  connect_bd_net -net mongyrocopse_1_sdo_gyro [get_bd_ports sdo_gyro_0] [get_bd_pins mongyrocopse_1/sdo_gyro]
   connect_bd_net -net pmod_audio_0_out1 [get_bd_ports DIR_MOTEUR1] [get_bd_pins pmod_audio_0/out1]
   connect_bd_net -net pmod_audio_0_sortie_pwm [get_bd_ports s_pwm] [get_bd_pins pmod_audio_0/sortie_pwm]
   connect_bd_net -net pmod_audio_1_out1 [get_bd_ports DIR_MOTEUR2] [get_bd_pins pmod_audio_1/out1]
   connect_bd_net -net pmod_audio_1_sortie_pwm [get_bd_ports sortie_pwm_1] [get_bd_pins pmod_audio_1/sortie_pwm]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins FIR_0/s00_axi_aclk] [get_bd_pins FIR_1/s00_axi_aclk] [get_bd_pins FIR_2/s00_axi_aclk] [get_bd_pins FIR_3/s00_axi_aclk] [get_bd_pins capteurDistanceUltra_0/s00_axi_aclk] [get_bd_pins gainNvoies_0/s00_axi_aclk] [get_bd_pins interface_DAC8551_1/clk_in] [get_bd_pins melangeur_0/clk_in] [get_bd_pins pmod_audio_0/clk_pwm] [get_bd_pins pmod_audio_0/s00_axi_aclk] [get_bd_pins pmod_audio_1/clk_pwm] [get_bd_pins pmod_audio_1/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/M07_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins FIR_0/s00_axi_aclk] [get_bd_pins FIR_1/s00_axi_aclk] [get_bd_pins FIR_2/s00_axi_aclk] [get_bd_pins FIR_3/s00_axi_aclk] [get_bd_pins GyrocsopeSPI_0/s00_axi_aclk] [get_bd_pins gainNvoies_0/s00_axi_aclk] [get_bd_pins interface_DAC8551_1/clk_in] [get_bd_pins melangeur_0/clk_in] [get_bd_pins mongyrocopse_1/s00_axi_aclk] [get_bd_pins pmod_audio_0/clk_pwm] [get_bd_pins pmod_audio_0/s00_axi_aclk] [get_bd_pins pmod_audio_1/clk_pwm] [get_bd_pins pmod_audio_1/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/M07_ACLK] [get_bd_pins ps7_0_axi_periph/M08_ACLK] [get_bd_pins ps7_0_axi_periph/M09_ACLK] [get_bd_pins ps7_0_axi_periph/M10_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_CLK2 [get_bd_pins FIR_0/s00_clk] [get_bd_pins FIR_1/s00_clk] [get_bd_pins FIR_2/s00_clk] [get_bd_pins FIR_3/s00_clk] [get_bd_pins PmodMIC3_0/clk_in] [get_bd_pins processing_system7_0/FCLK_CLK2]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins PmodMIC3_0/reset_n] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net processing_system7_0_GPIO_O [get_bd_ports LedC] [get_bd_pins processing_system7_0/GPIO_O]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins FIR_0/s00_axi_aresetn] [get_bd_pins FIR_1/s00_axi_aresetn] [get_bd_pins FIR_2/s00_axi_aresetn] [get_bd_pins FIR_3/s00_axi_aresetn] [get_bd_pins capteurDistanceUltra_0/s00_axi_aresetn] [get_bd_pins gainNvoies_0/s00_axi_aresetn] [get_bd_pins interface_DAC8551_1/reset] [get_bd_pins melangeur_0/reset_n] [get_bd_pins pmod_audio_0/s00_axi_aresetn] [get_bd_pins pmod_audio_1/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/M06_ARESETN] [get_bd_pins ps7_0_axi_periph/M07_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins FIR_0/s00_axi_aresetn] [get_bd_pins FIR_1/s00_axi_aresetn] [get_bd_pins FIR_2/s00_axi_aresetn] [get_bd_pins FIR_3/s00_axi_aresetn] [get_bd_pins GyrocsopeSPI_0/s00_axi_aresetn] [get_bd_pins gainNvoies_0/s00_axi_aresetn] [get_bd_pins interface_DAC8551_1/reset] [get_bd_pins melangeur_0/reset_n] [get_bd_pins mongyrocopse_1/s00_axi_aresetn] [get_bd_pins pmod_audio_0/s00_axi_aresetn] [get_bd_pins pmod_audio_1/s00_axi_aresetn] [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/M06_ARESETN] [get_bd_pins ps7_0_axi_periph/M07_ARESETN] [get_bd_pins ps7_0_axi_periph/M08_ARESETN] [get_bd_pins ps7_0_axi_periph/M09_ARESETN] [get_bd_pins ps7_0_axi_periph/M10_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+  connect_bd_net -net sdi_gyro_0_1 [get_bd_ports sdi_gyro_0] [get_bd_pins mongyrocopse_1/sdi_gyro]
   connect_bd_net -net sdi_mic_0_1 [get_bd_ports sdi_mic_0] [get_bd_pins PmodMIC3_0/sdi_mic]
 
   # Create address segments
@@ -1098,8 +1114,9 @@ proc create_root_design { parentCell } {
   assign_bd_address -offset 0x43C20000 -range 0x00001000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs FIR_1/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x43C30000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs FIR_2/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x43C40000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs FIR_3/S00_AXI/S00_AXI_reg] -force
-  assign_bd_address -offset 0x43C70000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs capteurDistanceUltra_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C80000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs GyrocsopeSPI_0/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x43C50000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs gainNvoies_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C70000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs mongyrocopse_1/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs pmod_audio_0/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x43C60000 -range 0x00010000 -target_address_space [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs pmod_audio_1/S00_AXI/S00_AXI_reg] -force
 

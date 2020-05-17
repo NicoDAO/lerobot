@@ -69,9 +69,10 @@ set rc [catch {
   create_project -in_memory -part xc7z010clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.cache/wt [current_project]
-  set_property parent.project_path /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.xpr [current_project]
+  set_property webtalk.parent_dir /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.cache/wt [current_project]
+  set_property parent.project_path /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.xpr [current_project]
   set_property ip_repo_paths {
+  /home/nicolas/yocto/soft_zybo/lerobot/vivado/ip_repo/mongyrocopse_1.0
   /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/ip_repo/capteurDistanceUltrason_1.0
   /home/nicolas/vivado/vivado/FPGA_xilinx/ip_repo/gainNvoies_1.0
   /home/nicolas/vivado/vivado/FPGA_xilinx/ip_repo/melangeurNvoies_1.0
@@ -88,15 +89,15 @@ set rc [catch {
   /home/nicolas/vivado/vivado/FPGA_xilinx/IPs
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.cache/ip [current_project]
+  set_property ip_output_repo /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/synth_5/design_1_wrapper.dcp
+  add_files -quiet /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/synth_5/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/design_1.bd
+  add_files /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
-  read_xdc /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc
+  read_xdc /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc
   set_param project.isImplRun true
   link_design -top design_1_wrapper -part xc7z010clg400-1
   set_param project.isImplRun false

@@ -77,16 +77,26 @@ set_property IOSTANDARD LVCMOS33 [get_ports  entree_echo_0]
 #set_property PACKAGE_PIN C6 [get_ports  entree_echo_0]
 set_property PACKAGE_PIN T11 [get_ports  entree_echo_0]
 
-#set_property MARK_DEBUG true [get_nets design_1_i/FIR_RAM_0/inst/FIR_RAM_v1_0_S00_AXI_inst/s00_nouvel_echantillon]
-#set_property MARK_DEBUG true [get_nets design_1_i/FIR_RAM_0/inst/FIR_RAM_v1_0_S00_AXI_inst/s00_traitement_fini]
-#set_property MARK_DEBUG true [get_nets design_1_i/FIR_RAM_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/s00_axi_aresetn]
-#connect_debug_port u_ila_0/clk [get_nets [list design_1_i/processing_system7_0/inst/FCLK_CLK0]]
-#connect_debug_port u_ila_0/probe0 [get_nets [list design_1_i/FIR_RAM_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/s00_axi_aresetn]]
-#connect_debug_port u_ila_0/probe1 [get_nets [list design_1_i/FIR_RAM_0/inst/FIR_RAM_v1_0_S00_AXI_inst/s00_nouvel_echantillon]]
-#connect_debug_port u_ila_1/clk [get_nets [list design_1_i/processing_system7_0/inst/FCLK_CLK1]]
-#connect_debug_port u_ila_1/probe0 [get_nets [list design_1_i/FIR_RAM_0/inst/FIR_RAM_v1_0_S00_AXI_inst/s00_traitement_fini]]
-#connect_debug_port dbg_hub/clk [get_nets u_ila_1_FCLK_CLK1]
+
+#accelerometre
+set_property IOSTANDARD LVCMOS33 [get_ports  sdi_gyro_0]
+set_property PACKAGE_PIN E9 [get_ports  sdi_gyro_0]#JF2
+
+set_property IOSTANDARD LVCMOS33 [get_ports  clk_gyro_0]
+set_property PACKAGE_PIN D9 [get_ports  clk_gyro_0]#JF4
+
+set_property IOSTANDARD LVCMOS33 [get_ports  sdo_gyro_0]
+set_property PACKAGE_PIN C6 [get_ports  sdo_gyro_0] #JF3
+
+set_property IOSTANDARD LVCMOS33 [get_ports  int1_gyro_0]
+set_property PACKAGE_PIN E6 [get_ports  int1_gyro_0]#JF7
+
+set_property IOSTANDARD LVCMOS33 [get_ports  int2_gyro_0]
+set_property PACKAGE_PIN B5 [get_ports  int2_gyro_0]#JF8
+
+set_property IOSTANDARD LVCMOS33 [get_ports  cs_gyro_0]
+set_property PACKAGE_PIN E8 [get_ports  cs_gyro_0]#JF1
 
 
-#connect_debug_port u_ila_0/probe6 [get_nets [list {design_1_i/FIR_0/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/raddrRAM_Coef[5]_i_2_n_0}]]
+
 
