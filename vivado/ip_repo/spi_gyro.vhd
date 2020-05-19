@@ -32,10 +32,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity spi_gyro is
-    Port ( sdi_gyro : in STD_LOGIC;
+    Port ( 
+           sdi_gyro : in STD_LOGIC;
            sdo_gyro : out STD_LOGIC;
            cs_gyro : out STD_LOGIC;
-           clk_gyro : in STD_LOGIC;
+           clk_gyro : out STD_LOGIC;
            int1_gyro : out STD_LOGIC;
            int2_gyro : out STD_LOGIC;
            horloge : in STD_LOGIC;
@@ -53,11 +54,14 @@ signal        SPIRESET : std_logic;
 signal        SPICS : std_logic;
 signal        MISO : std_logic;
 signal        MOSI :  std_logic;     
+signal        COMMANDE_SPI :  std_logic_vector (15 downto 0);
+signal        LECTURE_SPI :  std_logic_vector (15 downto 0);
+signal        RW : std_logic;
+signal        MS : std_logic  ;
 
 begin
-
-      -- I/O Connections assignments
-    inerface_spi_inst : entity work.inerface_spi port map(SPICLK=>SPICLK,SPIRESET=>SPIRESET,SPICS=>SPICS,MISO=>MISO,MOSI=>MOSI);
+    -- I/O Connections assignments
+    inerface_spi_inst : entity work.inerface_spi port map(horloge => horloge,SPICLK=>SPICLK,SPIRESET=>SPIRESET,SPICS=>SPICS,MISO=>MISO,MOSI=>MOSI,COMMANDE_SPI=>COMMANDE_SPI,LECTURE_SPI=>LECTURE_SPI,RW=>RW,MS=>MS);
 
    process (horloge)
    variable cpt :INTEGER :=0;  
@@ -81,9 +85,10 @@ begin
          then
          case cpt is
                 when 0 =>
-                     act_clk<='1'; 
+                     SPIRESET<='1';
                  when 1 to 4 => 
-                     cs_gyro<='0'; 
+                     RW<='1'; 
+                     SPIRESET<='1';
                        cpt_test :=cpt_test + 1;
               --  when 1 to 4 => 
               --       act_clk<='1'; 
