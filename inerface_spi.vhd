@@ -66,30 +66,57 @@ begin
           cpt:=0;
     end if;
     if rising_edge (horloge) then
+        report "The value of 'cpt' is " & integer'image(cpt);
         case cpt is
-            when 0 =>
+            when 0 =>               
+                 act_clk<='1'; -- on demarre l'horloge
+            when 1 =>
                 SPICS <='0';
                 MOSI <= RW;
-                 act_clk<='1';
-            when 1 =>
+            when 2 =>
                 MOSI <= MS;
-            when 2 TO 7 =>
+            when 3  =>
                 SPICS <='0';
-                MOSI <=COMMANDE_SPI(cpt-2);
-            when 8 to 15 =>
-                LECTURE_spi_temp(cpt-8)<=MISO;
-            when 15 =>
-                 SPICS <='1';
-                  act_clk<='1';
+                MOSI <=COMMANDE_SPI(5);
+           when 4  =>
+                MOSI <=COMMANDE_SPI(4);
+           when 5  =>
+                MOSI <=COMMANDE_SPI(3);
+           when 6  =>
+                MOSI <=COMMANDE_SPI(2);
+           when 7  =>
+                MOSI <=COMMANDE_SPI(1);
+           when 8  =>
+                MOSI <=COMMANDE_SPI(0);
+           when 9 =>
+                LECTURE_spi_temp(7)<=MISO;
+           when 10 =>
+                LECTURE_spi_temp(6)<=MISO;
+           when 11 =>
+                LECTURE_spi_temp(5)<=MISO;
+            when 12 =>
+                LECTURE_spi_temp(4)<=MISO;
+            when 13 =>
+                LECTURE_spi_temp(3)<=MISO;
+            when 14 =>
+                LECTURE_spi_temp(2)<=MISO;  
+           when 15 =>
+                LECTURE_spi_temp(1)<=MISO;  
+            when 16 =>
+                LECTURE_spi_temp(0)<=MISO;
+                SPICS <='1'; --on remonde le chip select
+            when 17 =>
+                act_clk<='0'; --on coupe l'horloge
                  LECTURE_SPI<=LECTURE_spi_temp;
+                 report "couper l horloge 'cpt' is " & integer'image(cpt);
             when others =>null  ; 
         end case;
-    end if;
-    cpt:=cpt+1;
-    if(cpt = 100) then
-        cpt:=0;
-    end if;   
 
+        cpt:=cpt+1;
+        if(cpt = 100) then
+            cpt:=0;
+        end if;   
+    end if;
 end process;
 -- en mode concurrent
 SPICLK<=horloge and act_clk;

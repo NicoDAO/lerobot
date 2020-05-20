@@ -94,14 +94,13 @@ begin
               --       act_clk<='1'; 
               
                 when others=> null;
-
          end case;     
          cpt:=cpt+1;
         
         if(cpt = 100) then
             cpt:=0;
         end if;   
-       end if;
+     end if;
 end process;
     
 
