@@ -35,7 +35,7 @@ entity inerface_spi is
 
 port (
 		-- Users to add ports here	
-		horloge : in std_logic;
+		horloge_spi : in std_logic;
         SPICLK : out std_logic;
         SPIRESET : in std_logic;
         SPICS : out std_logic;
@@ -51,7 +51,7 @@ architecture Behavioral of inerface_spi is
 signal LECTURE_spi_temp :  std_logic_vector (15 downto 0);
 signal act_clk  : std_logic;
 begin
-    process (horloge)
+    process (horloge_spi)
     
         variable cpt :INTEGER :=0;  
         variable cpt_test : INTEGER :=0; 
@@ -65,7 +65,7 @@ begin
           act_clk<='0';
           cpt:=0;
     end if;
-    if rising_edge (horloge) then
+    if rising_edge (horloge_spi) then
         report "The value of 'cpt' is " & integer'image(cpt);
         case cpt is
             when 0 =>               
@@ -119,5 +119,5 @@ begin
     end if;
 end process;
 -- en mode concurrent
-SPICLK<=horloge and act_clk;
+SPICLK<=horloge_spi and act_clk;
 end Behavioral;

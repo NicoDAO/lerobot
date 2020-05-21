@@ -2,8 +2,8 @@
 # Vivado v2019.2.1 (64-bit)
 # SW Build 2729669 on Thu Dec  5 04:48:12 MST 2019
 # IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
-# Start of session at: Thu May 14 00:28:15 2020
-# Process ID: 21493
+# Start of session at: Thu May 21 22:56:13 2020
+# Process ID: 835
 # Current directory: /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/synth_5
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/synth_5/design_1_wrapper.vds

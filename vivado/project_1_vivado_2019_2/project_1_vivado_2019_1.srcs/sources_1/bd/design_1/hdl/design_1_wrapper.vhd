@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
---Date        : Mon May 18 00:15:26 2020
+--Date        : Thu May 21 22:51:20 2020
 --Host        : grosportable running 64-bit Ubuntu 18.04.4 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -38,14 +38,14 @@ entity design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     LDAC_0 : out STD_LOGIC;
     LedC : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    clk_gyr_0 : in STD_LOGIC;
-    cs_gyro_0 : in STD_LOGIC;
+    clk_gyr_0 : out STD_LOGIC;
+    cs_gyro_0 : out STD_LOGIC;
     cs_mic_0 : out STD_LOGIC;
     entree_echo_0 : in STD_LOGIC;
     gain_ampli_0 : out STD_LOGIC;
     gpio_io_i_0 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    int1_gyro_0 : out STD_LOGIC;
-    int2_gyro_0 : out STD_LOGIC;
+    int1_gyro_0 : in STD_LOGIC;
+    int2_gyro_0 : in STD_LOGIC;
     s_pwm : out STD_LOGIC_VECTOR ( 0 to 0 );
     sck_mic_0 : out STD_LOGIC;
     sdi_gyro_0 : in STD_LOGIC;
@@ -76,12 +76,6 @@ architecture STRUCTURE of design_1_wrapper is
     DIR_MOTEUR2 : out STD_LOGIC;
     entree_echo_0 : in STD_LOGIC;
     sortie_trig_0 : out STD_LOGIC;
-    sdi_gyro_0 : in STD_LOGIC;
-    cs_gyro_0 : in STD_LOGIC;
-    clk_gyr_0 : in STD_LOGIC;
-    sdo_gyro_0 : out STD_LOGIC;
-    int1_gyro_0 : out STD_LOGIC;
-    int2_gyro_0 : out STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -102,7 +96,13 @@ architecture STRUCTURE of design_1_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    sdi_gyro_0 : in STD_LOGIC;
+    int1_gyro_0 : in STD_LOGIC;
+    int2_gyro_0 : in STD_LOGIC;
+    sdo_gyro_0 : out STD_LOGIC;
+    cs_gyro_0 : out STD_LOGIC;
+    clk_gyr_0 : out STD_LOGIC
   );
   end component design_1;
 begin
