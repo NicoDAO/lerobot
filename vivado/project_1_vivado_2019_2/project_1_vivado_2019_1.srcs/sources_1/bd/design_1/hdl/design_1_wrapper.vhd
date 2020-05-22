@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
---Date        : Fri May 22 14:20:50 2020
+--Date        : Fri May 22 17:36:53 2020
 --Host        : grosportable running 64-bit Ubuntu 18.04.4 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper

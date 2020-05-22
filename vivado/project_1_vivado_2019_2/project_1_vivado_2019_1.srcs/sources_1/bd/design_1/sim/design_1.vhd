@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
---Date        : Fri May 22 14:20:50 2020
+--Date        : Fri May 22 17:36:53 2020
 --Host        : grosportable running 64-bit Ubuntu 18.04.4 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -3968,7 +3968,6 @@ architecture STRUCTURE of design_1 is
   signal gainNvoies_0_sortie_out_2_pret : STD_LOGIC;
   signal gainNvoies_0_sortie_out_3_pret : STD_LOGIC;
   signal gainNvoies_0_sortie_out_4_pret : STD_LOGIC;
-  signal gpio_io_i_0_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal int1_gyro_pmod_0_1 : STD_LOGIC;
   signal int2_gyro_pmod_0_1 : STD_LOGIC;
   signal interface_DAC8551_1_LDAC : STD_LOGIC;
@@ -4008,7 +4007,6 @@ architecture STRUCTURE of design_1 is
   signal processing_system7_0_FIXED_IO_PS_CLK : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
-  signal processing_system7_0_GPIO_O : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal processing_system7_0_M_AXI_GP0_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal processing_system7_0_M_AXI_GP0_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal processing_system7_0_M_AXI_GP0_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -4240,6 +4238,7 @@ architecture STRUCTURE of design_1 is
   signal NLW_processing_system7_0_ENET0_GMII_TXD_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_processing_system7_0_ENET0_GMII_TX_EN_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_processing_system7_0_ENET0_GMII_TX_ER_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_processing_system7_0_GPIO_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_GPIO_T_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_ps7_0_axi_periph_M09_AXI_araddr_UNCONNECTED : STD_LOGIC;
@@ -4297,13 +4296,11 @@ begin
   DIR_MOTEUR1 <= pmod_audio_0_out1;
   DIR_MOTEUR2 <= pmod_audio_1_out1;
   LDAC_0 <= interface_DAC8551_1_LDAC;
-  LedC(3 downto 0) <= processing_system7_0_GPIO_O(3 downto 0);
   clk_gyr_pmod_0 <= mongyrocopse_0_clk_gyr_pmod;
   cs_gyro_pmod_0 <= mongyrocopse_0_cs_gyro_pmod;
   cs_mic_0 <= PmodMIC3_0_cs_mic;
   entree_echo_0_1 <= entree_echo_0;
   gain_ampli_0 <= interface_DAC8551_1_audio_out;
-  gpio_io_i_0_1(3 downto 0) <= gpio_io_i_0(3 downto 0);
   int1_gyro_pmod_0_1 <= int1_gyro_pmod_0;
   int2_gyro_pmod_0_1 <= int2_gyro_pmod_0;
   s_pwm(0) <= pmod_audio_0_sortie_pwm;
@@ -4315,6 +4312,10 @@ begin
   sortie_pwm_0 <= interface_DAC8551_1_sync;
   sortie_pwm_1 <= pmod_audio_1_sortie_pwm;
   sortie_trig_0 <= GyrocsopeSPI_0_sortie_trig;
+  LedC(0) <= 'Z';
+  LedC(1) <= 'Z';
+  LedC(2) <= 'Z';
+  LedC(3) <= 'Z';
 FIR_0: component design_1_FIR_0_0
      port map (
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
@@ -4666,8 +4667,8 @@ processing_system7_0: component design_1_processing_system7_0_0
       FCLK_CLK2 => processing_system7_0_FCLK_CLK2,
       FCLK_CLK3 => NLW_processing_system7_0_FCLK_CLK3_UNCONNECTED,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
-      GPIO_I(3 downto 0) => gpio_io_i_0_1(3 downto 0),
-      GPIO_O(3 downto 0) => processing_system7_0_GPIO_O(3 downto 0),
+      GPIO_I(3 downto 0) => B"0000",
+      GPIO_O(3 downto 0) => NLW_processing_system7_0_GPIO_O_UNCONNECTED(3 downto 0),
       GPIO_T(3 downto 0) => NLW_processing_system7_0_GPIO_T_UNCONNECTED(3 downto 0),
       IRQ_F2P(0) => '0',
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),

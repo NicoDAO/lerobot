@@ -3995,7 +3995,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_GP0.FREQ_HZ">50000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_GP0.FREQ_HZ">62500000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -8945,7 +8945,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK0.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK0_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK0.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK0_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">62500000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
@@ -9010,7 +9010,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK1.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK1_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK1.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK1_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">20000000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
@@ -9075,7 +9075,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK2.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK2_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK2.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK2_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">20000000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
@@ -9140,7 +9140,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK3.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK3_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+          <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.FCLK_CLK3.FREQ_HZ" spirit:dependency="(spirit:decode(id(PARAM_VALUE.PCW_CLK3_FREQ)))" spirit:minimum="100000" spirit:maximum="333000000">100000000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
@@ -10662,7 +10662,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_GP0_ACLK.FREQ_HZ">50000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_GP0_ACLK.FREQ_HZ">62500000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -14550,11 +14550,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 13 21:50:03 UTC 2020</spirit:value>
+            <spirit:value>Fri May 22 15:37:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1124c8e8</spirit:value>
+            <spirit:value>9:e5ea25e2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14565,7 +14565,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1124c8e8</spirit:value>
+            <spirit:value>9:e5ea25e2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14581,11 +14581,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 13 21:50:03 UTC 2020</spirit:value>
+            <spirit:value>Fri May 22 15:37:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1124c8e8</spirit:value>
+            <spirit:value>9:e5ea25e2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14606,7 +14606,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:55afa24c</spirit:value>
+            <spirit:value>9:1e9d8fac</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14622,11 +14622,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 13 21:50:05 UTC 2020</spirit:value>
+            <spirit:value>Fri May 22 15:37:17 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:55afa24c</spirit:value>
+            <spirit:value>9:1e9d8fac</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -14645,11 +14645,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 13 21:50:05 UTC 2020</spirit:value>
+            <spirit:value>Fri May 22 15:37:18 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:55afa24c</spirit:value>
+            <spirit:value>9:1e9d8fac</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -14672,11 +14672,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 13 21:50:05 UTC 2020</spirit:value>
+            <spirit:value>Fri May 22 15:37:18 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:55afa24c</spirit:value>
+            <spirit:value>9:1e9d8fac</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14692,11 +14692,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 13 21:50:05 UTC 2020</spirit:value>
+            <spirit:value>Fri May 22 15:37:18 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:55afa24c</spirit:value>
+            <spirit:value>9:1e9d8fac</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -14715,11 +14715,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed May 13 21:50:08 UTC 2020</spirit:value>
+            <spirit:value>Fri May 22 15:37:23 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:55afa24c</spirit:value>
+            <spirit:value>9:1e9d8fac</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -31630,63 +31630,6 @@
       <spirit:enumeration>MIO 8</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_544741b4</spirit:name>
-      <spirit:enumeration>MIO 0</spirit:enumeration>
-      <spirit:enumeration>MIO 1</spirit:enumeration>
-      <spirit:enumeration>MIO 2</spirit:enumeration>
-      <spirit:enumeration>MIO 3</spirit:enumeration>
-      <spirit:enumeration>MIO 4</spirit:enumeration>
-      <spirit:enumeration>MIO 5</spirit:enumeration>
-      <spirit:enumeration>MIO 6</spirit:enumeration>
-      <spirit:enumeration>MIO 7</spirit:enumeration>
-      <spirit:enumeration>MIO 8</spirit:enumeration>
-      <spirit:enumeration>MIO 9</spirit:enumeration>
-      <spirit:enumeration>MIO 10</spirit:enumeration>
-      <spirit:enumeration>MIO 11</spirit:enumeration>
-      <spirit:enumeration>MIO 12</spirit:enumeration>
-      <spirit:enumeration>MIO 13</spirit:enumeration>
-      <spirit:enumeration>MIO 14</spirit:enumeration>
-      <spirit:enumeration>MIO 15</spirit:enumeration>
-      <spirit:enumeration>MIO 16</spirit:enumeration>
-      <spirit:enumeration>MIO 17</spirit:enumeration>
-      <spirit:enumeration>MIO 18</spirit:enumeration>
-      <spirit:enumeration>MIO 19</spirit:enumeration>
-      <spirit:enumeration>MIO 20</spirit:enumeration>
-      <spirit:enumeration>MIO 21</spirit:enumeration>
-      <spirit:enumeration>MIO 22</spirit:enumeration>
-      <spirit:enumeration>MIO 23</spirit:enumeration>
-      <spirit:enumeration>MIO 24</spirit:enumeration>
-      <spirit:enumeration>MIO 25</spirit:enumeration>
-      <spirit:enumeration>MIO 26</spirit:enumeration>
-      <spirit:enumeration>MIO 27</spirit:enumeration>
-      <spirit:enumeration>MIO 28</spirit:enumeration>
-      <spirit:enumeration>MIO 29</spirit:enumeration>
-      <spirit:enumeration>MIO 30</spirit:enumeration>
-      <spirit:enumeration>MIO 31</spirit:enumeration>
-      <spirit:enumeration>MIO 32</spirit:enumeration>
-      <spirit:enumeration>MIO 33</spirit:enumeration>
-      <spirit:enumeration>MIO 34</spirit:enumeration>
-      <spirit:enumeration>MIO 35</spirit:enumeration>
-      <spirit:enumeration>MIO 36</spirit:enumeration>
-      <spirit:enumeration>MIO 37</spirit:enumeration>
-      <spirit:enumeration>MIO 38</spirit:enumeration>
-      <spirit:enumeration>MIO 39</spirit:enumeration>
-      <spirit:enumeration>MIO 40</spirit:enumeration>
-      <spirit:enumeration>MIO 41</spirit:enumeration>
-      <spirit:enumeration>MIO 42</spirit:enumeration>
-      <spirit:enumeration>MIO 43</spirit:enumeration>
-      <spirit:enumeration>MIO 44</spirit:enumeration>
-      <spirit:enumeration>MIO 45</spirit:enumeration>
-      <spirit:enumeration>MIO 46</spirit:enumeration>
-      <spirit:enumeration>MIO 47</spirit:enumeration>
-      <spirit:enumeration>MIO 48</spirit:enumeration>
-      <spirit:enumeration>MIO 49</spirit:enumeration>
-      <spirit:enumeration>MIO 50</spirit:enumeration>
-      <spirit:enumeration>MIO 51</spirit:enumeration>
-      <spirit:enumeration>MIO 52</spirit:enumeration>
-      <spirit:enumeration>MIO 53</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
       <spirit:name>choice_list_56e9f994</spirit:name>
       <spirit:enumeration>&lt;Select></spirit:enumeration>
       <spirit:enumeration>EMIO</spirit:enumeration>
@@ -33788,42 +33731,42 @@
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_0</spirit:name>
       <spirit:displayName>PCW PACKAGE DDR DQS TO CLK DELAY 0</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_0" spirit:order="20100" spirit:minimum="-0.100000" spirit:maximum="100.000000">-0.047</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_0" spirit:order="20100" spirit:minimum="-0.100000" spirit:maximum="100.000000">-0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_1</spirit:name>
       <spirit:displayName>PCW PACKAGE DDR DQS TO CLK DELAY 1</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_1" spirit:order="20200" spirit:minimum="-0.100000" spirit:maximum="100.000000">-0.025</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_1" spirit:order="20200" spirit:minimum="-0.100000" spirit:maximum="100.000000">-0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2</spirit:name>
       <spirit:displayName>PCW PACKAGE DDR DQS TO CLK DELAY 2</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2" spirit:order="20300" spirit:minimum="-0.100000" spirit:maximum="100.000000">-0.006</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2" spirit:order="20300" spirit:minimum="-0.100000" spirit:maximum="100.000000">-0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3</spirit:name>
       <spirit:displayName>PCW PACKAGE DDR DQS TO CLK DELAY 3</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3" spirit:order="20400" spirit:minimum="-0.100000" spirit:maximum="100.000000">-0.017</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3" spirit:order="20400" spirit:minimum="-0.100000" spirit:maximum="100.000000">-0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_DDR_BOARD_DELAY0</spirit:name>
       <spirit:displayName>PCW PACKAGE DDR BOARD DELAY0</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_BOARD_DELAY0" spirit:order="20500" spirit:minimum="0.000000" spirit:maximum="100.000000">0.080</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_BOARD_DELAY0" spirit:order="20500" spirit:minimum="0.000000" spirit:maximum="100.000000">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_DDR_BOARD_DELAY1</spirit:name>
       <spirit:displayName>PCW PACKAGE DDR BOARD DELAY1</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_BOARD_DELAY1" spirit:order="20600" spirit:minimum="0.000000" spirit:maximum="100.000000">0.063</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_BOARD_DELAY1" spirit:order="20600" spirit:minimum="0.000000" spirit:maximum="100.000000">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_DDR_BOARD_DELAY2</spirit:name>
       <spirit:displayName>PCW PACKAGE DDR BOARD DELAY2</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_BOARD_DELAY2" spirit:order="20700" spirit:minimum="0.000000" spirit:maximum="100.000000">0.057</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_BOARD_DELAY2" spirit:order="20700" spirit:minimum="0.000000" spirit:maximum="100.000000">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_DDR_BOARD_DELAY3</spirit:name>
       <spirit:displayName>PCW PACKAGE DDR BOARD DELAY3</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_BOARD_DELAY3" spirit:order="20800" spirit:minimum="0.000000" spirit:maximum="100.000000">0.068</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_DDR_BOARD_DELAY3" spirit:order="20800" spirit:minimum="0.000000" spirit:maximum="100.000000">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_CPU_CPU_6X4X_MAX_RANGE</spirit:name>
@@ -34085,37 +34028,37 @@
     <spirit:parameter>
       <spirit:name>PCW_ACT_APU_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT APU PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_APU_PERIPHERAL_FREQMHZ" spirit:order="26400" spirit:minimum="50.000000" spirit:maximum="800.000000">650.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_APU_PERIPHERAL_FREQMHZ" spirit:order="26400" spirit:minimum="50.000000" spirit:maximum="800.000000">650</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_UIPARAM_ACT_DDR_FREQ_MHZ</spirit:name>
       <spirit:displayName>PCW UIPARAM ACT DDR FREQ MHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_UIPARAM_ACT_DDR_FREQ_MHZ" spirit:order="26500" spirit:minimum="200.000000" spirit:maximum="534.000000">525.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_UIPARAM_ACT_DDR_FREQ_MHZ" spirit:order="26500" spirit:minimum="200.000000" spirit:maximum="534.000000">525</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_DCI_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT DCI PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_DCI_PERIPHERAL_FREQMHZ" spirit:order="26600" spirit:minimum="0.100000" spirit:maximum="177.000000">10.096154</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_DCI_PERIPHERAL_FREQMHZ" spirit:order="26600" spirit:minimum="0.100000" spirit:maximum="177.000000">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_QSPI_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT QSPI PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_QSPI_PERIPHERAL_FREQMHZ" spirit:order="26700" spirit:minimum="10.000000" spirit:maximum="200.000000">10.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_QSPI_PERIPHERAL_FREQMHZ" spirit:order="26700" spirit:minimum="10.000000" spirit:maximum="200.000000">200</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_SMC_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT SMC PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_SMC_PERIPHERAL_FREQMHZ" spirit:order="26800" spirit:minimum="10.000000" spirit:maximum="100.000000">10.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_SMC_PERIPHERAL_FREQMHZ" spirit:order="26800" spirit:minimum="10.000000" spirit:maximum="100.000000">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_ENET0_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT ENET0 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ" spirit:order="26900" spirit:minimum="0.1" spirit:maximum="125">25.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ" spirit:order="26900" spirit:minimum="0.1" spirit:maximum="125">25</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_ENET1_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT ENET1 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ" spirit:order="27000" spirit:minimum="0.1" spirit:maximum="125">10.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ" spirit:order="27000" spirit:minimum="0.1" spirit:maximum="125">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_USB0_PERIPHERAL_FREQMHZ</spirit:name>
@@ -34130,22 +34073,22 @@
     <spirit:parameter>
       <spirit:name>PCW_ACT_SDIO_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT SDIO PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_SDIO_PERIPHERAL_FREQMHZ" spirit:order="27300" spirit:minimum="10.000000" spirit:maximum="125.000000">10.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_SDIO_PERIPHERAL_FREQMHZ" spirit:order="27300" spirit:minimum="10.000000" spirit:maximum="125.000000">50</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_UART_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT UART PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_UART_PERIPHERAL_FREQMHZ" spirit:order="27400" spirit:minimum="10.000000" spirit:maximum="100.000000">10.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_UART_PERIPHERAL_FREQMHZ" spirit:order="27400" spirit:minimum="10.000000" spirit:maximum="100.000000">100</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_SPI_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT SPI PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_SPI_PERIPHERAL_FREQMHZ" spirit:order="27500" spirit:minimum="0.000000" spirit:maximum="200.000000">10.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_SPI_PERIPHERAL_FREQMHZ" spirit:order="27500" spirit:minimum="0.000000" spirit:maximum="200.000000">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_CAN_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT CAN PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_CAN_PERIPHERAL_FREQMHZ" spirit:order="27600" spirit:minimum="0.100000" spirit:maximum="100.000000">10.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_CAN_PERIPHERAL_FREQMHZ" spirit:order="27600" spirit:minimum="0.100000" spirit:maximum="100.000000">10</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_CAN0_PERIPHERAL_FREQMHZ</spirit:name>
@@ -34165,7 +34108,7 @@
     <spirit:parameter>
       <spirit:name>PCW_ACT_WDT_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT WDT PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_WDT_PERIPHERAL_FREQMHZ" spirit:order="27800" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_WDT_PERIPHERAL_FREQMHZ" spirit:order="27800" spirit:minimum="0.100000" spirit:maximum="200.000000">108</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC_PERIPHERAL_FREQMHZ</spirit:name>
@@ -34175,82 +34118,82 @@
     <spirit:parameter>
       <spirit:name>PCW_ACT_PCAP_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT PCAP PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_PCAP_PERIPHERAL_FREQMHZ" spirit:order="28000" spirit:minimum="10.000000" spirit:maximum="200.000000">200.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_PCAP_PERIPHERAL_FREQMHZ" spirit:order="28000" spirit:minimum="10.000000" spirit:maximum="200.000000">200</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TPIU_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TPIU PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TPIU_PERIPHERAL_FREQMHZ" spirit:order="28100" spirit:minimum="10.000000" spirit:maximum="300.000000">200.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TPIU_PERIPHERAL_FREQMHZ" spirit:order="28100" spirit:minimum="10.000000" spirit:maximum="300.000000">200</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT FPGA0 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ" spirit:order="28200" spirit:minimum="0.100000" spirit:maximum="250.000000">50.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ" spirit:order="28200" spirit:minimum="0.100000" spirit:maximum="250.000000">62</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT FPGA1 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ" spirit:order="28300" spirit:minimum="0.100000" spirit:maximum="250.000000">50.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ" spirit:order="28300" spirit:minimum="0.100000" spirit:maximum="250.000000">20</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT FPGA2 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ" spirit:order="28400" spirit:minimum="0.100000" spirit:maximum="250.000000">50.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ" spirit:order="28400" spirit:minimum="0.100000" spirit:maximum="250.000000">20</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT FPGA3 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ" spirit:order="28500" spirit:minimum="0.100000" spirit:maximum="250.000000">50.000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ" spirit:order="28500" spirit:minimum="0.100000" spirit:maximum="250.000000">100</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC0 CLK0 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ" spirit:order="28600" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ" spirit:order="28600" spirit:minimum="0.100000" spirit:maximum="200.000000">108</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC0 CLK1 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ" spirit:order="28700" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ" spirit:order="28700" spirit:minimum="0.100000" spirit:maximum="200.000000">108</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC0 CLK2 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ" spirit:order="28800" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ" spirit:order="28800" spirit:minimum="0.100000" spirit:maximum="200.000000">108</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC1 CLK0 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ" spirit:order="28900" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ" spirit:order="28900" spirit:minimum="0.100000" spirit:maximum="200.000000">108</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC1 CLK1 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ" spirit:order="29000" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ" spirit:order="29000" spirit:minimum="0.100000" spirit:maximum="200.000000">108</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW ACT TTC1 CLK2 PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ" spirit:order="29100" spirit:minimum="0.100000" spirit:maximum="200.000000">108.333336</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ" spirit:order="29100" spirit:minimum="0.100000" spirit:maximum="200.000000">108</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_CLK0_FREQ</spirit:name>
       <spirit:displayName>PCW CLK0 FREQ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK0_FREQ" spirit:order="62600" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK0_FREQ" spirit:order="62600" spirit:minimum="100000" spirit:maximum="333000000">62500000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_CLK1_FREQ</spirit:name>
       <spirit:displayName>PCW CLK1 FREQ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK1_FREQ" spirit:order="62700" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK1_FREQ" spirit:order="62700" spirit:minimum="100000" spirit:maximum="333000000">20000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_CLK2_FREQ</spirit:name>
       <spirit:displayName>PCW CLK2 FREQ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK2_FREQ" spirit:order="62800" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK2_FREQ" spirit:order="62800" spirit:minimum="100000" spirit:maximum="333000000">20000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_CLK3_FREQ</spirit:name>
       <spirit:displayName>PCW CLK3 FREQ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK3_FREQ" spirit:order="62900" spirit:minimum="100000" spirit:maximum="333000000">50000000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CLK3_FREQ" spirit:order="62900" spirit:minimum="100000" spirit:maximum="333000000">100000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_OVERRIDE_BASIC_CLOCK</spirit:name>
@@ -37663,11 +37606,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_USB0_RESET_ENABLE</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_USB0_RESET_ENABLE" spirit:choiceRef="choice_list_8af5a703" spirit:order="6301">1</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_USB0_RESET_ENABLE" spirit:choiceRef="choice_list_8af5a703" spirit:order="6301">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_USB0_RESET_IO</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_USB0_RESET_IO" spirit:choiceRef="choice_list_544741b4" spirit:order="6302">MIO 46</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_USB0_RESET_IO" spirit:choiceRef="choice_list_d679c87d" spirit:order="6302">&lt;Select></spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_USB1_PERIPHERAL_ENABLE</spirit:name>
@@ -38529,17 +38472,17 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_16_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 16 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_16_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29416">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_16_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29416">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_16_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 16 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_16_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34816">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_16_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34816">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_16_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 16 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_16_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40216">out</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_16_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40216">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38551,22 +38494,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_16_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 16 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_16_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40316">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_16_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40316">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_17_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 17 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_17_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29417">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_17_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29417">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_17_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 17 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_17_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34817">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_17_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34817">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_17_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 17 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_17_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40217">out</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_17_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40217">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38578,22 +38521,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_17_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 17 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_17_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40317">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_17_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40317">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_18_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 18 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_18_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29418">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_18_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29418">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_18_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 18 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_18_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34818">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_18_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34818">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_18_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 18 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_18_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40218">out</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_18_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40218">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38605,22 +38548,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_18_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 18 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_18_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40318">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_18_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40318">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_19_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 19 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_19_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29419">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_19_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29419">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_19_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 19 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_19_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34819">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_19_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34819">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_19_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 19 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_19_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40219">out</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_19_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40219">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38632,22 +38575,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_19_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 19 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_19_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40319">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_19_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40319">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_20_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 20 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_20_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29420">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_20_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29420">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_20_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 20 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_20_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34820">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_20_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34820">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_20_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 20 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_20_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40220">out</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_20_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40220">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38659,22 +38602,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_20_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 20 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_20_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40320">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_20_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40320">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_21_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 21 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_21_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29421">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_21_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29421">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_21_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 21 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_21_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34821">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_21_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34821">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_21_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 21 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_21_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40221">out</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_21_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40221">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38686,22 +38629,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_21_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 21 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_21_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40321">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_21_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40321">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_22_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 22 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_22_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29422">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_22_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29422">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_22_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 22 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_22_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34822">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_22_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34822">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_22_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 22 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_22_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40222">in</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_22_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40222">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38713,22 +38656,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_22_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 22 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_22_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40322">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_22_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40322">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_23_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 23 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_23_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29423">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_23_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29423">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_23_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 23 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_23_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34823">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_23_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34823">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_23_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 23 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_23_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40223">in</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_23_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40223">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38740,22 +38683,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_23_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 23 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_23_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40323">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_23_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40323">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_24_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 24 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_24_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29424">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_24_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29424">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_24_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 24 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_24_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34824">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_24_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34824">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_24_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 24 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_24_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40224">in</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_24_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40224">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38767,22 +38710,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_24_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 24 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_24_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40324">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_24_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40324">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_25_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 25 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_25_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29425">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_25_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29425">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_25_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 25 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_25_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34825">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_25_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34825">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_25_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 25 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_25_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40225">in</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_25_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40225">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38794,22 +38737,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_25_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 25 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_25_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40325">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_25_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40325">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_26_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 26 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_26_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29426">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_26_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29426">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_26_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 26 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_26_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34826">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_26_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34826">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_26_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 26 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_26_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40226">in</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_26_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40226">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38821,22 +38764,22 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_26_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 26 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_26_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40326">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_26_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40326">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_27_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 27 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_27_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29427">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_27_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29427">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_27_IOTYPE</spirit:name>
       <spirit:displayName>PCW MIO 27 IOTYPE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_27_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34827">HSTL 1.8V</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_27_IOTYPE" spirit:choiceRef="choice_list_369f74cf" spirit:order="34827">LVCMOS 1.8V</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_27_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 27 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_27_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40227">in</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_27_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40227">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -38848,7 +38791,7 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_27_SLEW</spirit:name>
       <spirit:displayName>PCW MIO 27 SLEW</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_27_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40327">fast</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_27_SLEW" spirit:choiceRef="choice_list_86458347" spirit:order="40327">slow</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_28_PULLUP</spirit:name>
@@ -39349,7 +39292,7 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_46_DIRECTION</spirit:name>
       <spirit:displayName>PCW MIO 46 DIRECTION</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_46_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40246">out</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_46_DIRECTION" spirit:choiceRef="choice_list_95a9da0c" spirit:order="40246">inout</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -39447,7 +39390,7 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_50_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 50 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_50_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29450">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_50_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29450">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_50_IOTYPE</spirit:name>
@@ -39474,7 +39417,7 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_51_PULLUP</spirit:name>
       <spirit:displayName>PCW MIO 51 PULLUP</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_51_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29451">disabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_51_PULLUP" spirit:choiceRef="choice_list_2d7daef4" spirit:order="29451">enabled</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_51_IOTYPE</spirit:name>
@@ -39565,12 +39508,12 @@
     <spirit:parameter>
       <spirit:name>PCW_MIO_TREE_PERIPHERALS</spirit:name>
       <spirit:displayName>PCW MIO TREE PERIPHERALS</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_TREE_PERIPHERALS" spirit:order="210000">GPIO#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#GPIO#Quad SPI Flash#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#USB Reset#SD 0#UART 1#UART 1#GPIO#GPIO#Enet 0#Enet 0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_TREE_PERIPHERALS" spirit:order="210000">GPIO#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#GPIO#Quad SPI Flash#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#GPIO#SD 0#UART 1#UART 1#GPIO#GPIO#Enet 0#Enet 0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_MIO_TREE_SIGNALS</spirit:name>
       <spirit:displayName>PCW MIO TREE SIGNALS</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_TREE_SIGNALS" spirit:order="220000">gpio[0]#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#gpio[7]#qspi_fbclk#gpio[9]#gpio[10]#gpio[11]#gpio[12]#gpio[13]#gpio[14]#gpio[15]#gpio[16]#gpio[17]#gpio[18]#gpio[19]#gpio[20]#gpio[21]#gpio[22]#gpio[23]#gpio[24]#gpio[25]#gpio[26]#gpio[27]#data[4]#dir#stp#nxt#data[0]#data[1]#data[2]#data[3]#clk#data[5]#data[6]#data[7]#clk#cmd#data[0]#data[1]#data[2]#data[3]#reset#cd#tx#rx#gpio[50]#gpio[51]#mdc#mdio</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_MIO_TREE_SIGNALS" spirit:order="220000">gpio[0]#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#gpio[7]#qspi_fbclk#gpio[9]#gpio[10]#gpio[11]#gpio[12]#gpio[13]#gpio[14]#gpio[15]#gpio[16]#gpio[17]#gpio[18]#gpio[19]#gpio[20]#gpio[21]#gpio[22]#gpio[23]#gpio[24]#gpio[25]#gpio[26]#gpio[27]#data[4]#dir#stp#nxt#data[0]#data[1]#data[2]#data[3]#clk#data[5]#data[6]#data[7]#clk#cmd#data[0]#data[1]#data[2]#data[3]#gpio[46]#cd#tx#rx#gpio[50]#gpio[51]#mdc#mdio</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PS7_SI_REV</spirit:name>

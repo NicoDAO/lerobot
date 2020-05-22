@@ -2,15 +2,14 @@
 # Vivado v2019.2.1 (64-bit)
 # SW Build 2729669 on Thu Dec  5 04:48:12 MST 2019
 # IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
-# Start of session at: Fri May 22 15:08:06 2020
-# Process ID: 26076
+# Start of session at: Fri May 22 17:37:37 2020
+# Process ID: 9515
 # Current directory: /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/synth_5
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/synth_5/design_1_wrapper.vds
 # Journal file: /home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/synth_5/vivado.jou
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1499.113 ; gain = 70.016 ; free physical = 115 ; free virtual = 2681
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nicolas/yocto/soft_zybo/lerobot/vivado/ip_repo/mongyrocopse_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/ip_repo/capteurDistanceUltrason_1.0'.
@@ -29,21 +28,21 @@ INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nicolas/vivado/vivado/F
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/nicolas/vivado/vivado/FPGA_xilinx/IPs'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.2/data/ip'.
 WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:melangeur:1.0'. The one found in IP location '/home/nicolas/vivado/vivado/FPGA_xilinx/ip_repo/melangeur_1.0' will take precedence over the same IP in location /home/nicolas/vivado/vivado/FPGA_xilinx/ip_repo/melangeur/melangeur.srcs/sources_1/imports
-update_ip_catalog: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1522.926 ; gain = 23.812 ; free physical = 252 ; free virtual = 2787
+update_ip_catalog: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1514.980 ; gain = 23.812 ; free physical = 207 ; free virtual = 2102
 Command: synth_design -top design_1_wrapper -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26208 
+INFO: Helper process launched with PID 9613 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1983.699 ; gain = 201.684 ; free physical = 177 ; free virtual = 2265
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:36 . Memory (MB): peak = 1975.754 ; gain = 201.684 ; free physical = 152 ; free virtual = 1540
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:61]
 INFO: [Synth 8-3491] module 'design_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:3464' bound to instance 'design_1_i' of component 'design_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:109]
 INFO: [Synth 8-638] synthesizing module 'design_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:3515]
-INFO: [Synth 8-3491] module 'design_1_FIR_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_0/synth/design_1_FIR_0_0.v:56' bound to instance 'FIR_0' of component 'design_1_FIR_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4318]
+INFO: [Synth 8-3491] module 'design_1_FIR_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_0/synth/design_1_FIR_0_0.v:56' bound to instance 'FIR_0' of component 'design_1_FIR_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4319]
 INFO: [Synth 8-6157] synthesizing module 'design_1_FIR_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_0/synth/design_1_FIR_0_0.v:56]
 INFO: [Synth 8-6157] synthesizing module 'FIR_RAM_v1_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/53a9/src/FIR_RAM_v1_0.v:4]
 	Parameter numero bound to: 0 - type: integer 
@@ -104,7 +103,7 @@ WARNING: [Synth 8-6014] Unused sequential element RESETFIR_reg_reg was removed. 
 INFO: [Synth 8-6155] done synthesizing module 'FIR_RAM_v1_0_S00_AXI' (3#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/53a9/src/FIR_RAM_v1_0_S00_AXI.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'FIR_RAM_v1_0' (4#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/53a9/src/FIR_RAM_v1_0.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_FIR_0_0' (5#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_0/synth/design_1_FIR_0_0.v:56]
-INFO: [Synth 8-3491] module 'design_1_FIR_1_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_1_0/synth/design_1_FIR_1_0.v:56' bound to instance 'FIR_1' of component 'design_1_FIR_1_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4347]
+INFO: [Synth 8-3491] module 'design_1_FIR_1_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_1_0/synth/design_1_FIR_1_0.v:56' bound to instance 'FIR_1' of component 'design_1_FIR_1_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4348]
 INFO: [Synth 8-6157] synthesizing module 'design_1_FIR_1_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_1_0/synth/design_1_FIR_1_0.v:56]
 INFO: [Synth 8-6157] synthesizing module 'FIR_RAM_v1_0__parameterized0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/53a9/src/FIR_RAM_v1_0.v:4]
 	Parameter numero bound to: 1 - type: integer 
@@ -123,13 +122,13 @@ WARNING: [Synth 8-6014] Unused sequential element RESETFIR_reg_reg was removed. 
 INFO: [Synth 8-6155] done synthesizing module 'FIR_RAM_v1_0_S00_AXI__parameterized0' (5#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/53a9/src/FIR_RAM_v1_0_S00_AXI.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'FIR_RAM_v1_0__parameterized0' (5#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/53a9/src/FIR_RAM_v1_0.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_FIR_1_0' (6#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_1_0/synth/design_1_FIR_1_0.v:56]
-INFO: [Synth 8-3491] module 'design_1_FIR_0_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_1/synth/design_1_FIR_0_1.v:56' bound to instance 'FIR_2' of component 'design_1_FIR_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4376]
+INFO: [Synth 8-3491] module 'design_1_FIR_0_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_1/synth/design_1_FIR_0_1.v:56' bound to instance 'FIR_2' of component 'design_1_FIR_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4377]
 INFO: [Synth 8-6157] synthesizing module 'design_1_FIR_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_1/synth/design_1_FIR_0_1.v:56]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_FIR_0_1' (7#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_1/synth/design_1_FIR_0_1.v:56]
-INFO: [Synth 8-3491] module 'design_1_FIR_0_2' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_2/synth/design_1_FIR_0_2.v:56' bound to instance 'FIR_3' of component 'design_1_FIR_0_2' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4405]
+INFO: [Synth 8-3491] module 'design_1_FIR_0_2' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_2/synth/design_1_FIR_0_2.v:56' bound to instance 'FIR_3' of component 'design_1_FIR_0_2' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4406]
 INFO: [Synth 8-6157] synthesizing module 'design_1_FIR_0_2' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_2/synth/design_1_FIR_0_2.v:56]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_FIR_0_2' (8#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_FIR_0_2/synth/design_1_FIR_0_2.v:56]
-INFO: [Synth 8-3491] module 'design_1_GyrocsopeSPI_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_GyrocsopeSPI_0_0/synth/design_1_GyrocsopeSPI_0_0.vhd:56' bound to instance 'GyrocsopeSPI_0' of component 'design_1_GyrocsopeSPI_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4434]
+INFO: [Synth 8-3491] module 'design_1_GyrocsopeSPI_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_GyrocsopeSPI_0_0/synth/design_1_GyrocsopeSPI_0_0.vhd:56' bound to instance 'GyrocsopeSPI_0' of component 'design_1_GyrocsopeSPI_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4435]
 INFO: [Synth 8-638] synthesizing module 'design_1_GyrocsopeSPI_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_GyrocsopeSPI_0_0/synth/design_1_GyrocsopeSPI_0_0.vhd:84]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
@@ -158,7 +157,7 @@ WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [
 INFO: [Synth 8-256] done synthesizing module 'capteurDistanceUltrason_v1_0_S00_AXI' (10#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/f2ec/hdl/capteurDistanceUltrason_v1_0_S00_AXI.vhd:87]
 INFO: [Synth 8-256] done synthesizing module 'capteurDistanceUltrason_v1_0' (11#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/f2ec/hdl/capteurDistanceUltrason_v1_0.vhd:50]
 INFO: [Synth 8-256] done synthesizing module 'design_1_GyrocsopeSPI_0_0' (12#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_GyrocsopeSPI_0_0/synth/design_1_GyrocsopeSPI_0_0.vhd:84]
-INFO: [Synth 8-3491] module 'design_1_PmodMIC3_0_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_PmodMIC3_0_1/synth/design_1_PmodMIC3_0_1.vhd:56' bound to instance 'PmodMIC3_0' of component 'design_1_PmodMIC3_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4460]
+INFO: [Synth 8-3491] module 'design_1_PmodMIC3_0_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_PmodMIC3_0_1/synth/design_1_PmodMIC3_0_1.vhd:56' bound to instance 'PmodMIC3_0' of component 'design_1_PmodMIC3_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4461]
 INFO: [Synth 8-638] synthesizing module 'design_1_PmodMIC3_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_PmodMIC3_0_1/synth/design_1_PmodMIC3_0_1.vhd:68]
 INFO: [Synth 8-3491] module 'entre_micro' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/1611/entre_micro.vhd:35' bound to instance 'U0' of component 'entre_micro' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_PmodMIC3_0_1/synth/design_1_PmodMIC3_0_1.vhd:91]
 INFO: [Synth 8-638] synthesizing module 'entre_micro' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/1611/entre_micro.vhd:47]
@@ -166,7 +165,7 @@ WARNING: [Synth 8-614] signal 'reset_n' is read in the process but is not in the
 WARNING: [Synth 8-6014] Unused sequential element cpt_test_reg was removed.  [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/1611/entre_micro.vhd:104]
 INFO: [Synth 8-256] done synthesizing module 'entre_micro' (13#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/1611/entre_micro.vhd:47]
 INFO: [Synth 8-256] done synthesizing module 'design_1_PmodMIC3_0_1' (14#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_PmodMIC3_0_1/synth/design_1_PmodMIC3_0_1.vhd:68]
-INFO: [Synth 8-3491] module 'design_1_gainNvoies_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_gainNvoies_0_0/synth/design_1_gainNvoies_0_0.vhd:56' bound to instance 'gainNvoies_0' of component 'design_1_gainNvoies_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4470]
+INFO: [Synth 8-3491] module 'design_1_gainNvoies_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_gainNvoies_0_0/synth/design_1_gainNvoies_0_0.vhd:56' bound to instance 'gainNvoies_0' of component 'design_1_gainNvoies_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4471]
 INFO: [Synth 8-638] synthesizing module 'design_1_gainNvoies_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_gainNvoies_0_0/synth/design_1_gainNvoies_0_0.vhd:98]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
@@ -194,14 +193,14 @@ WARNING: [Synth 8-3848] Net transparent_4 in module/entity gainNvoies_v1_0_S00_A
 INFO: [Synth 8-256] done synthesizing module 'gainNvoies_v1_0_S00_AXI' (16#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/d569/hdl/gainNvoies_v1_0_S00_AXI.vhd:109]
 INFO: [Synth 8-256] done synthesizing module 'gainNvoies_v1_0' (17#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/d569/hdl/gainNvoies_v1_0.vhd:68]
 INFO: [Synth 8-256] done synthesizing module 'design_1_gainNvoies_0_0' (18#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_gainNvoies_0_0/synth/design_1_gainNvoies_0_0.vhd:98]
-INFO: [Synth 8-3491] module 'design_1_interface_DAC8551_1_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_interface_DAC8551_1_0/synth/design_1_interface_DAC8551_1_0.v:57' bound to instance 'interface_DAC8551_1' of component 'design_1_interface_DAC8551_1_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4510]
+INFO: [Synth 8-3491] module 'design_1_interface_DAC8551_1_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_interface_DAC8551_1_0/synth/design_1_interface_DAC8551_1_0.v:57' bound to instance 'interface_DAC8551_1' of component 'design_1_interface_DAC8551_1_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4511]
 INFO: [Synth 8-6157] synthesizing module 'design_1_interface_DAC8551_1_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_interface_DAC8551_1_0/synth/design_1_interface_DAC8551_1_0.v:57]
 INFO: [Synth 8-6157] synthesizing module 'interface_DAC16bits' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/d681/DAC16bits.v:19]
 INFO: [Synth 8-251] sortie DAC // = xxxx ,  [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/d681/DAC16bits.v:106]
 WARNING: [Synth 8-6014] Unused sequential element echantillon_pret_reg was removed.  [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/d681/DAC16bits.v:80]
 INFO: [Synth 8-6155] done synthesizing module 'interface_DAC16bits' (19#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/d681/DAC16bits.v:19]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_interface_DAC8551_1_0' (20#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_interface_DAC8551_1_0/synth/design_1_interface_DAC8551_1_0.v:57]
-INFO: [Synth 8-3491] module 'design_1_melangeur_0_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_melangeur_0_1/synth/design_1_melangeur_0_1.vhd:56' bound to instance 'melangeur_0' of component 'design_1_melangeur_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4521]
+INFO: [Synth 8-3491] module 'design_1_melangeur_0_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_melangeur_0_1/synth/design_1_melangeur_0_1.vhd:56' bound to instance 'melangeur_0' of component 'design_1_melangeur_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4522]
 INFO: [Synth 8-638] synthesizing module 'design_1_melangeur_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_melangeur_0_1/synth/design_1_melangeur_0_1.vhd:73]
 INFO: [Synth 8-3491] module 'melangeur' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/b6d0/hdl/melangeur_v1_0.vhd:35' bound to instance 'U0' of component 'melangeur' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_melangeur_0_1/synth/design_1_melangeur_0_1.vhd:101]
 INFO: [Synth 8-638] synthesizing module 'melangeur' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/b6d0/hdl/melangeur_v1_0.vhd:52]
@@ -209,7 +208,7 @@ WARNING: [Synth 8-614] signal 'reset_n' is read in the process but is not in the
 WARNING: [Synth 8-6014] Unused sequential element addition_faite_reg was removed.  [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/b6d0/hdl/melangeur_v1_0.vhd:74]
 INFO: [Synth 8-256] done synthesizing module 'melangeur' (21#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/b6d0/hdl/melangeur_v1_0.vhd:52]
 INFO: [Synth 8-256] done synthesizing module 'design_1_melangeur_0_1' (22#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_melangeur_0_1/synth/design_1_melangeur_0_1.vhd:73]
-INFO: [Synth 8-3491] module 'design_1_mongyrocopse_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_mongyrocopse_0_0/synth/design_1_mongyrocopse_0_0.vhd:59' bound to instance 'mongyrocopse_0' of component 'design_1_mongyrocopse_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4536]
+INFO: [Synth 8-3491] module 'design_1_mongyrocopse_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_mongyrocopse_0_0/synth/design_1_mongyrocopse_0_0.vhd:59' bound to instance 'mongyrocopse_0' of component 'design_1_mongyrocopse_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4537]
 INFO: [Synth 8-638] synthesizing module 'design_1_mongyrocopse_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_mongyrocopse_0_0/synth/design_1_mongyrocopse_0_0.vhd:91]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
@@ -241,7 +240,7 @@ WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [/h
 INFO: [Synth 8-256] done synthesizing module 'mongyrocopse_v1_0_S00_AXI' (25#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/fcae/hdl/mongyrocopse_v1_0_S00_AXI.vhd:93]
 INFO: [Synth 8-256] done synthesizing module 'mongyrocopse_v1_0' (26#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/fcae/hdl/mongyrocopse_v1_0.vhd:56]
 INFO: [Synth 8-256] done synthesizing module 'design_1_mongyrocopse_0_0' (27#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_mongyrocopse_0_0/synth/design_1_mongyrocopse_0_0.vhd:91]
-INFO: [Synth 8-3491] module 'design_1_pmod_audio_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_0/synth/design_1_pmod_audio_0_0.vhd:56' bound to instance 'pmod_audio_0' of component 'design_1_pmod_audio_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4566]
+INFO: [Synth 8-3491] module 'design_1_pmod_audio_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_0/synth/design_1_pmod_audio_0_0.vhd:56' bound to instance 'pmod_audio_0' of component 'design_1_pmod_audio_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4567]
 INFO: [Synth 8-638] synthesizing module 'design_1_pmod_audio_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_0/synth/design_1_pmod_audio_0_0.vhd:92]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
@@ -267,13 +266,13 @@ WARNING: [Synth 8-6014] Unused sequential element mute1_reg was removed.  [/home
 INFO: [Synth 8-256] done synthesizing module 'pmod_audio_v1_0_S00_AXI' (29#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/a183/hdl/pmod_audio_v1_0_S00_AXI.vhd:96]
 INFO: [Synth 8-256] done synthesizing module 'pmod_audio_v1_0' (30#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/a183/hdl/pmod_audio_v1_0.vhd:60]
 INFO: [Synth 8-256] done synthesizing module 'design_1_pmod_audio_0_0' (31#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_0/synth/design_1_pmod_audio_0_0.vhd:92]
-INFO: [Synth 8-3491] module 'design_1_pmod_audio_0_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_1/synth/design_1_pmod_audio_0_1.vhd:56' bound to instance 'pmod_audio_1' of component 'design_1_pmod_audio_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4600]
+INFO: [Synth 8-3491] module 'design_1_pmod_audio_0_1' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_1/synth/design_1_pmod_audio_0_1.vhd:56' bound to instance 'pmod_audio_1' of component 'design_1_pmod_audio_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4601]
 INFO: [Synth 8-638] synthesizing module 'design_1_pmod_audio_0_1' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_1/synth/design_1_pmod_audio_0_1.vhd:92]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 INFO: [Synth 8-3491] module 'pmod_audio_v1_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/a183/hdl/pmod_audio_v1_0.vhd:5' bound to instance 'U0' of component 'pmod_audio_v1_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_1/synth/design_1_pmod_audio_0_1.vhd:168]
 INFO: [Synth 8-256] done synthesizing module 'design_1_pmod_audio_0_1' (32#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_pmod_audio_0_1/synth/design_1_pmod_audio_0_1.vhd:92]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4634]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:4635]
 INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/synth/design_1_processing_system7_0_0.v:60]
 INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:161]
 	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
@@ -1405,7 +1404,7 @@ INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_21_crossbar_sas
 INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_21_axi_crossbar' (75#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/6b0d/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (76#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/synth/design_1_xbar_0.v:60]
 INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_0' (77#1) [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:1829]
-INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/synth/design_1_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:5000]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_0' declared at '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/synth/design_1_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/synth/design_1.vhd:5001]
 INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_0' [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/synth/design_1_rst_ps7_0_100M_0.vhd:74]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
@@ -1593,7 +1592,7 @@ WARNING: [Synth 8-3331] design axi_crossbar_v2_1_21_axi_crossbar has unconnected
 WARNING: [Synth 8-3331] design axi_crossbar_v2_1_21_axi_crossbar has unconnected port m_axi_bid[3]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:41 . Memory (MB): peak = 2165.355 ; gain = 383.340 ; free physical = 353 ; free virtual = 2342
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 2157.410 ; gain = 383.340 ; free physical = 326 ; free virtual = 1579
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1606,12 +1605,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:42 . Memory (MB): peak = 2183.168 ; gain = 401.152 ; free physical = 353 ; free virtual = 2343
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:58 . Memory (MB): peak = 2175.223 ; gain = 401.152 ; free physical = 333 ; free virtual = 1587
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:42 . Memory (MB): peak = 2183.168 ; gain = 401.152 ; free physical = 353 ; free virtual = 2343
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:58 . Memory (MB): peak = 2175.223 ; gain = 401.152 ; free physical = 333 ; free virtual = 1587
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2186.137 ; gain = 0.000 ; free physical = 337 ; free virtual = 2327
+Netlist sorting complete. Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.23 . Memory (MB): peak = 2175.223 ; gain = 0.000 ; free physical = 319 ; free virtual = 1578
 INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -1627,6 +1626,7 @@ Finished Parsing XDC File [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_
 Parsing XDC File [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc] for cell 'design_1_i/rst_ps7_0_100M/U0'
 Finished Parsing XDC File [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc] for cell 'design_1_i/rst_ps7_0_100M/U0'
 Parsing XDC File [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc]
+CRITICAL WARNING: [Designutils 20-1307] Command 'JA' is not supported in the xdc constraint file. [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc:12]
 Finished Parsing XDC File [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
@@ -1636,22 +1636,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2284.965 ; gain = 0.000 ; free physical = 204 ; free virtual = 2214
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2277.051 ; gain = 0.000 ; free physical = 187 ; free virtual = 1468
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 13 instances were transformed.
   FDR => FDRE: 12 instances
   SRL16 => SRL16E: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2284.965 ; gain = 0.000 ; free physical = 204 ; free virtual = 2214
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2277.051 ; gain = 0.000 ; free physical = 187 ; free virtual = 1468
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:56 . Memory (MB): peak = 2284.965 ; gain = 502.949 ; free physical = 298 ; free virtual = 2310
+Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:01:13 . Memory (MB): peak = 2277.051 ; gain = 502.980 ; free physical = 265 ; free virtual = 1557
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:56 . Memory (MB): peak = 2284.965 ; gain = 502.949 ; free physical = 298 ; free virtual = 2310
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:01:13 . Memory (MB): peak = 2277.051 ; gain = 502.980 ; free physical = 265 ; free virtual = 1557
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1677,7 +1677,7 @@ Applied set_property DONT_TOUCH = true for design_1_i/GyrocsopeSPI_0. (constrain
 Applied set_property DONT_TOUCH = true for design_1_i/mongyrocopse_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:57 . Memory (MB): peak = 2284.965 ; gain = 502.949 ; free physical = 298 ; free virtual = 2310
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:01:14 . Memory (MB): peak = 2277.051 ; gain = 502.980 ; free physical = 265 ; free virtual = 1558
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "SPICS" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "MOSI" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -1703,7 +1703,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'donnee_X_reg' [/home/nicola
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:01:00 . Memory (MB): peak = 2284.965 ; gain = 502.949 ; free physical = 283 ; free virtual = 2296
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:01:18 . Memory (MB): peak = 2277.051 ; gain = 502.980 ; free physical = 270 ; free virtual = 1567
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2681,7 +2681,7 @@ WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GE
 WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
 WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:01:15 . Memory (MB): peak = 2284.965 ; gain = 502.949 ; free physical = 226 ; free virtual = 2250
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:01:33 . Memory (MB): peak = 2277.051 ; gain = 502.980 ; free physical = 182 ; free virtual = 1526
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2747,13 +2747,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:29 . Memory (MB): peak = 2364.965 ; gain = 582.949 ; free physical = 133 ; free virtual = 1940
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:47 . Memory (MB): peak = 2357.051 ; gain = 582.980 ; free physical = 130 ; free virtual = 1194
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:32 . Memory (MB): peak = 2403.004 ; gain = 620.988 ; free physical = 176 ; free virtual = 1976
+Finished Timing Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:50 . Memory (MB): peak = 2395.082 ; gain = 621.012 ; free physical = 130 ; free virtual = 1187
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2794,7 +2794,7 @@ INFO: [Synth 8-7053] The timing for the instance design_1_i/FIR_2/inst/FIR_RAM_v
 INFO: [Synth 8-7053] The timing for the instance design_1_i/FIR_3/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMAudio/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7053] The timing for the instance design_1_i/FIR_3/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMCoef/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:08 ; elapsed = 00:01:38 . Memory (MB): peak = 2411.012 ; gain = 628.996 ; free physical = 160 ; free virtual = 1960
+Finished Technology Mapping : Time (s): cpu = 00:01:08 ; elapsed = 00:01:55 . Memory (MB): peak = 2403.090 ; gain = 629.020 ; free physical = 147 ; free virtual = 1205
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2820,13 +2820,13 @@ INFO: [Synth 8-5365] Flop inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:13 ; elapsed = 00:01:42 . Memory (MB): peak = 2413.980 ; gain = 631.965 ; free physical = 154 ; free virtual = 1954
+Finished IO Insertion : Time (s): cpu = 00:01:12 ; elapsed = 00:01:59 . Memory (MB): peak = 2406.059 ; gain = 631.988 ; free physical = 144 ; free virtual = 1205
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:13 ; elapsed = 00:01:42 . Memory (MB): peak = 2413.980 ; gain = 631.965 ; free physical = 154 ; free virtual = 1954
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:12 ; elapsed = 00:01:59 . Memory (MB): peak = 2406.059 ; gain = 631.988 ; free physical = 144 ; free virtual = 1205
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2845,25 +2845,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:14 ; elapsed = 00:01:43 . Memory (MB): peak = 2413.980 ; gain = 631.965 ; free physical = 153 ; free virtual = 1953
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:13 ; elapsed = 00:02:01 . Memory (MB): peak = 2406.059 ; gain = 631.988 ; free physical = 142 ; free virtual = 1205
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:14 ; elapsed = 00:01:43 . Memory (MB): peak = 2413.980 ; gain = 631.965 ; free physical = 153 ; free virtual = 1953
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:02:01 . Memory (MB): peak = 2406.059 ; gain = 631.988 ; free physical = 142 ; free virtual = 1205
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:01:44 . Memory (MB): peak = 2413.980 ; gain = 631.965 ; free physical = 153 ; free virtual = 1953
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:02:01 . Memory (MB): peak = 2406.059 ; gain = 631.988 ; free physical = 141 ; free virtual = 1206
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:14 ; elapsed = 00:01:44 . Memory (MB): peak = 2413.980 ; gain = 631.965 ; free physical = 153 ; free virtual = 1953
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:14 ; elapsed = 00:02:01 . Memory (MB): peak = 2406.059 ; gain = 631.988 ; free physical = 141 ; free virtual = 1206
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2917,16 +2917,16 @@ Report Cell Usage:
 |19    |FDRE      |  2589|
 |20    |FDSE      |    32|
 |21    |LD        |     2|
-|22    |IBUF      |     6|
-|23    |OBUF      |    16|
-|24    |OBUFT     |     2|
+|22    |IBUF      |     2|
+|23    |OBUF      |    12|
+|24    |OBUFT     |     6|
 +------+----------+------+
 
 Report Instance Areas: 
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
 |      |Instance                                           |Module                                                         |Cells |
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
-|1     |top                                                |                                                               |  6103|
+|1     |top                                                |                                                               |  6099|
 |2     |  design_1_i                                       |design_1                                                       |  6079|
 |3     |    FIR_0                                          |design_1_FIR_0_0                                               |   483|
 |4     |      inst                                         |FIR_RAM_v1_0_19                                                |   483|
@@ -3027,18 +3027,18 @@ Report Instance Areas:
 |99    |          SEQ_COUNTER                              |upcnt_n                                                        |    13|
 +------+---------------------------------------------------+---------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:14 ; elapsed = 00:01:44 . Memory (MB): peak = 2413.980 ; gain = 631.965 ; free physical = 153 ; free virtual = 1953
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:14 ; elapsed = 00:02:01 . Memory (MB): peak = 2406.059 ; gain = 631.988 ; free physical = 141 ; free virtual = 1206
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 480 critical warnings and 263 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:08 ; elapsed = 00:01:36 . Memory (MB): peak = 2413.980 ; gain = 530.168 ; free physical = 221 ; free virtual = 2022
-Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:01:44 . Memory (MB): peak = 2413.988 ; gain = 631.965 ; free physical = 221 ; free virtual = 2022
+Synthesis finished with 0 errors, 480 critical warnings and 271 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:08 ; elapsed = 00:01:52 . Memory (MB): peak = 2406.059 ; gain = 530.160 ; free physical = 205 ; free virtual = 1271
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:02:01 . Memory (MB): peak = 2406.066 ; gain = 631.988 ; free physical = 205 ; free virtual = 1271
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2413.988 ; gain = 0.000 ; free physical = 284 ; free virtual = 2090
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2406.066 ; gain = 0.000 ; free physical = 192 ; free virtual = 1270
 INFO: [Netlist 29-17] Analyzing 265 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2413.988 ; gain = 0.000 ; free physical = 224 ; free virtual = 2031
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2406.066 ; gain = 0.000 ; free physical = 116 ; free virtual = 1225
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 11 instances were transformed.
   FDR => FDRE: 8 instances
@@ -3046,12 +3046,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRL16 => SRL16E: 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-503 Infos, 172 Warnings, 200 Critical Warnings and 0 Errors encountered.
+503 Infos, 172 Warnings, 201 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:25 ; elapsed = 00:02:00 . Memory (MB): peak = 2413.988 ; gain = 872.219 ; free physical = 511 ; free virtual = 2318
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2413.988 ; gain = 0.000 ; free physical = 510 ; free virtual = 2318
+synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:02:26 . Memory (MB): peak = 2406.066 ; gain = 872.242 ; free physical = 476 ; free virtual = 1597
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2406.066 ; gain = 0.000 ; free physical = 476 ; free virtual = 1597
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.runs/synth_5/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri May 22 15:11:27 2020...
+INFO: [Common 17-206] Exiting Vivado at Fri May 22 17:41:02 2020...
