@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
---Date        : Thu May 21 22:51:20 2020
+--Date        : Fri May 22 14:20:50 2020
 --Host        : grosportable running 64-bit Ubuntu 18.04.4 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -3488,19 +3488,19 @@ entity design_1 is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     LDAC_0 : out STD_LOGIC;
     LedC : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    clk_gyr_0 : out STD_LOGIC;
-    cs_gyro_0 : out STD_LOGIC;
+    clk_gyr_pmod_0 : out STD_LOGIC;
+    cs_gyro_pmod_0 : out STD_LOGIC;
     cs_mic_0 : out STD_LOGIC;
     entree_echo_0 : in STD_LOGIC;
     gain_ampli_0 : out STD_LOGIC;
     gpio_io_i_0 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    int1_gyro_0 : in STD_LOGIC;
-    int2_gyro_0 : in STD_LOGIC;
+    int1_gyro_pmod_0 : in STD_LOGIC;
+    int2_gyro_pmod_0 : in STD_LOGIC;
     s_pwm : out STD_LOGIC_VECTOR ( 0 to 0 );
     sck_mic_0 : out STD_LOGIC;
-    sdi_gyro_0 : in STD_LOGIC;
+    sdi_gyro_pmod_0 : in STD_LOGIC;
     sdi_mic_0 : in STD_LOGIC;
-    sdo_gyro_0 : out STD_LOGIC;
+    sdo_gyro_pmod_0 : out STD_LOGIC;
     shd_ampli_0 : out STD_LOGIC;
     sortie_pwm_0 : out STD_LOGIC;
     sortie_pwm_1 : out STD_LOGIC;
@@ -3917,12 +3917,12 @@ architecture STRUCTURE of design_1 is
   end component design_1_GyrocsopeSPI_0_0;
   component design_1_mongyrocopse_0_0 is
   port (
-    sdi_gyro : in STD_LOGIC;
-    sdo_gyro : out STD_LOGIC;
-    cs_gyro : out STD_LOGIC;
-    clk_gyr : out STD_LOGIC;
-    int1_gyro : in STD_LOGIC;
-    int2_gyro : in STD_LOGIC;
+    sdi_gyro_pmod : in STD_LOGIC;
+    sdo_gyro_pmod : out STD_LOGIC;
+    cs_gyro_pmod : out STD_LOGIC;
+    clk_gyr_pmod : out STD_LOGIC;
+    int1_gyro_pmod : in STD_LOGIC;
+    int2_gyro_pmod : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -3969,17 +3969,17 @@ architecture STRUCTURE of design_1 is
   signal gainNvoies_0_sortie_out_3_pret : STD_LOGIC;
   signal gainNvoies_0_sortie_out_4_pret : STD_LOGIC;
   signal gpio_io_i_0_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal int1_gyro_0_1 : STD_LOGIC;
-  signal int2_gyro_0_1 : STD_LOGIC;
+  signal int1_gyro_pmod_0_1 : STD_LOGIC;
+  signal int2_gyro_pmod_0_1 : STD_LOGIC;
   signal interface_DAC8551_1_LDAC : STD_LOGIC;
   signal interface_DAC8551_1_SCLK : STD_LOGIC;
   signal interface_DAC8551_1_audio_out : STD_LOGIC;
   signal interface_DAC8551_1_sync : STD_LOGIC;
   signal melangeur_0_audio_out : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal melangeur_0_audio_valid_out : STD_LOGIC;
-  signal mongyrocopse_0_clk_gyr : STD_LOGIC;
-  signal mongyrocopse_0_cs_gyro : STD_LOGIC;
-  signal mongyrocopse_0_sdo_gyro : STD_LOGIC;
+  signal mongyrocopse_0_clk_gyr_pmod : STD_LOGIC;
+  signal mongyrocopse_0_cs_gyro_pmod : STD_LOGIC;
+  signal mongyrocopse_0_sdo_gyro_pmod : STD_LOGIC;
   signal pmod_audio_0_out1 : STD_LOGIC;
   signal pmod_audio_0_sortie_pwm : STD_LOGIC;
   signal pmod_audio_1_out1 : STD_LOGIC;
@@ -4219,7 +4219,7 @@ architecture STRUCTURE of design_1 is
   signal ps7_0_axi_periph_M08_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M08_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal sdi_gyro_0_1 : STD_LOGIC;
+  signal sdi_gyro_pmod_0_1 : STD_LOGIC;
   signal sdi_mic_0_1 : STD_LOGIC;
   signal NLW_pmod_audio_0_gain_ampli_UNCONNECTED : STD_LOGIC;
   signal NLW_pmod_audio_0_out2_UNCONNECTED : STD_LOGIC;
@@ -4298,19 +4298,19 @@ begin
   DIR_MOTEUR2 <= pmod_audio_1_out1;
   LDAC_0 <= interface_DAC8551_1_LDAC;
   LedC(3 downto 0) <= processing_system7_0_GPIO_O(3 downto 0);
-  clk_gyr_0 <= mongyrocopse_0_clk_gyr;
-  cs_gyro_0 <= mongyrocopse_0_cs_gyro;
+  clk_gyr_pmod_0 <= mongyrocopse_0_clk_gyr_pmod;
+  cs_gyro_pmod_0 <= mongyrocopse_0_cs_gyro_pmod;
   cs_mic_0 <= PmodMIC3_0_cs_mic;
   entree_echo_0_1 <= entree_echo_0;
   gain_ampli_0 <= interface_DAC8551_1_audio_out;
   gpio_io_i_0_1(3 downto 0) <= gpio_io_i_0(3 downto 0);
-  int1_gyro_0_1 <= int1_gyro_0;
-  int2_gyro_0_1 <= int2_gyro_0;
+  int1_gyro_pmod_0_1 <= int1_gyro_pmod_0;
+  int2_gyro_pmod_0_1 <= int2_gyro_pmod_0;
   s_pwm(0) <= pmod_audio_0_sortie_pwm;
   sck_mic_0 <= PmodMIC3_0_sck_mic;
-  sdi_gyro_0_1 <= sdi_gyro_0;
+  sdi_gyro_pmod_0_1 <= sdi_gyro_pmod_0;
   sdi_mic_0_1 <= sdi_mic_0;
-  sdo_gyro_0 <= mongyrocopse_0_sdo_gyro;
+  sdo_gyro_pmod_0 <= mongyrocopse_0_sdo_gyro_pmod;
   shd_ampli_0 <= interface_DAC8551_1_SCLK;
   sortie_pwm_0 <= interface_DAC8551_1_sync;
   sortie_pwm_1 <= pmod_audio_1_sortie_pwm;
@@ -4535,10 +4535,10 @@ melangeur_0: component design_1_melangeur_0_1
     );
 mongyrocopse_0: component design_1_mongyrocopse_0_0
      port map (
-      clk_gyr => mongyrocopse_0_clk_gyr,
-      cs_gyro => mongyrocopse_0_cs_gyro,
-      int1_gyro => int1_gyro_0_1,
-      int2_gyro => int2_gyro_0_1,
+      clk_gyr_pmod => mongyrocopse_0_clk_gyr_pmod,
+      cs_gyro_pmod => mongyrocopse_0_cs_gyro_pmod,
+      int1_gyro_pmod => int1_gyro_pmod_0_1,
+      int2_gyro_pmod => int2_gyro_pmod_0_1,
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(3 downto 0) => ps7_0_axi_periph_M07_AXI_ARADDR(3 downto 0),
       s00_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -4560,8 +4560,8 @@ mongyrocopse_0: component design_1_mongyrocopse_0_0
       s00_axi_wready => ps7_0_axi_periph_M07_AXI_WREADY,
       s00_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M07_AXI_WSTRB(3 downto 0),
       s00_axi_wvalid => ps7_0_axi_periph_M07_AXI_WVALID,
-      sdi_gyro => sdi_gyro_0_1,
-      sdo_gyro => mongyrocopse_0_sdo_gyro
+      sdi_gyro_pmod => sdi_gyro_pmod_0_1,
+      sdo_gyro_pmod => mongyrocopse_0_sdo_gyro_pmod
     );
 pmod_audio_0: component design_1_pmod_audio_0_0
      port map (

@@ -79,24 +79,28 @@ set_property PACKAGE_PIN T11 [get_ports  entree_echo_0]
 
 
 #accelerometre
-set_property IOSTANDARD LVCMOS33 [get_ports  sdi_gyro_0]
-set_property PACKAGE_PIN E9 [get_ports  sdi_gyro_0]#JF2
+#JF2
+set_property IOSTANDARD LVCMOS33 [get_ports  sdi_gyro_pmod_0]
+set_property PACKAGE_PIN E9 [get_ports  sdi_gyro_pmod_0]
 
-set_property IOSTANDARD LVCMOS33 [get_ports  clk_gyro_0]
-set_property PACKAGE_PIN D9 [get_ports  clk_gyro_0]#JF4
+#JF7
+set_property IOSTANDARD LVCMOS33 [get_ports  int1_gyro_pmod_0]
+set_property PACKAGE_PIN E6 [get_ports  int1_gyro_pmod_0]
 
-set_property IOSTANDARD LVCMOS33 [get_ports  sdo_gyro_0]
-set_property PACKAGE_PIN C6 [get_ports  sdo_gyro_0] #JF3
+#JF8   
+set_property IOSTANDARD LVCMOS33 [get_ports  int2_gyro_pmod_0]
+set_property PACKAGE_PIN B5 [get_ports  int2_gyro_pmod_0]
 
-set_property IOSTANDARD LVCMOS33 [get_ports  int1_gyro_0]
-set_property PACKAGE_PIN E6 [get_ports  int1_gyro_0]#JF7
+#JF1
+set_property IOSTANDARD LVCMOS33 [get_ports  cs_gyro_pmod_0]
+set_property PACKAGE_PIN E8 [get_ports  cs_gyro_pmod_0]
 
-set_property IOSTANDARD LVCMOS33 [get_ports  int2_gyro_0]
-set_property PACKAGE_PIN B5 [get_ports  int2_gyro_0]#JF8
+#JF4
+set_property IOSTANDARD LVCMOS33 [get_ports  clk_gyr_pmod_0]
+set_property PACKAGE_PIN D9 [get_ports  clk_gyr_pmod_0]
 
-set_property IOSTANDARD LVCMOS33 [get_ports  cs_gyro_0]
-set_property PACKAGE_PIN E8 [get_ports  cs_gyro_0]#JF1
-
-
+ #JF3
+ set_property IOSTANDARD LVCMOS33 [get_ports  sdo_gyro_pmod_0]
+set_property PACKAGE_PIN C6 [get_ports  sdo_gyro_pmod_0]
 
 

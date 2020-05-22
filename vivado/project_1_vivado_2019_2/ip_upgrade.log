@@ -1,0 +1,238 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Fri May 22 14:20:41 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 24) to (Rev. 25)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Fri May 22 12:21:06 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 23) to (Rev. 24)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Fri May 22 09:58:02 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 22) to (Rev. 23)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Fri May 22 09:29:40 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 21) to (Rev. 22)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Fri May 22 09:13:00 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 20) to (Rev. 21)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Fri May 22 00:29:11 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 19) to (Rev. 20)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Fri May 22 00:19:39 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 17) to (Rev. 19)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Thu May 21 23:39:46 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 15) to (Rev. 17)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_mongyrocopse_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'clk_gyr'
+
+-Upgrade has removed port 'cs_gyro'
+
+-Upgrade has removed port 'int1_gyro'
+
+-Upgrade has removed port 'int2_gyro'
+
+-Upgrade has removed port 'sdi_gyro'
+
+-Upgrade has removed port 'sdo_gyro'
+
+-Upgrade has added port 'clk_gyr_pmod'
+
+-Upgrade has added port 'cs_gyro_pmod'
+
+-Upgrade has added port 'int1_gyro_pmod'
+
+-Upgrade has added port 'int2_gyro_pmod'
+
+-Upgrade has added port 'sdi_gyro_pmod'
+
+-Upgrade has added port 'sdo_gyro_pmod'
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Thu May 21 23:25:07 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 14) to (Rev. 15)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Thu May 21 23:21:12 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.01) from (Rev. 11) to (Rev. 14)
+

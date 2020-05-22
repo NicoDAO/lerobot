@@ -47,20 +47,23 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: user.org:user:mongyrocopse:1.01
--- IP Revision: 11
+-- IP Revision: 25
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
+LIBRARY work;
+USE work.mongyrocopse_v1_0;
+
 ENTITY design_1_mongyrocopse_0_0 IS
   PORT (
-    sdi_gyro : IN STD_LOGIC;
-    sdo_gyro : OUT STD_LOGIC;
-    cs_gyro : OUT STD_LOGIC;
-    clk_gyr : OUT STD_LOGIC;
-    int1_gyro : IN STD_LOGIC;
-    int2_gyro : IN STD_LOGIC;
+    sdi_gyro_pmod : IN STD_LOGIC;
+    sdo_gyro_pmod : OUT STD_LOGIC;
+    cs_gyro_pmod : OUT STD_LOGIC;
+    clk_gyr_pmod : OUT STD_LOGIC;
+    int1_gyro_pmod : IN STD_LOGIC;
+    int2_gyro_pmod : IN STD_LOGIC;
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -94,12 +97,12 @@ ARCHITECTURE design_1_mongyrocopse_0_0_arch OF design_1_mongyrocopse_0_0 IS
       C_S00_AXI_ADDR_WIDTH : INTEGER -- Width of S_AXI address bus
     );
     PORT (
-      sdi_gyro : IN STD_LOGIC;
-      sdo_gyro : OUT STD_LOGIC;
-      cs_gyro : OUT STD_LOGIC;
-      clk_gyr : OUT STD_LOGIC;
-      int1_gyro : IN STD_LOGIC;
-      int2_gyro : IN STD_LOGIC;
+      sdi_gyro_pmod : IN STD_LOGIC;
+      sdo_gyro_pmod : OUT STD_LOGIC;
+      cs_gyro_pmod : OUT STD_LOGIC;
+      clk_gyr_pmod : OUT STD_LOGIC;
+      int1_gyro_pmod : IN STD_LOGIC;
+      int2_gyro_pmod : IN STD_LOGIC;
       s00_axi_aclk : IN STD_LOGIC;
       s00_axi_aresetn : IN STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -161,12 +164,12 @@ BEGIN
       C_S00_AXI_ADDR_WIDTH => 4
     )
     PORT MAP (
-      sdi_gyro => sdi_gyro,
-      sdo_gyro => sdo_gyro,
-      cs_gyro => cs_gyro,
-      clk_gyr => clk_gyr,
-      int1_gyro => int1_gyro,
-      int2_gyro => int2_gyro,
+      sdi_gyro_pmod => sdi_gyro_pmod,
+      sdo_gyro_pmod => sdo_gyro_pmod,
+      cs_gyro_pmod => cs_gyro_pmod,
+      clk_gyr_pmod => clk_gyr_pmod,
+      int1_gyro_pmod => int1_gyro_pmod,
+      int2_gyro_pmod => int2_gyro_pmod,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn,
       s00_axi_awaddr => s00_axi_awaddr,
