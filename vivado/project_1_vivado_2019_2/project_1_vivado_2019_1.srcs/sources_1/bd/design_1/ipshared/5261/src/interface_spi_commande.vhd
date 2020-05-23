@@ -31,7 +31,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity spi_gyro is
+entity spi_gyro_commande is
+	generic (
+		DIVISEUR_HORLOGE	: integer	:= 32
+		);
     Port ( 
            sdi_gyro : in STD_LOGIC;
            sdo_gyro : out STD_LOGIC;
@@ -45,9 +48,9 @@ entity spi_gyro is
            donnee_Y : out std_logic_vector (15 downto 0);
            donnee_Z : out std_logic_vector (15 downto 0) );
 
-end spi_gyro;
+end spi_gyro_commande;
 
-architecture Behavioral of spi_gyro is
+architecture Behavioral of spi_gyro_commande is
     signal        act_clk : std_logic;
     --signal        SPICLK : std_logic;
     signal        SPIRESET : std_logic;
@@ -63,7 +66,7 @@ architecture Behavioral of spi_gyro is
     begin
 
     -- I/O Connections assignments
-    inerface_spi_inst : entity work.inerface_spi port map( horloge_spi=>horloge_g,SPICLK=>clk_gyro,
+    inerface_spi_inst : entity work.inerface_spi_materielle port map( horloge_spi=>horloge_g,SPICLK=>clk_gyro,
             SPIRESET=>SPIRESET,SPICS=>SPICS,MISO=>MISO,MOSI=>MOSI,
             COMMANDE_SPI=>COMMANDE_SPI,LECTURE_SPI=>LECTURE_SPI,
             RW=>RW,MS=>MS);
@@ -89,19 +92,15 @@ architecture Behavioral of spi_gyro is
          then
          case cpt is
                 when 0 =>
-                     SPIRESET<='1';
-                     horloge_g<='1';
-                 when 1 to 4 => 
-                    horloge_g<='0';
-                    RW<='1'; 
-                    SPIRESET<='1';
-                    cpt_test :=cpt_test + 1;
-                    horloge_g<='0';
+                      horloge_g<='0';
+                 when DIVISEUR_HORLOGE => 
+                    horloge_g<='1';
+                  
                     when others=> null;
                 end case;     
             cpt:=cpt+1;
         
-        if(cpt = 10) then
+        if(cpt =DIVISEUR_HORLOGE * 2) then
             cpt:=0;
             end if;   
      end if;

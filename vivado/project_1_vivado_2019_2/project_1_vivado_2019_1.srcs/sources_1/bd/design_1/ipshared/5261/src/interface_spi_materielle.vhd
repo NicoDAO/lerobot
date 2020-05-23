@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity inerface_spi is
+entity inerface_spi_materielle is
 
 port (
 		-- Users to add ports here	
@@ -46,9 +46,9 @@ port (
         LECTURE_SPI :  out std_logic_vector (15 downto 0);
         RW : in std_logic;
         MS : in std_logic     );
-end inerface_spi;
+end inerface_spi_materielle;
 
-architecture Behavioral of inerface_spi is
+architecture Behavioral of inerface_spi_materielle is
 signal LECTURE_spi_temp :  std_logic_vector (15 downto 0);
 signal act_clk  : std_logic;
 begin

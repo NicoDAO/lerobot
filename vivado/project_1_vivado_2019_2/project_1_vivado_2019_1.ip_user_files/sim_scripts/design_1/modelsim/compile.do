@@ -131,10 +131,10 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/design_1/ipshared/f2ec/hdl/capteurDistanceUltrason_v1_0_S00_AXI.vhd" \
 "../../../bd/design_1/ipshared/f2ec/hdl/capteurDistanceUltrason_v1_0.vhd" \
 "../../../bd/design_1/ip/design_1_GyrocsopeSPI_0_0/sim/design_1_GyrocsopeSPI_0_0.vhd" \
-"../../../bd/design_1/ipshared/fcae/src/inerface_spi.vhd" \
-"../../../bd/design_1/ipshared/spi_gyro.vhd" \
-"../../../bd/design_1/ipshared/fcae/hdl/mongyrocopse_v1_0_S00_AXI.vhd" \
-"../../../bd/design_1/ipshared/fcae/hdl/mongyrocopse_v1_0.vhd" \
+"../../../bd/design_1/ipshared/5261/src/interface_spi_materielle.vhd" \
+"../../../bd/design_1/ipshared/5261/src/interface_spi_commande.vhd" \
+"../../../bd/design_1/ipshared/5261/hdl/mongyrocopse_v1_0_S00_AXI.vhd" \
+"../../../bd/design_1/ipshared/5261/hdl/mongyrocopse_v1_0.vhd" \
 "../../../bd/design_1/ip/design_1_mongyrocopse_0_0/sim/design_1_mongyrocopse_0_0.vhd" \
 
 vlog -work axi_protocol_converter_v2_1_20 -64 -incr "+incdir+../../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ipshared/2d50/hdl" "+incdir+../../../../project_1_vivado_2019_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0" "+incdir+/opt/Xilinx/Vivado/2019.2/data/xilinx_vip/include" \

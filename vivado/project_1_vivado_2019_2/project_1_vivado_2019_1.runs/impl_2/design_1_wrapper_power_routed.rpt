@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
-| Date             : Fri May 22 17:46:19 2020
+| Date             : Fri May 22 23:38:22 2020
 | Host             : grosportable running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -54,13 +54,13 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.005 |        6 |       --- |             --- |
 | Slice Logic             |     0.002 |     5796 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     2062 |     17600 |           11.72 |
+|   LUT as Logic          |     0.002 |     2060 |     17600 |           11.70 |
 |   CARRY4                |    <0.001 |      208 |      4400 |            4.73 |
 |   Register              |    <0.001 |     2603 |     35200 |            7.39 |
 |   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
 |   LUT as Shift Register |    <0.001 |       62 |      6000 |            1.03 |
 |   Others                |     0.000 |      298 |       --- |             --- |
-| Signals                 |     0.003 |     5794 |       --- |             --- |
+| Signals                 |     0.003 |     5792 |       --- |             --- |
 | Block RAM               |     0.001 |        4 |        60 |            6.67 |
 | DSPs                    |     0.001 |       24 |        80 |           30.00 |
 | I/O                     |     0.007 |       20 |       100 |           20.00 |
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.013 |      0.007 | Unspecified | NA         |
+| Vccint    |       1.000 |     0.020 |       0.012 |      0.007 | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.008 |       0.000 |      0.008 | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 | Unspecified | NA         |

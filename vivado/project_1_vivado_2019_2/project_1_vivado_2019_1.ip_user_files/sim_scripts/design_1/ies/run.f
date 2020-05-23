@@ -98,10 +98,10 @@
   "../../../bd/design_1/ipshared/f2ec/hdl/capteurDistanceUltrason_v1_0_S00_AXI.vhd" \
   "../../../bd/design_1/ipshared/f2ec/hdl/capteurDistanceUltrason_v1_0.vhd" \
   "../../../bd/design_1/ip/design_1_GyrocsopeSPI_0_0/sim/design_1_GyrocsopeSPI_0_0.vhd" \
-  "../../../bd/design_1/ipshared/fcae/src/inerface_spi.vhd" \
-  "../../../bd/design_1/ipshared/spi_gyro.vhd" \
-  "../../../bd/design_1/ipshared/fcae/hdl/mongyrocopse_v1_0_S00_AXI.vhd" \
-  "../../../bd/design_1/ipshared/fcae/hdl/mongyrocopse_v1_0.vhd" \
+  "../../../bd/design_1/ipshared/5261/src/interface_spi_materielle.vhd" \
+  "../../../bd/design_1/ipshared/5261/src/interface_spi_commande.vhd" \
+  "../../../bd/design_1/ipshared/5261/hdl/mongyrocopse_v1_0_S00_AXI.vhd" \
+  "../../../bd/design_1/ipshared/5261/hdl/mongyrocopse_v1_0.vhd" \
   "../../../bd/design_1/ip/design_1_mongyrocopse_0_0/sim/design_1_mongyrocopse_0_0.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_20 \
