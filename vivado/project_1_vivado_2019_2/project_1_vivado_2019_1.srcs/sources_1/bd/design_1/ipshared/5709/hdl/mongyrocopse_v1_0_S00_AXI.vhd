@@ -95,6 +95,7 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
     signal donnee_X :std_logic_vector(15 downto 0); 
     signal donnee_Y :std_logic_vector(15 downto 0); 
     signal donnee_Z :std_logic_vector(15 downto 0); 
+    signal whomai   :std_logic_vector(15 downto 0);
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -127,10 +128,12 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
+	signal adresse_registre :  std_logic_vector (7 downto 0);
 
 begin
     -- I/O Connections assignments
-   spi_gyro_inst : entity work.spi_gyro_commande port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO ,horloge_gyro=>S_AXI_ACLK, reset_n=>S_AXI_ARESETN,donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z);
+   spi_gyro_inst : entity work.spi_gyro_commande port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO ,horloge_gyro=>S_AXI_ACLK, reset_n=>S_AXI_ARESETN,
+   adresse_registre=>adresse_registre,donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z,whoami=>whomai);
 
 	-- I/O Connections assignments
 
@@ -153,6 +156,7 @@ begin
 	    if S_AXI_ARESETN = '0' then
 	      axi_awready <= '0';
 	      aw_en <= '1';
+	      adresse_registre<="00000000";
 	    else
 	      if (axi_awready = '0' and S_AXI_AWVALID = '1' and S_AXI_WVALID = '1' and aw_en = '1') then
 	        -- slave is ready to accept write address when

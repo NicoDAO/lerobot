@@ -44,6 +44,8 @@ entity spi_gyro_commande is
            int2_gyro : in STD_LOGIC;
            horloge_gyro : in STD_LOGIC;
            reset_n : in STD_LOGIC;
+           adresse_registre : in std_logic_vector (7 downto 0);
+           whoami :   out std_logic_vector (15 downto 0);
            donnee_X : out std_logic_vector (15 downto 0);
            donnee_Y : out std_logic_vector (15 downto 0);
            donnee_Z : out std_logic_vector (15 downto 0) );
@@ -66,12 +68,22 @@ architecture Behavioral of spi_gyro_commande is
     begin
 
     -- I/O Connections assignments
-    inerface_spi_inst : entity work.inerface_spi_materielle port map( horloge_spi=>horloge_g,SPICLK=>clk_gyro,
-            SPIRESET=>SPIRESET,SPICS=>SPICS,MISO=>MISO,MOSI=>MOSI,
+--    diviseur_horloge_inst : entity work.diviseur_horloge port map (entree_horloge=>horloge_gyro,
+--            horloge_divisu=>horloge_g,reset_n=>reset_n);
+   diviseur_horloge_inst : entity work.diviseur_horloge port map (entree_horloge=>horloge_gyro,
+            horloge_divisu=>horloge_g,reset_n=>reset_n);
+
+    inerface_spi_inst : entity work.inerface_spi_materielle port map( horloge_spi=>horloge_gyro,SPICLK=>clk_gyro,
+            SPIRESET=>SPIRESET,SPICS=>SPICS,MISO=>sdi_gyro,MOSI=>sdo_gyro,
             COMMANDE_SPI=>COMMANDE_SPI,LECTURE_SPI=>LECTURE_SPI,
             RW=>RW,MS=>MS);
+-- end entity;   
 
-   process (horloge_gyro)
+--end entity;
+
+ 
+  
+process (horloge_gyro)
    variable cpt :INTEGER :=0;  
    variable cpt_test : INTEGER :=0; 
    variable adresse_registre : INTEGER :=0; 
@@ -83,6 +95,7 @@ architecture Behavioral of spi_gyro_commande is
         donnee_X<="0000000000000000";
         donnee_Y<="0000000000000000";
         donnee_Z<="0000000000000000";
+        whoami<="0000000000000000";
        -- spiclk<='0';
         horloge_g<='0';
         cpt:=0;
@@ -92,19 +105,29 @@ architecture Behavioral of spi_gyro_commande is
          then
          case cpt is
                 when 0 =>
-                      horloge_g<='0';
-                 when DIVISEUR_HORLOGE => 
-                    horloge_g<='1';
-                  
-                    when others=> null;
+                   RW <='1'; --on place les données on ecrit
+                   MS<='0';
+                   COMMANDE_SPI<=x"0055" ; --WHO_AM_I
+                   SPIRESET<='0';
+                 when 1 =>  -- on lance le SPI
+                    SPIRESET<='1';
+                  when 50 =>  -- on attend
+                     whoami<=LECTURE_SPI;
+                     RW <='1'; --on lit
+                     SPIRESET<='0';
+                   when 51 =>  -- on attend
+                  when others=> null;
                 end case;     
             cpt:=cpt+1;
         
-        if(cpt =DIVISEUR_HORLOGE * 2) then
+        if(cpt =51) then
             cpt:=0;
             end if;   
      end if;
-end process;
-    
+end process;   
 
 end Behavioral;
+
+
+
+
