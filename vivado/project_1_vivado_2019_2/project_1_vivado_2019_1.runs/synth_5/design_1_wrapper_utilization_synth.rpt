@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
-| Date         : Fri May 22 23:33:24 2020
+| Date         : Sun May 24 00:00:45 2020
 | Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 2550 |     0 |     17600 | 14.49 |
-|   LUT as Logic             | 2484 |     0 |     17600 | 14.11 |
+| Slice LUTs*                | 2580 |     0 |     17600 | 14.66 |
+|   LUT as Logic             | 2514 |     0 |     17600 | 14.28 |
 |   LUT as Memory            |   66 |     0 |      6000 |  1.10 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   66 |     0 |           |       |
-| Slice Registers            | 2747 |     0 |     35200 |  7.80 |
-|   Register as Flip Flop    | 2745 |     0 |     35200 |  7.80 |
+| Slice Registers            | 2748 |     0 |     35200 |  7.81 |
+|   Register as Flip Flop    | 2746 |     0 |     35200 |  7.80 |
 |   Register as Latch        |    2 |     0 |     35200 | <0.01 |
 | F7 Muxes                   |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 118   |          Yes |           - |        Reset |
 | 32    |          Yes |         Set |            - |
-| 2597  |          Yes |       Reset |            - |
+| 2598  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -117,7 +117,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    5 |     0 |        32 | 15.63 |
+| BUFGCTRL   |    4 |     0 |        32 | 12.50 |
 | BUFIO      |    0 |     0 |         8 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         2 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         2 |  0.00 |
@@ -150,24 +150,24 @@ Table of Contents
 +----------+------+----------------------+
 | Ref Name | Used |  Functional Category |
 +----------+------+----------------------+
-| FDRE     | 2597 |         Flop & Latch |
-| LUT2     | 1087 |                  LUT |
-| LUT6     |  666 |                  LUT |
-| LUT4     |  406 |                  LUT |
-| LUT3     |  350 |                  LUT |
-| LUT5     |  270 |                  LUT |
+| FDRE     | 2598 |         Flop & Latch |
+| LUT2     | 1122 |                  LUT |
+| LUT6     |  660 |                  LUT |
+| LUT4     |  407 |                  LUT |
+| LUT3     |  352 |                  LUT |
+| LUT5     |  273 |                  LUT |
 | CARRY4   |  222 |           CarryLogic |
 | BIBUF    |  130 |                   IO |
 | FDCE     |  116 |         Flop & Latch |
-| LUT1     |   96 |                  LUT |
+| LUT1     |   95 |                  LUT |
 | SRLC32E  |   47 |   Distributed Memory |
 | FDSE     |   32 |         Flop & Latch |
 | DSP48E1  |   24 |     Block Arithmetic |
 | SRL16E   |   19 |   Distributed Memory |
-| OBUF     |   12 |                   IO |
+| OBUF     |   13 |                   IO |
 | RAMB18E1 |    8 |         Block Memory |
-| OBUFT    |    6 |                   IO |
-| BUFG     |    5 |                Clock |
+| OBUFT    |    5 |                   IO |
+| BUFG     |    4 |                Clock |
 | LDCE     |    2 |         Flop & Latch |
 | IBUF     |    2 |                   IO |
 | PS7      |    1 | Specialized Resource |

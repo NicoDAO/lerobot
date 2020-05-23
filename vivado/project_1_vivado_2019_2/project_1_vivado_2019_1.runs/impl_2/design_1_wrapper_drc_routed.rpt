@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
-| Date         : Fri May 22 23:38:14 2020
+| Date         : Sun May 24 00:08:11 2020
 | Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -24,21 +24,34 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 57
-+-----------+----------+----------------------------+------------+
-| Rule      | Severity | Description                | Violations |
-+-----------+----------+----------------------------+------------+
-| CHECK-3   | Warning  | Report rule limit reached  | 1          |
-| DPOP-1    | Warning  | PREG Output pipelining     | 16         |
-| DPOP-2    | Warning  | MREG Output pipelining     | 20         |
-| REQP-1840 | Warning  | RAMB18 async control check | 20         |
-+-----------+----------+----------------------------+------------+
+             Violations found: 61
++-----------+----------+-------------------------------------------------+------------+
+| Rule      | Severity | Description                                     | Violations |
++-----------+----------+-------------------------------------------------+------------+
+| CHECK-3   | Warning  | Report rule limit reached                       | 1          |
+| DPIP-1    | Warning  | Input pipelining                                | 2          |
+| DPOP-1    | Warning  | PREG Output pipelining                          | 16         |
+| DPOP-2    | Warning  | MREG Output pipelining                          | 20         |
+| REQP-1840 | Warning  | RAMB18 async control check                      | 20         |
+| REQP-20   | Advisory | enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND | 1          |
+| REQP-24   | Advisory | enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND | 1          |
++-----------+----------+-------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 CHECK-3#1 Warning
 Report rule limit reached  
 REQP-1840 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+DPIP-1#1 Warning
+Input pipelining  
+DSP design_1_i/gainNvoies_0/U0/gainNvoies_v1_0_S00_AXI_inst/gain1_inst/audio_out_temp_reg input design_1_i/gainNvoies_0/U0/gainNvoies_v1_0_S00_AXI_inst/gain1_inst/audio_out_temp_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP design_1_i/gainNvoies_0/U0/gainNvoies_v1_0_S00_AXI_inst/gain1_inst/multOp input design_1_i/gainNvoies_0/U0/gainNvoies_v1_0_S00_AXI_inst/gain1_inst/multOp/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning
@@ -319,6 +332,16 @@ Related violations: <none>
 REQP-1840#20 Warning
 RAMB18 async control check  
 The RAMB18E1 design_1_i/FIR_3/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMAudio/mem_reg has an input control pin design_1_i/FIR_3/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMAudio/mem_reg/ADDRBWRADDR[9] (net: design_1_i/FIR_3/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/RAMAudio/mem_reg_0[4]) which is driven by a register (design_1_i/FIR_3/inst/FIR_RAM_v1_0_S00_AXI_inst/filtre/waddrRAM_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-20#1 Advisory
+enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
+design_1_i/gainNvoies_0/U0/gainNvoies_v1_0_S00_AXI_inst/gain1_inst/multOp: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+Related violations: <none>
+
+REQP-24#1 Advisory
+enum_BREG_0_connects_CEB1_GND_connects_CEB2_GND  
+design_1_i/gainNvoies_0/U0/gainNvoies_v1_0_S00_AXI_inst/gain1_inst/audio_out_temp_reg: When DSP48E1 attribute BREG is set to 0, the CEB1 and CEB2 pins should be tied to GND to save power.
 Related violations: <none>
 
 

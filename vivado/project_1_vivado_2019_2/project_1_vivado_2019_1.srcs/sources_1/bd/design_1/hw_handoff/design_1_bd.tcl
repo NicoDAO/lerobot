@@ -223,7 +223,7 @@ proc create_root_design { parentCell } {
   set melangeur_0 [ create_bd_cell -type ip -vlnv user.org:user:melangeur:1.0 melangeur_0 ]
 
   # Create instance: mongyrocopse_0, and set properties
-  set mongyrocopse_0 [ create_bd_cell -type ip -vlnv user.org:user:mongyrocopse:1.01 mongyrocopse_0 ]
+  set mongyrocopse_0 [ create_bd_cell -type ip -vlnv user.org:user:mongyrocopse:1.02 mongyrocopse_0 ]
 
   # Create instance: pmod_audio_0, and set properties
   set pmod_audio_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:gesre_moteur:1.4 pmod_audio_0 ]

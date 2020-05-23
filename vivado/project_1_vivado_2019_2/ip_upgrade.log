@@ -1,6 +1,69 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Sat May 23 23:57:54 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.02) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Sat May 23 17:55:44 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 (user.org:user:mongyrocopse:1.02) from (Rev. 1) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
+| Date         : Sat May 23 15:00:50 2020
+| Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mongyrocopse_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_mongyrocopse_0_0 from user.org:user:mongyrocopse:1.01 (Rev. 26) to user.org:user:mongyrocopse:1.02 (Rev. 1)
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
 | Date         : Sat May 23 14:49:09 2020
 | Host         : grosportable running 64-bit Ubuntu 18.04.4 LTS
 | Command      : upgrade_ip
