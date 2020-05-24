@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.55",
-   "Default View_TopLeft":"-202,1224",
+   "Default View_TopLeft":"-202,809",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"",
    "PinnedPorts":"",
@@ -88,18 +88,18 @@ preplace netloc int2_gyro_pmod_0_1 1 0 3 NJ 1850 NJ 1850 NJ
 preplace netloc mongyrocopse_0_sdo_gyro_pmod 1 3 3 NJ 1820 NJ 1820 NJ
 preplace netloc mongyrocopse_0_cs_gyro_pmod 1 3 3 NJ 1840 NJ 1840 NJ
 preplace netloc mongyrocopse_0_clk_gyr_pmod 1 3 3 NJ 1860 NJ 1860 NJ
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 1170 870n
-preplace netloc processing_system7_0_FIXED_IO 1 0 1 10 1280n
-preplace netloc ps7_0_axi_periph_M06_AXI 1 2 1 1120 80n
-preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 1130 420n
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 1140 660n
-preplace netloc ps7_0_axi_periph_M05_AXI 1 2 1 1190 930n
-preplace netloc ps7_0_axi_periph_M08_AXI 1 2 1 1130 990n
-preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 1190 870n
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 1200 830n
-preplace netloc processing_system7_0_DDR 1 1 5 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 780 670n
 preplace netloc ps7_0_axi_periph_M07_AXI 1 2 1 1140 970n
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 1250 NJ 1250 NJ 1250 NJ 1250 NJ
+preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 1190 870n
+preplace netloc ps7_0_axi_periph_M08_AXI 1 2 1 1130 990n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 1200 830n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 1140 660n
+preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 1130 420n
+preplace netloc processing_system7_0_FIXED_IO 1 0 1 10 1280n
+preplace netloc ps7_0_axi_periph_M06_AXI 1 2 1 1120 80n
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 1 1190 930n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 1170 870n
 levelinfo -pg 1 -20 530 970 1460 1860 2170 2330
 pagesize -pg 1 -db -bbox -sgen -210 -60 2510 2290
 "

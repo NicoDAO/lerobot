@@ -1,0 +1,118 @@
+/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/design_1_wrapper_corona2/export/design_1_wrapper_corona2/sw/design_1_wrapper_corona2/boot/fsbl.elf
+/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dsfyoyo/Debug/dsfyoyo.elf
+/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/design_1_wrapper_corona2/bitstream/design_1_wrapper_corona2.bit
+
+creer bootgen depuis xilinx
+https://www.xilinx.com/support/documentation/sw_manuals/xilinx2019_2/ug1283-bootgen-user-guide.pdf
+
+**************liens************************************
+https://blog.mbedded.ninja/programming/embedded-linux/zynq/building-linux-for-the-zynq-zc702-eval-kit-using-yocto/#&gid=1&pid=1
+https://www.yoctoproject.org/docs/2.4/dev-manual/dev-manual.html
+
+
+
+*****************************************format carte sd :
+sudo dd if=/dev/zero of=/dev/mmcblk0 of=/dev/
+
+*****************************************configurer les partitions :
+sudo fdisk /dev/mmcblk0 
+
+Command (m for help): n 
+Partition type: p primary (0 primary, 0 extended, 4 free) e extended Select (default p): p 
+Partition number (1-4, default 1): 1 
+First sector (2048-15759359, default 2048): Using default value 2048 
+Last sector, +sectors or +size{K,M,G} (2048-15759359, default 15759359): +200M 
+
+Command (m for help): n 
+Partition type: p primary (1 primary, 0 extended, 3 free) e extended Select (default p): p 
+Partition number (1-4, default 2): 2 
+First sector (411648-15759359, default 411648): Using default value 411648 
+Last sector, +sectors or +size{K,M,G} (411648-15759359, 
+default 15759359): Using default value 15759359
+
+
+Command (m for help): a
+Partition number (1-4): 1
+    
+Command (m for help): t
+Partition number (1-4): 1
+Hex code (type L to list codes): c
+Changed system type of partition 1 to c (W95 FAT32 (LBA))
+    
+Command (m for help): t
+Partition number (1-4): 2
+Hex code (type L to list codes): 83
+
+Commande (m pour l'aide) : p
+Disque /dev/mmcblk0 : 7,4 GiB, 7948206080 octets, 15523840 secteurs
+Unités : secteur de 1 × 512 = 512 octets
+Taille de secteur (logique / physique) : 512 octets / 512 octets
+taille d'E/S (minimale / optimale) : 512 octets / 512 octets
+Type d'étiquette de disque : dos
+Identifiant de disque : 0xca4a050b
+
+Périphérique   Amorçage  Début      Fin Secteurs Taille Id Type
+/dev/mmcblk0p1 *          2048   411647   409600   200M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2          411648 15523839 15112192   7,2G 83 Linux
+
+
+Command (m for help): w
+
+
+*****************************  creer les sytemes de fichiers
+sudo mkfs.vfat -F 32 -n boot /dev/mmcblk0p1
+sudo mkfs.ext4 -L root /dev/mmcblk0p2
+
+****************************** rajouter des trucs linux
+
+dans local.conf ajouter le truc 
+source oe-init-build-env
+
+dégager ce qu'il y a dans la carte sd root
+sudo rm -r /media/nicolas/root/ 
+
+******************  mettre le nouveau file system
+
+sudo tar x -C /media/nicolas/root/ -f core-image-minimal-zybo-zynq7.tar.gz 
+sudo tar x -C /mnt/mmcblk0p2/ -f core-image-minimal-zybo-zynq7.tar.gz 
+
+
+copier le contenu du répertoire dans la partition boot
+cp * /media/nicolas/boot/
+sudo mount /dev/mmcblk0p2 /mnt/mmcblk0p2
+
+
+**************compiler
+~/poky/meta-xilinx$ cd ..
+~/poky$ source oe-init-build-env
+bitbake-layers add-layer "$HOME/poky/meta-xilinx"
+rajouter MACHINE ?= "zybo-zynq7" dans local.conf
+bitbake-layers add-layer "$HOME/yocto/poky/meta-xilinx"
+
+
+**************generation du boot.bin avec le bitstream
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dsfyoyo/Debug/dsfyoyo.elf
+	/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dsfyoyo/_ide/bitstream/design_1_wrapper_corona2.bit
+	/home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u-boot.elf
+	/home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u-boot-zybo-zynq7.elf
+}
+
+
+
+cp *.bin /mnt/mmcblk0p1
+cp *.img /mnt/mmcblk0p1
+cp *.dtb /mnt/mmcblk0p1
+cp *.elf /mnt/mmcblk0p1
+cp *.u-boot /mnt/mmcblk0p1
+
+ bitbake -c menuconfig virtual/kernel
+
+
+
+
+
+
+

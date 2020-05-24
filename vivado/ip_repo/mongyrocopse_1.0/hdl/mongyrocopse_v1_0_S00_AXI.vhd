@@ -129,11 +129,19 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
 	signal adresse_registre :  std_logic_vector (7 downto 0);
+	signal adresse_registre_ecriture : std_logic_vector (7 downto 0);
+    signal adresse_registre_lecure :  std_logic_vector (7 downto 0);
+    signal valeur_registre_a_ecrire :    std_logic_vector (15 downto 0);
+    signal valeur_registre_lue :    std_logic_vector (15 downto 0);
+    signal commande_ecriture_registre :  STD_LOGIC;
 
 begin
     -- I/O Connections assignments
    spi_gyro_inst : entity work.spi_gyro_commande port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO ,horloge_gyro=>S_AXI_ACLK, reset_n=>S_AXI_ARESETN,
-   adresse_registre=>adresse_registre,donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z,whoami=>whomai);
+   adresse_registre_ecriture=>adresse_registre_ecriture,adresse_registre_lecure=>adresse_registre_lecure,
+   valeur_registre_a_ecrire=>valeur_registre_a_ecrire,valeur_registre_lue=>valeur_registre_lue,commande_ecriture_registre=>commande_ecriture_registre,
+   donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z);
+
 
 	-- I/O Connections assignments
 
@@ -402,7 +410,54 @@ begin
 
 
 	-- Add user logic here
-
+    -- Output register or memory read data
+	process( S_AXI_ACLK ) is
+	begin
+	  if (rising_edge (S_AXI_ACLK)) then
+	    if ( S_AXI_ARESETN = '0' ) then
+	      axi_rdata  <= (others => '0');
+	    else
+	      if (slv_reg_rden = '1') then
+	        -- When there is a valid read address (S_AXI_ARVALID) with 
+	        -- acceptance of read address by the slave (axi_arready), 
+	        -- output the read dada 
+	        -- Read address mux
+	           case slv_reg0 is
+	               when x"00000000"     =>
+	                    axi_rdata <= donnee_X;     -- on lit la rotation en X
+	               when x"00000010"     =>
+	                    axi_rdata <= donnee_Y;     -- on lit la rotation en Y
+                   when x"00000020"     =>
+	                    axi_rdata <= donnee_Z;     -- on lit la rotation en Z
+	 	           
+	               when others =>
+	                    axi_rdata <= x"12345678";  -- patate, y a rien à cette adresse
+	            end case;                  
+	      end if;  
+--           adresse_registre_ecriture : in std_logic_vector (7 downto 0);
+--           adresse_registre_lecure : in std_logic_vector (7 downto 0);
+--           valeur_registre_a_ecrire :   out std_logic_vector (15 downto 0);
+--           valeur_registre_lue :   out std_logic_vector (15 downto 0);
+--           commande_ecriture_registre : in STD_LOGIC;
+  
+             case slv_reg1 is
+	               when x"000000AA"     =>
+	                   commande_ecriture_registre<='0';
+	                    adresse_registre_ecriture<=slv_reg2;
+	               when x"000000BB"     =>
+	                     commande_ecriture_registre<='1';
+	                    adresse_registre_lecure<=slv_reg2;
+                   when x"000000CC"     =>
+	                    axi_rdata <= donnee_Z;     -- on lit la rotation en Z
+	 	           
+	               when others =>
+	                    axi_rdata <= x"12345678";  -- patate, y a rien à cette adresse
+	            end case;      
+  
+   
+	    end if;
+	  end if;
+	end process;
 	-- User logic ends
 
 end arch_imp;

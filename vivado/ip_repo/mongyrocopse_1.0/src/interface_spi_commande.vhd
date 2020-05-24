@@ -44,8 +44,11 @@ entity spi_gyro_commande is
            int2_gyro : in STD_LOGIC;
            horloge_gyro : in STD_LOGIC;
            reset_n : in STD_LOGIC;
-           adresse_registre : in std_logic_vector (7 downto 0);
-           whoami :   out std_logic_vector (15 downto 0);
+           adresse_registre_ecriture : in std_logic_vector (7 downto 0);
+           adresse_registre_lecure : in std_logic_vector (7 downto 0);
+           valeur_registre_a_ecrire :   out std_logic_vector (15 downto 0);
+           valeur_registre_lue :   out std_logic_vector (15 downto 0);
+           commande_ecriture_registre : in STD_LOGIC;
            donnee_X : out std_logic_vector (15 downto 0);
            donnee_Y : out std_logic_vector (15 downto 0);
            donnee_Z : out std_logic_vector (15 downto 0) );
@@ -95,7 +98,7 @@ process (horloge_gyro)
         donnee_X<="0000000000000000";
         donnee_Y<="0000000000000000";
         donnee_Z<="0000000000000000";
-        whoami<="0000000000000000";
+
        -- spiclk<='0';
         horloge_g<='0';
         cpt:=0;
@@ -111,11 +114,13 @@ process (horloge_gyro)
                    SPIRESET<='0';
                  when 1 =>  -- on lance le SPI
                     SPIRESET<='1';
-                  when 50 =>  -- on attend
-                     whoami<=LECTURE_SPI;
-                     RW <='1'; --on lit
+                  when 20 =>  -- on attend
+                    RW <='0'; --on configure CTRL_REG1
+                     COMMANDE_SPI<=x"20FF" ; 
                      SPIRESET<='0';
-                   when 51 =>  -- on attend
+                  when 21 =>  -- on lance le SPI
+                     SPIRESET<='1';                
+                  when 40 =>  -- on attend
                   when others=> null;
                 end case;     
             cpt:=cpt+1;
