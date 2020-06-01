@@ -44,11 +44,10 @@ entity spi_gyro_commande is
            int2_gyro : in STD_LOGIC;
            horloge_gyro : in STD_LOGIC;
            reset_n : in STD_LOGIC;
-           adresse_registre_ecriture : in std_logic_vector (7 downto 0);
-           adresse_registre_lecure : in std_logic_vector (7 downto 0);
-           valeur_registre_a_ecrire :   out std_logic_vector (15 downto 0);
-           valeur_registre_lue :   out std_logic_vector (15 downto 0);
-           commande_ecriture_registre : in STD_LOGIC;
+           adresse_registre : in std_logic_vector (7 downto 0);
+           valeur_registre_a_ecrire :   in std_logic_vector (7 downto 0);
+           valeur_registre_lue :   out std_logic_vector (7 downto 0);
+           commande_ecriture : in STD_LOGIC;
            donnee_X : out std_logic_vector (15 downto 0);
            donnee_Y : out std_logic_vector (15 downto 0);
            donnee_Z : out std_logic_vector (15 downto 0) );
@@ -59,7 +58,7 @@ architecture Behavioral of spi_gyro_commande is
     signal        act_clk : std_logic;
     --signal        SPICLK : std_logic;
     signal        SPIRESET : std_logic;
-    signal        SPICS : std_logic;
+  --  signal        SPICS : std_logic;
     signal        MISO : std_logic;
     signal        MOSI :  std_logic;     
     signal        COMMANDE_SPI :  std_logic_vector (15 downto 0);
@@ -77,7 +76,7 @@ architecture Behavioral of spi_gyro_commande is
             horloge_divisu=>horloge_g,reset_n=>reset_n);
 
     inerface_spi_inst : entity work.inerface_spi_materielle port map( horloge_spi=>horloge_gyro,SPICLK=>clk_gyro,
-            SPIRESET=>SPIRESET,SPICS=>SPICS,MISO=>sdi_gyro,MOSI=>sdo_gyro,
+            SPIRESET=>SPIRESET,SPICS=>cs_gyro,MISO=>sdi_gyro,MOSI=>sdo_gyro,
             COMMANDE_SPI=>COMMANDE_SPI,LECTURE_SPI=>LECTURE_SPI,
             RW=>RW,MS=>MS);
 -- end entity;   
@@ -85,12 +84,15 @@ architecture Behavioral of spi_gyro_commande is
 --end entity;
 
  
-  
+ COMMANDE_SPI(7 downto 0) <= valeur_registre_a_ecrire(7 downto 0);
+ COMMANDE_SPI(13 downto 8) <= adresse_registre(5 downto 0);
+ COMMANDE_SPI(14) <= '1';--MS
+ COMMANDE_SPI(15) <= commande_ecriture; 
+ 
 process (horloge_gyro)
    variable cpt :INTEGER :=0;  
    variable cpt_test : INTEGER :=0; 
-   variable adresse_registre : INTEGER :=0; 
-    variable valeur_registre : INTEGER :=0; 
+     variable valeur_registre : INTEGER :=0; 
    begin
        
     if (reset_n = '0') then
@@ -106,30 +108,47 @@ process (horloge_gyro)
     end if;
      if rising_edge (horloge_gyro)
          then
+         if commande_ecriture = '0' then
+         --on est en ecriture
+         
          case cpt is
                 when 0 =>
-                   RW <='1'; --on place les données on ecrit
-                   MS<='0';
-                   COMMANDE_SPI<=x"0055" ; --WHO_AM_I
-                   SPIRESET<='0';
-                 when 1 =>  -- on lance le SPI
+                    SPIRESET<='0';
+                when 1 =>  -- on lance le SPI
                     SPIRESET<='1';
-                  when 20 =>  -- on attend
-                    RW <='0'; --on configure CTRL_REG1
-                     COMMANDE_SPI<=x"20FF" ; 
-                     SPIRESET<='0';
-                  when 21 =>  -- on lance le SPI
-                     SPIRESET<='1';                
-                  when 40 =>  -- on attend
-                  when others=> null;
-                end case;     
+                 when 20 =>  -- on attend
+                      SPIRESET<='0';
+                 when others=> null;
+          end case;     
             cpt:=cpt+1;
         
-        if(cpt =51) then
-            cpt:=0;
+            if(cpt =51) then
+                cpt:=0;
+                end if;   
+         end if;
+
+         if commande_ecriture = '1' then
+         --on est en ecriture
+         
+         case cpt is
+                when 0 =>
+                    SPIRESET<='0';
+                when 1 =>  -- on lance le SPI
+                    SPIRESET<='1';
+                 when 20 =>  -- on attend
+                      SPIRESET<='0';
+                 when others=> null;
+          end case;     
+            cpt:=cpt+1;
+        
+            if(cpt =51) then
+                valeur_registre_lue <=LECTURE_SPI(7 downto 0);
+                cpt:=0;
             end if;   
-     end if;
-end process;   
+             end if;
+             end if;
+    
+    end process;   
 
 end Behavioral;
 
