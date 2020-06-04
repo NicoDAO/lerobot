@@ -49,7 +49,7 @@ architecture Behavioral of diviseur_horloge is
         cpt:=0;
         horloge_divisu<='0';
     end if;
-    if rising_edge (entree_horloge)
+    if falling_edge (entree_horloge)
      then
      case cpt is
             when 0 =>

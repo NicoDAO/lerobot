@@ -128,17 +128,18 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
-	signal adresse_registre :  std_logic_vector (7 downto 0);
+	signal adresse_registre :  std_logic_vector (5 downto 0);
     signal valeur_registre_a_ecrire :    std_logic_vector (7 downto 0);
     signal valeur_registre_lue :    std_logic_vector (7 downto 0);
     signal commande_ecriture :  STD_LOGIC;
+    signal trame_spi :  std_logic_vector (15 downto 0);
 
 begin
     -- I/O Connections assignments
    spi_gyro_inst : entity work.spi_gyro_commande port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, 
     int2_gyro=>INT2GYRO ,horloge_gyro=>S_AXI_ACLK, reset_n=>S_AXI_ARESETN, adresse_registre=>adresse_registre,
     valeur_registre_a_ecrire=>valeur_registre_a_ecrire,valeur_registre_lue=>valeur_registre_lue,commande_ecriture=>commande_ecriture,
-    donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z);
+    donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z,trame_spi=>trame_spi);
 
 
 	-- I/O Connections assignments
@@ -162,7 +163,7 @@ begin
 	    if S_AXI_ARESETN = '0' then
 	      axi_awready <= '0';
 	      aw_en <= '1';
-	      adresse_registre<="00000000";
+	      adresse_registre<="000000";
 	    else
 	      if (axi_awready = '0' and S_AXI_AWVALID = '1' and S_AXI_WVALID = '1' and aw_en = '1') then
 	        -- slave is ready to accept write address when
@@ -414,6 +415,8 @@ begin
 	  if (rising_edge (S_AXI_ACLK)) then
 	    if ( S_AXI_ARESETN = '0' ) then
 	      axi_rdata  <= (others => '0');
+	      adresse_registre <= (others => '0');
+	      valeur_registre_a_ecrire <=(others => '0');
 	    else
 	      if (slv_reg_rden = '1') then
 	        -- When there is a valid read address (S_AXI_ARVALID) with 
@@ -436,11 +439,14 @@ begin
              case slv_reg1 is
 	               when x"000000AA"     =>
 	                    commande_ecriture<='0';--on ecrit
-	                    adresse_registre<=slv_reg2(7 downto 0);
-	                    valeur_registre_a_ecrire<=slv_reg3(7 downto 0);
+	                    adresse_registre(5 downto 0)<=slv_reg2(5 downto 0);
+	                    trame_spi(5 downto 0)<=slv_reg2(5 downto 0);
+	                    trame_spi(13 downto 6)<=slv_reg3(7 downto 0);
+	               --when x"000000AB"     =>
+	                    --valeur_registre_a_ecrire(7 downto 0)<=slv_reg3(7 downto 0);	
 	               when x"000000BB"     =>
 	                     commande_ecriture<='1';
-	                     adresse_registre<=slv_reg2(7 downto 0);
+	                     adresse_registre<=slv_reg2(5 downto 0);
                    when x"000000CC"     =>
 	                     axi_rdata(15 downto 0) <= donnee_Z;    -- on lit la rotation en Z
 	 	           

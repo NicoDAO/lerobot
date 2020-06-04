@@ -44,13 +44,15 @@ entity spi_gyro_commande is
            int2_gyro : in STD_LOGIC;
            horloge_gyro : in STD_LOGIC;
            reset_n : in STD_LOGIC;
-           adresse_registre : in std_logic_vector (7 downto 0);
+           adresse_registre : in std_logic_vector (5 downto 0);
            valeur_registre_a_ecrire :   in std_logic_vector (7 downto 0);
            valeur_registre_lue :   out std_logic_vector (7 downto 0);
            commande_ecriture : in STD_LOGIC;
            donnee_X : out std_logic_vector (15 downto 0);
            donnee_Y : out std_logic_vector (15 downto 0);
-           donnee_Z : out std_logic_vector (15 downto 0) );
+           donnee_Z : out std_logic_vector (15 downto 0) ;
+            trame_spi :  in std_logic_vector(15 downto 0)
+        );
 
 end spi_gyro_commande;
 
@@ -65,7 +67,8 @@ architecture Behavioral of spi_gyro_commande is
     signal        LECTURE_SPI :  std_logic_vector (15 downto 0);
     signal        RW : std_logic;
     signal        MS : std_logic  ;
-    signal        horloge_g  : std_logic;
+    signal        horloge_divise  : std_logic;
+
 
     begin
 
@@ -73,23 +76,32 @@ architecture Behavioral of spi_gyro_commande is
 --    diviseur_horloge_inst : entity work.diviseur_horloge port map (entree_horloge=>horloge_gyro,
 --            horloge_divisu=>horloge_g,reset_n=>reset_n);
    diviseur_horloge_inst : entity work.diviseur_horloge port map (entree_horloge=>horloge_gyro,
-            horloge_divisu=>horloge_g,reset_n=>reset_n);
+            horloge_divisu=>horloge_divise,reset_n=>reset_n);
 
-    inerface_spi_inst : entity work.inerface_spi_materielle port map( horloge_spi=>horloge_gyro,SPICLK=>clk_gyro,
+    inerface_spi_inst : entity work.inerface_spi_materielle port map( horloge_spi=>horloge_divise,SPICLK=>clk_gyro,
             SPIRESET=>SPIRESET,SPICS=>cs_gyro,MISO=>sdi_gyro,MOSI=>sdo_gyro,
             COMMANDE_SPI=>COMMANDE_SPI,LECTURE_SPI=>LECTURE_SPI,
             RW=>RW,MS=>MS);
--- end entity;   
+-- end entity; 
+
+    --    COMMANDE_SPI(7 downto 0)  <= valeur_registre_a_ecrire(7 downto 0);
+    --    COMMANDE_SPI(13 downto 8) <= adresse_registre(5 downto 0);
+    --    COMMANDE_SPI(14) <= '1';--MS
+    --    COMMANDE_SPI(15) <= commande_ecriture; 
+
+COMMANDE_SPI(13 downto 0) <=trame_spi(13 downto 0);
+COMMANDE_SPI(14) <= '1';--MS
+COMMANDE_SPI(15) <= commande_ecriture; 
 
 --end entity;
 
+
+-- COMMANDE_SPI(7 downto 0) <= valeur_registre_a_ecrire(7 downto 0);
+-- COMMANDE_SPI(13 downto 8) <= adresse_registre(5 downto 0);
+-- COMMANDE_SPI(14) <= '1';--MS
+-- COMMANDE_SPI(15) <= commande_ecriture; 
  
- COMMANDE_SPI(7 downto 0) <= valeur_registre_a_ecrire(7 downto 0);
- COMMANDE_SPI(13 downto 8) <= adresse_registre(5 downto 0);
- COMMANDE_SPI(14) <= '1';--MS
- COMMANDE_SPI(15) <= commande_ecriture; 
- 
-process (horloge_gyro)
+process (horloge_divise)
    variable cpt :INTEGER :=0;  
    variable cpt_test : INTEGER :=0; 
      variable valeur_registre : INTEGER :=0; 
@@ -102,11 +114,11 @@ process (horloge_gyro)
         donnee_Z<="0000000000000000";
 
        -- spiclk<='0';
-        horloge_g<='0';
+       -- horloge_g<='0';
         cpt:=0;
 
     end if;
-     if rising_edge (horloge_gyro)
+     if falling_edge (horloge_divise)
          then
          if commande_ecriture = '0' then
          --on est en ecriture
@@ -114,7 +126,8 @@ process (horloge_gyro)
          case cpt is
                 when 0 =>
                     SPIRESET<='0';
-                when 1 =>  -- on lance le SPI
+
+                 when 1 =>  -- on lance le SPI
                     SPIRESET<='1';
                  when 20 =>  -- on attend
                       SPIRESET<='0';
