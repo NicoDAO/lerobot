@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7z010clg400-1" LaunchTime="1590271110">
+<GenRun Id="impl_2" LaunchPart="xc7z010clg400-1" LaunchTime="1591735633">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="design_1_wrapper.vdi"/>
   <File Type="BG-DRC" Name="design_1_wrapper.drc"/>
   <File Type="BG-BGN" Name="design_1_wrapper.bgn"/>
   <File Type="BITSTR-SYSDEF" Name="design_1_wrapper.sysdef"/>
@@ -10,7 +11,6 @@
   <File Type="NPI_FILE" Name="design_1_wrapper.npi"/>
   <File Type="RNPI_FILE" Name="design_1_wrapper.rnpi"/>
   <File Type="CFI_FILE" Name="design_1_wrapper.cfi"/>
-  <File Type="RDI-RDI" Name="design_1_wrapper.vdi"/>
   <File Type="RCFI_FILE" Name="design_1_wrapper.rcfi"/>
   <File Type="PDI-FILE" Name="design_1_wrapper.pdi"/>
   <File Type="BITSTR-MMI" Name="design_1_wrapper.mmi"/>

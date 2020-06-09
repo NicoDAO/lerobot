@@ -1,7 +1,7 @@
-Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
----------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2019.2.1 (lin64) Build 2729669 Thu Dec  5 04:48:12 MST 2019
-| Date                      : Sun May 24 00:03:32 2020
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------
+| Tool Version              : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
+| Date                      : Tue Jun  9 22:53:17 2020
 | Host                      : grosportable running 64-bit Ubuntu 18.04.4 LTS
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -10,7 +10,7 @@ Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 | Package                   : clg400
 | Package Version           : FINAL 2012-10-23
 | Package Pin Delay Version : VERS. 2.0 2012-10-23
----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 IO Information
 
@@ -354,7 +354,7 @@ Table of Contents
 | T17        |                   | High Range | IO_L20P_T3_34           | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | T18        |                   | High Range | VCCO_34                 | VCCO          |                   |      34 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | T19        |                   | High Range | IO_25_34                | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| T20        | cs_gyro_pmod_0    | High Range | IO_L15P_T2_DQS_34       | TRISTATE      | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| T20        | cs_gyro_pmod_0    | High Range | IO_L15P_T2_DQS_34       | OUTPUT        | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U1         |                   |            | VCCO_DDR_502            | VCCO          |                   |         |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |
 | U2         | DDR_dq[22]        |            | PS_DDR_DQ22_502         | INOUT         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |
 | U3         | DDR_dq[23]        |            | PS_DDR_DQ23_502         | INOUT         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |
@@ -374,7 +374,7 @@ Table of Contents
 | U17        | DIR_MOTEUR2       | High Range | IO_L9N_T1_DQS_34        | OUTPUT        | LVCMOS33          |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U18        |                   | High Range | IO_L12P_T1_MRCC_34      | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U19        |                   | High Range | IO_L12N_T1_MRCC_34      | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| U20        |                   | High Range | IO_L15N_T2_DQS_34       | User IO       |                   |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| U20        | sdi_gyro_pmod_0   | High Range | IO_L15N_T2_DQS_34       | INPUT         | LVCMOS33          |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | V1         | DDR_dq[24]        |            | PS_DDR_DQ24_502         | INOUT         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |
 | V2         | DDR_dq[30]        |            | PS_DDR_DQ30_502         | INOUT         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |
 | V3         | DDR_dq[31]        |            | PS_DDR_DQ31_502         | INOUT         | SSTL15_T_DCI      |         |            | FAST |           DCI SPLIT |            FP_VTT_50 |         | FIXED      |           |          |      | SPLIT            |              |                   |              |

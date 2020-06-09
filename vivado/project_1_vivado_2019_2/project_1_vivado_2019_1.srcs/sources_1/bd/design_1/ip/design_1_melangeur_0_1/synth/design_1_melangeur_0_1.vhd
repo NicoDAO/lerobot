@@ -90,7 +90,7 @@ ARCHITECTURE design_1_melangeur_0_1_arch OF design_1_melangeur_0_1 IS
     );
   END COMPONENT melangeur;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF design_1_melangeur_0_1_arch: ARCHITECTURE IS "melangeur,Vivado 2019.2.1";
+  ATTRIBUTE X_CORE_INFO OF design_1_melangeur_0_1_arch: ARCHITECTURE IS "melangeur,Vivado 2020.1";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_melangeur_0_1_arch : ARCHITECTURE IS "design_1_melangeur_0_1,melangeur,{}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;

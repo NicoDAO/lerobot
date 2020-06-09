@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="mongyrocopse_v1_0_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="mongyrocopse_v1_0" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="912791880fs"></ZoomStartTime>
+      <ZoomEndTime time="1002591881fs"></ZoomEndTime>
+      <Cursor1Time time="1001000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="186"></NameColumnWidth>
+      <ValueColumnWidth column_width="127"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject type="logic" fp_name="/mongyrocopse_v1_0/sdi_gyro_pmod">
+      <obj_property name="ElementShortName">sdi_gyro_pmod</obj_property>
+      <obj_property name="ObjectShortName">sdi_gyro_pmod</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mongyrocopse_v1_0/sdo_gyro_pmod">
+      <obj_property name="ElementShortName">sdo_gyro_pmod</obj_property>
+      <obj_property name="ObjectShortName">sdo_gyro_pmod</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mongyrocopse_v1_0/cs_gyro_pmod">
+      <obj_property name="ElementShortName">cs_gyro_pmod</obj_property>
+      <obj_property name="ObjectShortName">cs_gyro_pmod</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mongyrocopse_v1_0/clk_gyr_pmod">
+      <obj_property name="ElementShortName">clk_gyr_pmod</obj_property>
+      <obj_property name="ObjectShortName">clk_gyr_pmod</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mongyrocopse_v1_0/s00_axi_aclk">
+      <obj_property name="ElementShortName">s00_axi_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mongyrocopse_v1_0/s00_axi_aresetn">
+      <obj_property name="ElementShortName">s00_axi_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_aresetn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mongyrocopse_v1_0/mongyrocopse_v1_0_S00_AXI_inst/slv_reg0">
+      <obj_property name="ElementShortName">slv_reg0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_reg0[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mongyrocopse_v1_0/mongyrocopse_v1_0_S00_AXI_inst/slv_reg1">
+      <obj_property name="ElementShortName">slv_reg1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_reg1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mongyrocopse_v1_0/mongyrocopse_v1_0_S00_AXI_inst/slv_reg2">
+      <obj_property name="ElementShortName">slv_reg2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_reg2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mongyrocopse_v1_0/mongyrocopse_v1_0_S00_AXI_inst/slv_reg3">
+      <obj_property name="ElementShortName">slv_reg3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_reg3[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mongyrocopse_v1_0/mongyrocopse_v1_0_S00_AXI_inst/spi_gyro_inst/valeur_registre_lue">
+      <obj_property name="ElementShortName">valeur_registre_lue[7:0]</obj_property>
+      <obj_property name="ObjectShortName">valeur_registre_lue[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mongyrocopse_v1_0/s00_axi_rdata">
+      <obj_property name="ElementShortName">s00_axi_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_rdata[31:0]</obj_property>
+   </wvobject>
+</wave_config>

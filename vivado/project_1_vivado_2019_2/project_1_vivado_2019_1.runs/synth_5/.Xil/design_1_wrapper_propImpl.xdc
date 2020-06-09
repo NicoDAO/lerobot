@@ -2,13 +2,13 @@ set_property SRC_FILE_INFO {cfile:/home/nicolas/yocto/soft_zybo/lerobot/vivado/p
 set_property SRC_FILE_INFO {cfile:/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc rfile:../../../project_1_vivado_2019_1.srcs/constrs_1/new/contraintes.xdc id:2} [current_design]
 current_instance design_1_i/processing_system7_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter clk_fpga_1 1.5
+set_input_jitter clk_fpga_3 0.3
 set_property src_info {type:SCOPED_XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_2 1.5
 set_property src_info {type:SCOPED_XDC file:1 line:27 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter clk_fpga_3 0.3
-set_property src_info {type:SCOPED_XDC file:1 line:30 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.48
+set_property src_info {type:SCOPED_XDC file:1 line:30 export:INPUT save:INPUT read:READ} [current_design]
+set_input_jitter clk_fpga_1 1.5
 set_property src_info {type:SCOPED_XDC file:1 line:40 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN "C11" [get_ports "MIO[53]"]
 set_property src_info {type:SCOPED_XDC file:1 line:46 export:INPUT save:INPUT read:READ} [current_design]
@@ -317,7 +317,7 @@ set_property PACKAGE_PIN T11 [get_ports  entree_echo_0]
 set_property src_info {type:XDC file:2 line:144 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN T20 [get_ports  cs_gyro_pmod_0]
 set_property src_info {type:XDC file:2 line:147 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN P1 U20 [get_ports  sdi_gyro_pmod_0]
+set_property PACKAGE_PIN  U20 [get_ports  sdi_gyro_pmod_0]
 set_property src_info {type:XDC file:2 line:150 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN V20 [get_ports  sdo_gyro_pmod_0]
 set_property src_info {type:XDC file:2 line:153 export:INPUT save:INPUT read:READ} [current_design]

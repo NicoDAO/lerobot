@@ -1,22 +1,7 @@
 /******************************************************************************
 *
-* Copyright (C) 2010-2019 Xilinx, Inc. All rights reserved.
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy of this
-* software and associated documentation files (the "Software"), to deal in the Software
-* without restriction, including without limitation the rights to use, copy, modify, merge,
-* publish, distribute, sublicense, and/or sell copies of the Software, and to permit
-* persons to whom the Software is furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in all copies or
-* substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
-* BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-* OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-* CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*
+* Copyright (C) 2010-2020 Xilinx, Inc. All rights reserved.
+* SPDX-License-Identifier: MIT
 ******************************************************************************/
 /****************************************************************************/
 /**
@@ -294,11 +279,11 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. DIVISOR = 0x1
     // .. ==> 0XF8000140[13:8] = 0x00000001U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000100U
-    // .. DIVISOR1 = 0x5
-    // .. ==> 0XF8000140[25:20] = 0x00000005U
-    // ..     ==> MASK : 0x03F00000U    VAL : 0x00500000U
+    // .. DIVISOR1 = 0x1
+    // .. ==> 0XF8000140[25:20] = 0x00000001U
+    // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00500141U),
+    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00100141U),
     // .. CLKACT = 0x1
     // .. ==> 0XF800014C[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
@@ -4181,11 +4166,11 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. DIVISOR = 0x1
     // .. ==> 0XF8000140[13:8] = 0x00000001U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000100U
-    // .. DIVISOR1 = 0x5
-    // .. ==> 0XF8000140[25:20] = 0x00000005U
-    // ..     ==> MASK : 0x03F00000U    VAL : 0x00500000U
+    // .. DIVISOR1 = 0x1
+    // .. ==> 0XF8000140[25:20] = 0x00000001U
+    // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00500141U),
+    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00100141U),
     // .. CLKACT = 0x1
     // .. ==> 0XF800014C[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
@@ -8221,11 +8206,11 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. DIVISOR = 0x1
     // .. ==> 0XF8000140[13:8] = 0x00000001U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000100U
-    // .. DIVISOR1 = 0x5
-    // .. ==> 0XF8000140[25:20] = 0x00000005U
-    // ..     ==> MASK : 0x03F00000U    VAL : 0x00500000U
+    // .. DIVISOR1 = 0x1
+    // .. ==> 0XF8000140[25:20] = 0x00000001U
+    // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00500141U),
+    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00100141U),
     // .. CLKACT = 0x1
     // .. ==> 0XF800014C[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U

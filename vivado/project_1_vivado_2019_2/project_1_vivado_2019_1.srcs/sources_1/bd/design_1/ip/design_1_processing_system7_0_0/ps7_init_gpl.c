@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (C) 2010-2019 <Xilinx Inc.>
+* Copyright (C) 2010-2020 <Xilinx Inc.>
 *
 *  This program is free software; you can redistribute it and/or modify
 *  it under the terms of the GNU General Public License as published by
@@ -292,11 +292,11 @@ unsigned long ps7_clock_init_data_3_0[] = {
     // .. DIVISOR = 0x1
     // .. ==> 0XF8000140[13:8] = 0x00000001U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000100U
-    // .. DIVISOR1 = 0x5
-    // .. ==> 0XF8000140[25:20] = 0x00000005U
-    // ..     ==> MASK : 0x03F00000U    VAL : 0x00500000U
+    // .. DIVISOR1 = 0x1
+    // .. ==> 0XF8000140[25:20] = 0x00000001U
+    // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00500141U),
+    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00100141U),
     // .. CLKACT = 0x1
     // .. ==> 0XF800014C[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
@@ -4179,11 +4179,11 @@ unsigned long ps7_clock_init_data_2_0[] = {
     // .. DIVISOR = 0x1
     // .. ==> 0XF8000140[13:8] = 0x00000001U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000100U
-    // .. DIVISOR1 = 0x5
-    // .. ==> 0XF8000140[25:20] = 0x00000005U
-    // ..     ==> MASK : 0x03F00000U    VAL : 0x00500000U
+    // .. DIVISOR1 = 0x1
+    // .. ==> 0XF8000140[25:20] = 0x00000001U
+    // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00500141U),
+    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00100141U),
     // .. CLKACT = 0x1
     // .. ==> 0XF800014C[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U
@@ -8219,11 +8219,11 @@ unsigned long ps7_clock_init_data_1_0[] = {
     // .. DIVISOR = 0x1
     // .. ==> 0XF8000140[13:8] = 0x00000001U
     // ..     ==> MASK : 0x00003F00U    VAL : 0x00000100U
-    // .. DIVISOR1 = 0x5
-    // .. ==> 0XF8000140[25:20] = 0x00000005U
-    // ..     ==> MASK : 0x03F00000U    VAL : 0x00500000U
+    // .. DIVISOR1 = 0x1
+    // .. ==> 0XF8000140[25:20] = 0x00000001U
+    // ..     ==> MASK : 0x03F00000U    VAL : 0x00100000U
     // .. 
-    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00500141U),
+    EMIT_MASKWRITE(0XF8000140, 0x03F03F71U ,0x00100141U),
     // .. CLKACT = 0x1
     // .. ==> 0XF800014C[0:0] = 0x00000001U
     // ..     ==> MASK : 0x00000001U    VAL : 0x00000001U

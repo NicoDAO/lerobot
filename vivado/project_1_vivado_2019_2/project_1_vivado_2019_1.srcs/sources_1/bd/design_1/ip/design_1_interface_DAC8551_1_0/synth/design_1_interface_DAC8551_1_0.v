@@ -50,7 +50,7 @@
 // IP VLNV: user.org:user:interface_DAC8551:1.1
 // IP Revision: 13
 
-(* X_CORE_INFO = "interface_DAC16bits,Vivado 2019.2.1" *)
+(* X_CORE_INFO = "interface_DAC16bits,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_interface_DAC8551_1_0,interface_DAC16bits,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

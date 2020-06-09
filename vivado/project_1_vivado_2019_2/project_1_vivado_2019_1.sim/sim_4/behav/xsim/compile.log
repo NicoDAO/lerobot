@@ -23,8 +23,26 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerob
 INFO: [VRFC 10-311] analyzing module design_1_FIR_0_2
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module design_1_xbar_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_9/sim/design_1_auto_pc_9.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_9
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_0/sim/design_1_auto_pc_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module design_1_auto_pc_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_1/sim/design_1_auto_pc_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_2/sim/design_1_auto_pc_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_3/sim/design_1_auto_pc_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_4/sim/design_1_auto_pc_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_4
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_5/sim/design_1_auto_pc_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_5
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_6/sim/design_1_auto_pc_6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_6
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_7/sim/design_1_auto_pc_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_7
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_auto_pc_8/sim/design_1_auto_pc_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module design_1_auto_pc_8
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'design_1_rst_ps7_0_100M_0'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/1611/entre_micro.vhd" into library xil_defaultlib
@@ -61,13 +79,15 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/v
 INFO: [VRFC 10-3107] analyzing entity 'capteurDistanceUltrason_v1_0'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_GyrocsopeSPI_0_0/sim/design_1_GyrocsopeSPI_0_0.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'design_1_GyrocsopeSPI_0_0'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/4f45/src/inerface_spi.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'inerface_spi'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/spi_gyro.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'spi_gyro'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/4f45/hdl/mongyrocopse_v1_0_S00_AXI.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/0922/hdl/diviseur_horloge.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'diviseur_horloge'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/0922/src/interface_spi_materielle.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'inerface_spi_materielle'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/0922/src/interface_spi_commande.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'spi_gyro_commande'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/0922/hdl/mongyrocopse_v1_0_S00_AXI.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'mongyrocopse_v1_0_S00_AXI'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/4f45/hdl/mongyrocopse_v1_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ipshared/0922/hdl/mongyrocopse_v1_0.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'mongyrocopse_v1_0'
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/nicolas/yocto/soft_zybo/lerobot/vivado/project_1_vivado_2019_2/project_1_vivado_2019_1.ip_user_files/bd/design_1/ip/design_1_mongyrocopse_0_0/sim/design_1_mongyrocopse_0_0.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'design_1_mongyrocopse_0_0'

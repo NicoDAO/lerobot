@@ -144,7 +144,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports  cs_gyro_pmod_0]
 set_property PACKAGE_PIN T20 [get_ports  cs_gyro_pmod_0]
 #JB1N 2
 set_property IOSTANDARD LVCMOS33 [get_ports  sdi_gyro_pmod_0]
-set_property PACKAGE_PIN P1 U20 [get_ports  sdi_gyro_pmod_0]
+set_property PACKAGE_PIN  U20 [get_ports  sdi_gyro_pmod_0]
  #JD2P 3
  set_property IOSTANDARD LVCMOS33 [get_ports  sdo_gyro_pmod_0]
 set_property PACKAGE_PIN V20 [get_ports  sdo_gyro_pmod_0]
