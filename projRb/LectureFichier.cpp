@@ -35,7 +35,7 @@ int LectureFichier::litFichierSimu() { //valeur entiere venant du capteur
 
 	fp = fopen(nom_fichier.c_str(), "r");
 	if (fp == NULL) {
-		log_fichiersimu("ouverture impossible");
+		log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
 
 		exit(EXIT_FAILURE);
 	}
@@ -69,7 +69,7 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 
 	fp = fopen(nom.c_str(), "r");
 	if (fp == NULL) {
-		log_fichiersimu("ouverture impossible");
+		log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
 
 		exit(EXIT_FAILURE);
 	}

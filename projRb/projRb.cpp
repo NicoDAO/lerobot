@@ -19,6 +19,7 @@ using namespace std;
 #include "GereCapteurDistance.h"
 #include "xparameters.h"
 #include "mode_fonctionnement.h"
+#include "GereGyroscope.h"
 
 ConfigureFIR_FPGA FIR1;
 ConfigureFIR_FPGA FIR2;
@@ -30,10 +31,10 @@ ConfigureVolumes Volume1;
 GereMoteur mot1;
 GereMoteur mot2;
 GestionTraction traction;
-
 GereLed GereLesLed;
-
 GereCapteurDistance capteurDistance;
+GereGyroscope gyroscope1;
+
 //laxi2.
 //CagereAXI laxi3;
 
@@ -46,10 +47,12 @@ void* handlerGereMoteur1(void *pvParameters);
 void* handlerGereMoteur2(void *pvParameters);
 void* handlerGestionTraction(void *pvParameters);
 void* handlerCapteurDistance(void *pvParameters);
+void* handlerCapteurGyroscope1(void *pvParameters);
 
 Messager messageConsigneMoteur2("/ConsigneMoteur", 1);
 Messager messageMesureDistanceCapteur("/mesureDistance", 2);
 Messager messageConsigneMoteur1("/consigneMoteur1", 3);
+Messager messageGyro("/gyroscope1", 3);
 
 //#define LANCE_FIR
 
@@ -74,13 +77,14 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	pthread_t GereAXI2, GereAXI3, GereMoteur1, GereMoteur2, GestionTraction,
-			CapteurDistance;
+			CapteurDistance,Gyroscope1;
 	pthread_attr_t attr;
 	log_info("main");
 	struct thread_info *tinfo;
 	traction.SetMessage1(&messageConsigneMoteur1);
 	traction.SetMessage2(&messageConsigneMoteur2);
 	traction.SetMessage3(&messageMesureDistanceCapteur);
+	traction.SetMessage4(&messageGyro);
 	snprintf(nom, sizeof(nom), "moteur1");
 	mot1.SetNomMoteur(nom, 0);
 	snprintf(nom, sizeof(nom), "moteur2");
@@ -95,14 +99,15 @@ int main(int argc, char *argv[]) {
 		mot1.metEnmodeSimu();
 		mot2.metEnmodeSimu();
 		capteurDistance.metEnmodeSimu();
+		gyroscope1.metEnmodeSimu();
 	}
 	if (mode_fonctionnement == MODE_CALIBRAGE_MOTEURS) //le mode PC_SIMULATION sert à simuler le fonctionnement du robot sur un PC
-				{
-			log_info("Calibrage des moteurs");
-			mot1.metEnmodeSimu();
-			mot2.metEnmodeSimu();
-			capteurDistance.metEnmodeSimu();
-		}
+			{
+		log_info("Calibrage des moteurs");
+		mot1.metEnmodeSimu();
+		mot2.metEnmodeSimu();
+		capteurDistance.metEnmodeSimu();
+	}
 	if (mode_fonctionnement == MODE_SIMU_CAPTEUR_DISTANCE) //le mode PC_SIMULATION sert à simuler le fonctionnement du robot sur un PC
 			{
 		// mode servant à tester le robot sur cible en envoyant des valeurs
@@ -143,6 +148,10 @@ int main(int argc, char *argv[]) {
 #endif
 #if 1
 	pthread_create(&CapteurDistance, NULL, handlerCapteurDistance,
+			(void*) tinfo);
+#endif
+#if 1
+	pthread_create(&Gyroscope1, NULL, handlerCapteurGyroscope1,
 			(void*) tinfo);
 #endif
 	void *ret;
@@ -258,4 +267,17 @@ void* handlerCapteurDistance(void *pvParameters) {
 	return NULL;
 
 }
+void* handlerCapteurGyroscope1(void *pvParameters) {
+	log_info("gyroscope1");
+	gyroscope1.setPeriod(1000001);	//seconde
+	gyroscope1.SetfichierCalib("capteur_gyroscope1.calib");
+	gyroscope1.RegleAdresseAxi(
+			XPAR_GYROSCOPE0_S00_AXI_BASEADDR);
+	for (;;) {
+		gyroscope1.handler();
+	}
+	return NULL;
+
+}
+
 

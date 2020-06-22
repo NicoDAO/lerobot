@@ -91,7 +91,7 @@ void log_pwm(const char *message, ...) {
 #endif
 }
 void log_memoire(const char *message, ...) {
-#if 0
+#if 1
 	va_list args;
 	va_start(args, message);
 	log_format("mem", message, args);
