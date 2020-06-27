@@ -26,6 +26,7 @@ public:
 	int litFichierSimu(void);
 	std::vector<float> parametrage;
 	int ouvrFichierSimu(std::string nom);
+	void setFichier(std::string);
 private:
 	int ouvrFichierSimu(void);
 

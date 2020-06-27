@@ -15,4 +15,6 @@ typedef uint32 u32;
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef signed int s32;
+typedef signed short s16;
+typedef unsigned short u16;
 #endif /* DEFINITIONS_TYPES_H_ */
