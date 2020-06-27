@@ -16,13 +16,15 @@ LectureFichier::LectureFichier() {
 
 }
 LectureFichier::LectureFichier(std::string fichier) {
-	this->nom_fichier = fichier;
+	nom_fichier = fichier;
 }
 
 LectureFichier::~LectureFichier() {
 	// TODO Auto-generated destructor stub
 }
-
+void LectureFichier::setFichier(std::string stt){
+	nom_fichier = stt;
+}
 int LectureFichier::ouvrFichierSimu() {
 	return 1;
 }
