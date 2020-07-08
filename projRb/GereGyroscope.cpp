@@ -33,8 +33,6 @@ void GereGyroscope::handler() {
 	lit = Xil_In32(add1);
 	u32 distance_calibree = (int)appliqueCalibre((int) lit);
 
-	static int num = 0;
-
 	switch (etat_gyro){
 
 	case gyro_reset:
@@ -78,7 +76,7 @@ int GereGyroscope::lit_config_gyro()
 {
 	//config_gyro.
 	config_gyro.setFichier("config_gyroscope");
-	config_gyro.litFichierSimu();
+	config_gyro.litFichierConfigMemoire();
 	//element_config reg1;
 	//reg1.nom_element = "registr1";
 	//reg1.adresse = 1;

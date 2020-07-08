@@ -31,7 +31,7 @@ void log_error(const char *message, ...) {
 }
 
 void log_info(const char *message, ...) {
-#if 1
+#if 0
     va_list args;
     va_start(args, message);
     log_format("info", message, args);
@@ -91,7 +91,7 @@ void log_pwm(const char *message, ...) {
 #endif
 }
 void log_memoire(const char *message, ...) {
-#if 1
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("mem", message, args);
@@ -116,7 +116,7 @@ void log_fichiersimu(const char *message, ...) {
 #endif
 }
 void log_calibre(const char *message, ...) {
-#if 1
+#if 0
     va_list args;
     va_start(args, message);
     log_format("calibre", message, args);
