@@ -162,38 +162,33 @@ int  LectureFichier::lit_parametre_ligne(std::string  ligne,memoire_peripherique
 	//std::size_t position_t3 = ligne.find(":",position_t2+1);
 	log_fichiersimu("%d/%d  " ,position_t1,position_t2);
 
-
 	if((position_t1 == std::string::npos) || (position_t2 == std::string::npos) )return -1;
 	nom_reg = ligne.substr(0,position_t1);
 	adresse = ligne.substr(position_t1+1,position_t2-position_t1-1);
 	valeure = ligne.substr(position_t2+1);
 	std::string temp = "donnees a analyser /" + nom_reg + "/" + adresse + "/" + valeure;
 
-
 	log_fichiersimu(temp.c_str());
-
-
 	//	log_fichiersimu("%d/%d  nom_reg %s  adresse : %s  valeure : %s" ,position_t1,position_t2,nom_reg.c_str(), adresse.c_str(),valeure.c_str());
 
 	try
 	{
 		adresse_int = std::stoi(adresse);
 		valeur_int = std::stoi(valeure);
-		log_fichiersimu( "adresse registre : %d , valeur registre : %d",adresse_int,valeur_int);
+		log_fichiersimu( "décimale : adresse registre : %d , valeur registre : %d",adresse_int,valeur_int);
+		tt.adresse = adresse_int;
+		tt.valeur = valeur_int;
 	}
 	catch (std::invalid_argument const &e)
 	{
 		log_fichiersimu("Bad input: std::invalid_argument thrown");
+		return -1;
 	}
 	catch (std::out_of_range const &e)
 	{
 		log_fichiersimu( "Integer overflow: std::out_of_range thrown" );
+		return -1;
 	}
-
-
-
-
-
 
 	mem->parametrage_memoire.push_back(tt) ;// tt.adresse = ligne.sp
 	//nom:12:01    12 : adresse registre,  01 :  valeur registre

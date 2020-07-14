@@ -77,6 +77,15 @@ int GereGyroscope::lit_config_gyro()
 	//config_gyro.
 	config_gyro.setFichier("config_gyroscope");
 	config_gyro.litFichierConfigMemoire();
+
+	log_fichiersimu("lecture fichier  (%d)",config_gyro.memoire_periph->parametrage_memoire.size());
+	int rr;
+	for (rr=0;rr<config_gyro.memoire_periph->parametrage_memoire.size();rr++){
+		case_memoire_ pp = config_gyro.memoire_periph->parametrage_memoire.at(rr);
+		log_fichiersimu("reglage gyroscope  %d : %d ",pp.adresse,pp.valeur);
+	}
+//	config_gyro.memoire_periph->parametrage_memoire.get_allocator()
+//	config_gyro.memoire_periph->parametrage_memoire.
 	//element_config reg1;
 	//reg1.nom_element = "registr1";
 	//reg1.adresse = 1;
