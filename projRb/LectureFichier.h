@@ -16,6 +16,19 @@
 #include <string>
 #include "log.h"
 #include <vector>
+#include "config_du_system.h"
+
+class case_memoire_{
+public:
+	u16 adresse= 0;
+	u16 valeur = 0;
+	std::string nom="";
+};
+
+class memoire_peripherique{
+public:
+	std::vector<case_memoire_> parametrage_memoire;
+};
 
 class LectureFichier {
 public:
@@ -24,9 +37,13 @@ public:
 	virtual ~LectureFichier();
 
 	int litFichierSimu(void);
+	int litFichierConfigMemoire(void);
 	std::vector<float> parametrage;
+
 	int ouvrFichierSimu(std::string nom);
 	void setFichier(std::string);
+	int lit_parametre_ligne(std::string,memoire_peripherique*); // on me le contenu du fichier dans la mémoire
+	memoire_peripherique* memoire_periph;
 private:
 	int ouvrFichierSimu(void);
 
@@ -34,6 +51,8 @@ private:
 	int fichier_lu = 0;
 	unsigned int index_fichier= 0;
 	std::string nom_fichier ="simu_capteur_distance.txt";
+
+
 
 };
 

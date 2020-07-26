@@ -62,7 +62,40 @@ void GereGyroscope::handler() {
 }
 
 int GereGyroscope::handler_gyro_config(int ii){
+	log_gyro("handler_gyro_config : %d ",config_gyro.memoire_periph->parametrage_memoire.size());
+	static unsigned int axi_reg_loc = AXI_SLV_REG0_OFFSET;
+	static unsigned int axi_adresse = 0;
+	static unsigned int axi_valeur = 0;
+	//regle le gyroscope avec les données trouvées dans le fichier de configuration
+	for (int rr=0;rr<config_gyro.memoire_periph->parametrage_memoire.size();rr++){
+		case_memoire_ pp = config_gyro.memoire_periph->parametrage_memoire.at(rr);
+		log_gyro("		pp.nom = %s",pp.nom);
 
+		if(pp.nom == "AXI_REG"){
+			axi_reg_loc = pp.valeur;//on regle le numero de registre de l'AXI
+			log_fichiersimu("AXI_REG %d %d ",pp.adresse,pp.valeur);
+		}
+		if(pp.nom == "AXI_ADD"){
+			axi_adresse = pp.valeur;//on regle l'adresse de l'AXI
+			log_fichiersimu("AXI_ADD %d %d ",pp.adresse,pp.valeur);
+		}
+		if(pp.nom == "AXI_VAL"){
+			axi_valeur = pp.valeur;//on regle l'adresse de l'AXI
+			log_fichiersimu("AXI_VAL %d %d ",pp.adresse,pp.valeur);
+		}
+		if(pp.nom == "ECRIT"){
+			log_fichiersimu("ECRIT %d %d ",pp.adresse,pp.valeur);
+			Xil_Out32(this->adresseAXI + axi_reg_loc,
+					axi_valeur);
+		}
+		if(pp.nom == "LIT"){
+			log_fichiersimu("LIT %d %d ",pp.adresse,pp.valeur);
+
+			Xil_Out32(this->adresseAXI + axi_reg_loc,
+					axi_valeur);
+		}
+
+	}
 
 	return 1;
 }
@@ -79,19 +112,8 @@ int GereGyroscope::lit_config_gyro()
 	config_gyro.litFichierConfigMemoire();
 
 	log_fichiersimu("lecture fichier  (%d)",config_gyro.memoire_periph->parametrage_memoire.size());
-	int rr;
-	for (rr=0;rr<config_gyro.memoire_periph->parametrage_memoire.size();rr++){
-		case_memoire_ pp = config_gyro.memoire_periph->parametrage_memoire.at(rr);
-		log_fichiersimu("reglage gyroscope  %d : %d ",pp.adresse,pp.valeur);
-	}
-//	config_gyro.memoire_periph->parametrage_memoire.get_allocator()
-//	config_gyro.memoire_periph->parametrage_memoire.
-	//element_config reg1;
-	//reg1.nom_element = "registr1";
-	//reg1.adresse = 1;
-	//reg1.valeur = 22;
 
-//	config_gyro.element.push_back(reg1);
+
 	return 1;
 }
 

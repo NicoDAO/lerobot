@@ -32,7 +32,7 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 			log_memoire("ouvre /dev/mem");
 			fd_ecriture = open("/dev/mem", O_RDWR);
 			data_ecriture = static_cast<int*>(mmap(NULL, pagesize,
-			PROT_READ | PROT_WRITE, MAP_SHARED, fd_ecriture, (off_t) adress));
+					PROT_READ | PROT_WRITE, MAP_SHARED, fd_ecriture, (off_t) adress));
 		}
 		if (fd_ecriture == -1)
 			log_memoire("open");
@@ -53,7 +53,7 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 		}
 	} else {
 		if (estCequonestenmodeSimu() == 1) {
-			//log_simumemoire("SIMULATION %d   r\n", trs++);
+			log_simumemoire("SIMULATION %d / %d / %d  r\n", adress,donnee,registre);
 			return trs;
 		}
 
@@ -72,7 +72,7 @@ u32 LitMemoireLinux::Xil_Out32_tab(u32 adress, u32 *donnee, u32 taille) {
 			log_memoire("tab ouvre /dev/mem");
 			fd_ecriture = open("/dev/mem", O_RDWR);
 			data_ecriture = static_cast<int*>(mmap(NULL, pagesize,
-			PROT_READ | PROT_WRITE, MAP_SHARED, fd_ecriture, (off_t) adress));
+					PROT_READ | PROT_WRITE, MAP_SHARED, fd_ecriture, (off_t) adress));
 		}
 		if (fd_ecriture == -1)
 			log_memoire("open");
@@ -104,7 +104,7 @@ u32 LitMemoireLinux::Xil_Out32_tab(u32 adress, u32 *donnee, u32 taille) {
 	return 0;
 }
 
-	u32 LitMemoireLinux::Xil_In32(u32 adress) {
+u32 LitMemoireLinux::Xil_In32(u32 adress) {
 	if (estCequonestenmodeRobot() == 1) {
 		int offset;
 
@@ -117,7 +117,7 @@ u32 LitMemoireLinux::Xil_Out32_tab(u32 adress, u32 *donnee, u32 taille) {
 
 			fd_lecture = open("/dev/mem", O_RDWR);
 			data_lecture = static_cast<int*>(mmap(NULL, pagesize,
-							PROT_READ | PROT_WRITE, MAP_SHARED, fd_lecture, (off_t) adress));
+					PROT_READ | PROT_WRITE, MAP_SHARED, fd_lecture, (off_t) adress));
 		}
 		if (data_lecture == MAP_FAILED) {
 			log_memoire("mmap error");
