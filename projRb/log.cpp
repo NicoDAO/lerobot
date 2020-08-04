@@ -1,16 +1,26 @@
-#include "log.h"
+
 #include<stdarg.h>
 #include<stdio.h>
 #include <string.h>
 #include <iostream>
 #include <sys/time.h>
+#include "log.h"
+
+
 #define LOG_MESSAGE
 #define LOG_INFO
 //#define LOG_DEBUG
 
 int numero_log = 0;
 
-void log_format(const char *tag, const char *message, va_list args) {
+
+ GestionLog::GestionLog(){
+
+}
+ GestionLog::~GestionLog(){
+
+}
+void GestionLog::log_format(const char *tag, const char *message, va_list args) {
 	time_t now;
 	time(&now);
 	char *date = ctime(&now);
@@ -23,14 +33,14 @@ void log_format(const char *tag, const char *message, va_list args) {
 	printf("\n");
 }
 
-void log_error(const char *message, ...) {
+void GestionLog::log_error(const char *message, ...) {
 	va_list args;
 	va_start(args, message);
 	log_format("error", message, args);
 	va_end(args);
 }
 
-void log_info(const char *message, ...) {
+void GestionLog::log_info(const char *message, ...) {
 #if 0
     va_list args;
     va_start(args, message);
@@ -39,7 +49,7 @@ void log_info(const char *message, ...) {
     #endif
 }
 
-void log_debug(const char *message, ...) {
+void GestionLog::log_debug(const char *message, ...) {
 #ifdef LOG_DEBUG
     va_list args;
     va_start(args, message);
@@ -48,7 +58,7 @@ void log_debug(const char *message, ...) {
     #endif
 }
 
-void log_message(const char *message, ...) {
+void GestionLog::log_message(const char *message, ...) {
 #if 0
     va_list args;
     va_start(args, message);
@@ -56,8 +66,8 @@ void log_message(const char *message, ...) {
     va_end(args);
     #endif
 }
-void log_capteur(const char *message, ...) {
-#if 0
+void GestionLog::log_capteur(const char *message, ...) {
+#if 1
 	va_list args;
 	va_start(args, message);
 	log_format("capteur", message, args);
@@ -65,8 +75,8 @@ void log_capteur(const char *message, ...) {
 #endif
 }
 
-void log_traction(const char *message, ...) {
-#if 0
+void GestionLog::log_traction(const char *message, ...) {
+#if 1
 	va_list args;
 	va_start(args, message);
 	log_format("traction", message, args);
@@ -74,23 +84,23 @@ void log_traction(const char *message, ...) {
 #endif
 
 }
-void log_moteur(const char *message, ...) {
-#if 0
+void GestionLog::log_moteur(const char *message, ...) {
+#if 1
 	va_list args;
 	va_start(args, message);
 	log_format("moteur", message, args);
 	va_end(args);
 #endif
 }
-void log_pwm(const char *message, ...) {
-#if 0
+void GestionLog::log_pwm(const char *message, ...) {
+#if 1
 	va_list args;
 	va_start(args, message);
 	log_format("pwm", message, args);
 	va_end(args);
 #endif
 }
-void log_memoire(const char *message, ...) {
+void GestionLog::log_memoire(const char *message, ...) {
 #if 1
 	va_list args;
 	va_start(args, message);
@@ -98,7 +108,7 @@ void log_memoire(const char *message, ...) {
 	va_end(args);
 #endif
 }
-void log_simumemoire(const char *message, ...) {
+void GestionLog::log_simumemoire(const char *message, ...) {
 #if 1
     va_list args;
     va_start(args, message);
@@ -107,27 +117,27 @@ void log_simumemoire(const char *message, ...) {
 #endif
 }
 
-void log_fichiersimu(const char *message, ...) {
+void GestionLog::log_fichiersimu(const char *message, ...) {
 #if 1
     va_list args;
     va_start(args, message);
-    log_format("fichier", message, args);
+    log_format("fichierS", message, args);
     va_end(args);
 #endif
 }
-void log_calibre(const char *message, ...) {
-#if 0
+void GestionLog::log_calibre(const char *message, ...) {
+#if 1
     va_list args;
     va_start(args, message);
     log_format("calibre", message, args);
     va_end(args);
 #endif
 }
-void log_gyro(const char *message, ...) {
+void GestionLog::log_gyro(const char *message, ...) {
 #if 1
     va_list args;
     va_start(args, message);
-    log_format("gyro", message, args);
+    log_format("Gyro", message, args);
     va_end(args);
 #endif
 }

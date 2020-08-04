@@ -69,8 +69,9 @@ int GereGyroscope::handler_gyro_config(int ii){
 	//regle le gyroscope avec les données trouvées dans le fichier de configuration
 	for (int rr=0;rr<config_gyro.memoire_periph->parametrage_memoire.size();rr++){
 		case_memoire_ pp = config_gyro.memoire_periph->parametrage_memoire.at(rr);
-		log_gyro("		pp.nom = %s",pp.nom);
-
+		std::string toto =  pp.nom ;
+		log_gyro(toto.c_str());
+		log_fichiersimu("on a : %s %d %d ",pp.nom.c_str(),pp.adresse,pp.valeur);
 		if(pp.nom == "AXI_REG"){
 			axi_reg_loc = pp.valeur;//on regle le numero de registre de l'AXI
 			log_fichiersimu("AXI_REG %d %d ",pp.adresse,pp.valeur);

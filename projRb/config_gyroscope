@@ -1,4 +1,14 @@
-1
-2
-3
-4
+regisre TRUC;1;54
+nom0:01:55
+regisre bidule;0x1;0x32
+regisre chose;1;4
+regisre ouaf;1;4
+aaa:bbb:ccc
+d:v:b
+nom:12:23
+nom1:23:33
+AXI_REG:00:11
+AXI_ADD:00:12
+ECRIT:00:00
+
+

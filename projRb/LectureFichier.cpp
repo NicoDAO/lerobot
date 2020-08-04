@@ -175,9 +175,11 @@ int  LectureFichier::lit_parametre_ligne(std::string  ligne,memoire_peripherique
 	{
 		adresse_int = std::stoi(adresse);
 		valeur_int = std::stoi(valeure);
-		log_fichiersimu( "décimale : adresse registre : %d , valeur registre : %d",adresse_int,valeur_int);
+		tt.nom = nom_reg;
 		tt.adresse = adresse_int;
 		tt.valeur = valeur_int;
+		log_fichiersimu( "enregistre: %s, adresse registre : %d, valeur registre : %d",tt.nom.c_str() ,adresse_int,valeur_int);
+
 	}
 	catch (std::invalid_argument const &e)
 	{
