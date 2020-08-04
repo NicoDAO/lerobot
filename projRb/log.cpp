@@ -20,7 +20,7 @@ int numero_log = 0;
  GestionLog::~GestionLog(){
 
 }
-void GestionLog::log_format(const char *tag, const char *message, va_list args) {
+void log_format(const char *tag, const char *message, va_list args) {
 	time_t now;
 	time(&now);
 	char *date = ctime(&now);
@@ -41,6 +41,98 @@ void GestionLog::log_error(const char *message, ...) {
 }
 
 void GestionLog::log_info(const char *message, ...) {
+    va_list args;
+    va_start(args, message);
+    log_format("info", message, args);
+    va_end(args);
+}
+
+void GestionLog::log_debug(const char *message, ...) {
+
+    va_list args;
+    va_start(args, message);
+    log_format("debug", message, args);
+    va_end(args);
+
+}
+
+void GestionLog::log_message(const char *message, ...) {
+
+    va_list args;
+    va_start(args, message);
+    log_format("message", message, args);
+    va_end(args);
+
+}
+void GestionLog::log_capteur(const char *message, ...) {
+
+	va_list args;
+	va_start(args, message);
+	log_format("capteur", message, args);
+	va_end(args);
+
+}
+
+void GestionLog::log_traction(const char *message, ...) {
+
+	va_list args;
+	va_start(args, message);
+	log_format("traction", message, args);
+	va_end(args);
+}
+void GestionLog::log_moteur(const char *message, ...) {
+
+	va_list args;
+	va_start(args, message);
+	log_format("moteur", message, args);
+	va_end(args);
+}
+void GestionLog::log_pwm(const char *message, ...) {
+	va_list args;
+	va_start(args, message);
+	log_format("pwm", message, args);
+	va_end(args);
+}
+void GestionLog::log_memoire(const char *message, ...) {
+	va_list args;
+	va_start(args, message);
+	log_format("mem", message, args);
+	va_end(args);
+}
+void GestionLog::log_simumemoire(const char *message, ...) {
+    va_list args;
+    va_start(args, message);
+    log_format("simu mem", message, args);
+    va_end(args);
+}
+
+void GestionLog::log_fichiersimu(const char *message, ...) {
+    va_list args;
+    va_start(args, message);
+    log_format("fichierS", message, args);
+    va_end(args);
+}
+void GestionLog::log_calibre(const char *message, ...) {
+    va_list args;
+    va_start(args, message);
+    log_format("calibre", message, args);
+    va_end(args);
+}
+void GestionLog::log_gyro(const char *message, ...) {
+    va_list args;
+    va_start(args, message);
+    log_format("Gyro", message, args);
+    va_end(args);
+}
+
+void log_error(const char *message, ...) {
+	va_list args;
+	va_start(args, message);
+	log_format("error", message, args);
+	va_end(args);
+}
+
+void log_info(const char *message, ...) {
 #if 0
     va_list args;
     va_start(args, message);
@@ -49,7 +141,7 @@ void GestionLog::log_info(const char *message, ...) {
     #endif
 }
 
-void GestionLog::log_debug(const char *message, ...) {
+void log_debug(const char *message, ...) {
 #ifdef LOG_DEBUG
     va_list args;
     va_start(args, message);
@@ -58,7 +150,7 @@ void GestionLog::log_debug(const char *message, ...) {
     #endif
 }
 
-void GestionLog::log_message(const char *message, ...) {
+void log_message(const char *message, ...) {
 #if 0
     va_list args;
     va_start(args, message);
@@ -66,8 +158,8 @@ void GestionLog::log_message(const char *message, ...) {
     va_end(args);
     #endif
 }
-void GestionLog::log_capteur(const char *message, ...) {
-#if 1
+void log_capteur(const char *message, ...) {
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("capteur", message, args);
@@ -75,8 +167,8 @@ void GestionLog::log_capteur(const char *message, ...) {
 #endif
 }
 
-void GestionLog::log_traction(const char *message, ...) {
-#if 1
+void log_traction(const char *message, ...) {
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("traction", message, args);
@@ -84,32 +176,32 @@ void GestionLog::log_traction(const char *message, ...) {
 #endif
 
 }
-void GestionLog::log_moteur(const char *message, ...) {
-#if 1
+void log_moteur(const char *message, ...) {
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("moteur", message, args);
 	va_end(args);
 #endif
 }
-void GestionLog::log_pwm(const char *message, ...) {
-#if 1
+void log_pwm(const char *message, ...) {
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("pwm", message, args);
 	va_end(args);
 #endif
 }
-void GestionLog::log_memoire(const char *message, ...) {
-#if 1
+void log_memoire(const char *message, ...) {
+#if 0
 	va_list args;
 	va_start(args, message);
 	log_format("mem", message, args);
 	va_end(args);
 #endif
 }
-void GestionLog::log_simumemoire(const char *message, ...) {
-#if 1
+void log_simumemoire(const char *message, ...) {
+#if 0
     va_list args;
     va_start(args, message);
     log_format("simu mem", message, args);
@@ -117,27 +209,29 @@ void GestionLog::log_simumemoire(const char *message, ...) {
 #endif
 }
 
-void GestionLog::log_fichiersimu(const char *message, ...) {
-#if 1
+void log_fichiersimu(const char *message, ...) {
+#if 0
     va_list args;
     va_start(args, message);
     log_format("fichierS", message, args);
     va_end(args);
 #endif
 }
-void GestionLog::log_calibre(const char *message, ...) {
-#if 1
+void log_calibre(const char *message, ...) {
+#if 0
     va_list args;
     va_start(args, message);
     log_format("calibre", message, args);
     va_end(args);
 #endif
 }
-void GestionLog::log_gyro(const char *message, ...) {
-#if 1
+void log_gyro(const char *message, ...) {
+#if 0
     va_list args;
     va_start(args, message);
     log_format("Gyro", message, args);
     va_end(args);
 #endif
 }
+
+

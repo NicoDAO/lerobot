@@ -8,7 +8,7 @@
 #ifndef SRC_CONFIGUREVOLUMES_H_
 #define SRC_CONFIGUREVOLUMES_H_
 #include "TransfertAXI.h"
-
+#include "log.h"
 enum {
 	etat_pas_encore_init = 0,
 	etat_reglageVol1,

@@ -7,13 +7,18 @@
 
 #include "Calibrage.h"
 #include "log.h"
+
 Calibrage::Calibrage() {
 	// TODO Auto-generated constructor stub
-
 }
 
 Calibrage::~Calibrage() {
 	// TODO Auto-generated destructor stub
+}
+
+Calibrage::Calibrage(GestionLog *lelog ) {
+	this->lelog = lelog;
+
 }
 
 void Calibrage::SetfichierCalib(std::string tt){
@@ -24,9 +29,8 @@ void Calibrage::SetfichierCalib(std::string tt){
 }
 int Calibrage::lit_parametrage(void){
 	 for (unsigned i=0; i<parametrage.size(); i++)
-	    log_calibre("on lit %d", parametrage.at(i));
+		 this->lelog->log_calibre("on lit %d", parametrage.at(i));
 	 return 1;
 }
-
 
 

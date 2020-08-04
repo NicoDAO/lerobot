@@ -8,6 +8,7 @@
 #include "ConfigureVolumes.h"
 #include "config_du_system.h"
 #include <pthread.h>
+#include "log.h"
 #define VOLUME1 1
 #define VOLUME2 2
 #define VOLUME3 3

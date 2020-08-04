@@ -11,6 +11,8 @@ string
 -
 LectureFichier.h
 /home/nicolas/yocto/soft_zybo/lerobot/projRb/LectureFichier.h
+log.h
+/home/nicolas/yocto/soft_zybo/lerobot/projRb/log.h
 
 /home/nicolas/yocto/soft_zybo/lerobot/projRb/ConfigureFIRFPGA.h
 TransfertAXI.h

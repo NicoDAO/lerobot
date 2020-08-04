@@ -7,7 +7,7 @@
 
 #include "GereCapteurDistance.h"
 #include "config_du_system.h"
-GereCapteurDistance::GereCapteurDistance() {
+GereCapteurDistance::GereCapteurDistance()  {
 	//log_info(this->nom_moteur, sizeof(this->nom_moteur), "moteur????");
 	memset(tabMesure, 0, sizeof(tabMesure));
 }
@@ -23,7 +23,7 @@ void GereCapteurDistance::handler() {
 	lit = Xil_In32(add1);
 	u32 distance_calibree = (int)appliqueCalibre((int) lit);
 
-	log_capteur("capteur distance brute %d = %d cm",lit, distance_calibree);
+	//lelog_calib_capteur("capteur distance brute %d = %d cm",lit, distance_calibree);
 	AMessage messCapteur;
 	snprintf(messCapteur.message, sizeof(messCapteur.message), "%d", distance_calibree);
 	int ret = leMessage1->envoieMessage(&messCapteur);

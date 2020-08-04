@@ -86,6 +86,7 @@ int main(int argc, char *argv[]) {
 	pthread_attr_t attr;
 	calog.log_info("main");
 	struct thread_info *tinfo;
+//configuration classe traction
 	traction.SetMessage1(&messageConsigneMoteur1);
 	traction.SetMessage2(&messageConsigneMoteur2);
 	traction.SetMessage3(&messageMesureDistanceCapteur);
@@ -96,7 +97,11 @@ int main(int argc, char *argv[]) {
 	mot2.SetNomMoteur(nom, 0);
 	mot1.SetMessage1(&messageConsigneMoteur1);
 	mot2.SetMessage1(&messageConsigneMoteur2);
+
 	capteurDistance.SetMessage1(&messageMesureDistanceCapteur);
+	capteurDistance.setGestionLog(&calog);
+
+
 	GereLesLed.regleAdresse(0x43C00000);
 	if (mode_fonctionnement == MODE_PC_SIMULATION) //le mode PC_SIMULATION sert à simuler le fonctionnement du robot sur un PC
 	{

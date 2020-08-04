@@ -13,6 +13,7 @@
 #include "Calibrage.h"
 #include "Messagerie.h"
 #include "LitMemoireLinux.h"
+#include "log.h"
 #include <cstring>
 class GereCapteurDistance: public CagereAXI , public Calibrage {
 public:
@@ -22,6 +23,7 @@ public:
 	void handler(void);
 	void ajoute_mesure(int);
 	int calculeMesureMoyenne(void);
+	void setGestionLog(GestionLog*lelog){this->lelog_calib_capteur = lelog;};
 private:
 	int mesureMoyenne = 0;
 
@@ -29,7 +31,7 @@ private:
 	u8 indexMesure = 0;
 	u8 coef_moyenne = 10;
 	int appliqueCalibre(int val);
-
+	GestionLog *lelog_calib_capteur;
 };
 
 #endif /* SRC_GEREMOTEUR_H_ */
