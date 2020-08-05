@@ -137,6 +137,101 @@
 			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/projRb.cpp</location>
 		</link>
 		<link>
+			<name>[Targets]/[exe] projRb/Source Files/Calibrage.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/Calibrage.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/GereMoteur_test.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/GereMoteur_test.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/MonPWM.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/MonPWM.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/ConfigureFIRFPGA.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/ConfigureFIRFPGA.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/GestionTraction.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/GestionTraction.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/ConfigureVolumes.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/ConfigureVolumes.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/LectureFichier.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/LectureFichier.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/GereCapteurDistance.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/GereCapteurDistance.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/LitMemoireLinux.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/LitMemoireLinux.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/SensMoteur.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/SensMoteur.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/GereGyroscope.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/GereGyroscope.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/log.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/log.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/sockets.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/sockets.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/GereLed.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/GereLed.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/Messagerie.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/Messagerie.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/Tache.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/Tache.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/GereMoteur.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/GereMoteur.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/mode_fonctionnement.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/mode_fonctionnement.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] projRb/Source Files/TransfereAXI.cpp</name>
+			<type>1</type>
+			<location>/home/nicolas/yocto/soft_zybo/lerobot/projRb/TransfereAXI.cpp</location>
+		</link>
+		<link>
 			<name>[Targets]/[exe] projRb/Header Files</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
