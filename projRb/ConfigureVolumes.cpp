@@ -63,9 +63,9 @@ void ConfigureVolumes::handler() {
 				VOLUME1); 	//
 
 		etat = etat_fini;
-		log_info(truc, sizeof(truc), "1etat_reglageVol1 = %d", levol1);
+		calog.log_info(truc, sizeof(truc), "1etat_reglageVol1 = %d", levol1);
 
-		log_info(truc);
+		calog.log_info(truc);
 		break;
 	case etat_reglageVol2:
 		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
@@ -75,8 +75,8 @@ void ConfigureVolumes::handler() {
 				VOLUME2); 	//
 
 		etat = etat_fini;
-		log_info(truc, sizeof(truc), "etat_reglageVol2 = %d", levol2);
-		log_info(truc);
+		calog.log_info(truc, sizeof(truc), "etat_reglageVol2 = %d", levol2);
+		calog.log_info(truc);
 		break;
 	case etat_reglageVol3:
 		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
@@ -86,8 +86,8 @@ void ConfigureVolumes::handler() {
 				VOLUME3); 	//
 
 		etat = etat_fini;
-		log_info(truc, sizeof(truc), "etat_reglageVol3 = %d", levol3);
-		log_info(truc);
+		calog.log_info(truc, sizeof(truc), "etat_reglageVol3 = %d", levol3);
+	//	log_info(truc);
 		break;
 	case etat_reglageVol4:
 		Xil_Out32(this->adresseAXI + PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET,
@@ -97,8 +97,8 @@ void ConfigureVolumes::handler() {
 				VOLUME4); 	//
 
 		etat = etat_fini;
-		log_info(truc, sizeof(truc), "etat_reglageVol4 = %d", levol4);
-		log_info(truc);
+		calog.log_info(truc, sizeof(truc), "etat_reglageVol4 = %d", levol4);
+		//log_info(truc);
 
 		break;
 	case etat_fini:
@@ -109,7 +109,7 @@ void ConfigureVolumes::handler() {
 	}
 
 	//vTaskDelayUntil(&xLastWakeTime, xWakePeriod);
-	log_info("volume");
+	calog.log_info("volume");
 	usleep(/*xWakePeriod*/1);
 }
 void ConfigureVolumes::calcul_volumes() {
@@ -127,8 +127,7 @@ void ConfigureVolumes::calcul_volumes() {
 		GpioLu2 = (char) ((GpioLu & 0x2) >> 1);
 		GpioLu3 = (char) ((GpioLu & 0x4) >> 2);
 		GpioLu4 = (char) ((GpioLu & 0x8) >> 3);
-		log_info(truc, sizeof(truc), "1etat_reglageVol1 = %08x", GpioLu);
-		log_info(truc);
+		calog.log_info(truc, sizeof(truc), "1etat_reglageVol1 = %08x", GpioLu);
 		if (GpioLu1 != GpioLu1_avant) {
 			GpioLu1_avant = GpioLu1;
 			levol1 += 1000;

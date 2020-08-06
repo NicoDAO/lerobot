@@ -53,7 +53,7 @@ int GereCapteurDistance::appliqueCalibre(int val) {
 
 	float cal = parametrage.at(0);
 	int valeur_calibre = ((float) val) * cal;
-	log_calibre("on applique  le calibrage (%f) capteur %d ", cal,
+	calog.log_calibre("on applique  le calibrage (%f) capteur %d ", cal,
 			valeur_calibre);
 	return valeur_calibre;
 }

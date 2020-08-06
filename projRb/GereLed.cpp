@@ -9,7 +9,7 @@
 #include "config_du_system.h"
 GereLed::GereLed() {
 	// TODO Auto-generated constructor stub
-	log_info("le constructeur GereLed() ");
+	calog.log_info("le constructeur GereLed() ");
 }
 
 GereLed::~GereLed() {

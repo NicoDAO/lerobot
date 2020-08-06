@@ -13,7 +13,7 @@
 #include "type.h"
 #include "config_du_system.h"
 #include "xparameters.h"
-
+#include "log.h"
 #include "config_du_system.h"
 //#include "xbasic_types.h"
 
@@ -43,6 +43,7 @@ private:
 	u32 DataRead;
 	u8 chut;
 	uint32 val_coef_test;
+	GestionLog calog;
 protected:
 	int etat_automate;
 	int EtatChargeCoef;

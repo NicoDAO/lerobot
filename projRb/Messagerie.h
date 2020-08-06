@@ -11,6 +11,7 @@
 #include <vector>
 #include <sys/ipc.h>
 #include <sys/msg.h>
+#include "log.h"
 #define MAX_CACHE_REQUEST_LEN 1000
 
 struct mesg_buffer {
@@ -37,6 +38,7 @@ private:
     key_t key;
     int msgid;
     char nomqueue[100];
+    GestionLog calog;
 };
 
 #endif /* SRC_MESSAGE_H_ */

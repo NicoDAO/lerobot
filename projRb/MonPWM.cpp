@@ -29,7 +29,7 @@ void CommandePWM::setBaseAddr(u32 aa){ // @suppress("Member declaration not foun
 }
 
 void CommandePWM::RegleRapportCyclique(u32 rc){
-    log_pwm("	on RegleRapportCyclique = %d /1000",rc);
+	calog.log_pwm("	on RegleRapportCyclique = %d /1000",rc);
 
 	u32 rcloc = rc & 0x03FFFF;//on utilise que les 10 bits de poids faible
 	//rcloc |= 20000000;//dans l'IP, le bit 29 sert à router le PWM depuis le bus AXI
@@ -39,7 +39,8 @@ void CommandePWM::RegleRapportCyclique(u32 rc){
 
 }
 void CommandePWM::RegleMoteur(u32 vitesse, u32 sens){
-    log_pwm("la on RegleRapportCyclique = %d /1000, sens = %x",vitesse, sens);
+
+    calog.log_pwm("la on RegleRapportCyclique = %d /1000, sens = %x",vitesse, sens);
 
 	u32 rcloc = vitesse & 0x03FFFF;//on utilise que les 10 bits de poids faible
 	//rcloc |= 20000000;//dans l'IP, le bit 29 sert à router le PWM depuis le bus AXI

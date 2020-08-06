@@ -99,7 +99,7 @@ int main(int argc, char *argv[]) {
 	mot2.SetMessage1(&messageConsigneMoteur2);
 
 	capteurDistance.SetMessage1(&messageMesureDistanceCapteur);
-	capteurDistance.setGestionLog(&calog);
+	//capteurDistance.setGestionLog(&calog);
 
 
 	GereLesLed.regleAdresse(0x43C00000);

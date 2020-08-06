@@ -50,6 +50,7 @@ private :
 	s32 handler_gyro_tourne(s32);
 	config_totale config_gyro;
 	int lit_config_gyro (void);
+	GestionLog calog;
 };
 
 #endif /* GEREGYROSCOPE_H_ */

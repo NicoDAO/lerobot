@@ -51,7 +51,7 @@ void CagereAXI::handler()
         //XGpio_SetDataDirection(&GpioInput, 1, 0xFFFFFFFF);
         etat_automate = EtatInitEnCours;
         EtatChargeCoef = Nv_coef;
-        log_info(truc, sizeof(truc), "!!EtatPasEncoreInitialise  =%x\r\n",
+        calog. log_info(truc, sizeof(truc), "!!EtatPasEncoreInitialise  =%x\r\n",
                etat_automate);
         //	log_info(truc);
         Xil_Out32(0x43C00000 + AXI_SLV_REG0_OFFSET, 0x80000000); //allume l'ampli
@@ -66,9 +66,9 @@ void CagereAXI::handler()
         {
             Xil_Out32(this->adresseAXI + AXI_SLV_REG2_OFFSET, 0x1); //activation du mode transparent
             Xil_Out32(this->adresseAXI + AXI_SLV_REG0_OFFSET, 0x125); //
-            log_info(truc, sizeof(truc), "FIR %d : mode chut activé\r\n",
+            calog.log_info(truc, sizeof(truc), "FIR %d : mode chut activé\r\n",
                      this->numFIR);
-            log_info(truc);
+            calog.log_info(truc);
             etat_automate = EtatInitFini;
         }
         else
@@ -101,10 +101,10 @@ void CagereAXI::handler()
                 if (cpt_coef >= this->taille_filtre)
                 {
                     etat_automate = EtatInitFini;
-                    log_info(truc, sizeof(truc),
+                    calog.log_info(truc, sizeof(truc),
                              "EtatInitFini cpt_coef = %d/%d\r\n", cpt_coef,
                              this->taille_filtre);
-                    log_info(truc);
+                    calog.log_info(truc);
                 }
                 break;
             case fin_charge:

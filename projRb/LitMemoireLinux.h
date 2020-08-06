@@ -18,7 +18,8 @@
 #include "config_du_system.h"
 #include "LectureFichier.h"
 #include "mode_fonctionnement.h"
-class LitMemoireLinux : public mode_foncionnel  {
+#include "log.h"
+class LitMemoireLinux : public mode_foncionnel {
 public:
 	LitMemoireLinux();
 	virtual ~LitMemoireLinux();
@@ -35,6 +36,7 @@ private:
 	int fd_lecture = -1 ;
 	int *data_ecriture =  NULL;
 	int *data_lecture =  NULL;
+	GestionLog calog;
 };
 
 #endif /* LITMEMOIRELINUX_H_ */

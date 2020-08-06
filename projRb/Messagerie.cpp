@@ -34,7 +34,7 @@ Messager::Messager(char *nom, int taille) {
 	snprintf(nomqueue, sizeof(nomqueue), "%s", nom);
 	msgid = msgget(key, 0666 | IPC_CREAT);
 	//log_message(nomqueue,sizeof(nomqueue),"%s",nom);
-	log_message("Creation messagerie ->%s<-, key : %d  msgid : %d\r\n",
+	calog.log_message("Creation messagerie ->%s<-, key : %d  msgid : %d\r\n",
 			nomqueue, key, msgid);
 }
 
@@ -46,7 +46,7 @@ int Messager::envoieMessage(AMessage *txMessage) {
 	msgsnd(msgid, txMessage, BUF_LEN /*sizeof(txMessage)*/, 0);
 	timespec taillemahout;
 	taillemahout.tv_sec = 4;
-	log_message("%s envoieMessage : fin (id %d): %s\r\n", nomqueue, msgid,
+	calog.log_message("%s envoieMessage : fin (id %d): %s\r\n", nomqueue, msgid,
 			txMessage->message);
 
 	return 1;
@@ -60,10 +60,10 @@ int Messager::recoitMessage() {
 	char *text;
 	char recv[BUF_LEN];
 	memset(recv, 0, BUF_LEN);
-	log_message("    attend message  id:%x\n\r ", msgid);
+	calog.log_message("    attend message  id:%x\n\r ", msgid);
 	AMessage messagea;
 	msgrcv(msgid, &messagea, BUF_LEN /*sizeof(messagea)*/, 1, 0);
-	log_message("%s    recu message :%s\n\r ", nomqueue, messagea.message);
+	calog.log_message("%s    recu message :%s\n\r ", nomqueue, messagea.message);
 	vecteurMessages.push_back(messagea);
 	return 1;
 }

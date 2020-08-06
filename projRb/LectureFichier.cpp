@@ -37,7 +37,7 @@ int LectureFichier::litFichierSimu() { //valeur entiere venant du capteur
 
 	fp = fopen(nom_fichier.c_str(), "r");
 	if (fp == NULL) {
-		log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
+		calog.log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
 
 		exit(EXIT_FAILURE);
 	}
@@ -45,7 +45,7 @@ int LectureFichier::litFichierSimu() { //valeur entiere venant du capteur
 		while ((read = getline(&line, &len, fp)) != -1) {
 			//log_fichiersimu("Retrieved line of length %zu :\n", read);
 			int var = atoi(line);
-			log_fichiersimu("fichier %s / %s  -> %d", nom_fichier.c_str(), line,
+			calog.log_fichiersimu("fichier %s / %s  -> %d", nom_fichier.c_str(), line,
 					var);
 			fichier_lu = 1;
 			parametrage.push_back(var);
@@ -59,7 +59,7 @@ int LectureFichier::litFichierSimu() { //valeur entiere venant du capteur
 	}
 	if (++index_fichier > parametrage.size())
 		index_fichier = 0;
-	log_fichiersimu("valeur index[%d]= %d", index_fichier, retour);
+	calog.log_fichiersimu("valeur index[%d]= %d", index_fichier, retour);
 	return retour;
 }
 int LectureFichier::litFichierConfigMemoire() { //on va lire le contenu de la memoire issu du fichier de configuration
@@ -72,7 +72,7 @@ int LectureFichier::litFichierConfigMemoire() { //on va lire le contenu de la me
 		memoire_periph= new memoire_peripherique();
 	}
 	else {
-		log_error("eh Raymond, y'a un truc qui va pas dans le programme !!! %s, %s",__FILE__,__LINE__);
+		calog.log_error("eh Raymond, y'a un truc qui va pas dans le programme !!! %s, %s",__FILE__,__LINE__);
 		exit(EXIT_FAILURE);
 	}
 
@@ -80,17 +80,17 @@ int LectureFichier::litFichierConfigMemoire() { //on va lire le contenu de la me
 
 	fp = fopen(nom_fichier.c_str(), "r");//on ouvre le fichier texte
 	if (fp == NULL) {
-		log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
+		calog.log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
 
 		exit(EXIT_FAILURE);
 	}
 	if (fichier_lu == 0) { //on lit le fichier de paramtrage en en l'enregistre dans un vecteur
 		while ((read = getline(&line, &len, fp)) != -1) {
-			log_fichiersimu("Retrieved line of length %zu %s\n", read,line);
+			calog.log_fichiersimu("Retrieved line of length %zu %s\n", read,line);
 			//int var = atoi(line);
 			std::string laligne(line) ;
 			casememe.nom = laligne; // on met le contenu de la ligne dans l'objet
-			log_fichiersimu("fichier memoire: %s=> %s",nom_fichier.c_str(), casememe.nom.c_str());
+			calog.log_fichiersimu("fichier memoire: %s=> %s",nom_fichier.c_str(), casememe.nom.c_str());
 			fichier_lu = 1;
 			lit_parametre_ligne(laligne,memoire_periph);
 			//	memoire_periph->parametrage_memoire.push_back(casememe);
@@ -104,7 +104,7 @@ int LectureFichier::litFichierConfigMemoire() { //on va lire le contenu de la me
 	}
 	if (++index_fichier > parametrage.size())
 		index_fichier = 0;
-	log_fichiersimu("valeur index[%d]= %d", index_fichier, retour);
+	calog.log_fichiersimu("valeur index[%d]= %d", index_fichier, retour);
 	return retour;
 }
 int LectureFichier::ouvrFichierSimu(std::string nom) {
@@ -116,7 +116,7 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 
 	fp = fopen(nom.c_str(), "r");
 	if (fp == NULL) {
-		log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
+		calog.log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
 
 		exit(EXIT_FAILURE);
 	}
@@ -127,10 +127,10 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 					f = strtof(line, &end)) {
 				line = end;
 				if (errno == ERANGE) {
-					log_fichiersimu("range error, got ");
+					calog.log_fichiersimu("range error, got ");
 					errno = 0;
 				}
-				log_fichiersimu("fichier %s -> %f", nom.c_str(), f);
+				calog.log_fichiersimu("fichier %s -> %f", nom.c_str(), f);
 				parametrage.push_back(f);
 				//log_fichiersimu("%f\n", f);
 			}
@@ -147,7 +147,7 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 	}
 	if (++index_fichier > parametrage.size())
 		index_fichier = 0;
-	log_fichiersimu("valeur index[%d]= %d", index_fichier, retour);
+	calog.log_fichiersimu("valeur index[%d]= %d", index_fichier, retour);
 	return retour;
 }
 
@@ -160,7 +160,7 @@ int  LectureFichier::lit_parametre_ligne(std::string  ligne,memoire_peripherique
 	std::size_t position_t1 = ligne.find(":",0);
 	std::size_t position_t2 = ligne.find(":",position_t1+1);
 	//std::size_t position_t3 = ligne.find(":",position_t2+1);
-	log_fichiersimu("%d/%d  " ,position_t1,position_t2);
+	calog.log_fichiersimu("%d/%d  " ,position_t1,position_t2);
 
 	if((position_t1 == std::string::npos) || (position_t2 == std::string::npos) )return -1;
 	nom_reg = ligne.substr(0,position_t1);
@@ -168,7 +168,7 @@ int  LectureFichier::lit_parametre_ligne(std::string  ligne,memoire_peripherique
 	valeure = ligne.substr(position_t2+1);
 	std::string temp = "donnees a analyser /" + nom_reg + "/" + adresse + "/" + valeure;
 
-	log_fichiersimu(temp.c_str());
+	calog.log_fichiersimu(temp.c_str());
 	//	log_fichiersimu("%d/%d  nom_reg %s  adresse : %s  valeure : %s" ,position_t1,position_t2,nom_reg.c_str(), adresse.c_str(),valeure.c_str());
 
 	try
@@ -178,17 +178,17 @@ int  LectureFichier::lit_parametre_ligne(std::string  ligne,memoire_peripherique
 		tt.nom = nom_reg;
 		tt.adresse = adresse_int;
 		tt.valeur = valeur_int;
-		log_fichiersimu( "enregistre: %s, adresse registre : %d, valeur registre : %d",tt.nom.c_str() ,adresse_int,valeur_int);
+		calog.log_fichiersimu( "enregistre: %s, adresse registre : %d, valeur registre : %d",tt.nom.c_str() ,adresse_int,valeur_int);
 
 	}
 	catch (std::invalid_argument const &e)
 	{
-		log_fichiersimu("Bad input: std::invalid_argument thrown");
+		calog.log_fichiersimu("Bad input: std::invalid_argument thrown");
 		return -1;
 	}
 	catch (std::out_of_range const &e)
 	{
-		log_fichiersimu( "Integer overflow: std::out_of_range thrown" );
+		calog.log_fichiersimu( "Integer overflow: std::out_of_range thrown" );
 		return -1;
 	}
 

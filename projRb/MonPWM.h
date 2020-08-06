@@ -10,7 +10,7 @@
 #include "config_du_system.h"
 #include "LitMemoireLinux.h"
 #include "xparameters.h"
-
+#include "log.h"
 
 class CommandePWM :public LitMemoireLinux{
 public:
@@ -27,7 +27,7 @@ private :
 	u32 PWM_Get_Duty(u32 pwmIndex);
 	void PWM_Enable();
 	void PWM_Disable();
-
+	GestionLog calog;
 	u32 baseAddr = 0;
 };
 

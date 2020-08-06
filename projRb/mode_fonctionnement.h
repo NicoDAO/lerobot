@@ -1,6 +1,7 @@
 #ifndef MOD_FONC__
 #define MOD_FONC__
 
+#include "log.h"
 enum
 {
 
@@ -29,7 +30,7 @@ public :
 protected :
 
     int mode = MODE_ROBOT;
-
+    GestionLog calog;
 
 
 };

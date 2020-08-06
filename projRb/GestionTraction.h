@@ -10,7 +10,7 @@
 
 #include "config_du_system.h"
 #include "Tache.h"
-
+#include "log.h"
 enum{
 	Robot_arret = 0,
 	Robot_avant_lent,
@@ -25,7 +25,7 @@ enum{
 
 };
 
-class GestionTraction : public Tache{
+class GestionTraction : public Tache,  public GestionLog{
 public:
 	GestionTraction();
 	virtual ~GestionTraction();

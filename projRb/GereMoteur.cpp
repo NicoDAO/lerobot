@@ -10,7 +10,7 @@
 #include "MonPWM.h"
 
 GereMoteur::GereMoteur() {
-	log_info(this->nom_moteur, sizeof(this->nom_moteur), "moteur????");
+	calog.log_info(this->nom_moteur, sizeof(this->nom_moteur), "moteur????");
 }
 
 GereMoteur::~GereMoteur() {
@@ -25,7 +25,7 @@ void GereMoteur::handler() {
 			AMessage tt = leMessage1->vecteurMessages.back();
 			consigne_puissance = atoi(tt.message);
 
-			log_moteur("Recoit message :%s  messages: %s ->%d", nom_moteur,
+			calog.log_moteur("Recoit message :%s  messages: %s ->%d", nom_moteur,
 					tt.message, consigne_puissance);
 			leMessage1->vecteurMessages.pop_back();
 		}
@@ -58,7 +58,7 @@ void GereMoteur::SetAdresseMoteur(uint32 add) {
 void GereMoteur::reglePuissanceMoteur(u32 p,u8 sens) {
 
 	u32 val_calibre = appliqueCalibre((int) p);
-	log_moteur("  %s   puissance brute = %d, puissance calibre = %d",
+	calog.log_moteur("  %s   puissance brute = %d, puissance calibre = %d",
 			this->nom_moteur, p, val_calibre);
 
 	puissanceMoteur.RegleMoteur(val_calibre,(u32)sens); //test
@@ -76,7 +76,7 @@ void GereMoteur::SetNomMoteur(char *nom, unsigned char taille) {
 }
 
 void GereMoteur::metEnmodeSimu() {
-	log_moteur("met moteur (%s) en mode simu", nom_moteur);
+	calog.log_moteur("met moteur (%s) en mode simu", nom_moteur);
 	puissanceMoteur.metEnmodeSimu();
 	lsensMoteur.metEnmodeSimu();
 }
@@ -87,7 +87,7 @@ void GereMoteur::Reglecalibre(float cal) {
 int GereMoteur::appliqueCalibre(int val) {
 	float cal = parametrage.at(0);
 	int valeur_calibre = ((float) val) * cal;
-	log_calibre("on calibre %s (%d) , coef  = %f ,commande %d ", nom_moteur, val, cal,
+	calog.log_calibre("on calibre %s (%d) , coef  = %f ,commande %d ", nom_moteur, val, cal,
 			valeur_calibre);
 	return valeur_calibre;
 }

@@ -8,7 +8,7 @@
 #include "Calibrage.h"
 #include "log.h"
 
-Calibrage::Calibrage() {
+Calibrage::Calibrage() { // @suppress("Member declaration not found")
 	// TODO Auto-generated constructor stub
 }
 

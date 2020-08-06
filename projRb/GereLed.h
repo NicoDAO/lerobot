@@ -19,6 +19,7 @@ using namespace std;
 #include <unistd.h>
 #include "LitMemoireLinux.h"
 #include "config_du_system.h"
+#include "log.h"
 #define AXI_SLV_REG0_OFFSET 0
 #define PMOD_AUDIO_S00_AXI_SLV_REG1_OFFSET 4
 #define AXI_SLV_REG2_OFFSET 8
@@ -37,7 +38,7 @@ public:
 private:
 //	LitMemoireLinux mem;
 	u32 adresseAXI=0;
-
+	GestionLog calog;
 };
 
 #endif /* SRC_GERELED_H_ */

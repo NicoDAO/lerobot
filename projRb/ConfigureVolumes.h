@@ -41,7 +41,7 @@ private:
 	char GpioLu4_avant;
 
 	void calcul_volumes(void);
-
+	GestionLog calog;
 };
 
 #endif /* SRC_CONFIGUREVOLUMES_H_ */

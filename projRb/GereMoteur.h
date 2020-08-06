@@ -17,6 +17,7 @@
 #include "LectureFichier.h"
 #include "Calibrage.h"
 #include <cstring>
+#include "log.h"
 class GereMoteur: public CagereAXI, public Calibrage
 {
 public:
@@ -60,6 +61,7 @@ private:
     float calibre = 1;
     std::string fichier_calibre = "pasdefini";
     int appliqueCalibre(int val);
+    GestionLog calog;
 };
 
 #endif /* SRC_GEREMOTEUR_H_ */

@@ -17,7 +17,7 @@
 #include "log.h"
 #include <vector>
 #include "config_du_system.h"
-
+#include "log.h"
 class case_memoire_{
 public:
 	u16 adresse= 0;
@@ -30,7 +30,7 @@ public:
 	std::vector<case_memoire_> parametrage_memoire;
 };
 
-class LectureFichier {
+class LectureFichier  {
 public:
 	LectureFichier();
 	LectureFichier(std::string fichier);
@@ -51,7 +51,7 @@ private:
 	int fichier_lu = 0;
 	unsigned int index_fichier= 0;
 	std::string nom_fichier ="simu_capteur_distance.txt";
-
+	GestionLog calog;
 
 
 };

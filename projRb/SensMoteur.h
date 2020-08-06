@@ -9,7 +9,7 @@
 #define SRC_SensMoteur_H_
 #include "config_du_system.h"
 #include "LitMemoireLinux.h"
-
+#include "log.h"
 class SensMoteur : public LitMemoireLinux{
 public:
 	SensMoteur();
@@ -21,6 +21,7 @@ private :
 	LitMemoireLinux mem;
 
 	u32 baseAddr = 0;
+	GestionLog calog;
 };
 
 #endif /* SRC_MONPWM_H_ */
