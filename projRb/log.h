@@ -9,11 +9,18 @@ enum
     LOG_CAPTEUR_DISTANCE,
 	LOG_TRACTION,
 	LOG_GYROSCOPE,
-	LOG_MOTEUR
+	LOG_CALIBRE,
+	LOG_FSIMU,
+	LOG_MEMSIMU,
+	LOG_MOTEUR,
+	LOG_PWM,
+	LOG_MEM,
+	LOG_MESSAGES,
+	LOG_INFOS
+
 
 };
-
-
+static int mode_log =LOG_TRACTION;
 class GestionLog{
 public:
 	GestionLog();
@@ -39,7 +46,13 @@ public:
 	void log_calibre(const char* message, ...);
 	void log_gyro(const char* message, ...);
 
-	int mode_log =LOG_RIEN;
+
+	void setMode(int m);
+
+private :
+	 static bool alreadyCreated;
+	// log_format(const char *tag, const char *message, va_list args);
+	 //static mode = LOG_RIEN;
 
 };
 //

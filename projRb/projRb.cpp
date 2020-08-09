@@ -77,8 +77,15 @@ int main(int argc, char *argv[]) {
 		if (NULL != strstr(argv[i], "simuCapteur")) {
 			mode_fonctionnement = MODE_SIMU_CAPTEUR_DISTANCE;
 		}
-		if (NULL != strstr(argv[i], "LOG_CAPTEUR_DISTANCE")) {
+		if (NULL != strstr(argv[i], "LOG=")) {
+			std::string param(argv[i]+strlen("LOG="));//on choppe la config du log
+			int log_nb = std::stoi(param);
+			//std::stoi(adresse);
+			cout << "on a " + param;
 			mod_log = LOG_CAPTEUR_DISTANCE;
+			GestionLog ll;
+			ll.log_error("on a %s(%d)",argv[i] ,log_nb);
+			ll.setMode(log_nb);
 		}
 	}
 	pthread_t GereAXI2, GereAXI3, GereMoteur1, GereMoteur2, GestionTraction,
