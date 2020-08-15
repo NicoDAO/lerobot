@@ -82,10 +82,10 @@ void GestionLog::log_capteur(const char *message, ...) {
 }
 
 void GestionLog::log_traction(const char *message, ...) {
-	if(mode_log == LOG_TRACTION){
+	if (mode_log == LOG_TRACTION){
 		va_list args;
 		va_start(args, message);
-		log_format("traction", message, args);
+		log_format("TTraction", message, args);
 		va_end(args);
 	}
 }
