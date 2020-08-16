@@ -73,6 +73,7 @@ int main(int argc, char *argv[]) {
 		}
 		if (NULL != strstr(argv[i], "simuPC")) {
 			mode_fonctionnement = MODE_PC_SIMULATION;
+			calog.log_info("mode PC simulation");
 		}
 		if (NULL != strstr(argv[i], "simuCapteur")) {
 			mode_fonctionnement = MODE_SIMU_CAPTEUR_DISTANCE;
@@ -83,11 +84,13 @@ int main(int argc, char *argv[]) {
 			//std::stoi(adresse);
 			cout << "on a " + param;
 			mod_log = LOG_CAPTEUR_DISTANCE;
-			GestionLog ll;
-			ll.log_error("on a %s(%d)",argv[i] ,log_nb);
-			ll.setMode(log_nb);
+
+			calog.log_error("on a %s(%d)",argv[i] ,log_nb);
+			calog.setMode(log_nb);
 		}
 	}
+	printf("lancement thread\n");
+	calog.log_info("premier log");
 	pthread_t GereAXI2, GereAXI3, GereMoteur1, GereMoteur2, GestionTraction,
 	CapteurDistance,Gyroscope1;
 	pthread_attr_t attr;

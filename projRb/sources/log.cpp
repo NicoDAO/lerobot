@@ -14,7 +14,12 @@
 int numero_log = 0;
 // Et on déclare alreadyCreated comme faux au début !
 bool GestionLog::alreadyCreated = false;
+selectionneLOg::selectionneLOg(){
 
+}
+selectionneLOg::~selectionneLOg(){
+
+}
 GestionLog::GestionLog(){
 	// if (alreadyCreated)
 	// cout <<("Vous ne pouvez pas créer une seconde instance de la classe Singleton.");
@@ -46,7 +51,7 @@ void GestionLog::log_error(const char *message, ...) {
 }
 
 void GestionLog::log_info(const char *message, ...) {
-	if(mode_log ==LOG_INFOS){
+	if(1 ==logS.LOG_INFOS){
 		va_list args;
 		va_start(args, message);
 		log_format("Info", message, args);
@@ -82,10 +87,10 @@ void GestionLog::log_capteur(const char *message, ...) {
 }
 
 void GestionLog::log_traction(const char *message, ...) {
-	if (mode_log == LOG_TRACTION){
+	if (logS.LOG_TRACTION ==1){
 		va_list args;
 		va_start(args, message);
-		log_format("TTraction", message, args);
+		log_format("Traction", message, args);
 		va_end(args);
 	}
 }
@@ -133,8 +138,10 @@ void GestionLog::log_fichiersimu(const char *message, ...) {
 	}
 }
 void GestionLog::log_calibre(const char *message, ...) {
-	if (mode_log == LOG_CALIBRE){
+	//if ( logS.LOG_CALIBRE == 1  ){
+	if(0){
 		va_list args;
+
 		va_start(args, message);
 		log_format("calibre", message, args);
 		va_end(args);
@@ -151,6 +158,9 @@ void GestionLog::log_gyro(const char *message, ...) {
 
 void GestionLog::setMode(int m){
 	mode_log = m;
+	//logS.LOG_CALIBRE =1;
+	logS.LOG_INFOS =1;
+	logS.LOG_TRACTION =0;
 }
 /*void log_error(const char *message, ...) {
 	va_list args;

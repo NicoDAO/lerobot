@@ -18,8 +18,30 @@ enum
 	LOG_MESSAGES,
 	LOG_INFOS
 
+};
+class selectionneLOg
+{
+public :
+	selectionneLOg();
+	~selectionneLOg();
+    int activeLOG_RIEN;
+    int LOG_CAPTEUR_DISTANCE;
+	int LOG_TRACTION;
+	int LOG_GYROSCOPE;
+	int LOG_CALIBRE;
+	int LOG_FSIMU;
+	int LOG_MEMSIMU;
+	int LOG_MOTEUR;
+	int LOG_PWM;
+	int LOG_MEM;
+	int LOG_MESSAGES;
+	int LOG_INFOS;
 
 };
+
+
+
+
 static int mode_log =LOG_TRACTION;
 class GestionLog{
 public:
@@ -53,7 +75,7 @@ private :
 	 static bool alreadyCreated;
 	// log_format(const char *tag, const char *message, va_list args);
 	 //static mode = LOG_RIEN;
-
+	 selectionneLOg logS;
 };
 //
 //
