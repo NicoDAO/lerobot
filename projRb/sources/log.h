@@ -43,7 +43,7 @@ public :
 
 
 static int mode_log =LOG_TRACTION;
-class GestionLog{
+class GestionLog: public selectionneLOg{
 public:
 	GestionLog();
 	~GestionLog();
@@ -73,9 +73,10 @@ public:
 
 private :
 	 static bool alreadyCreated;
+	 int mode_log = 0;
 	// log_format(const char *tag, const char *message, va_list args);
 	 //static mode = LOG_RIEN;
-	 selectionneLOg logS;
+	// selectionneLOg logS;
 };
 //
 //

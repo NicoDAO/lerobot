@@ -51,7 +51,7 @@ void GestionLog::log_error(const char *message, ...) {
 }
 
 void GestionLog::log_info(const char *message, ...) {
-	if(1 ==logS.LOG_INFOS){
+	if(1 ==LOG_INFOS){
 		va_list args;
 		va_start(args, message);
 		log_format("Info", message, args);
@@ -87,7 +87,7 @@ void GestionLog::log_capteur(const char *message, ...) {
 }
 
 void GestionLog::log_traction(const char *message, ...) {
-	if (logS.LOG_TRACTION ==1){
+	if (LOG_TRACTION ==1){
 		va_list args;
 		va_start(args, message);
 		log_format("Traction", message, args);
@@ -151,7 +151,7 @@ void GestionLog::log_gyro(const char *message, ...) {
 	if (mode_log == LOG_GYROSCOPE){
 		va_list args;
 		va_start(args, message);
-		log_format("Gyro", message, args);
+		log_format("Gyros", message, args);
 		va_end(args);
 	}
 }
@@ -159,8 +159,8 @@ void GestionLog::log_gyro(const char *message, ...) {
 void GestionLog::setMode(int m){
 	mode_log = m;
 	//logS.LOG_CALIBRE =1;
-	logS.LOG_INFOS =1;
-	logS.LOG_TRACTION =0;
+	LOG_INFOS =1;
+	LOG_TRACTION =0;
 }
 /*void log_error(const char *message, ...) {
 	va_list args;

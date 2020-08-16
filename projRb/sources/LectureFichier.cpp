@@ -10,7 +10,12 @@
 #include <string>
 #include <errno.h>
 #include <stdlib.h>
+#include <unistd.h>
 #define BUF_SIZE 8192
+
+
+std::mutex g_num_mutex;
+
 
 LectureFichier::LectureFichier() {
 
@@ -114,11 +119,21 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 	size_t len = 0;
 	ssize_t read;
 
-	fp = fopen(nom.c_str(), "r");
-	if (fp == NULL) {
-		calog.log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
 
-		exit(EXIT_FAILURE);
+
+		  g_num_mutex.lock();
+
+
+	char *chement;
+	chement= get_current_dir_name();
+	calog.log_fichiersimu("repertoire courant %s",chement);
+	fp = fopen(nom.c_str(), "r");
+
+	//fp = fopen("truc.txt","r");
+	if (fp == NULL) {
+		calog.log_fichiersimu("Ouverture impossible d'ouvrir:%s",nom_fichier.c_str() );
+
+		//exit(EXIT_FAILURE);
 	}
 	if (fichier_lu == 0) {
 		while ((read = getline(&line, &len, fp)) != -1) {
@@ -148,6 +163,7 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 	if (++index_fichier > parametrage.size())
 		index_fichier = 0;
 	calog.log_fichiersimu("valeur index[%d]= %d", index_fichier, retour);
+	 g_num_mutex.unlock();
 	return retour;
 }
 

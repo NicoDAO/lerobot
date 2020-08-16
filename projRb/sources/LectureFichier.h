@@ -18,6 +18,7 @@
 #include <vector>
 #include "config_du_system.h"
 #include "log.h"
+#include <mutex>
 class case_memoire_{
 public:
 	u16 adresse= 0;
@@ -52,7 +53,6 @@ private:
 	unsigned int index_fichier= 0;
 	std::string nom_fichier ="simu_capteur_distance.txt";
 	GestionLog calog;
-
 
 };
 
