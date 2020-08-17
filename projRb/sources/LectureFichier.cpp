@@ -39,10 +39,12 @@ int LectureFichier::litFichierSimu() { //valeur entiere venant du capteur
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read;
-
+	char *chement;
+	chement= get_current_dir_name();
+	calog.log_fichiersimu("repertoire courant %s, fichier %s",chement,nom_fichier);
 	fp = fopen(nom_fichier.c_str(), "r");
 	if (fp == NULL) {
-		calog.log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
+		calog.log_fichiersimu("1ouverture impossible de :%s",nom_fichier.c_str() );
 
 		exit(EXIT_FAILURE);
 	}
@@ -83,9 +85,14 @@ int LectureFichier::litFichierConfigMemoire() { //on va lire le contenu de la me
 
 	case_memoire_ casememe; // on met ça en stack
 
+
+	char *chement;
+	chement= get_current_dir_name();
+	calog.log_fichiersimu("repertoire courant %s, fichier =%s\n",chement,nom_fichier.c_str());
+
 	fp = fopen(nom_fichier.c_str(), "r");//on ouvre le fichier texte
 	if (fp == NULL) {
-		calog.log_fichiersimu("ouverture impossible de :%s",nom_fichier.c_str() );
+		calog.log_fichiersimu("2 ouverture impossible de :%s",nom_fichier.c_str() );
 
 		exit(EXIT_FAILURE);
 	}
@@ -126,8 +133,8 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 
 	char *chement;
 	chement= get_current_dir_name();
-	calog.log_fichiersimu("repertoire courant %s",chement);
-	fp = fopen(nom.c_str(), "r");
+	calog.log_fichiersimu("repertoire courant %s, fichier %s",chement,nom_fichier.c_str());
+	fp = fopen(nom_fichier.c_str(), "r");
 
 	//fp = fopen("truc.txt","r");
 	if (fp == NULL) {
