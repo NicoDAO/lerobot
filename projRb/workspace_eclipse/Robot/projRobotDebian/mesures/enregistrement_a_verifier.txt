@@ -1,0 +1,445 @@
+testé avec le capteur et les moteurs, pendant toute une après midi, alimentation des moteurs débranchée.
+pb le robot ne recule pas
+
+
+
+98105;Sat Apr 18 05:35:51 2020; 58614; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98106;Sat Apr 18 05:35:51 2020; 58673; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98107;Sat Apr 18 05:35:51 2020; 58725; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98108;Sat Apr 18 05:35:51 2020; 58774; [info];on est en mode ROBO
+98109;Sat Apr 18 05:35:55 2020; 58125; [info];on est en mode ROBO
+98110;Sat Apr 18 05:35:55 2020; 58186; [calibre];on applique  le calibrage (0.870000) capteur 467768 
+98111;Sat Apr 18 05:35:55 2020; 58282; [traction];GestionTraction : recoit 1 message
+98112;Sat Apr 18 05:35:55 2020; 58349; [traction];[0]GestionTraction : Recoit mesure distance : 537665 ->537665
+98113;Sat Apr 18 05:35:55 2020; 58393; [traction];Robot_avant_rapide 
+98114;Sat Apr 18 05:35:55 2020; 58484; [moteur];Recoit message :moteur1  messages: 900 ->900
+98116;Sat Apr 18 05:35:55 2020; 58563; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98117;Sat Apr 18 05:35:55 2020; 58624; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98118;Sat Apr 18 05:35:55 2020; 58676; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98119;Sat Apr 18 05:35:55 2020; 58727; [info];on est en mode ROBO
+98115;Sat Apr 18 05:35:55 2020; 58501; [moteur];Recoit message :moteur2  messages: 900 ->900
+98120;Sat Apr 18 05:35:55 2020; 58824; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98121;Sat Apr 18 05:35:55 2020; 58884; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98122;Sat Apr 18 05:35:55 2020; 58934; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98123;Sat Apr 18 05:35:55 2020; 58984; [info];on est en mode ROBO
+98124;Sat Apr 18 05:35:59 2020; 58358; [info];on est en mode ROBO
+98125;Sat Apr 18 05:35:59 2020; 58420; [calibre];on applique  le calibrage (0.870000) capteur 685635 
+98126;Sat Apr 18 05:35:59 2020; 58516; [traction];GestionTraction : recoit 1 message
+98127;Sat Apr 18 05:35:59 2020; 58583; [traction];[0]GestionTraction : Recoit mesure distance : 788087 ->788087
+98128;Sat Apr 18 05:35:59 2020; 58628; [traction];Robot_avant_rapide 
+98129;Sat Apr 18 05:35:59 2020; 58721; [moteur];Recoit message :moteur1  messages: 900 ->900
+98130;Sat Apr 18 05:35:59 2020; 58735; [moteur];Recoit message :moteur2  messages: 900 ->900
+98132;Sat Apr 18 05:35:59 2020; 58869; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98133;Sat Apr 18 05:35:59 2020; 58931; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98134;Sat Apr 18 05:35:59 2020; 58981; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98135;Sat Apr 18 05:35:59 2020; 59031; [info];on est en mode ROBO
+98131;Sat Apr 18 05:35:59 2020; 58818; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98136;Sat Apr 18 05:35:59 2020; 59149; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98137;Sat Apr 18 05:35:59 2020; 59201; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98138;Sat Apr 18 05:35:59 2020; 59263; [info];on est en mode ROBO
+98139;Sat Apr 18 05:36:03 2020; 58596; [info];on est en mode ROBO
+98140;Sat Apr 18 05:36:03 2020; 58660; [calibre];on applique  le calibrage (0.870000) capteur 694389 
+98141;Sat Apr 18 05:36:03 2020; 58759; [traction];GestionTraction : recoit 1 message
+98142;Sat Apr 18 05:36:03 2020; 58830; [traction];[0]GestionTraction : Recoit mesure distance : 798149 ->798149
+98143;Sat Apr 18 05:36:03 2020; 58877; [traction];Robot_avant_rapide 
+98144;Sat Apr 18 05:36:03 2020; 58972; [moteur];Recoit message :moteur2  messages: 900 ->900
+98146;Sat Apr 18 05:36:03 2020; 59068; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98147;Sat Apr 18 05:36:03 2020; 59172; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98148;Sat Apr 18 05:36:03 2020; 59264; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98149;Sat Apr 18 05:36:03 2020; 59352; [info];on est en mode ROBO
+98145;Sat Apr 18 05:36:03 2020; 58989; [moteur];Recoit message :moteur1  messages: 900 ->900
+98150;Sat Apr 18 05:36:03 2020; 59486; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98151;Sat Apr 18 05:36:03 2020; 59567; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98152;Sat Apr 18 05:36:03 2020; 59641; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98153;Sat Apr 18 05:36:03 2020; 59711; [info];on est en mode ROBO
+98154;Sat Apr 18 05:36:07 2020; 58837; [info];on est en mode ROBO
+98155;Sat Apr 18 05:36:07 2020; 58901; [calibre];on applique  le calibrage (0.870000) capteur 478490 
+98156;Sat Apr 18 05:36:07 2020; 58999; [traction];GestionTraction : recoit 1 message
+98157;Sat Apr 18 05:36:07 2020; 59071; [traction];[0]GestionTraction : Recoit mesure distance : 549989 ->549989
+98158;Sat Apr 18 05:36:07 2020; 59116; [traction];Robot_avant_rapide 
+98159;Sat Apr 18 05:36:07 2020; 59211; [moteur];Recoit message :moteur2  messages: 900 ->900
+98161;Sat Apr 18 05:36:07 2020; 59308; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98160;Sat Apr 18 05:36:07 2020; 59228; [moteur];Recoit message :moteur1  messages: 900 ->900
+98162;Sat Apr 18 05:36:07 2020; 59464; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98163;Sat Apr 18 05:36:07 2020; 59545; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98164;Sat Apr 18 05:36:07 2020; 59617; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98165;Sat Apr 18 05:36:07 2020; 59689; [info];on est en mode ROBO
+98166;Sat Apr 18 05:36:07 2020; 59771; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98167;Sat Apr 18 05:36:07 2020; 59845; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98168;Sat Apr 18 05:36:07 2020; 59916; [info];on est en mode ROBO
+98169;Sat Apr 18 05:36:11 2020; 59076; [info];on est en mode ROBO
+98170;Sat Apr 18 05:36:11 2020; 59137; [calibre];on applique  le calibrage (0.870000) capteur 465690 
+98171;Sat Apr 18 05:36:11 2020; 59236; [traction];GestionTraction : recoit 1 message
+98172;Sat Apr 18 05:36:11 2020; 59305; [traction];[0]GestionTraction : Recoit mesure distance : 535276 ->535276
+98173;Sat Apr 18 05:36:11 2020; 59350; [traction];Robot_avant_rapide 
+98174;Sat Apr 18 05:36:11 2020; 59443; [moteur];Recoit message :moteur1  messages: 900 ->900
+98175;Sat Apr 18 05:36:11 2020; 59530; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98176;Sat Apr 18 05:36:11 2020; 59615; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98177;Sat Apr 18 05:36:11 2020; 59689; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98178;Sat Apr 18 05:36:11 2020; 59762; [info];on est en mode ROBO
+98179;Sat Apr 18 05:36:11 2020; 59853; [moteur];Recoit message :moteur2  messages: 900 ->900
+98180;Sat Apr 18 05:36:11 2020; 59930; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98181;Sat Apr 18 05:36:11 2020; 60039; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98182;Sat Apr 18 05:36:11 2020; 60117; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98183;Sat Apr 18 05:36:11 2020; 60189; [info];on est en mode ROBO
+98184;Sat Apr 18 05:36:15 2020; 59313; [info];on est en mode ROBO
+98185;Sat Apr 18 05:36:15 2020; 59374; [calibre];on applique  le calibrage (0.870000) capteur 687932 
+98186;Sat Apr 18 05:36:15 2020; 59472; [traction];GestionTraction : recoit 1 message
+98187;Sat Apr 18 05:36:15 2020; 59540; [traction];[0]GestionTraction : Recoit mesure distance : 790727 ->790727
+98188;Sat Apr 18 05:36:15 2020; 59584; [traction];Robot_avant_rapide 
+98189;Sat Apr 18 05:36:15 2020; 59697; [moteur];Recoit message :moteur1  messages: 900 ->900
+98190;Sat Apr 18 05:36:15 2020; 59784; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98191;Sat Apr 18 05:36:15 2020; 59870; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98192;Sat Apr 18 05:36:15 2020; 59944; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98193;Sat Apr 18 05:36:15 2020; 60046; [info];on est en mode ROBO
+98194;Sat Apr 18 05:36:15 2020; 60133; [moteur];Recoit message :moteur2  messages: 900 ->900
+98195;Sat Apr 18 05:36:15 2020; 60210; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98196;Sat Apr 18 05:36:15 2020; 60291; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98197;Sat Apr 18 05:36:15 2020; 60365; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98198;Sat Apr 18 05:36:15 2020; 60436; [info];on est en mode ROBO
+98199;Sat Apr 18 05:36:19 2020; 59550; [info];on est en mode ROBO
+98200;Sat Apr 18 05:36:19 2020; 59611; [calibre];on applique  le calibrage (0.870000) capteur 470031 
+98201;Sat Apr 18 05:36:19 2020; 59708; [traction];GestionTraction : recoit 1 message
+98202;Sat Apr 18 05:36:19 2020; 59776; [traction];[0]GestionTraction : Recoit mesure distance : 540266 ->540266
+98203;Sat Apr 18 05:36:19 2020; 59821; [traction];Robot_avant_rapide 
+98204;Sat Apr 18 05:36:19 2020; 59914; [moteur];Recoit message :moteur1  messages: 900 ->900
+98206;Sat Apr 18 05:36:19 2020; 60038; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98207;Sat Apr 18 05:36:19 2020; 60127; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98208;Sat Apr 18 05:36:19 2020; 60202; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98209;Sat Apr 18 05:36:19 2020; 60275; [info];on est en mode ROBO
+98205;Sat Apr 18 05:36:19 2020; 59929; [moteur];Recoit message :moteur2  messages: 900 ->900
+98210;Sat Apr 18 05:36:19 2020; 60408; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98211;Sat Apr 18 05:36:19 2020; 60489; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98212;Sat Apr 18 05:36:19 2020; 60562; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98213;Sat Apr 18 05:36:19 2020; 60632; [info];on est en mode ROBO
+98214;Sat Apr 18 05:36:23 2020; 59785; [info];on est en mode ROBO
+98215;Sat Apr 18 05:36:23 2020; 59847; [calibre];on applique  le calibrage (0.870000) capteur 489172 
+98216;Sat Apr 18 05:36:23 2020; 59947; [traction];GestionTraction : recoit 1 message
+98217;Sat Apr 18 05:36:23 2020; 60044; [traction];[0]GestionTraction : Recoit mesure distance : 562267 ->562267
+98218;Sat Apr 18 05:36:23 2020; 60091; [traction];Robot_avant_rapide 
+98219;Sat Apr 18 05:36:23 2020; 60184; [moteur];Recoit message :moteur1  messages: 900 ->900
+98221;Sat Apr 18 05:36:23 2020; 60263; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98222;Sat Apr 18 05:36:23 2020; 60328; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98223;Sat Apr 18 05:36:23 2020; 60381; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98224;Sat Apr 18 05:36:23 2020; 60433; [info];on est en mode ROBO
+98220;Sat Apr 18 05:36:23 2020; 60200; [moteur];Recoit message :moteur2  messages: 900 ->900
+98225;Sat Apr 18 05:36:23 2020; 60533; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98226;Sat Apr 18 05:36:23 2020; 60597; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98227;Sat Apr 18 05:36:23 2020; 60650; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98228;Sat Apr 18 05:36:23 2020; 60702; [info];on est en mode ROBO
+98229;Sat Apr 18 05:36:27 2020; 60054; [info];on est en mode ROBO
+98230;Sat Apr 18 05:36:27 2020; 60116; [calibre];on applique  le calibrage (0.870000) capteur 685545 
+98231;Sat Apr 18 05:36:27 2020; 60213; [traction];GestionTraction : recoit 1 message
+98232;Sat Apr 18 05:36:27 2020; 60281; [traction];[0]GestionTraction : Recoit mesure distance : 787983 ->787983
+98233;Sat Apr 18 05:36:27 2020; 60325; [traction];Robot_avant_rapide 
+98234;Sat Apr 18 05:36:27 2020; 60418; [moteur];Recoit message :moteur1  messages: 900 ->900
+98235;Sat Apr 18 05:36:27 2020; 60484; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98237;Sat Apr 18 05:36:27 2020; 60561; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98238;Sat Apr 18 05:36:27 2020; 60615; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98239;Sat Apr 18 05:36:27 2020; 60671; [info];on est en mode ROBO
+98236;Sat Apr 18 05:36:27 2020; 60504; [moteur];Recoit message :moteur2  messages: 900 ->900
+98240;Sat Apr 18 05:36:27 2020; 60774; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98241;Sat Apr 18 05:36:27 2020; 60835; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98242;Sat Apr 18 05:36:27 2020; 60889; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98243;Sat Apr 18 05:36:27 2020; 60942; [info];on est en mode ROBO
+98244;Sat Apr 18 05:36:31 2020; 60289; [info];on est en mode ROBO
+98245;Sat Apr 18 05:36:31 2020; 60350; [calibre];on applique  le calibrage (0.870000) capteur 480429 
+98246;Sat Apr 18 05:36:31 2020; 60446; [traction];GestionTraction : recoit 1 message
+98247;Sat Apr 18 05:36:31 2020; 60515; [traction];[0]GestionTraction : Recoit mesure distance : 552218 ->552218
+98248;Sat Apr 18 05:36:31 2020; 60572; [traction];Robot_avant_rapide 
+98249;Sat Apr 18 05:36:31 2020; 60675; [moteur];Recoit message :moteur1  messages: 900 ->900
+98250;Sat Apr 18 05:36:31 2020; 60766; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98251;Sat Apr 18 05:36:31 2020; 60873; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98252;Sat Apr 18 05:36:31 2020; 60963; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98253;Sat Apr 18 05:36:31 2020; 61032; [info];on est en mode ROBO
+98254;Sat Apr 18 05:36:31 2020; 61127; [moteur];Recoit message :moteur2  messages: 900 ->900
+98255;Sat Apr 18 05:36:31 2020; 61211; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98256;Sat Apr 18 05:36:31 2020; 61309; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98257;Sat Apr 18 05:36:31 2020; 61379; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98258;Sat Apr 18 05:36:31 2020; 61476; [info];on est en mode ROBO
+98259;Sat Apr 18 05:36:35 2020; 60523; [info];on est en mode ROBO
+98260;Sat Apr 18 05:36:35 2020; 60586; [calibre];on applique  le calibrage (0.870000) capteur 687770 
+98261;Sat Apr 18 05:36:35 2020; 60682; [traction];GestionTraction : recoit 1 message
+98262;Sat Apr 18 05:36:35 2020; 60749; [traction];[0]GestionTraction : Recoit mesure distance : 790541 ->790541
+98263;Sat Apr 18 05:36:35 2020; 60794; [traction];Robot_avant_rapide 
+98264;Sat Apr 18 05:36:35 2020; 60908; [moteur];Recoit message :moteur1  messages: 900 ->900
+98265;Sat Apr 18 05:36:35 2020; 60939; [moteur];Recoit message :moteur2  messages: 900 ->900
+98266;Sat Apr 18 05:36:35 2020; 61004; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98267;Sat Apr 18 05:36:35 2020; 61053; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98268;Sat Apr 18 05:36:35 2020; 61125; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98269;Sat Apr 18 05:36:35 2020; 61179; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98271;Sat Apr 18 05:36:35 2020; 61298; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98272;Sat Apr 18 05:36:35 2020; 61351; [info];on est en mode ROBO
+98270;Sat Apr 18 05:36:35 2020; 61244; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98273;Sat Apr 18 05:36:35 2020; 61441; [info];on est en mode ROBO
+98274;Sat Apr 18 05:36:39 2020; 60760; [info];on est en mode ROBO
+98275;Sat Apr 18 05:36:39 2020; 60821; [calibre];on applique  le calibrage (0.870000) capteur 685597 
+98276;Sat Apr 18 05:36:39 2020; 60918; [traction];GestionTraction : recoit 1 message
+98277;Sat Apr 18 05:36:39 2020; 60987; [traction];[0]GestionTraction : Recoit mesure distance : 788043 ->788043
+98278;Sat Apr 18 05:36:39 2020; 61031; [traction];Robot_avant_rapide 
+98279;Sat Apr 18 05:36:39 2020; 61123; [moteur];Recoit message :moteur2  messages: 900 ->900
+98280;Sat Apr 18 05:36:39 2020; 61141; [moteur];Recoit message :moteur1  messages: 900 ->900
+98281;Sat Apr 18 05:36:39 2020; 61221; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98282;Sat Apr 18 05:36:39 2020; 61271; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98284;Sat Apr 18 05:36:39 2020; 61414; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98285;Sat Apr 18 05:36:39 2020; 61483; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98286;Sat Apr 18 05:36:39 2020; 61566; [info];on est en mode ROBO
+98283;Sat Apr 18 05:36:39 2020; 61341; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98287;Sat Apr 18 05:36:39 2020; 61712; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98288;Sat Apr 18 05:36:39 2020; 61792; [info];on est en mode ROBO
+98289;Sat Apr 18 05:36:43 2020; 60995; [info];on est en mode ROBO
+98290;Sat Apr 18 05:36:43 2020; 61057; [calibre];on applique  le calibrage (0.870000) capteur 685601 
+98291;Sat Apr 18 05:36:43 2020; 61152; [traction];GestionTraction : recoit 1 message
+98292;Sat Apr 18 05:36:43 2020; 61219; [traction];[0]GestionTraction : Recoit mesure distance : 788048 ->788048
+98293;Sat Apr 18 05:36:43 2020; 61263; [traction];Robot_avant_rapide 
+98294;Sat Apr 18 05:36:43 2020; 61361; [moteur];Recoit message :moteur1  messages: 900 ->900
+98296;Sat Apr 18 05:36:43 2020; 61456; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98297;Sat Apr 18 05:36:43 2020; 61542; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98298;Sat Apr 18 05:36:43 2020; 61616; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98299;Sat Apr 18 05:36:43 2020; 61689; [info];on est en mode ROBO
+98295;Sat Apr 18 05:36:43 2020; 61375; [moteur];Recoit message :moteur2  messages: 900 ->900
+98300;Sat Apr 18 05:36:43 2020; 61820; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98301;Sat Apr 18 05:36:43 2020; 61899; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98302;Sat Apr 18 05:36:43 2020; 61972; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98303;Sat Apr 18 05:36:43 2020; 62041; [info];on est en mode ROBO
+98304;Sat Apr 18 05:36:47 2020; 61230; [info];on est en mode ROBO
+98305;Sat Apr 18 05:36:47 2020; 61292; [calibre];on applique  le calibrage (0.870000) capteur 461291 
+98306;Sat Apr 18 05:36:47 2020; 61389; [traction];GestionTraction : recoit 1 message
+98307;Sat Apr 18 05:36:47 2020; 61457; [traction];[0]GestionTraction : Recoit mesure distance : 530220 ->530220
+98308;Sat Apr 18 05:36:47 2020; 61501; [traction];Robot_avant_rapide 
+98309;Sat Apr 18 05:36:47 2020; 61592; [moteur];Recoit message :moteur1  messages: 900 ->900
+98311;Sat Apr 18 05:36:47 2020; 61688; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98312;Sat Apr 18 05:36:47 2020; 61773; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98313;Sat Apr 18 05:36:47 2020; 61848; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98314;Sat Apr 18 05:36:47 2020; 61919; [info];on est en mode ROBO
+98310;Sat Apr 18 05:36:47 2020; 61609; [moteur];Recoit message :moteur2  messages: 900 ->900
+98315;Sat Apr 18 05:36:47 2020; 62050; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98316;Sat Apr 18 05:36:47 2020; 62131; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98317;Sat Apr 18 05:36:47 2020; 62203; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98318;Sat Apr 18 05:36:47 2020; 62275; [info];on est en mode ROBO
+98319;Sat Apr 18 05:36:51 2020; 61468; [info];on est en mode ROBO
+98320;Sat Apr 18 05:36:51 2020; 61529; [calibre];on applique  le calibrage (0.870000) capteur 687698 
+98321;Sat Apr 18 05:36:51 2020; 61625; [traction];GestionTraction : recoit 1 message
+98322;Sat Apr 18 05:36:51 2020; 61694; [traction];[0]GestionTraction : Recoit mesure distance : 790458 ->790458
+98323;Sat Apr 18 05:36:51 2020; 61739; [traction];Robot_avant_rapide 
+98324;Sat Apr 18 05:36:51 2020; 61832; [moteur];Recoit message :moteur1  messages: 900 ->900
+98326;Sat Apr 18 05:36:51 2020; 61927; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98327;Sat Apr 18 05:36:51 2020; 62014; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98328;Sat Apr 18 05:36:51 2020; 62087; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98329;Sat Apr 18 05:36:51 2020; 62160; [info];on est en mode ROBO
+98325;Sat Apr 18 05:36:51 2020; 61848; [moteur];Recoit message :moteur2  messages: 900 ->900
+98330;Sat Apr 18 05:36:51 2020; 62289; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98331;Sat Apr 18 05:36:51 2020; 62371; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98332;Sat Apr 18 05:36:51 2020; 62443; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98333;Sat Apr 18 05:36:51 2020; 62514; [info];on est en mode ROBO
+98334;Sat Apr 18 05:36:55 2020; 61702; [info];on est en mode ROBO
+98335;Sat Apr 18 05:36:55 2020; 61763; [calibre];on applique  le calibrage (0.870000) capteur 685470 
+98336;Sat Apr 18 05:36:55 2020; 61858; [traction];GestionTraction : recoit 1 message
+98337;Sat Apr 18 05:36:55 2020; 61926; [traction];[0]GestionTraction : Recoit mesure distance : 787897 ->787897
+98338;Sat Apr 18 05:36:55 2020; 61971; [traction];Robot_avant_rapide 
+98339;Sat Apr 18 05:36:55 2020; 62057; [moteur];Recoit message :moteur1  messages: 900 ->900
+98341;Sat Apr 18 05:36:55 2020; 62153; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98342;Sat Apr 18 05:36:55 2020; 62240; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98343;Sat Apr 18 05:36:55 2020; 62314; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98344;Sat Apr 18 05:36:55 2020; 62385; [info];on est en mode ROBO
+98340;Sat Apr 18 05:36:55 2020; 62079; [moteur];Recoit message :moteur2  messages: 900 ->900
+98345;Sat Apr 18 05:36:55 2020; 62514; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98346;Sat Apr 18 05:36:55 2020; 62594; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98347;Sat Apr 18 05:36:55 2020; 62667; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98348;Sat Apr 18 05:36:55 2020; 62738; [info];on est en mode ROBO
+98349;Sat Apr 18 05:36:59 2020; 61937; [info];on est en mode ROBO
+98350;Sat Apr 18 05:36:59 2020; 61999; [calibre];on applique  le calibrage (0.870000) capteur 687728 
+98351;Sat Apr 18 05:36:59 2020; 62094; [traction];GestionTraction : recoit 1 message
+98352;Sat Apr 18 05:36:59 2020; 62163; [traction];[0]GestionTraction : Recoit mesure distance : 790492 ->790492
+98353;Sat Apr 18 05:36:59 2020; 62207; [traction];Robot_avant_rapide 
+98354;Sat Apr 18 05:36:59 2020; 62298; [moteur];Recoit message :moteur1  messages: 900 ->900
+98356;Sat Apr 18 05:36:59 2020; 62393; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98357;Sat Apr 18 05:36:59 2020; 62478; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98358;Sat Apr 18 05:36:59 2020; 62552; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98359;Sat Apr 18 05:36:59 2020; 62624; [info];on est en mode ROBO
+98355;Sat Apr 18 05:36:59 2020; 62314; [moteur];Recoit message :moteur2  messages: 900 ->900
+98360;Sat Apr 18 05:36:59 2020; 62754; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98361;Sat Apr 18 05:36:59 2020; 62834; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98362;Sat Apr 18 05:36:59 2020; 62906; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98363;Sat Apr 18 05:36:59 2020; 62977; [info];on est en mode ROBO
+98364;Sat Apr 18 05:37:03 2020; 62175; [info];on est en mode ROBO
+98365;Sat Apr 18 05:37:03 2020; 62240; [calibre];on applique  le calibrage (0.870000) capteur 463419 
+98366;Sat Apr 18 05:37:03 2020; 62344; [traction];GestionTraction : recoit 1 message
+98367;Sat Apr 18 05:37:03 2020; 62412; [traction];[0]GestionTraction : Recoit mesure distance : 532666 ->532666
+98368;Sat Apr 18 05:37:03 2020; 62459; [traction];Robot_avant_rapide 
+98369;Sat Apr 18 05:37:03 2020; 62554; [moteur];Recoit message :moteur1  messages: 900 ->900
+98371;Sat Apr 18 05:37:03 2020; 62652; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98372;Sat Apr 18 05:37:03 2020; 62739; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98373;Sat Apr 18 05:37:03 2020; 62813; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98374;Sat Apr 18 05:37:03 2020; 62885; [info];on est en mode ROBO
+98370;Sat Apr 18 05:37:03 2020; 62571; [moteur];Recoit message :moteur2  messages: 900 ->900
+98375;Sat Apr 18 05:37:03 2020; 63016; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98376;Sat Apr 18 05:37:03 2020; 63097; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98377;Sat Apr 18 05:37:03 2020; 63168; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98378;Sat Apr 18 05:37:03 2020; 63239; [info];on est en mode ROBO
+98379;Sat Apr 18 05:37:07 2020; 62420; [info];on est en mode ROBO
+98380;Sat Apr 18 05:37:07 2020; 62483; [calibre];on applique  le calibrage (0.870000) capteur 685391 
+98381;Sat Apr 18 05:37:07 2020; 62580; [traction];GestionTraction : recoit 1 message
+98382;Sat Apr 18 05:37:07 2020; 62649; [traction];[0]GestionTraction : Recoit mesure distance : 787806 ->787806
+98383;Sat Apr 18 05:37:07 2020; 62694; [traction];Robot_avant_rapide 
+98384;Sat Apr 18 05:37:07 2020; 62788; [moteur];Recoit message :moteur1  messages: 900 ->900
+98386;Sat Apr 18 05:37:07 2020; 62885; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98387;Sat Apr 18 05:37:07 2020; 62971; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98388;Sat Apr 18 05:37:07 2020; 63046; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98389;Sat Apr 18 05:37:07 2020; 63118; [info];on est en mode ROBO
+98385;Sat Apr 18 05:37:07 2020; 62802; [moteur];Recoit message :moteur2  messages: 900 ->900
+98390;Sat Apr 18 05:37:07 2020; 63248; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98391;Sat Apr 18 05:37:07 2020; 63328; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98392;Sat Apr 18 05:37:07 2020; 63401; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98393;Sat Apr 18 05:37:07 2020; 63471; [info];on est en mode ROBO
+98394;Sat Apr 18 05:37:11 2020; 62658; [info];on est en mode ROBO
+98395;Sat Apr 18 05:37:11 2020; 62721; [calibre];on applique  le calibrage (0.870000) capteur 685674 
+98396;Sat Apr 18 05:37:11 2020; 62820; [traction];GestionTraction : recoit 1 message
+98397;Sat Apr 18 05:37:11 2020; 62888; [traction];[0]GestionTraction : Recoit mesure distance : 788131 ->788131
+98398;Sat Apr 18 05:37:11 2020; 62944; [traction];Robot_avant_rapide 
+98399;Sat Apr 18 05:37:11 2020; 63056; [moteur];Recoit message :moteur1  messages: 900 ->900
+98400;Sat Apr 18 05:37:11 2020; 63158; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98401;Sat Apr 18 05:37:11 2020; 63248; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98402;Sat Apr 18 05:37:11 2020; 63319; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98403;Sat Apr 18 05:37:11 2020; 63416; [info];on est en mode ROBO
+98404;Sat Apr 18 05:37:11 2020; 63522; [moteur];Recoit message :moteur2  messages: 900 ->900
+98405;Sat Apr 18 05:37:11 2020; 63608; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98406;Sat Apr 18 05:37:11 2020; 63685; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98407;Sat Apr 18 05:37:11 2020; 63778; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98408;Sat Apr 18 05:37:11 2020; 63847; [info];on est en mode ROBO
+98409;Sat Apr 18 05:37:15 2020; 62897; [info];on est en mode ROBO
+98410;Sat Apr 18 05:37:15 2020; 62961; [calibre];on applique  le calibrage (0.870000) capteur 470134 
+98411;Sat Apr 18 05:37:15 2020; 63058; [traction];GestionTraction : recoit 1 message
+98412;Sat Apr 18 05:37:15 2020; 63126; [traction];[0]GestionTraction : Recoit mesure distance : 540385 ->540385
+98413;Sat Apr 18 05:37:15 2020; 63184; [traction];Robot_avant_rapide 
+98414;Sat Apr 18 05:37:15 2020; 63278; [moteur];Recoit message :moteur1  messages: 900 ->900
+98415;Sat Apr 18 05:37:15 2020; 63336; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98416;Sat Apr 18 05:37:15 2020; 63441; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98417;Sat Apr 18 05:37:15 2020; 63524; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98418;Sat Apr 18 05:37:15 2020; 63594; [info];on est en mode ROBO
+98419;Sat Apr 18 05:37:15 2020; 63690; [moteur];Recoit message :moteur2  messages: 900 ->900
+98420;Sat Apr 18 05:37:15 2020; 63774; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98421;Sat Apr 18 05:37:15 2020; 63871; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98422;Sat Apr 18 05:37:15 2020; 63942; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98423;Sat Apr 18 05:37:15 2020; 64037; [info];on est en mode ROBO
+98424;Sat Apr 18 05:37:19 2020; 63135; [info];on est en mode ROBO
+98425;Sat Apr 18 05:37:19 2020; 63196; [calibre];on applique  le calibrage (0.870000) capteur 685812 
+98426;Sat Apr 18 05:37:19 2020; 63293; [traction];GestionTraction : recoit 1 message
+98427;Sat Apr 18 05:37:19 2020; 63361; [traction];[0]GestionTraction : Recoit mesure distance : 788290 ->788290
+98428;Sat Apr 18 05:37:19 2020; 63406; [traction];Robot_avant_rapide 
+98429;Sat Apr 18 05:37:19 2020; 63522; [moteur];Recoit message :moteur1  messages: 900 ->900
+98430;Sat Apr 18 05:37:19 2020; 63552; [moteur];Recoit message :moteur2  messages: 900 ->900
+98432;Sat Apr 18 05:37:19 2020; 63668; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98433;Sat Apr 18 05:37:19 2020; 63765; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98434;Sat Apr 18 05:37:19 2020; 63866; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98435;Sat Apr 18 05:37:19 2020; 63990; [info];on est en mode ROBO
+98431;Sat Apr 18 05:37:19 2020; 63618; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98436;Sat Apr 18 05:37:19 2020; 64143; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98437;Sat Apr 18 05:37:19 2020; 64223; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98438;Sat Apr 18 05:37:19 2020; 64302; [info];on est en mode ROBO
+98439;Sat Apr 18 05:37:23 2020; 63370; [info];on est en mode ROBO
+98440;Sat Apr 18 05:37:23 2020; 63433; [calibre];on applique  le calibrage (0.870000) capteur 10998987 
+98441;Sat Apr 18 05:37:23 2020; 63530; [traction];GestionTraction : recoit 1 message
+98442;Sat Apr 18 05:37:23 2020; 63598; [traction];[0]GestionTraction : Recoit mesure distance : 12642514 ->12642514
+98443;Sat Apr 18 05:37:23 2020; 63643; [traction];Robot_avant_rapide 
+98444;Sat Apr 18 05:37:23 2020; 63735; [moteur];Recoit message :moteur2  messages: 900 ->900
+98445;Sat Apr 18 05:37:23 2020; 63751; [moteur];Recoit message :moteur1  messages: 900 ->900
+98446;Sat Apr 18 05:37:23 2020; 63833; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98447;Sat Apr 18 05:37:23 2020; 63881; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98449;Sat Apr 18 05:37:23 2020; 64028; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98450;Sat Apr 18 05:37:23 2020; 64098; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98451;Sat Apr 18 05:37:23 2020; 64182; [info];on est en mode ROBO
+98448;Sat Apr 18 05:37:23 2020; 63954; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98452;Sat Apr 18 05:37:23 2020; 64327; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98453;Sat Apr 18 05:37:23 2020; 64407; [info];on est en mode ROBO
+98454;Sat Apr 18 05:37:27 2020; 63607; [info];on est en mode ROBO
+98455;Sat Apr 18 05:37:27 2020; 63670; [calibre];on applique  le calibrage (0.870000) capteur 19273 
+98456;Sat Apr 18 05:37:27 2020; 63766; [traction];GestionTraction : recoit 1 message
+98457;Sat Apr 18 05:37:27 2020; 63835; [traction];[0]GestionTraction : Recoit mesure distance : 22154 ->	
+98458;Sat Apr 18 05:37:27 2020; 63880; [traction];Robot_avant_rapide 
+98459;Sat Apr 18 05:37:27 2020; 63975; [moteur];Recoit message :moteur1  messages: 900 ->900
+98461;Sat Apr 18 05:37:27 2020; 64070; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98462;Sat Apr 18 05:37:27 2020; 64155; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98463;Sat Apr 18 05:37:27 2020; 64231; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98464;Sat Apr 18 05:37:27 2020; 64303; [info];on est en mode ROBO
+98460;Sat Apr 18 05:37:27 2020; 63990; [moteur];Recoit message :moteur2  messages: 900 ->900
+98465;Sat Apr 18 05:37:27 2020; 64550; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98466;Sat Apr 18 05:37:27 2020; 64612; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98467;Sat Apr 18 05:37:27 2020; 64661; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98468;Sat Apr 18 05:37:27 2020; 64709; [info];on est en mode ROBO
+98469;Sat Apr 18 05:37:31 2020; 63841; [info];on est en mode ROBO
+98470;Sat Apr 18 05:37:31 2020; 63902; [calibre];on applique  le calibrage (0.870000) capteur 466129 
+98471;Sat Apr 18 05:37:31 2020; 63998; [traction];GestionTraction : recoit 1 message
+98472;Sat Apr 18 05:37:31 2020; 64066; [traction];[0]GestionTraction : Recoit mesure distance : 535781 ->535781
+98473;Sat Apr 18 05:37:31 2020; 64110; [traction];Robot_avant_rapide 
+98474;Sat Apr 18 05:37:31 2020; 64200; [moteur];Recoit message :moteur1  messages: 900 ->900
+98476;Sat Apr 18 05:37:31 2020; 64296; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98477;Sat Apr 18 05:37:31 2020; 64382; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98478;Sat Apr 18 05:37:31 2020; 64457; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98479;Sat Apr 18 05:37:31 2020; 64528; [info];on est en mode ROBO
+98475;Sat Apr 18 05:37:31 2020; 64214; [moteur];Recoit message :moteur2  messages: 900 ->900
+98480;Sat Apr 18 05:37:31 2020; 64659; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98481;Sat Apr 18 05:37:31 2020; 64740; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98482;Sat Apr 18 05:37:31 2020; 64812; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98483;Sat Apr 18 05:37:31 2020; 64882; [info];on est en mode ROBO
+98484;Sat Apr 18 05:37:35 2020; 64073; [info];on est en mode ROBO
+98485;Sat Apr 18 05:37:35 2020; 64134; [calibre];on applique  le calibrage (0.870000) capteur 11003729 
+98486;Sat Apr 18 05:37:35 2020; 64231; [traction];GestionTraction : recoit 1 message
+98487;Sat Apr 18 05:37:35 2020; 64298; [traction];[0]GestionTraction : Recoit mesure distance : 12647964 ->12647964
+98488;Sat Apr 18 05:37:35 2020; 64342; [traction];Robot_avant_rapide 
+98489;Sat Apr 18 05:37:35 2020; 64434; [moteur];Recoit message :moteur1  messages: 900 ->900
+98491;Sat Apr 18 05:37:35 2020; 64531; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98492;Sat Apr 18 05:37:35 2020; 64616; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98493;Sat Apr 18 05:37:35 2020; 64689; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98494;Sat Apr 18 05:37:35 2020; 64761; [info];on est en mode ROBO
+98490;Sat Apr 18 05:37:35 2020; 64448; [moteur];Recoit message :moteur2  messages: 900 ->900
+98495;Sat Apr 18 05:37:35 2020; 64891; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98496;Sat Apr 18 05:37:35 2020; 64972; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98497;Sat Apr 18 05:37:35 2020; 65044; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98498;Sat Apr 18 05:37:35 2020; 65114; [info];on est en mode ROBO
+98499;Sat Apr 18 05:37:39 2020; 64308; [info];on est en mode ROBO
+98500;Sat Apr 18 05:37:39 2020; 64370; [calibre];on applique  le calibrage (0.870000) capteur 11003621 
+98501;Sat Apr 18 05:37:39 2020; 64466; [traction];GestionTraction : recoit 1 message
+98502;Sat Apr 18 05:37:39 2020; 64534; [traction];[0]GestionTraction : Recoit mesure distance : 12647840 ->12647840
+98503;Sat Apr 18 05:37:39 2020; 64579; [traction];Robot_avant_rapide 
+98504;Sat Apr 18 05:37:39 2020; 64672; [moteur];Recoit message :moteur1  messages: 900 ->900
+98506;Sat Apr 18 05:37:39 2020; 64768; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98507;Sat Apr 18 05:37:39 2020; 64854; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98508;Sat Apr 18 05:37:39 2020; 64928; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98509;Sat Apr 18 05:37:39 2020; 64999; [info];on est en mode ROBO
+98505;Sat Apr 18 05:37:39 2020; 64686; [moteur];Recoit message :moteur2  messages: 900 ->900
+98510;Sat Apr 18 05:37:39 2020; 65128; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98511;Sat Apr 18 05:37:39 2020; 65208; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98512;Sat Apr 18 05:37:39 2020; 65278; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98513;Sat Apr 18 05:37:39 2020; 65349; [info];on est en mode ROBO
+98514;Sat Apr 18 05:37:43 2020; 64543; [info];on est en mode ROBO
+98515;Sat Apr 18 05:37:43 2020; 64605; [calibre];on applique  le calibrage (0.870000) capteur 703111 
+98516;Sat Apr 18 05:37:43 2020; 64701; [traction];GestionTraction : recoit 1 message
+98517;Sat Apr 18 05:37:43 2020; 64770; [traction];[0]GestionTraction : Recoit mesure distance : 808174 ->808174
+98518;Sat Apr 18 05:37:43 2020; 64814; [traction];Robot_avant_rapide 
+98519;Sat Apr 18 05:37:43 2020; 64905; [moteur];Recoit message :moteur1  messages: 900 ->900
+98521;Sat Apr 18 05:37:43 2020; 65001; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98522;Sat Apr 18 05:37:43 2020; 65085; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98523;Sat Apr 18 05:37:43 2020; 65159; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98524;Sat Apr 18 05:37:43 2020; 65232; [info];on est en mode ROBO
+98520;Sat Apr 18 05:37:43 2020; 64923; [moteur];Recoit message :moteur2  messages: 900 ->900
+98525;Sat Apr 18 05:37:43 2020; 65361; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98526;Sat Apr 18 05:37:43 2020; 65441; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98527;Sat Apr 18 05:37:43 2020; 65512; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98528;Sat Apr 18 05:37:43 2020; 65582; [info];on est en mode ROBO
+98529;Sat Apr 18 05:37:47 2020; 64777; [info];on est en mode ROBO
+98530;Sat Apr 18 05:37:47 2020; 64838; [calibre];on applique  le calibrage (0.870000) capteur 703074 
+98531;Sat Apr 18 05:37:47 2020; 64934; [traction];GestionTraction : recoit 1 message
+98532;Sat Apr 18 05:37:47 2020; 65002; [traction];[0]GestionTraction : Recoit mesure distance : 808132 ->808132
+98533;Sat Apr 18 05:37:47 2020; 65047; [traction];Robot_avant_rapide 
+98534;Sat Apr 18 05:37:47 2020; 65140; [moteur];Recoit message :moteur1  messages: 900 ->900
+98535;Sat Apr 18 05:37:47 2020; 65155; [moteur];Recoit message :moteur2  messages: 900 ->900
+98536;Sat Apr 18 05:37:47 2020; 65216; [calibre];on calibre moteur1 (100) , coef  = 0.800000 ,commande 80 
+98537;Sat Apr 18 05:37:47 2020; 65276; [calibre];on calibre moteur2 (100) , coef  = 0.700000 ,commande 70 
+98538;Sat Apr 18 05:37:47 2020; 65343; [moteur];  moteur1   puissance brute = 100, puissance calibre = 80
+98540;Sat Apr 18 05:37:47 2020; 65475; [pwm];la on RegleRapportCyclique = 80 /1000, sens = 1
+98541;Sat Apr 18 05:37:47 2020; 65529; [info];on est en mode ROBO
+98539;Sat Apr 18 05:37:47 2020; 65416; [moteur];  moteur2   puissance brute = 100, puissance calibre = 70
+98542;Sat Apr 18 05:37:47 2020; 65649; [pwm];la on RegleRapportCyclique = 70 /1000, sens = 1
+98543;Sat Apr 18 05:37:47 2020; 65721; [info];on est en mode ROBO
+
