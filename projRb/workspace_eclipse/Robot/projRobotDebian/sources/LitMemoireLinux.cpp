@@ -53,7 +53,7 @@ u32 LitMemoireLinux::Xil_Out32(u32 adress, u32 donnee, u32 registre) {
 		}
 	} else {
 		if (estCequonestenmodeSimu() == 1) {
-			calog.log_simumemoire("SIMULATION %d / %d / %d  r\n", adress,donnee,registre);
+			calog.log_simumemoire("SIMULATION %x / %x / %x  r\n", adress,donnee,registre);
 			return trs;
 		}
 

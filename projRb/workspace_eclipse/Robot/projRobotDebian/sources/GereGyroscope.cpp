@@ -86,8 +86,8 @@ int GereGyroscope::handler_gyro_config(int ii){
 		}
 		if(pp.nom == "ECRIT"){
 			calog.log_fichiersimu("ECRIT %d %d ",pp.adresse,pp.valeur);
-			Xil_Out32(this->adresseAXI + axi_reg_loc,
-					axi_valeur);
+			Xil_Out32(this->adresseAXI + pp.adresse,
+					pp.valeur);
 		}
 		if(pp.nom == "LIT"){
 			calog.log_fichiersimu("LIT %d %d ",pp.adresse,pp.valeur);
