@@ -84,10 +84,25 @@ int GereGyroscope::handler_gyro_config(int ii){
 			axi_valeur = pp.valeur;//on regle l'adresse de l'AXI
 			calog.log_fichiersimu("AXI_VAL %d %d ",pp.adresse,pp.valeur);
 		}
-		if(pp.nom == "ECRIT"){
-			calog.log_fichiersimu("ECRIT %d %d ",pp.adresse,pp.valeur);
-			Xil_Out32(this->adresseAXI + axi_reg_loc,
-					axi_valeur);
+		if(pp.nom == "AXI_ECRIT"){
+			calog.log_fichiersimu("ECRIT__ %d : %d = ",pp.adresse,pp.valeur);
+			//Xil_Out32(this->adresseAXI + axi_reg_loc,
+			//		axi_valeur);
+	//		Xil_Out32_tab(this->adresseAXI, commande,10   ); //allume l'ampli                   
+ 	
+			u32 commande[10];                                                                 
+                                                                                          
+		        memset(commande,0,sizeof(commande));                                              
+                                                                                          
+		        commande[0] =  axi_valeur;                                                              
+		        commande[1] = 0xAA;                                                               
+//		        commande[2] = 0x3C;                                                             
+//		        commande[3] = 0x44;                                                             
+//		        commande[4] = 0x55;                                                             
+		        Xil_Out32(this->adresseAXI,axi_valeur,axi_reg_loc ); //envoie la valeur sur la sortie               
+		        Xil_Out32(this->adresseAXI,axi_valeur,0 ); //arrete d'envoyer sur la sortie   
+                           
+
 		}
 		if(pp.nom == "LIT"){
 			calog.log_fichiersimu("LIT %d %d ",pp.adresse,pp.valeur);

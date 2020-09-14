@@ -51,7 +51,7 @@ void GestionLog::log_error(const char *message, ...) {
 }
 
 void GestionLog::log_info(const char *message, ...) {
-	if(1 ==LOG_INFOS){
+	if((mode_log >> LOG_INFOS) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("Info", message, args);
@@ -69,7 +69,7 @@ void GestionLog::log_debug(const char *message, ...) {
 }
 
 void GestionLog::log_message(const char *message, ...) {
-	if(mode_log ==LOG_MESSAGES){
+	if((mode_log >> LOG_MESSAGES) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("message", message, args);
@@ -78,7 +78,7 @@ void GestionLog::log_message(const char *message, ...) {
 
 }
 void GestionLog::log_capteur(const char *message, ...) {
-	if(mode_log ==LOG_CAPTEUR_DISTANCE){
+	if((mode_log >> LOG_CAPTEUR_DISTANCE) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("capteur", message, args);
@@ -87,7 +87,7 @@ void GestionLog::log_capteur(const char *message, ...) {
 }
 
 void GestionLog::log_traction(const char *message, ...) {
-	if (LOG_TRACTION ==1){
+	if((mode_log >> LOG_TRACTION) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("Traction", message, args);
@@ -95,7 +95,7 @@ void GestionLog::log_traction(const char *message, ...) {
 	}
 }
 void GestionLog::log_moteur(const char *message, ...) {
-	if(mode_log == LOG_MOTEUR){
+	if((mode_log >> LOG_MOTEUR) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("moteur", message, args);
@@ -103,7 +103,7 @@ void GestionLog::log_moteur(const char *message, ...) {
 	}
 }
 void GestionLog::log_pwm(const char *message, ...) {
-	if(mode_log == LOG_PWM){
+	if((mode_log >> LOG_PWM) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("pwm", message, args);
@@ -111,7 +111,7 @@ void GestionLog::log_pwm(const char *message, ...) {
 	}
 }
 void GestionLog::log_memoire(const char *message, ...) {
-	if (mode_log == LOG_MEM){
+	if((mode_log >> LOG_MEM) & 1){
 
 		va_list args;
 		va_start(args, message);
@@ -121,7 +121,7 @@ void GestionLog::log_memoire(const char *message, ...) {
 
 }
 void GestionLog::log_simumemoire(const char *message, ...) {
-	if (mode_log == LOG_MEMSIMU){
+	if((mode_log >> LOG_MEMSIMU) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("simu mem", message, args);
@@ -130,7 +130,7 @@ void GestionLog::log_simumemoire(const char *message, ...) {
 }
 
 void GestionLog::log_fichiersimu(const char *message, ...) {
-	if (mode_log == LOG_FSIMU){
+	if((mode_log >> LOG_FSIMU) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("fichierS", message, args);
@@ -139,7 +139,7 @@ void GestionLog::log_fichiersimu(const char *message, ...) {
 }
 void GestionLog::log_calibre(const char *message, ...) {
 	//if ( logS.LOG_CALIBRE == 1  ){
-	if(0){
+	if((mode_log >> LOG_CALIBRE) & 1){
 		va_list args;
 
 		va_start(args, message);
@@ -148,7 +148,7 @@ void GestionLog::log_calibre(const char *message, ...) {
 	}
 }
 void GestionLog::log_gyro(const char *message, ...) {
-	if (mode_log == LOG_GYROSCOPE){
+	if((mode_log >> LOG_GYROSCOPE) & 1){
 		va_list args;
 		va_start(args, message);
 		log_format("Gyros", message, args);
@@ -159,8 +159,9 @@ void GestionLog::log_gyro(const char *message, ...) {
 void GestionLog::setMode(int m){
 	mode_log = m;
 	//logS.LOG_CALIBRE =1;
-	LOG_INFOS =1;
-	LOG_TRACTION =0;
+	//LOG_INFOS =1;
+	//if(mode_log &&
+//	this->activeLOG_RIEN = 0;
 }
 /*void log_error(const char *message, ...) {
 	va_list args;

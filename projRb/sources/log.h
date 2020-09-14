@@ -6,11 +6,11 @@ enum
 {
 
     LOG_RIEN=0,
-    LOG_CAPTEUR_DISTANCE,
-	LOG_TRACTION,
-	LOG_GYROSCOPE,
-	LOG_CALIBRE,
-	LOG_FSIMU,
+    LOG_CAPTEUR_DISTANCE,//2
+	LOG_TRACTION,		//4
+	LOG_GYROSCOPE,		//8
+	LOG_CALIBRE,        //16
+	LOG_FSIMU,          //32
 	LOG_MEMSIMU,
 	LOG_MOTEUR,
 	LOG_PWM,
@@ -24,7 +24,7 @@ class selectionneLOg
 public :
 	selectionneLOg();
 	~selectionneLOg();
-    int activeLOG_RIEN;
+   /* int activeLOG_RIEN;
     int LOG_CAPTEUR_DISTANCE;
 	int LOG_TRACTION;
 	int LOG_GYROSCOPE;
@@ -35,7 +35,7 @@ public :
 	int LOG_PWM;
 	int LOG_MEM;
 	int LOG_MESSAGES;
-	int LOG_INFOS;
+	int LOG_INFOS;*/
 
 };
 
