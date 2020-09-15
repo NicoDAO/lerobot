@@ -48,22 +48,23 @@ architecture Behavioral of diviseur_horloge is
     if (reset_n = '0') then
         cpt:=0;
         horloge_divisu<='0';
-    end if;
+    else
     if falling_edge (entree_horloge)
-     then
-     case cpt is
-            when 0 =>
-                  horloge_divisu<='0';
-             when 10 =>
-                horloge_divisu<='1';
-              
-            when others=> null;
-            end case;     
-            cpt:=cpt+1;
-    
-    if(cpt =20) then
-        cpt:=0;
-        end if;   
+         then
+         case cpt is
+                when 0 =>
+                      horloge_divisu<='0';
+                 when 10 =>
+                    horloge_divisu<='1';
+                  
+                when others=> null;
+          end case;     
+                cpt:=cpt+1;
+        
+        if(cpt =20) then
+            cpt:=0;
+            end if;   
+        end if;
     end if;
     end process;
 

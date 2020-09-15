@@ -79,7 +79,7 @@ architecture Behavioral of spi_gyro_commande is
             horloge_divisu=>horloge_divise,reset_n=>reset_n);
 
     inerface_spi_inst : entity work.inerface_spi_materielle port map( horloge_spi=>horloge_divise,SPICLK=>clk_gyro,
-            SPIRESET=>SPIRESET,SPICS=>cs_gyro,MISO=>sdi_gyro,MOSI=>sdo_gyro,
+            SPIRESET=>reset_n,SPICS=>cs_gyro,MISO=>sdi_gyro,MOSI=>sdo_gyro,
             COMMANDE_SPI=>COMMANDE_SPI,LECTURE_SPI=>LECTURE_SPI,
             RW=>RW,MS=>MS);
 -- end entity; 
@@ -104,6 +104,7 @@ COMMANDE_SPI(15 downto 0) <=trame_spi(15 downto 0);
 process (horloge_divise)
    variable cpt :INTEGER :=0;  
    variable cpt_test : INTEGER :=0; 
+   variable bascule : INTEGER :=0; 
      variable valeur_registre : INTEGER :=0; 
    begin
        
@@ -116,48 +117,30 @@ process (horloge_divise)
        -- spiclk<='0';
        -- horloge_g<='0';
         cpt:=0;
-
-    end if;
-     if falling_edge (horloge_divise)
-         then
---      --   if commande_ecriture = '0' then
---         --on est en ecriture
-         
---         case cpt is
---                when 0 =>
---                    SPIRESET<='0';
-
---                 when 1 =>  -- on lance le SPI
---                    SPIRESET<='1';
---                 when 20 =>  -- on attend
---                      SPIRESET<='0';
---                 when others=> null;
---          end case;     
---            cpt:=cpt+1;
-        
---            if(cpt =51) then
---                cpt:=0;
---                end if;   
---         end if;
-
-       --  if commande_ecriture = '1' then
-         --on est en ecriture
-         
-         case cpt is
-                when 0 =>
-                    SPIRESET<='0';
-                when 1 =>  -- on lance le SPI
-                    SPIRESET<='1';
-                 when 20 =>  -- on attend
-                      SPIRESET<='0';
-                 when others=> null;
-          end case;     
-          cpt:=cpt+1;
-        
-        if(cpt =51) then
-            valeur_registre_lue <=LECTURE_SPI(7 downto 0);
-            cpt:=0;
-        end if;   
+        bascule :=0;
+    else
+         if falling_edge (horloge_divise)
+             then
+             if bascule =0 then --if faut reseter pour réenvoyer une trame spi, pour eviter que ca envoie en boucle
+             
+                 case cpt is
+                        when 0 =>
+                            SPIRESET<='0';
+                        when 1 =>  -- on lance le SPI
+                            SPIRESET<='1';
+                         when 20 =>  -- on attend
+                              SPIRESET<='0';
+                              bascule :=1;
+                         when others=> null;
+                  end case;     
+                  cpt:=cpt+1;
+                
+                if(cpt =51) then
+                valeur_registre_lue <=LECTURE_SPI(7 downto 0);
+                cpt:=0;
+                end if;   
+                end if;
+        end if;
       end if;
   end process;   
 

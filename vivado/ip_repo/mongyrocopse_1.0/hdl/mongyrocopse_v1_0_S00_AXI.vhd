@@ -133,11 +133,11 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
     signal valeur_registre_lue :    std_logic_vector (7 downto 0);
     signal commande_ecriture :  STD_LOGIC;
     signal trame_spi :  std_logic_vector (15 downto 0);
-
+    signal reset_gyro_spi:std_logic;
 begin
     -- I/O Connections assignments
    spi_gyro_inst : entity work.spi_gyro_commande port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, 
-    int2_gyro=>INT2GYRO ,horloge_gyro=>S_AXI_ACLK, reset_n=>S_AXI_ARESETN, adresse_registre=>adresse_registre,
+    int2_gyro=>INT2GYRO ,horloge_gyro=>S_AXI_ACLK, reset_n=>reset_gyro_spi, adresse_registre=>adresse_registre,
     valeur_registre_a_ecrire=>valeur_registre_a_ecrire,valeur_registre_lue=>valeur_registre_lue,commande_ecriture=>commande_ecriture,
     donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z,trame_spi=>trame_spi);
 
@@ -441,16 +441,18 @@ begin
 	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
 	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
 	                    trame_spi(14)<='1';--'MSB'
-	                     trame_spi(15)<='0';--'RW'
+	                    trame_spi(15)<='0';--'RW'
+	                    reset_gyro_spi <='1';
 	               --     commande_ecriture<='0';
 	               --when x"000000AB"     =>
 	                    --valeur_registre_a_ecrire(7 downto 0)<=slv_reg3(7 downto 0);	
 	               when x"000000BB"     =>
-	                     trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
+	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
 	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
 	                    trame_spi(14)<='1';--'MSB'
-	                     trame_spi(15)<='1';--'RW'
-	                    
+	                    trame_spi(15)<='1';--'RW'
+	               when x"000000FF"     =>   
+	                        reset_gyro_spi <='0';
                    when x"000000CC"     =>
 	                     axi_rdata(7 downto 0) <= valeur_registre_lue;    -- on lit la rotation en Z
 	 	           
