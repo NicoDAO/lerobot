@@ -2,10 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity mongyrocopse_v1_0_S00_AXI is
+entity gainNvoies_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-
+       
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -16,16 +16,32 @@ entity mongyrocopse_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-	
-        SDIGYRO  : in  std_logic;
-        SDOGYRO  : out std_logic;
-        CSGYRO   : out std_logic;
-        CLKGYRO  : out std_logic;
-        INT1GYRO : in  std_logic;
-        INT2GYRO : in  std_logic;
+         AUDIO_IN_1_h: in std_logic_vector (15 downto 0);
+         AUDIO_IN_2_h: in std_logic_vector (15 downto 0);
+         AUDIO_IN_3_h: in std_logic_vector (15 downto 0);
+         AUDIO_IN_4_h: in std_logic_vector (15 downto 0);
+         
+        AUDIO_IN_1_pret_h: in std_logic;
+        AUDIO_IN_2_pret_h: in std_logic;
+        AUDIO_IN_3_pret_h: in std_logic;
+        AUDIO_IN_4_pret_h: in std_logic;
+                             
+         AUDIO_OUT_1_h: out std_logic_vector (15 downto 0);
+         AUDIO_OUT_2_h: out std_logic_vector (15 downto 0);
+         AUDIO_OUT_3_h: out std_logic_vector (15 downto 0);
+         AUDIO_OUT_4_h: out std_logic_vector (15 downto 0);
+         
+        SORTIE_OUT_1_pret_h: out std_logic;
+        SORTIE_OUT_2_pret_h: out std_logic;
+        SORTIE_OUT_3_pret_h: out std_logic;
+        SORTIE_OUT_4_pret_h: out std_logic;
+        
+--        TRANSPARENT_1_h : in std_logic;
+--        TRANSPARENT_2_h : in std_logic;
+--        TRANSPARENT_3_h : in std_logic;
+--        TRANSPARENT_4_h : in std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
---spi_gyro_inst : entinity work.spi_gyro port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO );
 
 		-- Global Clock Signal
 		S_AXI_ACLK	: in std_logic;
@@ -88,14 +104,11 @@ entity mongyrocopse_v1_0_S00_AXI is
     		-- accept the read data and response information.
 		S_AXI_RREADY	: in std_logic
 	);
-end mongyrocopse_v1_0_S00_AXI;
+end gainNvoies_v1_0_S00_AXI;
 
-architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
+architecture arch_imp of gainNvoies_v1_0_S00_AXI is
 
-    signal donnee_X :std_logic_vector(15 downto 0); 
-    signal donnee_Y :std_logic_vector(15 downto 0); 
-    signal donnee_Z :std_logic_vector(15 downto 0); 
-    signal whomai   :std_logic_vector(15 downto 0);
+
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -118,6 +131,17 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 	------------------------------------------------
 	---- Signals for user logic register space example
 	--------------------------------------------------
+	signal gain1 : std_logic_vector(15 downto 0);
+	signal gain2 : std_logic_vector(15 downto 0);
+	signal gain3 : std_logic_vector(15 downto 0);
+	signal gain4 : std_logic_vector(15 downto 0);
+
+    signal transparent_1 : std_logic;
+	signal transparent_2 : std_logic;
+	signal transparent_3 : std_logic;
+	signal transparent_4 : std_logic;
+	
+	
 	---- Number of Slave Registers 4
 	signal slv_reg0	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal slv_reg1	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
@@ -128,18 +152,14 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
-	signal adresse_registre :  std_logic_vector (5 downto 0);
-    signal valeur_registre_a_ecrire :    std_logic_vector (7 downto 0);
-    signal valeur_registre_lue :    std_logic_vector (7 downto 0);
-    signal commande_ecriture :  STD_LOGIC;
-    signal trame_spi :  std_logic_vector (15 downto 0);
-    signal reset_gyro_spi:std_logic;
+
 begin
-    -- I/O Connections assignments
-   spi_gyro_inst : entity work.spi_gyro_commande port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, 
-    int2_gyro=>INT2GYRO ,horloge_gyro=>S_AXI_ACLK, reset_n=>reset_gyro_spi, adresse_registre=>adresse_registre,
-    valeur_registre_a_ecrire=>valeur_registre_a_ecrire,valeur_registre_lue=>valeur_registre_lue,commande_ecriture=>commande_ecriture,
-    donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z,trame_spi=>trame_spi);
+
+     gain1_inst : entity work.gain port map(RESET=> S_AXI_ARESETN ,gain_audio=>gain1,audio=> AUDIO_IN_1_h,entree_prete=>AUDIO_IN_1_pret_h,horloge=>S_AXI_ACLK,sortie_prete=>SORTIE_OUT_1_PRET_h,audio_out=>AUDIO_OUT_1_h, transparent=>transparent_1);
+     gain2_inst : entity work.gain port map(RESET=> S_AXI_ARESETN ,gain_audio=>gain2,audio=> AUDIO_IN_2_h,entree_prete=>AUDIO_IN_2_pret_h,horloge=>S_AXI_ACLK,sortie_prete=>SORTIE_OUT_2_PRET_h,audio_out=>AUDIO_OUT_2_h, transparent=>transparent_2);
+     gain3_inst : entity work.gain port map(RESET=> S_AXI_ARESETN ,gain_audio=>gain3,audio=> AUDIO_IN_3_h,entree_prete=>AUDIO_IN_3_pret_h,horloge=>S_AXI_ACLK,sortie_prete=>SORTIE_OUT_3_PRET_h,audio_out=>AUDIO_OUT_3_h, transparent=>transparent_3);
+     gain4_inst : entity work.gain port map(RESET=> S_AXI_ARESETN ,gain_audio=>gain4,audio=> AUDIO_IN_4_h,entree_prete=>AUDIO_IN_4_pret_h,horloge=>S_AXI_ACLK,sortie_prete=>SORTIE_OUT_4_PRET_h,audio_out=>AUDIO_OUT_4_h, transparent=>transparent_4);
+
 
 
 	-- I/O Connections assignments
@@ -163,7 +183,6 @@ begin
 	    if S_AXI_ARESETN = '0' then
 	      axi_awready <= '0';
 	      aw_en <= '1';
-	      adresse_registre<="000000";
 	    else
 	      if (axi_awready = '0' and S_AXI_AWVALID = '1' and S_AXI_WVALID = '1' and aw_en = '1') then
 	        -- slave is ready to accept write address when
@@ -390,80 +409,53 @@ begin
 	end process; 
 
 	-- Output register or memory read data
---	process( S_AXI_ACLK ) is
---	begin
---	  if (rising_edge (S_AXI_ACLK)) then
---	    if ( S_AXI_ARESETN = '0' ) then
---	      axi_rdata  <= (others => '0');
---	    else
---	      if (slv_reg_rden = '1') then
---	        -- When there is a valid read address (S_AXI_ARVALID) with 
---	        -- acceptance of read address by the slave (axi_arready), 
---	        -- output the read dada 
---	        -- Read address mux
---	          axi_rdata <= reg_data_out;     -- register read data
---	      end if;   
---	    end if;
---	  end if;
---	end process;
-
-
-	-- Add user logic here
-    -- Output register or memory read data
 	process( S_AXI_ACLK ) is
 	begin
 	  if (rising_edge (S_AXI_ACLK)) then
 	    if ( S_AXI_ARESETN = '0' ) then
 	      axi_rdata  <= (others => '0');
-	      adresse_registre <= (others => '0');
-	      valeur_registre_a_ecrire <=(others => '0');
 	    else
 	      if (slv_reg_rden = '1') then
 	        -- When there is a valid read address (S_AXI_ARVALID) with 
 	        -- acceptance of read address by the slave (axi_arready), 
 	        -- output the read dada 
 	        -- Read address mux
-	           case slv_reg0 is
-	               when x"00000000"     =>
-	                    axi_rdata(15 downto 0) <= donnee_X;     -- on lit la rotation en X
-	               when x"00000010"     =>
-	                    axi_rdata(15 downto 0) <= donnee_Y;     -- on lit la rotation en Y
-                   when x"00000020"     =>
-	                    axi_rdata(15 downto 0) <= donnee_Z;     -- on lit la rotation en Z
-	 	           
-	               when others =>
-	                    axi_rdata <= x"12345678";  -- patate, y a rien à cette adresse
-	            end case;                  
-	      end if;  
+	          axi_rdata <= reg_data_out;     -- register read data
+	      end if;   
+	    end if;
+	  end if;
+	end process;
 
-             case slv_reg1 is
-	               when x"000000AA"     =>
-	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
-	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
-	                    trame_spi(14)<='1';--'MSB'
-	                    trame_spi(15)<='0';--'RW'
-	                    reset_gyro_spi <='1';
-	               --     commande_ecriture<='0';
-	               --when x"000000AB"     =>
-	                    --valeur_registre_a_ecrire(7 downto 0)<=slv_reg3(7 downto 0);	
-	               when x"000000BB"     =>
-	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
-	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
-	                    trame_spi(14)<='1';--'MSB'
-	                    trame_spi(15)<='1';--'RW'
-	               when x"000000FF"     =>   
-	                        reset_gyro_spi <='0';
-                   when x"000000CC"     =>
-	                     axi_rdata(7 downto 0) <= valeur_registre_lue;    -- on lit la rotation en Z
-                when x"000000DD"     =>
-	                     trame_spi(15 downto 0)<="1100110011001100";--'RW'
-	                     reset_gyro_spi <='1';
 
-	               when others =>
-	                    axi_rdata <= x"12345678";  -- patate, y a rien à cette adresse
-	            end case;      
-  
+	-- Add user logic here
+    process( S_AXI_ACLK ) is
+	begin
+	  if (rising_edge (S_AXI_ACLK)) then
+	    if ( S_AXI_ARESETN = '0' ) then
+	      axi_rdata  <= (others => '0');
+	      gain1<= x"00_00";
+	      gain2<= x"00_00";
+	      gain3<= x"00_00";
+	      gain4<= x"00_00";
+	    else
+                case slv_reg0(3 downto 0) is
+                    when "0001" =>                   
+                    gain1 <=slv_reg1(15 downto 0);
+                   
+                    when "0010" =>                   
+                    gain2 <=slv_reg1(15 downto 0);
+                   
+                    when "0011" =>                    
+                    gain3 <=slv_reg1(15 downto 0);
+                    
+                    when "0100" =>
+                    gain4 <=slv_reg1(15 downto 0);
+                   
+                   when others =>null;
+                end case;
+                  
    
+
 	    end if;
 	  end if;
 	end process;

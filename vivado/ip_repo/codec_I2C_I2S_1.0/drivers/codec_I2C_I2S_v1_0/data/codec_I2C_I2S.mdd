@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER codec_I2C_I2S
+	OPTION supported_peripherals = (codec_I2C_I2S);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = codec_I2C_I2S;
+END DRIVER

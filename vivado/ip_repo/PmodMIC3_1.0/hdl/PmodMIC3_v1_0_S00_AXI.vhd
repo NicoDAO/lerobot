@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity mongyrocopse_v1_0_S00_AXI is
+entity PmodMIC3_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
 
@@ -16,16 +16,14 @@ entity mongyrocopse_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-	
-        SDIGYRO  : in  std_logic;
-        SDOGYRO  : out std_logic;
-        CSGYRO   : out std_logic;
-        CLKGYRO  : out std_logic;
-        INT1GYRO : in  std_logic;
-        INT2GYRO : in  std_logic;
+        SDIMIC :  in std_logic;
+        SCKMIC :  out std_logic;   
+        CSMIC  :  out std_logic;
+        AUDIOOUT : out std_logic_vector (23 downto 0);
+        AUDIOVALID : out STD_LOGIC;
+               
 		-- User ports ends
 		-- Do not modify the ports beyond this line
---spi_gyro_inst : entinity work.spi_gyro port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, int2_gyro=>INT2GYRO );
 
 		-- Global Clock Signal
 		S_AXI_ACLK	: in std_logic;
@@ -88,14 +86,10 @@ entity mongyrocopse_v1_0_S00_AXI is
     		-- accept the read data and response information.
 		S_AXI_RREADY	: in std_logic
 	);
-end mongyrocopse_v1_0_S00_AXI;
+end PmodMIC3_v1_0_S00_AXI;
 
-architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
-
-    signal donnee_X :std_logic_vector(15 downto 0); 
-    signal donnee_Y :std_logic_vector(15 downto 0); 
-    signal donnee_Z :std_logic_vector(15 downto 0); 
-    signal whomai   :std_logic_vector(15 downto 0);
+architecture arch_imp of PmodMIC3_v1_0_S00_AXI is
+    
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -128,22 +122,18 @@ architecture arch_imp of mongyrocopse_v1_0_S00_AXI is
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
-	signal adresse_registre :  std_logic_vector (5 downto 0);
-    signal valeur_registre_a_ecrire :    std_logic_vector (7 downto 0);
-    signal valeur_registre_lue :    std_logic_vector (7 downto 0);
-    signal commande_ecriture :  STD_LOGIC;
-    signal trame_spi :  std_logic_vector (15 downto 0);
-    signal reset_gyro_spi:std_logic;
+
 begin
-    -- I/O Connections assignments
-   spi_gyro_inst : entity work.spi_gyro_commande port map(sdi_gyro=>SDIGYRO,sdo_gyro=>SDOGYRO , cs_gyro=>CSGYRO, clk_gyro=>CLKGYRO,int1_gyro=>INT1GYRO, 
-    int2_gyro=>INT2GYRO ,horloge_gyro=>S_AXI_ACLK, reset_n=>reset_gyro_spi, adresse_registre=>adresse_registre,
-    valeur_registre_a_ecrire=>valeur_registre_a_ecrire,valeur_registre_lue=>valeur_registre_lue,commande_ecriture=>commande_ecriture,
-    donnee_X=>donnee_X,donnee_Y=>donnee_Y,donnee_Z=>donnee_Z,trame_spi=>trame_spi);
-
-
 	-- I/O Connections assignments
+ entre_micro_inst : entity work.entre_micro port map(clk_in=>S_AXI_ACLK,reset_n=>S_AXI_ARESETN, sdi_mic=>SDIMIC,sck_mic=>SCKMIC,cs_mic=>CSMIC,audio_out=>AUDIOOUT,audio_valid=>AUDIOVALID);
+           
+--         SDIMIC :  in std_logic;
+--       SCKMIC :  in std_logic;   
+--       CSMIC  :  in std_logic;
 
+       -- User ports ends    
+     
+       
 	S_AXI_AWREADY	<= axi_awready;
 	S_AXI_WREADY	<= axi_wready;
 	S_AXI_BRESP	<= axi_bresp;
@@ -163,18 +153,16 @@ begin
 	    if S_AXI_ARESETN = '0' then
 	      axi_awready <= '0';
 	      aw_en <= '1';
-	      adresse_registre<="000000";
 	    else
 	      if (axi_awready = '0' and S_AXI_AWVALID = '1' and S_AXI_WVALID = '1' and aw_en = '1') then
 	        -- slave is ready to accept write address when
 	        -- there is a valid write address and write data
 	        -- on the write address and data bus. This design 
 	        -- expects no outstanding transactions. 
-	           axi_awready <= '1';
-	           aw_en <= '0';
+	        axi_awready <= '1';
 	        elsif (S_AXI_BREADY = '1' and axi_bvalid = '1') then
-	           aw_en <= '1';
-	           axi_awready <= '0';
+	            aw_en <= '1';
+	        	axi_awready <= '0';
 	      else
 	        axi_awready <= '0';
 	      end if;
@@ -390,83 +378,26 @@ begin
 	end process; 
 
 	-- Output register or memory read data
---	process( S_AXI_ACLK ) is
---	begin
---	  if (rising_edge (S_AXI_ACLK)) then
---	    if ( S_AXI_ARESETN = '0' ) then
---	      axi_rdata  <= (others => '0');
---	    else
---	      if (slv_reg_rden = '1') then
---	        -- When there is a valid read address (S_AXI_ARVALID) with 
---	        -- acceptance of read address by the slave (axi_arready), 
---	        -- output the read dada 
---	        -- Read address mux
---	          axi_rdata <= reg_data_out;     -- register read data
---	      end if;   
---	    end if;
---	  end if;
---	end process;
-
-
-	-- Add user logic here
-    -- Output register or memory read data
 	process( S_AXI_ACLK ) is
 	begin
 	  if (rising_edge (S_AXI_ACLK)) then
 	    if ( S_AXI_ARESETN = '0' ) then
 	      axi_rdata  <= (others => '0');
-	      adresse_registre <= (others => '0');
-	      valeur_registre_a_ecrire <=(others => '0');
 	    else
 	      if (slv_reg_rden = '1') then
 	        -- When there is a valid read address (S_AXI_ARVALID) with 
 	        -- acceptance of read address by the slave (axi_arready), 
 	        -- output the read dada 
 	        -- Read address mux
-	           case slv_reg0 is
-	               when x"00000000"     =>
-	                    axi_rdata(15 downto 0) <= donnee_X;     -- on lit la rotation en X
-	               when x"00000010"     =>
-	                    axi_rdata(15 downto 0) <= donnee_Y;     -- on lit la rotation en Y
-                   when x"00000020"     =>
-	                    axi_rdata(15 downto 0) <= donnee_Z;     -- on lit la rotation en Z
-	 	           
-	               when others =>
-	                    axi_rdata <= x"12345678";  -- patate, y a rien à cette adresse
-	            end case;                  
-	      end if;  
-
-             case slv_reg1 is
-	               when x"000000AA"     =>
-	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
-	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
-	                    trame_spi(14)<='1';--'MSB'
-	                    trame_spi(15)<='0';--'RW'
-	                    reset_gyro_spi <='1';
-	               --     commande_ecriture<='0';
-	               --when x"000000AB"     =>
-	                    --valeur_registre_a_ecrire(7 downto 0)<=slv_reg3(7 downto 0);	
-	               when x"000000BB"     =>
-	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
-	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
-	                    trame_spi(14)<='1';--'MSB'
-	                    trame_spi(15)<='1';--'RW'
-	               when x"000000FF"     =>   
-	                        reset_gyro_spi <='0';
-                   when x"000000CC"     =>
-	                     axi_rdata(7 downto 0) <= valeur_registre_lue;    -- on lit la rotation en Z
-                when x"000000DD"     =>
-	                     trame_spi(15 downto 0)<="1100110011001100";--'RW'
-	                     reset_gyro_spi <='1';
-
-	               when others =>
-	                    axi_rdata <= x"12345678";  -- patate, y a rien à cette adresse
-	            end case;      
-  
-   
+	          axi_rdata <= reg_data_out;     -- register read data
+	      end if;   
 	    end if;
 	  end if;
 	end process;
+
+
+	-- Add user logic here
+
 	-- User logic ends
 
 end arch_imp;

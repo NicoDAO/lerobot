@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER traitement_audio
+	OPTION supported_peripherals = (traitement_audio);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = traitement_audio;
+END DRIVER

@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER FIR_RAM
+	OPTION supported_peripherals = (FIR_RAM);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = FIR_RAM;
+END DRIVER
