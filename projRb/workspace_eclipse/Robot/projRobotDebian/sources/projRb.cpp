@@ -57,12 +57,11 @@ Messager messageConsigneMoteur1("/consigneMoteur1", 3);
 Messager messageGyro("/gyroscope1", 3);
 
 //#define LANCE_FIR
-
+//aa
 int main(int argc, char *argv[]) {
 	//configuation des messages
 	//Messager messageConsigneMoteur;
 	char nom[40];
-
 	printf("compile %s %s", __DATE__, __TIME__);
 	int mode_fonctionnement = MODE_ROBOT;
 	int mod_log = LOG_RIEN;
@@ -289,7 +288,7 @@ void* handlerCapteurDistance(void *pvParameters) {
 }
 void* handlerCapteurGyroscope1(void *pvParameters) {
 	calog.log_info("gyroscope1");
-	gyroscope1.setPeriod(1000001);	//seconde
+	gyroscope1.setPeriod(100001);	//0.1 seconde
 	gyroscope1.SetfichierCalib("capteur_gyroscope1.calib");
 	gyroscope1.RegleAdresseAxi(
 			XPAR_GYROSCOPE0_S00_AXI_BASEADDR);
