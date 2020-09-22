@@ -64,7 +64,7 @@ int GereGyroscope::handler_gyro_config(int ii){
 	static unsigned int axi_adresse = 0;
 	static unsigned int axi_valeur = 0;
 	//regle le gyroscope avec les données trouvées dans le fichier de configuration
-	
+
 	case_memoire_ pp = config_gyro.memoire_periph->parametrage_memoire.at(rr);
 	std::string toto =  pp.nom ;
 	if(pp.nom == "AXI_REG"){
@@ -81,27 +81,14 @@ int GereGyroscope::handler_gyro_config(int ii){
 	}
 	if(pp.nom == "AXI_ECRIT"){
 		calog.log_gyro("AXI_ECRIT %x : %x ",pp.adresse,pp.valeur);
-		//Xil_Out32(this->adresseAXI + axi_reg_loc,
-		//		axi_valeur);
-		//Xil_Out32_tab(this->adresseAXI, commande,10   ); //allume l'ampli                   
- 	
-		u32 commande[10];                                                                                                                                           
-		memset(commande,0,sizeof(commande));                                              
-                                                                                          
-		commande[0] =  axi_valeur;                                                              
-		commande[1] = 0xAA;                                                               
-		Xil_Out32(this->adresseAXI,axi_valeur,axi_reg_loc ); //envoie la valeur sur la sortie               
-		//Xil_Out32(this->adresseAXI,axi_valeur,0 ); //arrete d'envoyer sur la sortie   
+		Xil_Out32(this->adresseAXI, pp.valeur, pp.adresse ); //envoie la valeur sur la sortie
+	}
 
-		}
 	if(pp.nom == "LIT"){
-			calog.log_gyro("LIT %d %d ",pp.adresse,pp.valeur);
-		        u32 commande[10];                                                                 
-		        memset(commande,0,sizeof(commande));                                              
-		        commande[0] = 0;                                                              
-		        commande[1] = 0xAA;                                                               
-        		Xil_Out32_tab(this->adresseAXI, commande,10   ); //allume l'ampli                   
-		}
+		Xil_Out32(this->adresseAXI, pp.valeur, pp.adresse); //envoie la valeur sur la sortie
+		u32 lecture = Xil_In32(this->adresseAXI ); //envoie la valeur sur la sortie
+		calog.log_gyro("LIT %x: %x ",pp.adresse,lecture);
+	}
 	rr++;
 	return 0;
 }
