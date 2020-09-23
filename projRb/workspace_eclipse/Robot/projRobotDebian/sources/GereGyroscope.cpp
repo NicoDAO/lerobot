@@ -85,8 +85,8 @@ int GereGyroscope::handler_gyro_config(int ii){
 	}
 
 	if(pp.nom == "LIT"){
-		Xil_Out32(this->adresseAXI, pp.valeur, pp.adresse); //envoie la valeur sur la sortie
-		u32 lecture = Xil_In32(this->adresseAXI ); //envoie la valeur sur la sortie
+		//	Xil_Out32(this->adresseAXI, pp.valeur, pp.adresse); //envoie la valeur sur la sortie
+		u32 lecture = Xil_In32(this->adresseAXI+pp.adresse ); //envoie la valeur sur la sortie
 		calog.log_gyro("LIT %x: %x ",pp.adresse,lecture);
 	}
 	rr++;

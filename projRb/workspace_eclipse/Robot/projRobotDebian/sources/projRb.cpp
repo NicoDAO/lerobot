@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
 			cout << "on a " + param;
 			mod_log = LOG_CAPTEUR_DISTANCE;
 
-			calog.log_error("on a %s(%d)",argv[i] ,log_nb);
+			calog.log_info("on a %s(%d)",argv[i] ,log_nb);
 			calog.setMode(log_nb);
 		}
 	}
@@ -95,7 +95,7 @@ int main(int argc, char *argv[]) {
 	pthread_attr_t attr;
 	calog.log_info("main");
 	struct thread_info *tinfo;
-//configuration classe traction
+	//configuration classe traction
 	traction.SetMessage1(&messageConsigneMoteur1);
 	traction.SetMessage2(&messageConsigneMoteur2);
 	traction.SetMessage3(&messageMesureDistanceCapteur);
