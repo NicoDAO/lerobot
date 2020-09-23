@@ -60,10 +60,10 @@ int Messager::recoitMessage() {
 	char *text;
 	char recv[BUF_LEN];
 	memset(recv, 0, BUF_LEN);
-	calog.log_message("    attend message  id:%x", msgid);
+	calog.log_message("    attend message  id:%x\n\r ", msgid);
 	AMessage messagea;
 	msgrcv(msgid, &messagea, BUF_LEN /*sizeof(messagea)*/, 1, 0);
-	calog.log_message("%s    recu message :%s", nomqueue, messagea.message);
+	calog.log_message("%s    recu message :%s\n\r ", nomqueue, messagea.message);
 	vecteurMessages.push_back(messagea);
 	return 1;
 }

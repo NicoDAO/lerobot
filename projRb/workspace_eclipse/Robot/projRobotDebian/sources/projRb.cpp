@@ -57,12 +57,11 @@ Messager messageConsigneMoteur1("/consigneMoteur1", 3);
 Messager messageGyro("/gyroscope1", 3);
 
 //#define LANCE_FIR
-
+//aa
 int main(int argc, char *argv[]) {
 	//configuation des messages
 	//Messager messageConsigneMoteur;
 	char nom[40];
-
 	printf("compile %s %s", __DATE__, __TIME__);
 	int mode_fonctionnement = MODE_ROBOT;
 	int mod_log = LOG_RIEN;
@@ -85,7 +84,7 @@ int main(int argc, char *argv[]) {
 			cout << "on a " + param;
 			mod_log = LOG_CAPTEUR_DISTANCE;
 
-			calog.log_error("on a %s(%d)",argv[i] ,log_nb);
+			calog.log_info("on a %s(%d)",argv[i] ,log_nb);
 			calog.setMode(log_nb);
 		}
 	}
@@ -96,7 +95,7 @@ int main(int argc, char *argv[]) {
 	pthread_attr_t attr;
 	calog.log_info("main");
 	struct thread_info *tinfo;
-//configuration classe traction
+	//configuration classe traction
 	traction.SetMessage1(&messageConsigneMoteur1);
 	traction.SetMessage2(&messageConsigneMoteur2);
 	traction.SetMessage3(&messageMesureDistanceCapteur);
@@ -289,7 +288,7 @@ void* handlerCapteurDistance(void *pvParameters) {
 }
 void* handlerCapteurGyroscope1(void *pvParameters) {
 	calog.log_info("gyroscope1");
-	gyroscope1.setPeriod(1000001);	//seconde
+	gyroscope1.setPeriod(100001);	//0.1 seconde
 	gyroscope1.SetfichierCalib("capteur_gyroscope1.calib");
 	gyroscope1.RegleAdresseAxi(
 			XPAR_GYROSCOPE0_S00_AXI_BASEADDR);
