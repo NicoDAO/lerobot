@@ -67,58 +67,55 @@ begin
           cpt:=0;
           bascule :=0;
     else 
-        if rising_edge (horloge_spi) then
+        if falling_edge (horloge_spi) then
             report "The value of 'cpt' is " & integer'image(cpt);
             if bascule = 0 then
-                
                 case cpt is
                     when 0 =>               
-                         act_clk<='1'; -- on demarre l'horloge
+                         SPICS <='0';
                     when 1 =>
-                        SPICS <='0';
-                        --MOSI <= RW;
+                         act_clk<='1'; -- on demarre l'horloge
+                   when 2 =>
                         MOSI <=COMMANDE_SPI(15);
-                    when 2 =>
-                        --MOSI <= MS;
+                    when 3 =>
                         MOSI <=COMMANDE_SPI(14);
-                    when 3  =>
+                    when 4  =>
                         MOSI <=COMMANDE_SPI(13);
-                   when 4  =>
-                        MOSI <=COMMANDE_SPI(12);
                    when 5  =>
-                        MOSI <=COMMANDE_SPI(11);
+                        MOSI <=COMMANDE_SPI(12);
                    when 6  =>
-                        MOSI <=COMMANDE_SPI(10);
+                        MOSI <=COMMANDE_SPI(11);
                    when 7  =>
-                        MOSI <=COMMANDE_SPI(9);
+                        MOSI <=COMMANDE_SPI(10);
                    when 8  =>
+                        MOSI <=COMMANDE_SPI(9);
+                   when 9  =>
                         MOSI <=COMMANDE_SPI(8);
-                   when 9 =>
+                   when 10 =>
                         MOSI <=COMMANDE_SPI(7);
                         LECTURE_spi_temp(7)<=MISO;
-                   when 10 =>
+                   when 11 =>
                         MOSI <=COMMANDE_SPI(6);
                         LECTURE_spi_temp(6)<=MISO;
-                   when 11 =>
+                   when 12 =>
                         MOSI <=COMMANDE_SPI(5);
                         LECTURE_spi_temp(5)<=MISO;
-                    when 12 =>
+                    when 13 =>
                         MOSI <=COMMANDE_SPI(4);
                         LECTURE_spi_temp(4)<=MISO;
-                    when 13 =>
+                    when 14 =>
                         MOSI <=COMMANDE_SPI(3);
                         LECTURE_spi_temp(3)<=MISO;
-                    when 14 =>
+                    when 15 =>
                         MOSI <=COMMANDE_SPI(2);
                         LECTURE_spi_temp(2)<=MISO;  
-                   when 15 =>
+                   when 16 =>
                         MOSI <=COMMANDE_SPI(1);
                         LECTURE_spi_temp(1)<=MISO;  
-                    when 16 =>
+                    when 17 =>
                         MOSI <=COMMANDE_SPI(0);
                         LECTURE_spi_temp(0)<=MISO;
-        
-                    when 17 =>
+                    when 18 =>
                          SPICS <='1'; --on remonde le chip select
                          act_clk<='0'; --on coupe l'horloge     
                          LECTURE_SPI<=LECTURE_spi_temp;
@@ -130,9 +127,6 @@ begin
                 if(cpt < 30) then 
                     cpt:=cpt+1;
                 end if;
-            --if(cpt = 30) then
-            --    cpt:=0;
-            --end if;   
         end if;
     end if;
     end if;
