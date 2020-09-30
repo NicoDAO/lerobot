@@ -266,7 +266,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>53cd688f</spirit:value>
+            <spirit:value>bd0abf9a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>53cd688f</spirit:value>
+            <spirit:value>bd0abf9a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -922,13 +922,13 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>mongyrocopse_v1.03</xilinx:displayName>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreRevision>7</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>user.org:user:mongyrocopse:1.0</xilinx:canUpgradeFrom>
         <xilinx:canUpgradeFrom>user.org:user:mongyrocopse:1.01</xilinx:canUpgradeFrom>
         <xilinx:canUpgradeFrom>user.org:user:mongyrocopse:1.02</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2020-09-23T21:59:57Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2020-09-30T21:53:30Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@61682b03_ARCHIVE_LOCATION">/home/nicolas/yocto/soft_zybo/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@10522df5_ARCHIVE_LOCATION">/home/nicolas/yocto/soft_zybo/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
@@ -1800,13 +1800,58 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@4f9e9bf2_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2b606f7d_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@46e71fcb_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@215ac28d_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a7b197c_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cb0ad12_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31223fc2_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@719071f_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68f2b3aa_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53537347_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@606bfd97_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c8c33e0_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9d83e7e_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72ce3dbb_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e27896c_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5186fbb2_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3777235b_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@136931c9_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1560e777_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21565f19_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a3f6eb0_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b552e05_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f5e240e_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ac41256_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@357c20a2_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4aeebc6f_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@121b4f31_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ae569f6_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69904a29_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5498ca7a_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19e2a434_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7727fbd_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dacccf0_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69943c5_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@627f1185_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47b8fa48_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a1d8c8d_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@378a9004_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64cabeab_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3af7b794_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17f736f0_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@520eebcf_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47e02b85_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@537862c9_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cba5714_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a2edf46_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44172632_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52a580bf_ARCHIVE_LOCATION">/home/nicolas/yocto/lerobot/vivado/ip_repo/mongyrocopse_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7a63f3fc"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="358d2803"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="79f02e88"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="a1fe5306"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6992ea72"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="5b3e372c"/>

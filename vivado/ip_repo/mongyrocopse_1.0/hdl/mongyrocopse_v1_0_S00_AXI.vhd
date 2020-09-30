@@ -440,7 +440,7 @@ begin
 	               when x"000000AA"     =>
 	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
 	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
-	                    trame_spi(14)<='1';--'MSB'
+	                    trame_spi(14)<='0';--'MSB'
 	                    trame_spi(15)<='0';--'RW'
 	                    reset_gyro_spi <='1';
 	               --     commande_ecriture<='0';
@@ -449,7 +449,7 @@ begin
 	               when x"000000BB"     =>
 	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
 	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
-	                    trame_spi(14)<='1';--'MSB'
+	                    trame_spi(14)<='0';--'MSB'
 	                    trame_spi(15)<='1';--'RW'
 	                    reset_gyro_spi <='1';
 	               when x"000000FF"     =>   
