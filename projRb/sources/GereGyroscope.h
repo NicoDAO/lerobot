@@ -14,6 +14,23 @@
 #include "Messagerie.h"
 #include "LitMemoireLinux.h"
 
+
+#define CTRL_REG1 0x20
+#define CTRL_REG2 0x21
+#define CTRL_REG3 0x22
+#define CTRL_REG4 0x23
+#define CTRL_REG5 0x24
+#define DATA_CAPTURE  0x25
+#define OUT_TEMP 0x26
+#define STATUS_REG 0x27
+#define OUT_X_L 0x28
+
+#define CDE_ECRIT 0xAA
+#define CDE_LIT   0xBB
+#define CDE_RESET 255
+#define LIT_AXI   0xCC
+
+
 enum{
 	gyro_reset = 0,
 	gyro_config,
