@@ -51,6 +51,7 @@ end inerface_spi_materielle;
 architecture Behavioral of inerface_spi_materielle is
 signal LECTURE_spi_temp :  std_logic_vector (15 downto 0);
 signal act_clk  : std_logic;
+signal niveau_haut_horloge:std_logic;
 begin
     process (horloge_spi)
     
@@ -66,6 +67,7 @@ begin
           act_clk<='0';
           cpt:=0;
           bascule :=0;
+          niveau_haut_horloge <='1';
     else 
         if falling_edge (horloge_spi) then
             report "The value of 'cpt' is " & integer'image(cpt);
@@ -73,64 +75,89 @@ begin
                 case cpt is
                     when 0 =>               
                          SPICS <='0';
+                         
                     when 1 =>
                          act_clk<='1'; -- on demarre l'horloge
-                   when 2 =>
+                         niveau_haut_horloge <='0';
                         MOSI <=COMMANDE_SPI(15);
-                    when 3 =>
+                    when 2 =>
                         MOSI <=COMMANDE_SPI(14);
-                    when 4  =>
+                    when 3  =>
                         MOSI <=COMMANDE_SPI(13);
-                   when 5  =>
+                   when 4 =>
                         MOSI <=COMMANDE_SPI(12);
-                   when 6  =>
+                   when 5  =>
                         MOSI <=COMMANDE_SPI(11);
-                   when 7  =>
+                   when 6  =>
                         MOSI <=COMMANDE_SPI(10);
-                   when 8  =>
+                   when 7  =>
                         MOSI <=COMMANDE_SPI(9);
-                   when 9  =>
+                   when 8  =>
                         MOSI <=COMMANDE_SPI(8);
-                   when 10 =>
+                   when 9 =>
                         MOSI <=COMMANDE_SPI(7);
-                        LECTURE_spi_temp(7)<=MISO;
-                   when 11 =>
+                        --LECTURE_spi_temp(7)<=MISO;
+                   when 10 =>
                         MOSI <=COMMANDE_SPI(6);
-                        LECTURE_spi_temp(6)<=MISO;
-                   when 12 =>
+                        --LECTURE_spi_temp(6)<=MISO;
+                   when 11 =>
                         MOSI <=COMMANDE_SPI(5);
-                        LECTURE_spi_temp(5)<=MISO;
-                    when 13 =>
+                        --LECTURE_spi_temp(5)<=MISO;
+                    when 12 =>
                         MOSI <=COMMANDE_SPI(4);
-                        LECTURE_spi_temp(4)<=MISO;
-                    when 14 =>
+                        --LECTURE_spi_temp(4)<=MISO;
+                    when 13 =>
                         MOSI <=COMMANDE_SPI(3);
-                        LECTURE_spi_temp(3)<=MISO;
-                    when 15 =>
+                        --LECTURE_spi_temp(3)<=MISO;
+                    when 14 =>
                         MOSI <=COMMANDE_SPI(2);
-                        LECTURE_spi_temp(2)<=MISO;  
-                   when 16 =>
+                        --LECTURE_spi_temp(2)<=MISO;  
+                   when 15 =>
                         MOSI <=COMMANDE_SPI(1);
-                        LECTURE_spi_temp(1)<=MISO;  
-                    when 17 =>
+                        --LECTURE_spi_temp(1)<=MISO;  
+                    when 16 =>
                         MOSI <=COMMANDE_SPI(0);
-                        LECTURE_spi_temp(0)<=MISO;
-                    when 18 =>
-                         SPICS <='1'; --on remonde le chip select
-                         act_clk<='0'; --on coupe l'horloge     
-                         LECTURE_SPI<=LECTURE_spi_temp;
-                         report "couper l horloge 'cpt' is " & integer'image(cpt);
-                         bascule :=1;
+                        --LECTURE_spi_temp(0)<=MISO;
+                      
+                    when 17 =>
+                        SPICS <='1'; --on remonde le chip select
+                        act_clk<='0'; --on coupe l'horloge
+                        niveau_haut_horloge<='1'; 
+                        LECTURE_SPI<=LECTURE_spi_temp;
+                        report "couper l horloge 'cpt' is " & integer'image(cpt);
+                        bascule :=1;
                     when others =>null  ; 
                 end case;
         
                 if(cpt < 30) then 
                     cpt:=cpt+1;
                 end if;
+            end if;
         end if;
-    end if;
+        --lecture de la sortie gyrocscope sur les fronts montans
+        if rising_edge (horloge_spi) then
+            case cpt is
+                when 9 =>   
+                    LECTURE_spi_temp(7)<=MISO;
+                when 10 =>
+                    LECTURE_spi_temp(6)<=MISO;
+                when 11 =>
+                     LECTURE_spi_temp(5)<=MISO;
+                when 12 =>
+                     LECTURE_spi_temp(4)<=MISO;
+                when 13 =>
+                     LECTURE_spi_temp(3)<=MISO;
+                when 14 =>
+                     LECTURE_spi_temp(2)<=MISO;  
+                when 15 =>
+                     LECTURE_spi_temp(1)<=MISO;  
+                when 16 =>
+                     LECTURE_spi_temp(0)<=MISO;
+                when others =>null  ;
+            end case;               
+        end if;
     end if;
 end process;
 -- en mode concurrent
-SPICLK<=horloge_spi and act_clk;
+SPICLK<=(horloge_spi and act_clk) or niveau_haut_horloge;
 end Behavioral;

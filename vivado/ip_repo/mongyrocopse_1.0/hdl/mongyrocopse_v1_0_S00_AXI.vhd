@@ -425,7 +425,7 @@ begin
 	        -- Read address mux
 	           case slv_reg0 is
 	               when x"00000000"     =>
-	                    axi_rdata(15 downto 0) <= donnee_X;     -- on lit la rotation en X
+	                    axi_rdata(7 downto 0) <= valeur_registre_lue(7 downto 0);     -- on lit la rotation en X
 	               when x"00000010"     =>
 	                    axi_rdata(15 downto 0) <= donnee_Y;     -- on lit la rotation en Y
                    when x"00000020"     =>
