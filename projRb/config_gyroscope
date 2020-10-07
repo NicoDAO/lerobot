@@ -1,14 +1,9 @@
-regisre TRUC;1;54
-nom0:01:55
-regisre bidule;0x1;0x32
-regisre chose;1;4
-regisre ouaf;1;4
-aaa:bbb:ccc
-d:v:b
-nom:12:23
-nom1:23:33
-AXI_REG:00:11
-AXI_ADD:00:12
-ECRIT:00:00
+configuraion registre
+AXI_ECRIT:1:255
+AXI_ECRIT:2:15
+AXI_ECRIT:3:32
+AXI_ECRIT:1:170
 
+
+FIN_CONFIG:0:0
 
