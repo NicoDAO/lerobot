@@ -1,0 +1,16 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+//{
+//	[bootloader]/home/nicolas/vivado/vivado/FPGA_xilinx/vitis/qsdqd/Release/qsdqd.elf
+//	/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dim_2903.bit
+//	/home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u-boot.elf
+//}
+
+///home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7
+
+the_ROM_image:
+{
+	[bootloader]/home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u-boot-zybo-zynq7-v2016.07-xilinx-v2016.3+gitAUTOINC+95e11f6eb4-r0.elf
+	/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dim_2903.bit
+	/home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u-boot.elf
+}

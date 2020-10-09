@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]FSBL_git.elf	
+	design_1_wrapper.bit
+	u-boot-zybo-zynq7.elf
+}

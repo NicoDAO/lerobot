@@ -425,7 +425,7 @@ begin
 	        -- Read address mux
 	           case slv_reg0 is
 	               when x"00000000"     =>
-	                    axi_rdata(15 downto 0) <= donnee_X;     -- on lit la rotation en X
+	                    axi_rdata(7 downto 0) <= valeur_registre_lue(7 downto 0);     -- on lit la rotation en X
 	               when x"00000010"     =>
 	                    axi_rdata(15 downto 0) <= donnee_Y;     -- on lit la rotation en Y
                    when x"00000020"     =>
@@ -440,7 +440,7 @@ begin
 	               when x"000000AA"     =>
 	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
 	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
-	                    trame_spi(14)<='1';--'MSB'
+	                    trame_spi(14)<='0';--'MSB'
 	                    trame_spi(15)<='0';--'RW'
 	                    reset_gyro_spi <='1';
 	               --     commande_ecriture<='0';
@@ -449,8 +449,9 @@ begin
 	               when x"000000BB"     =>
 	                    trame_spi(7 downto 0)<=slv_reg2(7 downto 0);
 	                    trame_spi(13 downto 8)<=slv_reg3(5 downto 0);
-	                    trame_spi(14)<='1';--'MSB'
+	                    trame_spi(14)<='0';--'MSB'
 	                    trame_spi(15)<='1';--'RW'
+	                    reset_gyro_spi <='1';
 	               when x"000000FF"     =>   
 	                        reset_gyro_spi <='0';
                    when x"000000CC"     =>

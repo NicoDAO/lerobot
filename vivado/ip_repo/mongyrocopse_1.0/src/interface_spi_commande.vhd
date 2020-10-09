@@ -90,6 +90,7 @@ architecture Behavioral of spi_gyro_commande is
     --    COMMANDE_SPI(15) <= commande_ecriture; 
 
 COMMANDE_SPI(15 downto 0) <=trame_spi(15 downto 0);
+valeur_registre_lue(7 downto 0) <=LECTURE_SPI(7 downto 0);
 --COMMANDE_SPI(14) <= '1';--MS    
 --COMMANDE_SPI(15) <= commande_ecriture; 
 
@@ -133,15 +134,15 @@ process (horloge_divise)
                               bascule :=1;
                          when others=> null;
                   end case;     
-                  cpt:=cpt+1;
-                
-                if(cpt =51) then
-                valeur_registre_lue <=LECTURE_SPI(7 downto 0);
-                cpt:=0;
-                end if;   
-                end if;
-        end if;
-      end if;
+                   cpt:=cpt+1;
+                    
+                    if(cpt =51) then
+                      --  valeur_registre_lue <=LECTURE_SPI(7 downto 0);
+                        cpt:=0;
+                    end if;   
+                end if;--bascule = 0
+        end if;--falling edge
+      end if;--reset
   end process;   
 
 end Behavioral;

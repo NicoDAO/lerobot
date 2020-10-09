@@ -1,0 +1,9 @@
+configuraion registre
+AXI_ECRIT:1:255
+AXI_ECRIT:2:15
+AXI_ECRIT:3:32
+AXI_ECRIT:1:170
+
+
+FIN_CONFIG:0:0
+
