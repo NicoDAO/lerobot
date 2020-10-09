@@ -14,6 +14,27 @@
 #include "Messagerie.h"
 #include "LitMemoireLinux.h"
 
+
+#define CTRL_REG1 0x20
+#define CTRL_REG2 0x21
+#define CTRL_REG3 0x22
+#define CTRL_REG4 0x23
+#define CTRL_REG5 0x24
+#define DATA_CAPTURE  0x25
+#define OUT_TEMP 0x26
+#define STATUS_REG 0x27
+#define OUT_X_L 0x28
+#define OUT_X_H 0x29
+#define OUT_Y_L 0x2A
+#define OUT_Y_H 0x2B
+#define OUT_Z_L 0x2C
+#define OUT_Z_H 0x2D
+#define CDE_ECRIT 0xAA
+#define CDE_LIT   0xBB
+#define CDE_RESET 0xff
+#define LIT_AXI   0xCC
+
+
 enum{
 	gyro_reset = 0,
 	gyro_config,
@@ -36,6 +57,23 @@ public:
 
 };
 
+class Donnees_gyroscope{
+public:
+
+	s16 x_l = 0;
+	s16 y_l = 0;
+	s16 z_l = 0;
+
+	s16 x_h = 0;
+	s16 y_h = 0;
+	s16 z_h = 0;
+        
+        s16 x;
+        s16 y;
+        s16 z;
+
+        void calcul(void);	
+};
 
 class GereGyroscope : public CagereAXI , public Calibrage {
 public:
@@ -51,6 +89,8 @@ private :
 	config_totale config_gyro;
 	int lit_config_gyro (void);
 	GestionLog calog;
+        u32 litRegistreGyro(u8);
+        Donnees_gyroscope    donne_gyro; 
 };
 
 #endif /* GEREGYROSCOPE_H_ */

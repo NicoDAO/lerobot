@@ -7,18 +7,19 @@ enum
 
     LOG_RIEN=0,
     LOG_CAPTEUR_DISTANCE,//2
-	LOG_TRACTION,		//4
-	LOG_GYROSCOPE,		//8
-	LOG_CALIBRE,        //16
-	LOG_FSIMU,          //32
-	LOG_MEMSIMU,
-	LOG_MOTEUR,
-	LOG_PWM,
-	LOG_MEM,
-	LOG_MESSAGES,
-	LOG_INFOS
+	LOG_TRACTION,	//4
+	LOG_GYROSCOPE,	//8
+	LOG_CALIBRE,    //16
+	LOG_FSIMU,      //32
+	LOG_MEMSIMU,    //64
+	LOG_MOTEUR,     //128
+	LOG_PWM,        //256
+	LOG_MEM,        //512
+	LOG_MESSAGES,   //1024
+	LOG_INFOS       //2048
 
 };
+
 class selectionneLOg
 {
 public :
@@ -38,8 +39,6 @@ public :
 	int LOG_INFOS;*/
 
 };
-
-
 
 
 static int mode_log =LOG_TRACTION;
@@ -73,7 +72,8 @@ public:
 
 private :
 	 static bool alreadyCreated;
-	 int mode_log = 0;
+	 //int mode_log = 0;
+
 	// log_format(const char *tag, const char *message, va_list args);
 	 //static mode = LOG_RIEN;
 	// selectionneLOg logS;
