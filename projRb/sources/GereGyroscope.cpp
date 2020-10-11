@@ -34,24 +34,33 @@ void CalculOrientation::RAZ(){
         for(int i = 0;i<taille_mesure;i++){
             mesures.push_back(0);
         }
+	moyenne = 0;
 }
 int CalculOrientation::ajouteMesure(float m){
-        
+ #if 0 
         mesures.at(index_mesure) = m;
         //calog.log_gyro("ajoute mesure [%d] %f(%f)",index_mesure,m,mesures.at(index_mesure));
         index_mesure++;
         if(index_mesure == taille_mesure)index_mesure = 0;
-        
+#else
+	moyenne += m;
+
+#endif
 	return 1;
+	
 }
 float CalculOrientation::recupereCalcul(){
         int i = 0;
+#if 0
 	moyenne = 0;
         for (float f : mesures){
 	  //calog.log_gyro("recupere[%d] %f",i++,f);
             moyenne+=f;
         }
-        
+#else
+	//	moyenne+=moyenne;
+
+#endif
 
   return moyenne;
 }
