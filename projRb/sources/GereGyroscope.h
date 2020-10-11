@@ -59,7 +59,8 @@ public:
 
 class Donnees_gyroscope{
 public:
-
+        Donnees_gyroscope();
+        ~Donnees_gyroscope();
 	s16 x_l = 0;
 	s16 y_l = 0;
 	s16 z_l = 0;
@@ -68,11 +69,13 @@ public:
 	s16 y_h = 0;
 	s16 z_h = 0;
         
-        s16 x;
-        s16 y;
-        s16 z;
-
-        void calcul(void);	
+        s16 calc_x;
+        s16 calc_y;
+        s16 calc_z;
+	void raz(void);
+        void calcul(void);
+	void integre(void);
+	
 };
 
 class GereGyroscope : public CagereAXI , public Calibrage {

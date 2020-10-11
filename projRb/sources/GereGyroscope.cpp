@@ -14,7 +14,10 @@ GereGyroscope::GereGyroscope() {
 GereGyroscope::~GereGyroscope() {
 	// TODO Auto-generated destructor stub
 }
-
+Donnees_gyroscope::Donnees_gyroscope(){
+}
+Donnees_gyroscope::~Donnees_gyroscope(){
+}
 int GereGyroscope::appliqueCalibre(int val) {
 
 	float cal = parametrage.at(0);
@@ -84,10 +87,19 @@ void GereGyroscope::handler() {
 				donne_gyro.z_l = 0xff & litRegistreGyro(OUT_Z_L);
 				usleep(100);
                                 donne_gyro.z_h = 0xff & litRegistreGyro(OUT_Z_H);
+                                
+                                s16 XX = (donne_gyro.x_l) << 9 | (donne_gyro.x_h);//bugounet les bit doivent être décalés dans le vhdl
+                                s16 YY = (donne_gyro.y_l) << 9 | (donne_gyro.y_h);
+                                s16 ZZ = (donne_gyro.z_l) << 9 | (donne_gyro.z_h);
+			        float XX_f = static_cast<float>(~XX+1)/1000 ;	
+			        float YY_f = static_cast<float>(~YY+1)/1000;	
+			        float ZZ_f = static_cast<float>(~ZZ+1)/1000;	
+				//	calog.log_gyro(".x = %02x%02x   y =  %02x%02x    z = %02x%02x",donne_gyro.x_l,donne_gyro.x_h,donne_gyro.y_l,donne_gyro.y_h \
+				//		,donne_gyro.z_l,donne_gyro.z_h);
+				calog.log_gyro("  %f   %f   %f  ",XX_f,YY_f,ZZ_f);
+		
 
-				calog.log_gyro("x = %02x%02x   y =  %02x%02x    z = %02x%02x",donne_gyro.x_l,donne_gyro.x_h,donne_gyro.y_l,donne_gyro.y_h\
-						,donne_gyro.z_l,donne_gyro.z_h);
-			break;
+				break;
 		}
 	break;
 
@@ -96,6 +108,13 @@ void GereGyroscope::handler() {
 	usleep(this->xWakePeriod);
 }
 
+void Donnees_gyroscope::integre(){
+
+	calc_x = ((float) x_h + calc_x); 
+
+
+
+}
 int GereGyroscope::handler_gyro_config(int ii){
 	static unsigned int rr = 0;
 	if (rr == config_gyro.memoire_periph->parametrage_memoire.size())rr=0;//la config n'est pas finie
@@ -123,6 +142,7 @@ int GereGyroscope::handler_gyro_config(int ii){
 		calog.log_gyro("AXI_ECRIT %x : %x ",pp.adresse,pp.valeur);
 		Xil_Out32(this->adresseAXI, pp.valeur, pp.adresse ); //envoie la valeur sur la sortie
 	}
+	
 
 	if(pp.nom == "LIT"){
 		u32 lecture = Xil_In32(this->adresseAXI); //envoie la valeur sur la sortie
