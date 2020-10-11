@@ -14,10 +14,58 @@ GereGyroscope::GereGyroscope() {
 GereGyroscope::~GereGyroscope() {
 	// TODO Auto-generated destructor stub
 }
+
 Donnees_gyroscope::Donnees_gyroscope(){
 }
+
 Donnees_gyroscope::~Donnees_gyroscope(){
 }
+
+CalculOrientation::CalculOrientation(){
+  //void RAZ(void);
+}
+
+CalculOrientation::~CalculOrientation(){
+}
+
+void CalculOrientation::RAZ(){
+        calog.log_gyro("RAZ mesures");
+        
+        for(int i = 0;i<taille_mesure;i++){
+            mesures.push_back(0);
+        }
+}
+int CalculOrientation::ajouteMesure(float m){
+        
+        mesures.at(index_mesure) = m;
+        //calog.log_gyro("ajoute mesure [%d] %f(%f)",index_mesure,m,mesures.at(index_mesure));
+        index_mesure++;
+        if(index_mesure == taille_mesure)index_mesure = 0;
+        
+	return 1;
+}
+float CalculOrientation::recupereCalcul(){
+        int i = 0;
+	moyenne = 0;
+        for (float f : mesures){
+	  //calog.log_gyro("recupere[%d] %f",i++,f);
+            moyenne+=f;
+        }
+        
+
+  return moyenne;
+}
+float CalculOrientation::recupereMoyenne(void){
+  return moyenne;
+}
+void CalculOrientation::calcul(){
+}
+void Donnees_gyroscope::integre(){
+	calc_x = ((float) x_h + calc_x); 
+	calc_y = ((float) x_h + calc_x);
+	calc_z = ((float) x_h + calc_x);
+}
+ 
 int GereGyroscope::appliqueCalibre(int val) {
 
 	float cal = parametrage.at(0);
@@ -45,6 +93,10 @@ void GereGyroscope::handler() {
 		etat_gyro++;
 		lit_config_gyro();
 		num =  config_gyro.parametrage.size();
+		donne_gyro.axeX.RAZ();
+                donne_gyro.axeY.RAZ();
+		donne_gyro.axeZ.RAZ();
+		
 		break;
 	case gyro_config:
 		if(1 == handler_gyro_config(0)){
@@ -88,17 +140,23 @@ void GereGyroscope::handler() {
 				usleep(100);
                                 donne_gyro.z_h = 0xff & litRegistreGyro(OUT_Z_H);
                                 
-                                s16 XX = (donne_gyro.x_l) << 9 | (donne_gyro.x_h);//bugounet les bit doivent être décalés dans le vhdl
+                                s16 XX = (donne_gyro.x_l) << 9 | (donne_gyro.x_h);//TODO bugounet les bit doivent être décalés dans le vhdl, il doit manquer le bit
+				                                                  //de poid faible
                                 s16 YY = (donne_gyro.y_l) << 9 | (donne_gyro.y_h);
                                 s16 ZZ = (donne_gyro.z_l) << 9 | (donne_gyro.z_h);
-			        float XX_f = static_cast<float>(~XX+1)/1000 ;	
-			        float YY_f = static_cast<float>(~YY+1)/1000;	
-			        float ZZ_f = static_cast<float>(~ZZ+1)/1000;	
-				//	calog.log_gyro(".x = %02x%02x   y =  %02x%02x    z = %02x%02x",donne_gyro.x_l,donne_gyro.x_h,donne_gyro.y_l,donne_gyro.y_h \
-				//		,donne_gyro.z_l,donne_gyro.z_h);
-				calog.log_gyro("  %f   %f   %f  ",XX_f,YY_f,ZZ_f);
-		
+				float gx = static_cast<float>(~XX+1)/1000 ;
+				donne_gyro.axeX.ajouteMesure(gx);
+				float gy = static_cast<float>(~YY+1)/1000;	
+			        donne_gyro.axeY.ajouteMesure(gy);
+				float gz = static_cast<float>(~ZZ+1)/1000;	
+				donne_gyro.axeZ.ajouteMesure(gz);
+				//				calog.log_gyro(" %.08f  %.08f  %.08f",gx,gy,gz);
 
+                                float moy_x = donne_gyro.axeX.recupereCalcul();
+                                float moy_y = donne_gyro.axeY.recupereCalcul();
+				float moy_z = donne_gyro.axeZ.recupereCalcul();
+
+                                calog.log_gyro(" %.08f  %.08f  %.08f",moy_x,moy_y,moy_z);
 				break;
 		}
 	break;
@@ -106,14 +164,6 @@ void GereGyroscope::handler() {
 
 	}
 	usleep(this->xWakePeriod);
-}
-
-void Donnees_gyroscope::integre(){
-
-	calc_x = ((float) x_h + calc_x); 
-
-
-
 }
 int GereGyroscope::handler_gyro_config(int ii){
 	static unsigned int rr = 0;

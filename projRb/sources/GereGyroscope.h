@@ -14,7 +14,6 @@
 #include "Messagerie.h"
 #include "LitMemoireLinux.h"
 
-
 #define CTRL_REG1 0x20
 #define CTRL_REG2 0x21
 #define CTRL_REG3 0x22
@@ -33,7 +32,6 @@
 #define CDE_LIT   0xBB
 #define CDE_RESET 0xff
 #define LIT_AXI   0xCC
-
 
 enum{
 	gyro_reset = 0,
@@ -56,26 +54,50 @@ public:
 	std::vector<element_config> element;
 
 };
+class CalculOrientation{//filtre les valeurs mesurees
+public:
+        CalculOrientation ();
+        ~CalculOrientation();
+        void RAZ(void);
+        int ajouteMesure(float mesure);
+        float recupereCalcul(void);
+        void calcul(void);
+        float recupereMoyenne(void);
+        
+private:
+        std::vector<float>mesures;
+        GestionLog calog;
+        u16 taille_mesure = 10;
+        u16 index_mesure = 0;
+  float moyenne = 0;
+  
 
+};
 class Donnees_gyroscope{
 public:
         Donnees_gyroscope();
         ~Donnees_gyroscope();
-	s16 x_l = 0;
+
+        void raz(void);
+        void calcul(void);
+	void integre(void);
+        CalculOrientation axeX;
+        CalculOrientation axeY;
+        CalculOrientation axeZ;
+        s16 x_l = 0;
 	s16 y_l = 0;
 	s16 z_l = 0;
-
 	s16 x_h = 0;
 	s16 y_h = 0;
 	s16 z_h = 0;
-        
-        s16 calc_x;
-        s16 calc_y;
-        s16 calc_z;
-	void raz(void);
-        void calcul(void);
-	void integre(void);
-	
+   
+        float XX_f =0 ;	
+        float YY_f =0;	
+        float ZZ_f =0;	
+        float calc_x=0;
+        float calc_y=0;
+        float calc_z=0;
+	GestionLog calog;
 };
 
 class GereGyroscope : public CagereAXI , public Calibrage {
