@@ -19,8 +19,7 @@ public:
 	int lit_parametrage(void);
 	virtual int appliqueCalibre(int) = 0; //on met une methode virtuelle pure cara chaque périphérique à une regle de calibrage particulière
 private :
-	GestionLog calog ;
-  //  std::string nom_fichier = "";
+	GestionLog *lelog = nullptr;
 };
 
 #endif /* CALIBRAGE_H_ */

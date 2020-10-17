@@ -51,10 +51,8 @@ private:
 	int fp=-1;
 	int fichier_lu = 0;
 	unsigned int index_fichier= 0;
-        GestionLog calog;
-protected:
 	std::string nom_fichier ="simu_capteur_distance.txt";
-	  
+	GestionLog calog;
 
 };
 

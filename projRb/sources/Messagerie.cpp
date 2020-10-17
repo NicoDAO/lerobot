@@ -28,15 +28,17 @@ Messager::Messager(char *nom, int taille) {
 	ssize_t len_recv;
 	//mqd_t 		My_MQ;
 	// ftok to generate unique key
-	key = ftok(nom, taille);
+	char cle[50];
+	snprintf(cle,sizeof(cle),"/tmp%s",nom);//on crée la clé systemV dans le repertoitr /tmp"
+	key = ftok(".",(char) taille);
 	// msgget creates a message queue
 	// and returns identifier
 	snprintf(nomqueue, sizeof(nomqueue), "%s", nom);
 	msgid = msgget(key, 0666 | IPC_CREAT);
 	//log_message(nomqueue,sizeof(nomqueue),"%s",nom);
-	calog.log_message("Creation messagerie ->%s<-, key : %d  msgid : %d\r\n",
-			nomqueue, key, msgid);
-}
+	calog.log_message("Creation messagerie nom : %s, key : %d  msgid : %d\r\n",
+		       cle, key, msgid);
+} 
 
 Messager::~Messager() {
 }

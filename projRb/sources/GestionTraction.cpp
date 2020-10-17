@@ -1,5 +1,5 @@
 /*
- * MonPWM.cpp
+ * GestionTraction.cpp
  *
  *  Created on: 10 janv. 2020
  *      Author: nicolas
@@ -9,11 +9,9 @@
 #include <stdio.h>
 #include <iostream>
 GestionTraction::GestionTraction() {
-	// TODO Auto-generated constructor stub
 }
 
 GestionTraction::~GestionTraction() {
-	// TODO Auto-generated destructor stub
 }
 
 void GestionTraction::setBaseAddr(u32 aa) {
@@ -27,16 +25,29 @@ void GestionTraction::handler() {
 	char bargraf[256];
 	int puissance_moteur1 = 0;
 	int puissance_moteur2 = 0;
-//test
-//fin test
 #if 1
+        leMessage4->recoitMessage();
+	log_traction("4: recoit %d message",
+			leMessage4->vecteurMessages.size());
+	if( leMessage4->vecteurMessages.size()>0){
+	    for (unsigned i = 0; i < leMessage4->vecteurMessages.size(); i++) {
+	        char titi[MSGLEN];
+	        memset(titi,0,MSGLEN);
+	        snprintf(titi, sizeof(titi), "%s ->%d",
+		leMessage4->vecteurMessages[i].message, mesureDistance);
+	        log_traction("[%d]GestionTraction : Recoit mesure gyro : %s", i,titi);
+	    }
+            leMessage4->effaceQueue();
+        }
+ 
 	leMessage3->recoitMessage();
-	//  {
-	log_traction("GestionTraction : recoit %d message",
+	log_traction("3 : recoit %d message",
 			leMessage3->vecteurMessages.size());
-	for (unsigned i = 0; i < leMessage3->vecteurMessages.size(); i++) {
+        if( leMessage3->vecteurMessages.size()>0){
+	    for (unsigned i = 0; i < leMessage3->vecteurMessages.size(); i++) {
 		mesureDistance = atoi(leMessage3->vecteurMessages[i].message);
 		char mmmm[MSGLEN];
+		memset(mmmm,0,MSGLEN);
 		snprintf(mmmm, sizeof(mmmm), "%s ->%d",
 				leMessage3->vecteurMessages[i].message, mesureDistance);
 		log_traction("[%d]GestionTraction : Recoit mesure distance : %s", i,mmmm);
@@ -109,6 +120,7 @@ void GestionTraction::handler() {
 			automate = 0;
 			break;
 		}
+	    }
 	}
 #endif
 	leMessage3->effaceQueue();
@@ -116,8 +128,6 @@ void GestionTraction::handler() {
 			puissance_moteur1);
 	snprintf(mot2mess.message, sizeof(mot1mess.message), "%d",
 			puissance_moteur2);
-	//   log_traction("GestionTraction 1 : envoie %s\r\n",mot1mess.message);
-	//    log_traction("GestionTraction 2 : envoie %s\r\n",mot2mess.message);
 	leMessage1->envoieMessage(&mot1mess);
 	leMessage2->envoieMessage(&mot2mess);
 	usleep(this->xWakePeriod);

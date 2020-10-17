@@ -33,6 +33,15 @@
 #define CDE_RESET 0xff
 #define LIT_AXI   0xCC
 
+#define X_PRET_MASK 0x0001
+#define X_PRET      0x0001
+#define Y_PRET_MASK 0x0002
+#define Y_PRET      0x0002
+#define Z_PRET_MASK 0x0004
+#define Z_PRET      0x0004
+#define ZYXDA_MASK  0x0008
+#define ZYXDA       0x0008//test bug
+
 enum{
 	gyro_reset = 0,
 	gyro_config,
@@ -69,7 +78,7 @@ private:
         GestionLog calog;
         u16 taille_mesure = 10;
         u16 index_mesure = 0;
-  float moyenne = 0;
+        float moyenne = 0;
   
 
 };

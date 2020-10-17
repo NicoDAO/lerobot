@@ -1,3 +1,4 @@
+
 /*
  * GereGyroscope.cpp
  *
@@ -7,12 +8,9 @@
 
 #include "GereGyroscope.h"
 GereGyroscope::GereGyroscope() {
-	// TODO Auto-generated constructor stub
-
 }
 
 GereGyroscope::~GereGyroscope() {
-	// TODO Auto-generated destructor stub
 }
 
 Donnees_gyroscope::Donnees_gyroscope(){
@@ -22,7 +20,6 @@ Donnees_gyroscope::~Donnees_gyroscope(){
 }
 
 CalculOrientation::CalculOrientation(){
-  //void RAZ(void);
 }
 
 CalculOrientation::~CalculOrientation(){
@@ -131,42 +128,62 @@ void GereGyroscope::handler() {
 				Xil_Out32(this->adresseAXI, OUT_X_L,3 ); //on lit la valeur X
 				Xil_Out32(this->adresseAXI, CDE_LIT,1 ); //on lit la valeur X
 		                lecture2 = 0xff & Xil_In32(this->adresseAXI  ); //lit la valeur du registre
-				//calog.log_gyro("2 LIT  OUT_X_L = %x ",lecture2);
+			     	
 				etat = 2;
 			case 2:
-                                
-				donne_gyro.x_l = 0xff & litRegistreGyro(OUT_X_L);
-				usleep(100);
-                                donne_gyro.x_h = 0xff & litRegistreGyro(OUT_X_H);
-         	                usleep(100);
+			  //calog.log_gyro("tente lecture");
+				    
+			  //while(1)
+			    {
+			         u16 val_registreStatus =  ZYXDA_MASK & litRegistreGyro(STATUS_REG);
+			         if(val_registreStatus !=ZYXDA)
+				   {
+				     // calog.log_gyro("pas pret status = %x ",val_registreStatus);
+				     break;
+				   }
+				 //  calog.log_gyro("pret status = %x ",val_registreStatus);
+				    
+				  donne_gyro.x_l = 0xff & litRegistreGyro(OUT_X_L);
+				  usleep(100);
+				  donne_gyro.x_h = 0xff & litRegistreGyro(OUT_X_H);
+				  usleep(100);
+		    
+				  s16 XX = (donne_gyro.x_l) << 9 | (donne_gyro.x_h);//TODO bugounet les bit doivent être décalés dans le vhdl, il doit manquer le bit
+				  float gx = static_cast<float>(~XX+1)/100 ;
+				  donne_gyro.axeX.ajouteMesure(gx);
+				  
+				  donne_gyro.y_l = 0xff & litRegistreGyro(OUT_Y_L);
+				  usleep(100);
+				  donne_gyro.y_h = 0xff & litRegistreGyro(OUT_Y_H);
+				  usleep(100);
+				  s16 YY = (donne_gyro.y_l) << 9 | (donne_gyro.y_h);
+				  float gy = static_cast<float>(~YY+1)/100;	
+				  donne_gyro.axeY.ajouteMesure(gy);
+				  donne_gyro.z_l = 0xff & litRegistreGyro(OUT_Z_L);
+				  usleep(100);
+				  donne_gyro.z_h = 0xff & litRegistreGyro(OUT_Z_H);
+				  usleep(100);
+				  s16 ZZ = (donne_gyro.z_l) << 9 | (donne_gyro.z_h);
+				  float gz = static_cast<float>(~ZZ+1)/100;	
+				  donne_gyro.axeZ.ajouteMesure(gz);
+				
+				
+	
+			        float moy_x = donne_gyro.axeX.recupereCalcul();
+			        float moy_y = donne_gyro.axeY.recupereCalcul();
+			        float moy_z = donne_gyro.axeZ.recupereCalcul();
+                                calog.log_gyro(" X %.08f Y  %.08f Z  %.08f",gx,gy,gz);
+				// calog.log_gyro(" X %.08f Y  %.08f Z  %.08f",moy_x,moy_y,moy_z);
 
-				donne_gyro.y_l = 0xff & litRegistreGyro(OUT_Y_L);
-				usleep(100);
-                                donne_gyro.y_h = 0xff & litRegistreGyro(OUT_Y_H);
-		                usleep(100);
+				AMessage messCapteur;
+				snprintf(messCapteur.message, sizeof(messCapteur.message), "gyro x=%f  y=%f  z=%f",moy_x,moy_y,moy_z);
+				int ret = leMessage1->envoieMessage(&messCapteur);
 
-				donne_gyro.z_l = 0xff & litRegistreGyro(OUT_Z_L);
-				usleep(100);
-                                donne_gyro.z_h = 0xff & litRegistreGyro(OUT_Z_H);
-                                
-                                s16 XX = (donne_gyro.x_l) << 9 | (donne_gyro.x_h);//TODO bugounet les bit doivent être décalés dans le vhdl, il doit manquer le bit
-				                                                  //de poid faible
-                                s16 YY = (donne_gyro.y_l) << 9 | (donne_gyro.y_h);
-                                s16 ZZ = (donne_gyro.z_l) << 9 | (donne_gyro.z_h);
-				float gx = static_cast<float>(~XX+1)/1000 ;
-				donne_gyro.axeX.ajouteMesure(gx);
-				float gy = static_cast<float>(~YY+1)/1000;	
-			        donne_gyro.axeY.ajouteMesure(gy);
-				float gz = static_cast<float>(~ZZ+1)/1000;	
-				donne_gyro.axeZ.ajouteMesure(gz);
-				//				calog.log_gyro(" %.08f  %.08f  %.08f",gx,gy,gz);
 
-                                float moy_x = donne_gyro.axeX.recupereCalcul();
-                                float moy_y = donne_gyro.axeY.recupereCalcul();
-				float moy_z = donne_gyro.axeZ.recupereCalcul();
 
-                                calog.log_gyro(" %.08f  %.08f  %.08f",moy_x,moy_y,moy_z);
-				break;
+				
+			  }
+		      break;
 		}
 	break;
 

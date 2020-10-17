@@ -23,8 +23,8 @@ void GereCapteurDistance::handler() {
 	lit = Xil_In32(add1);
 	u32 distance_calibree = (int)appliqueCalibre((int) lit);
 
-	//lelog_calib_capteur("capteur distance brute %d = %d cm",lit, distance_calibree);
-	AMessage messCapteur;
+	calog.log_capteur("capteur distance brute %d = %d cm",lit, distance_calibree);
+   	AMessage messCapteur;
 	snprintf(messCapteur.message, sizeof(messCapteur.message), "%d", distance_calibree);
 	int ret = leMessage1->envoieMessage(&messCapteur);
 

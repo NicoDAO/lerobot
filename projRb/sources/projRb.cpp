@@ -37,8 +37,6 @@ GereLed GereLesLed;
 GereCapteurDistance capteurDistance;
 GereGyroscope gyroscope1;
 GestionLog calog;
-//laxi2.
-//CagereAXI laxi3;
 
 char HWstring[15] = "Hello World";
 long RxtaskCntr = 0;
@@ -51,10 +49,18 @@ void* handlerGestionTraction(void *pvParameters);
 void* handlerCapteurDistance(void *pvParameters);
 void* handlerCapteurGyroscope1(void *pvParameters);
 
-Messager messageConsigneMoteur2("/ConsigneMoteur", 1);
+/*Messager messageConsigneMoteur2("/ConsigneMoteur", 1);
 Messager messageMesureDistanceCapteur("/mesureDistance", 2);
 Messager messageConsigneMoteur1("/consigneMoteur1", 3);
-Messager messageGyro("/gyroscope1", 3);
+Messager messageGyro("/gyroscope1", 4);
+*/
+
+Messager *messageConsigneMoteur2;
+Messager *messageMesureDistanceCapteur;
+Messager *messageConsigneMoteur1;
+Messager *messageGyro;
+
+
 
 //#define LANCE_FIR
 //aa
@@ -95,21 +101,28 @@ int main(int argc, char *argv[]) {
 	pthread_attr_t attr;
 	calog.log_info("main");
 	struct thread_info *tinfo;
+
+	//configuration messagerie ipc systemV
+        messageConsigneMoteur2  = new Messager("/ConsigneMoteur", 1);
+        messageMesureDistanceCapteur  =new Messager("/mesureDistance", 2);
+        messageConsigneMoteur1  =new Messager("/consigneMoteur1", 3);
+        messageGyro  =new Messager("/gyroscope1", 4);
+	
 	//configuration classe traction
-	traction.SetMessage1(&messageConsigneMoteur1);
-	traction.SetMessage2(&messageConsigneMoteur2);
-	traction.SetMessage3(&messageMesureDistanceCapteur);
-	traction.SetMessage4(&messageGyro);
+	traction.SetMessage1(messageConsigneMoteur1);
+	traction.SetMessage2(messageConsigneMoteur2);
+	traction.SetMessage3(messageMesureDistanceCapteur);
+	traction.SetMessage4(messageGyro);
 	snprintf(nom, sizeof(nom), "moteur1");
 	mot1.SetNomMoteur(nom, 0);
 	snprintf(nom, sizeof(nom), "moteur2");
 	mot2.SetNomMoteur(nom, 0);
-	mot1.SetMessage1(&messageConsigneMoteur1);
-	mot2.SetMessage1(&messageConsigneMoteur2);
+	mot1.SetMessage1(messageConsigneMoteur1);
+	mot2.SetMessage1(messageConsigneMoteur2);
 
-	capteurDistance.SetMessage1(&messageMesureDistanceCapteur);
+	capteurDistance.SetMessage1(messageMesureDistanceCapteur);
 	//capteurDistance.setGestionLog(&calog);
-
+        gyroscope1.SetMessage1(messageGyro);
 
 	GereLesLed.regleAdresse(0x43C00000);
 	if (mode_fonctionnement == MODE_PC_SIMULATION) //le mode PC_SIMULATION sert à simuler le fonctionnement du robot sur un PC

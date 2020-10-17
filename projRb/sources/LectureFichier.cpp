@@ -125,11 +125,7 @@ int LectureFichier::ouvrFichierSimu(std::string nom) {
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read;
-
-
-
-		  g_num_mutex.lock();
-
+        g_num_mutex.lock();//evite les accès concurrents au fichier
 
 	char *chement;
 	chement= get_current_dir_name();

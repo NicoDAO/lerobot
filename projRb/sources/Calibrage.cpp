@@ -17,19 +17,22 @@ Calibrage::~Calibrage() {
 }
 
 Calibrage::Calibrage(GestionLog *lelog ) {
-	this->lelog = lelog;
+  //this->lelog = lelog;
 
 }
 
 void Calibrage::SetfichierCalib(std::string tt){
 
 	ouvrFichierSimu(tt);//on va lire le fichier de parametrage et on rempli le vecteur parametrage
+        calog.log_calibre( "setFichierCalib = %s",tt);
+
 	lit_parametrage();
+	nom_fichier = tt;
 
 }
 int Calibrage::lit_parametrage(void){
 	 for (unsigned i=0; i<parametrage.size(); i++)
-		 this->lelog->log_calibre("on lit %d", parametrage.at(i));
+	   calog.log_calibre( "%s  on lit %d", nom_fichier,parametrage.at(i));
 	 return 1;
 }
 
