@@ -63,7 +63,7 @@ Messager *messageGyro;
 
 
 //#define LANCE_FIR
-//aa
+
 int main(int argc, char *argv[]) {
 	//configuation des messages
 	//Messager messageConsigneMoteur;
@@ -268,7 +268,7 @@ void* handlerGereMoteur1(void *pvParameters) {
 void* handlerGereMoteur2(void *pvParameters) {
 	calog.log_info("handlerGereMoteur");
 	mot2.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-	mot2.setPeriod(100000);	//100ms
+	mot2.setPeriod(200000);	//100ms
 	//mot2.Reglecalibre(1);
 	mot2.SetfichierCalib("moteur2.calib");
 	calog.log_info("	GereMoteur 2");
@@ -289,7 +289,7 @@ void* handlerGestionTraction(void *pvParameters) {
 void* handlerCapteurDistance(void *pvParameters) {
 	calog.log_info("capteurDistance");
 	//traction.SetAdresseMoteur(XPAR_PMOD_AUDIO_1_S00_AXI_BASEADDR);
-	capteurDistance.setPeriod(1000001);	//seconde
+	capteurDistance.setPeriod(200011);	//seconde
 	capteurDistance.SetfichierCalib("capteur_distance.calib");
 	capteurDistance.RegleAdresseAxi(
 			XPAR_CAPTEURDISTANCEULTRA_0_S00_AXI_BASEADDR);

@@ -45,7 +45,9 @@ Messager::~Messager() {
 
 int Messager::envoieMessage(AMessage *txMessage) {
 	txMessage->mesg_type = 1;
-	msgsnd(msgid, txMessage, BUF_LEN /*sizeof(txMessage)*/, 0);
+	if(-1 == msgsnd(msgid, txMessage, BUF_LEN /*sizeof(txMessage)*/, 0)){
+            calog.log_error("probleme envoie message");
+	  }
 	timespec taillemahout;
 	taillemahout.tv_sec = 4;
 	calog.log_message("%s envoieMessage : fin (id %d): %s\r\n", nomqueue, msgid,
@@ -64,7 +66,17 @@ int Messager::recoitMessage() {
 	memset(recv, 0, BUF_LEN);
 	calog.log_message("    attend message  id:%x\n\r ", msgid);
 	AMessage messagea;
-	msgrcv(msgid, &messagea, BUF_LEN /*sizeof(messagea)*/, 1, 0);
+	/*
+        https://www.systutorials.com/docs/linux/man/2-msgrcv/
+        IPC_NOWAIT
+        Return immediately if no message of the requested type is in the queue. The system call fails with errno set to ENOMSG. */
+	
+ 	if(-1 == msgrcv(msgid, &messagea, BUF_LEN /*sizeof(messagea)*/, 1,/* 0*/IPC_NOWAIT)){
+	    if(errno != ENOMSG){
+	      calog.log_error("problème réception message");
+			       }
+	  }
+	  
 	calog.log_message("%s    recu message :%s\n\r ", nomqueue, messagea.message);
 	vecteurMessages.push_back(messagea);
 	return 1;
@@ -76,3 +88,5 @@ int Messager::effaceQueue() {
 int Messager::creeQueue() {
 	return 0;
 }
+
+

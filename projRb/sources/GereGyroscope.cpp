@@ -169,14 +169,14 @@ void GereGyroscope::handler() {
 				
 				
 	
-			        float moy_x = donne_gyro.axeX.recupereCalcul();
-			        float moy_y = donne_gyro.axeY.recupereCalcul();
-			        float moy_z = donne_gyro.axeZ.recupereCalcul();
-                                calog.log_gyro(" X %.08f Y  %.08f Z  %.08f",gx,gy,gz);
+				  //  float moy_x = donne_gyro.axeX.recupereCalcul();
+				  //float moy_y = donne_gyro.axeY.recupereCalcul();
+				  //float moy_z = donne_gyro.axeZ.recupereCalcul();
+                                calog.log_gyro("on mzure X %.08f Y  %.08f Z  %.08f",gx,gy,gz);
 				// calog.log_gyro(" X %.08f Y  %.08f Z  %.08f",moy_x,moy_y,moy_z);
 
 				AMessage messCapteur;
-				snprintf(messCapteur.message, sizeof(messCapteur.message), "gyro x=%f  y=%f  z=%f",moy_x,moy_y,moy_z);
+				snprintf(messCapteur.message, sizeof(messCapteur.message), "gyro x=%f  y=%f  z=%f",gx,gy,gz);
 				int ret = leMessage1->envoieMessage(&messCapteur);
 
 

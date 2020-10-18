@@ -8,12 +8,10 @@
 #include "Calibrage.h"
 #include "log.h"
 
-Calibrage::Calibrage() { // @suppress("Member declaration not found")
-	// TODO Auto-generated constructor stub
+Calibrage::Calibrage() {
 }
 
 Calibrage::~Calibrage() {
-	// TODO Auto-generated destructor stub
 }
 
 Calibrage::Calibrage(GestionLog *lelog ) {
@@ -22,17 +20,16 @@ Calibrage::Calibrage(GestionLog *lelog ) {
 }
 
 void Calibrage::SetfichierCalib(std::string tt){
-
-	ouvrFichierSimu(tt);//on va lire le fichier de parametrage et on rempli le vecteur parametrage
-        calog.log_calibre( "setFichierCalib = %s",tt);
-
-	lit_parametrage();
-	nom_fichier = tt;
+	nom_fichier = tt;  
+        calog.log_calibre( "setFichierCalib = %s",tt.c_str());
+        ouvrFichierSimu(tt);//on va lire le fichier de parametrage et on rempli le vecteur parametrage
+        lit_parametrage();
 
 }
 int Calibrage::lit_parametrage(void){
-	 for (unsigned i=0; i<parametrage.size(); i++)
-	   calog.log_calibre( "%s  on lit %d", nom_fichier,parametrage.at(i));
+
+        for (unsigned i=0; i<parametrage.size(); i++)
+	  calog.log_calibre( "%s  on lit %f", nom_fichier.c_str(),parametrage.at(i));
 	 return 1;
 }
 
