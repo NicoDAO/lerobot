@@ -49,3 +49,6 @@ void Tache::SetMessage3(Messager* lm){
 void Tache::SetMessage4(Messager* lm){
 	this->leMessage4 = lm;
 }
+void Tache::SetMessage5(Messager* lm){
+	this->leMessage5 = lm;
+}

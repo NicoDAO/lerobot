@@ -59,7 +59,7 @@ Messager *messageConsigneMoteur2;
 Messager *messageMesureDistanceCapteur;
 Messager *messageConsigneMoteur1;
 Messager *messageGyro;
-
+Messager *telecommande;
 
 
 //#define LANCE_FIR
@@ -113,6 +113,8 @@ int main(int argc, char *argv[]) {
 	traction.SetMessage2(messageConsigneMoteur2);
 	traction.SetMessage3(messageMesureDistanceCapteur);
 	traction.SetMessage4(messageGyro);
+	traction.SetMessage5(messageGyro);
+
 	snprintf(nom, sizeof(nom), "moteur1");
 	mot1.SetNomMoteur(nom, 0);
 	snprintf(nom, sizeof(nom), "moteur2");

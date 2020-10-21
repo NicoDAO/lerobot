@@ -124,7 +124,10 @@ private :
 	int lit_config_gyro (void);
 	GestionLog calog;
         u32 litRegistreGyro(u8);
-        Donnees_gyroscope    donne_gyro; 
+        Donnees_gyroscope    donne_gyro;
+        void dirige(void);
+  	int mesureDistance = 0;
+
 };
 
 #endif /* GEREGYROSCOPE_H_ */

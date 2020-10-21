@@ -29,7 +29,9 @@ public:
 	void SetMessage2(Messager*);
 	void SetMessage3(Messager*);
 	void SetMessage4(Messager* lm);
-	u32 cpt_tache=0;
+	void SetMessage5(Messager* lm);
+
+  u32 cpt_tache=0;
 protected:
 	uint32_t xWakePeriod;
 	//TickType_t xLastWakeTime;
@@ -42,6 +44,7 @@ protected:
 	Messager *leMessage2;
 	Messager *leMessage3;
 	Messager *leMessage4;
+  	Messager *leMessage5;
 private :
 
 

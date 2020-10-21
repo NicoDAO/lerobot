@@ -35,10 +35,22 @@ public:
 
 private :
 
+        void dirige(void);
 	s32 rapport_entre_2_consignes = 0;
 	u32 baseAddr = 0;
 	int mesureDistance_avant = 0;
-    int num = 0;
+        int num = 0;
+        int mesureDistance =0;
+      	u8 automate = 0;
+	AMessage mot1mess, mot2mess;
+	u32 vitesse_g = 0;
+	char bargraf[256];
+	int puissance_moteur1 = 0;
+	int puissance_moteur2 = 0;
+        string mesures_gyro ="";
+        string mesures_distance ="";
+	string etat_traction = "";
+
 };
 
 #endif /* SRC_MONPWM_H_ */
