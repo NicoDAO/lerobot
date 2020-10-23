@@ -59,7 +59,7 @@ Messager *messageConsigneMoteur2;
 Messager *messageMesureDistanceCapteur;
 Messager *messageConsigneMoteur1;
 Messager *messageGyro;
-Messager *telecommande;
+Messager *messageTelecommande;
 
 
 //#define LANCE_FIR
@@ -107,13 +107,13 @@ int main(int argc, char *argv[]) {
         messageMesureDistanceCapteur  =new Messager("/mesureDistance", 2);
         messageConsigneMoteur1  =new Messager("/consigneMoteur1", 3);
         messageGyro  =new Messager("/gyroscope1", 4);
-	
+	messageTelecommande = new Messager("/telecommande",5);
 	//configuration classe traction
 	traction.SetMessage1(messageConsigneMoteur1);
 	traction.SetMessage2(messageConsigneMoteur2);
 	traction.SetMessage3(messageMesureDistanceCapteur);
 	traction.SetMessage4(messageGyro);
-	traction.SetMessage5(messageGyro);
+	traction.SetMessage5(messageTelecommande);
 
 	snprintf(nom, sizeof(nom), "moteur1");
 	mot1.SetNomMoteur(nom, 0);
@@ -144,23 +144,15 @@ int main(int argc, char *argv[]) {
 	}
 	if (mode_fonctionnement == MODE_SIMU_CAPTEUR_DISTANCE) //le mode PC_SIMULATION sert à simuler le fonctionnement du robot sur un PC
 	{
-		// mode servant à tester le robot sur cible en envoyant des valeurs
-		// du capteur lues dans le fichier de simulation, met les moteurs sont
-		// réelements utilisés
-
 		calog.log_info("Mode SIMULATION du capteur distance");
 		capteurDistance.metEnmodeSimu();
-
 	}
 #if TEST_LUART == 1
 	//test_l_uart();
 	Test_lib_uart tt;
 	tt.test_l_uart();
 #endif
-	//Test_lib_uart tt;
-	//tt.test_l_uart();
-	//conf_uart();
-	//	lien1.setXUartPs(&Uart_Ps);
+
 #ifdef LANCE_FIR
 	//unsigned long int *, const pthread_attr_t *, void * (*)(void *), void *
 	log_info("pthread_create");
@@ -202,7 +194,6 @@ int main(int argc, char *argv[]) {
 		exit(3);
 	}
 	return 0;
-	//#endif
 }
 
 void* handlerGereAXI2(void *pvParameters) {

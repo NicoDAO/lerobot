@@ -126,6 +126,24 @@ void GestionTraction::handler() {
 	    }
 	    leMessage3->effaceQueue();
 	}
+
+
+	leMessage5->recoitMessage();
+        if( leMessage5->vecteurMessages.size()>0){
+	    for (unsigned i = 0; i < leMessage5->vecteurMessages.size(); i++) {
+		char mmmmt[MSGLEN];
+		memset(mmmmt,0,MSGLEN);
+		snprintf(mmmmt, sizeof(mmmmt), "message 5, msgid = %d : %s",
+			 leMessage5->getMsgId(),leMessage5->vecteurMessages[i].message);
+		log_info (mmmmt, strlen(mmmmt));	    
+
+		
+	    }
+	    leMessage5->effaceQueue();
+	}
+
+
+	
         dirige();
 	snprintf(mot1mess.message, sizeof(mot1mess.message), "%d",puissance_moteur1);
 	snprintf(mot2mess.message, sizeof(mot1mess.message), "%d",puissance_moteur2);

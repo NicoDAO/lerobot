@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm *.o
+#rm *.o
 
 
  #g++ *.cpp -Llibs -lpthread   $(LIBS) -lrt -o sorie 

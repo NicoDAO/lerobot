@@ -18,7 +18,7 @@ int mode_foncionnel::estCequonestenmodeRobot(void)
 {
 
 	if( this->mode == MODE_ROBOT){
-		calog.log_info("on est en mode ROBO" );
+	  //	calog.log_info("on est en mode ROBO" );
 		return 1;
 	}
 	return 0;
@@ -32,7 +32,7 @@ void mode_foncionnel::metEnmodeSimu()
 int mode_foncionnel::estCequonestenmodeSimu(void)
 {
 	if( this->mode == MODE_PC_SIMULATION) {
-		calog.log_info("on est en mode SIMU" );
+	  //	calog.log_info("on est en mode SIMU" );
 		return 1;
 	}
 	return 0;
