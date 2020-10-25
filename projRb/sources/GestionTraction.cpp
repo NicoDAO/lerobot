@@ -128,20 +128,20 @@ void GestionTraction::handler() {
 	}
 
 
-	leMessage5->recoitMessage();
-        if( leMessage5->vecteurMessages.size()>0){
-	    for (unsigned i = 0; i < leMessage5->vecteurMessages.size(); i++) {
-		char mmmmt[MSGLEN];
-		memset(mmmmt,0,MSGLEN);
-		snprintf(mmmmt, sizeof(mmmmt), "message 5, msgid = %d : %s",
+        if(leMessage5->recoitMessage()>=0){
+            if( leMessage5->vecteurMessages.size()>0){
+	        for (unsigned i = 0; i < leMessage5->vecteurMessages.size(); i++) {
+		    char mmmmt[MSGLEN];
+		    memset(mmmmt,0,MSGLEN);
+		    snprintf(mmmmt, sizeof(mmmmt), "message 5, msgid = %d : %s",
 			 leMessage5->getMsgId(),leMessage5->vecteurMessages[i].message);
-		log_info (mmmmt, strlen(mmmmt));	    
 
+		    log_info (mmmmt, strlen(mmmmt));	    
 		
-	    }
-	    leMessage5->effaceQueue();
-	}
-
+	          }
+	      leMessage5->effaceQueue();
+	      }
+	  }
 
 	
         dirige();

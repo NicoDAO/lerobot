@@ -75,6 +75,7 @@ int Messager::recoitMessage() {
 	    if(errno != ENOMSG){
 	      calog.log_error("problème réception message");
 			       }
+	    return -1;
 	  }
 	  
 	calog.log_message("%s    recu message :%s\n\r ", nomqueue, messagea.message);
