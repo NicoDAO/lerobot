@@ -156,6 +156,15 @@ void GestionLog::log_gyro(const char *message, ...) {
 	}
 }
 
+void GestionLog::log_teleco(const char *message, ...) {
+	if((mode_log >> LOG_TELECO) & 1){
+		va_list args;
+		va_start(args, message);
+		log_format("Teleco", message, args);
+		va_end(args);
+	}
+}
+
 void GestionLog::setMode(int m){
 	mode_log = m;
 	//logS.LOG_CALIBRE =1;

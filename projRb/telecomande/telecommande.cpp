@@ -22,6 +22,7 @@ int main(int argc, char *argv[]) {
 	int mode_fonctionnement = MODE_ROBOT;
 	int mod_log = LOG_RIEN;
 	int msg_id = 0;
+	std::string commande ="";
 	for (int i = 0; i < argc; ++i) {
 		calog.log_info("argument %s", argv[i]);
 		if (NULL != strstr(argv[i], "LOG=")) {
@@ -43,6 +44,13 @@ int main(int argc, char *argv[]) {
 			calog.log_info("on a %s(%d)",argv[i] ,msg_id);
 			//calog.setMode(log_nb);
 		}
+                if (NULL != strstr(argv[i], "COMMANDE=")) {
+			std::string param(argv[i]+strlen("COMMANDE="));//on choppe la config du log
+			//	cout << "on a " + param;
+			mod_log = LOG_CAPTEUR_DISTANCE;
+			commande = param; 
+                   	calog.log_info("on a %s(%d)",commande ,msg_id);
+		}
 	}
 
 	//configuration messagerie ipc systemV
@@ -50,10 +58,13 @@ int main(int argc, char *argv[]) {
         telecommande_robot->setID(msg_id);
 	int num = 0;
 	while(1){
+
+
 	  AMessage message;
-	  snprintf( message.message,sizeof(message.message),"trand %d",num++);
+	  snprintf( message.message,sizeof(message.message)," %d %s",num++,commande.c_str());
 	  telecommande_robot->envoieMessage(&message);
-          sleep(1);
+          //sleep(1);
+	  exit(0);
 	}
 
 

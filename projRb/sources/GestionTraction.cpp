@@ -136,7 +136,7 @@ void GestionTraction::handler() {
 		    snprintf(mmmmt, sizeof(mmmmt), "message 5, msgid = %d : %s",
 			 leMessage5->getMsgId(),leMessage5->vecteurMessages[i].message);
 
-		    log_info (mmmmt, strlen(mmmmt));	    
+		    log_teleco (mmmmt, strlen(mmmmt));	    
 		
 	          }
 	      leMessage5->effaceQueue();

@@ -34,7 +34,7 @@ public:
     std::vector<AMessage> vecteurMessages;
     int effaceQueue(void);
     int creeQueue(void);
-  int getMsgId(void){return msgid;}
+    int getMsgId(void){return msgid;}
 private:
     key_t key;
     int msgid;
