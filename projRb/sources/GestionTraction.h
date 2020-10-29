@@ -50,6 +50,8 @@ private :
         string mesures_gyro ="";
         string mesures_distance ="";
 	string etat_traction = "";
+        string commande_telecommande ="";
+        GestionLog calog;
 
 };
 

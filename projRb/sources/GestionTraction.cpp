@@ -19,6 +19,9 @@ void GestionTraction::setBaseAddr(u32 aa) {
 	this->baseAddr = aa;
 }
 void GestionTraction::dirige(){
+  string log;
+  
+  if( commande_telecommande.compare("mode autonome")){
 
 	if (mesureDistance <= 10) {  //on recoit les mesures en cm
 			automate = Robot_arret;
@@ -38,6 +41,20 @@ void GestionTraction::dirige(){
 	if ((mesureDistance > 20000)) {
 			automate = Robot_avant_rapide;
 	}
+    }
+    
+  if( commande_telecommande.find("avance")!=string::npos){
+         automate =    Robot_avant_rapide;
+	 calog.log_teleco("commande , bon, on avance");
+   }
+
+  calog.log_teleco(commande_telecommande.c_str());
+
+  if( commande_telecommande.find ("arret")!=string::npos){
+         automate =    Robot_arret;
+	 calog.log_teleco("commande , bon, on arrete");
+
+    }
 	switch (automate) {
 		case Robot_arret:
 			etat_traction = "robot arret";
@@ -96,8 +113,8 @@ void GestionTraction::dirige(){
 			automate = 0;
 			break;
 		}
-		string log = etat_traction + "  " + mesures_distance +  "  " +  mesures_gyro;
-		log_traction (log.c_str(), strlen(log.c_str()));	    
+		log = commande_telecommande + ":" +  etat_traction + "/ " + mesures_distance +  "  " +  mesures_gyro;
+		calog.log_teleco(log.c_str(), strlen(log.c_str()));	    
 
 }
 void GestionTraction::handler() {
@@ -135,7 +152,12 @@ void GestionTraction::handler() {
 		    memset(mmmmt,0,MSGLEN);
 		    snprintf(mmmmt, sizeof(mmmmt), "message 5, msgid = %d : %s",
 			 leMessage5->getMsgId(),leMessage5->vecteurMessages[i].message);
+		    
+                    commande_telecommande ="";
+		    commande_telecommande.append(leMessage5->vecteurMessages[i].message,strlen( leMessage5->vecteurMessages[i].message));
 
+                    calog.log_teleco(" recoit commande %s", commande_telecommande.c_str());
+		    
 		    log_teleco (mmmmt, strlen(mmmmt));	    
 		
 	          }
