@@ -19,9 +19,10 @@ void GestionTraction::setBaseAddr(u32 aa) {
 	this->baseAddr = aa;
 }
 void GestionTraction::dirige(){
-  string log;
+    string log;
   
-  if( commande_telecommande.compare("mode autonome")){
+    if( commande_telecommande.find("mode autonome")!= string::npos){
+      	 calog.log_teleco("mode autonome");
 
 	if (mesureDistance <= 10) {  //on recoit les mesures en cm
 			automate = Robot_arret;
@@ -43,118 +44,122 @@ void GestionTraction::dirige(){
 	}
     }
     
-  if( commande_telecommande.find("avance")!=string::npos){
+    if( commande_telecommande.find("AVANCE")!=string::npos){
          automate =    Robot_avant_rapide;
 	 calog.log_teleco("commande , bon, on avance");
-   }
+    }
 
-  calog.log_teleco(commande_telecommande.c_str());
+    calog.log_teleco(commande_telecommande.c_str());
 
-  if( commande_telecommande.find ("arret")!=string::npos){
+    if( commande_telecommande.find ("arret")!=string::npos){
          automate =    Robot_arret;
 	 calog.log_teleco("commande , bon, on arrete");
-
     }
-	switch (automate) {
-		case Robot_arret:
-			etat_traction = "robot arret";
-			puissance_moteur1 = 0;
-			puissance_moteur2 = 0;
-			break;
-		case Robot_avant_rapide:
-			etat_traction = "Robot_avant_rapide" ;
-			puissance_moteur1 = 900;
-			puissance_moteur2 = 900;
-			break;
-		case Robot_avant_lent:
-			etat_traction = "robot avance lentement";
-			vitesse_g = mesureDistance / 1000;
-			puissance_moteur1 = 100;
-			puissance_moteur2 = 100;
-			//mot1mess.sens_moteur = 0;
-			//	automate++;
-			break;
-		case Robot_avant_tranquilou:
-			etat_traction = "robot avance tranquilou";
-			vitesse_g = mesureDistance / 1000;
-			puissance_moteur1 = 300;
-			puissance_moteur2 = 300;
-			break;
-		case Robot_arriere_tranquilou:
-			etat_traction = "robot arriere tranquilou";
-			vitesse_g = mesureDistance / 1000;
-			puissance_moteur1 = -300;
-			puissance_moteur2 = -300;
-			break;
-		case Robot_arriere_lent:
-			etat_traction = "robot recule lentement";
-			puissance_moteur1 = -100;
-			puissance_moteur2 = -100;
-			break;
-		case Robot_tourne_droite_arriere:
-			etat_traction = "robot tourne arriere droite";
-			puissance_moteur1 = 500;
-			puissance_moteur2 = 100;
-			//	automate++;
-			break;
-	        case Robot_tourne_gauche_avant:
-	                etat_traction = "robot tourne avant gauche";
-			puissance_moteur1 = 100;
-			puissance_moteur2 = 500;
-	        break;
-                case Robot_tourne_droite_avant:
-	  	        etat_traction = "robot tourne avant droite";
-			puissance_moteur1 = 500;
-			puissance_moteur2 = 100;
-		
-	  break;
-		default:
-			etat_traction = "robot etat indeterminé";
-			automate = 0;
-			break;
-		}
-		log = commande_telecommande + ":" +  etat_traction + "/ " + mesures_distance +  "  " +  mesures_gyro;
-		calog.log_teleco(log.c_str(), strlen(log.c_str()));	    
+
+   if( commande_telecommande.find ("RECULE")!=string::npos){
+         automate =    Robot_arriere_lent;
+	 calog.log_teleco("commande , bon, recule");
+    }
+
+  switch (automate) {
+	case Robot_arret:
+		etat_traction = "robot arret";
+		puissance_moteur1 = 0;
+		puissance_moteur2 = 0;
+	break;
+	case Robot_avant_rapide:
+		etat_traction = "Robot_avant_rapide" ;
+		puissance_moteur1 = 900;
+		puissance_moteur2 = 900;
+	break;
+	case Robot_avant_lent:
+		etat_traction = "robot avance lentement";
+		vitesse_g = mesureDistance / 1000;
+		puissance_moteur1 = 100;
+		puissance_moteur2 = 100;
+		//mot1mess.sens_moteur = 0;
+		//	automate++;
+	break;
+	case Robot_avant_tranquilou:
+		etat_traction = "robot avance tranquilou";
+		vitesse_g = mesureDistance / 1000;
+		puissance_moteur1 = 300;
+		puissance_moteur2 = 300;
+	break;
+	case Robot_arriere_tranquilou:
+		etat_traction = "robot arriere tranquilou";
+		vitesse_g = mesureDistance / 1000;
+		puissance_moteur1 = -300;
+		puissance_moteur2 = -300;
+	break;
+	case Robot_arriere_lent:
+		etat_traction = "robot recule lentement";
+		puissance_moteur1 = -100;
+		puissance_moteur2 = -100;
+	break;
+	case Robot_tourne_droite_arriere:
+		etat_traction = "robot tourne arriere droite";
+		puissance_moteur1 = 500;
+		puissance_moteur2 = 100;
+		//	automate++;
+	break;
+        case Robot_tourne_gauche_avant:
+                etat_traction = "robot tourne avant gauche";
+		puissance_moteur1 = 100;
+		puissance_moteur2 = 500;
+        break;
+        case Robot_tourne_droite_avant:
+  	        etat_traction = "robot tourne avant droite";
+		puissance_moteur1 = 500;
+		puissance_moteur2 = 100;
+        break;
+	default:
+		etat_traction = "robot etat indeterminé";
+		automate = 0;
+	break;
+    }
+    log = commande_telecommande + ":" +  etat_traction + "/ " + mesures_distance +  " !  " +  mesures_gyro;
+    calog.log_teleco(log.c_str(), strlen(log.c_str()));	    
 
 }
 void GestionTraction::handler() {
 
-        leMessage4->recoitMessage();
-	if( leMessage4->vecteurMessages.size()>0){
-	    for (unsigned i = 0; i < leMessage4->vecteurMessages.size(); i++) {
-	        char titi[MSGLEN];
-	        memset(titi,0,MSGLEN);
-	        snprintf(titi, sizeof(titi), "%s ->%d",
-		leMessage4->vecteurMessages[i].message, mesureDistance);
-		mesures_gyro = to_string(i) + "gyro : "+ string(titi);
-	    }
-            leMessage4->effaceQueue();
-        }
+    leMessage4->recoitMessage();
+    if( leMessage4->vecteurMessages.size()>0){
+        for (unsigned i = 0; i < leMessage4->vecteurMessages.size(); i++) {
+	    char titi[MSGLEN];
+	    memset(titi,0,MSGLEN);
+	    snprintf(titi, sizeof(titi), "%s ->%d",
+	    leMessage4->vecteurMessages[i].message, mesureDistance);
+	    mesures_gyro = to_string(i) + "gyro : "+ string(titi);
+         }
+         leMessage4->effaceQueue();
+    }
  
-	leMessage3->recoitMessage();
-        if( leMessage3->vecteurMessages.size()>0){
-	    for (unsigned i = 0; i < leMessage3->vecteurMessages.size(); i++) {
-		mesureDistance = atoi(leMessage3->vecteurMessages[i].message);
-		char mmmm[MSGLEN];
-		memset(mmmm,0,MSGLEN);
-		snprintf(mmmm, sizeof(mmmm), "%s ->%d",
-				leMessage3->vecteurMessages[i].message, mesureDistance);
-		mesures_distance = to_string(i) + "distance : "+ string(mmmm);
-	    }
-	    leMessage3->effaceQueue();
+    leMessage3->recoitMessage();
+    if( leMessage3->vecteurMessages.size()>0){
+        for (unsigned i = 0; i < leMessage3->vecteurMessages.size(); i++) {
+       	    mesureDistance = atoi(leMessage3->vecteurMessages[i].message);
+	    char mmmm[MSGLEN];
+	    memset(mmmm,0,MSGLEN);
+	    snprintf(mmmm, sizeof(mmmm), "%s ->%d",
+			leMessage3->vecteurMessages[i].message, mesureDistance);
+	    mesures_distance = to_string(i) + "distance : "+ string(mmmm);
 	}
+        leMessage3->effaceQueue();
+    }
 
 
-        if(leMessage5->recoitMessage()>=0){
-            if( leMessage5->vecteurMessages.size()>0){
-	        for (unsigned i = 0; i < leMessage5->vecteurMessages.size(); i++) {
-		    char mmmmt[MSGLEN];
+    if(leMessage5->recoitMessage()>=0){
+        if( leMessage5->vecteurMessages.size()>0){
+            for (unsigned i = 0; i < leMessage5->vecteurMessages.size(); i++) {
+        	    char mmmmt[MSGLEN];
 		    memset(mmmmt,0,MSGLEN);
 		    snprintf(mmmmt, sizeof(mmmmt), "message 5, msgid = %d : %s",
 			 leMessage5->getMsgId(),leMessage5->vecteurMessages[i].message);
 		    
-                    commande_telecommande ="";
-		    commande_telecommande.append(leMessage5->vecteurMessages[i].message,strlen( leMessage5->vecteurMessages[i].message));
+		    // commande_telecommande ="";//on sort du mode autonome car on a recu une commande de la telecommande
+		    commande_telecommande= leMessage5->vecteurMessages[i].message;
 
                     calog.log_teleco(" recoit commande %s", commande_telecommande.c_str());
 		    

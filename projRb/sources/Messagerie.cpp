@@ -17,6 +17,7 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 
+
 //https://stackoverflow.com/questions/55437521/send-and-receive-a-struct-in-posix-message-queue
 //https://fabrice-boissier.developpez.com/articles/introduction-posix-mq/
 //http://perso.ens-lyon.fr/daniel.hirschkoff/C_Caml/docs/doc_gdb.pdf
@@ -35,6 +36,8 @@ Messager::Messager(char *nom, int taille) {
 	// and returns identifier
 	snprintf(nomqueue, sizeof(nomqueue), "%s", nom);
 	msgid = msgget(key, 0666 | IPC_CREAT);
+	char val[50];
+	snprintf(val,sizeof(val),"%d",msgid);
 	//log_message(nomqueue,sizeof(nomqueue),"%s",nom);
 	calog.log_message("Creation messagerie nom : %s, key : %d  msgid : %d\r\n",
 		       cle, key, msgid);
