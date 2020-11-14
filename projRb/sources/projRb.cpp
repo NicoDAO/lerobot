@@ -21,7 +21,9 @@ using namespace std;
 #include "mode_fonctionnement.h"
 #include "GereGyroscope.h"
 #include "log.h"
-
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 ConfigureFIR_FPGA FIR1;
 ConfigureFIR_FPGA FIR2;
@@ -63,6 +65,8 @@ Messager *messageTelecommande;
 
 
 //#define LANCE_FIR
+int enregistreVariableEnvironnement(const char *, int cle);
+
 
 int main(int argc, char *argv[]) {
 	//configuation des messages
@@ -108,6 +112,10 @@ int main(int argc, char *argv[]) {
         messageConsigneMoteur1  =new Messager("/consigneMoteur1", 3);
         messageGyro  =new Messager("/gyroscope1", 4);
 	messageTelecommande = new Messager("/telecommande",5);
+        //on cree une variable d'environnement avec la clé de la télécommande
+	//pour pouvoir l'utiliser avec les autres applis
+	int identifiantTelecommande = messageTelecommande->getMsgId();
+	enregistreVariableEnvironnement("ID_TELECOMMANDE_ROBOT",identifiantTelecommande);
 	//configuration classe traction
 	traction.SetMessage1(messageConsigneMoteur1);
 	traction.SetMessage2(messageConsigneMoteur2);
@@ -303,6 +311,46 @@ void* handlerCapteurGyroscope1(void *pvParameters) {
 	}
 	return NULL;
 
+}
+
+
+
+
+
+
+
+
+
+
+int enregistreVariableEnvironnement(const char * variable, int cle){
+/*
+On génère les différents scrips qui seront appelé par la télécommande
+Android et qui pilotent le robot
+
+ */
+
+   char cle_teleco[100];
+   snprintf(cle_teleco,sizeof(cle_teleco),"%d",cle);
+   
+   //on génère le script pour reculer
+   std::ofstream myfile;
+   myfile.open ("recule.sh");
+   myfile << "#!/bin/sh\n\n\n";
+   myfile << "telecomande/teleco LOG=1024 IPC_ID="<< cle_teleco <<"  COMMANDE=RECULE";
+   myfile << "\n";
+   myfile << "\n";
+   myfile.close();
+
+
+   //on génère le script pour avancer
+   myfile.open ("avance.sh");
+   myfile << "#!/bin/sh\n\n\n";
+   myfile << "telecomande/teleco LOG=1024 IPC_ID="<< cle_teleco <<"  COMMANDE=AVANCE";
+   myfile << "\n";
+   myfile << "\n";
+  
+   myfile.close();
+    
 }
 
 

@@ -23,9 +23,10 @@ int main(int argc, char *argv[]) {
 	int mod_log = LOG_RIEN;
 	int msg_id = 0;
 	std::string commande ="";
+
 	for (int i = 0; i < argc; ++i) {
-		calog.log_info("argument %s", argv[i]);
-		if (NULL != strstr(argv[i], "LOG=")) {
+		calog.log_info("argument =  %s", argv[i]);
+		if (NULL != strstr(argv [i], "LOG=")) {
 			std::string param(argv[i]+strlen("LOG="));//on choppe la config du log
 			int log_nb = std::stoi(param);
 			cout << "on a " + param;
@@ -41,7 +42,7 @@ int main(int argc, char *argv[]) {
 			cout << "on a " + param;
 			mod_log = LOG_CAPTEUR_DISTANCE;
 
-			calog.log_info("on a %s(%d)",argv[i] ,msg_id);
+			calog.log_info("on a : %s(%d)",argv[i] ,msg_id);
 			//calog.setMode(log_nb);
 		}
                 if (NULL != strstr(argv[i], "COMMANDE=")) {
@@ -49,9 +50,11 @@ int main(int argc, char *argv[]) {
 			//	cout << "on a " + param;
 			mod_log = LOG_CAPTEUR_DISTANCE;
 			commande = param; 
-                   	calog.log_info("on a %s(%d)",commande ,msg_id);
+                   	calog.log_info("on a: %s(%d)",commande ,msg_id);
 		}
 	}
+	char *  lit_var = getenv("ID_TELECOMMANDE_ROBOT");
+  	calog.log_info("lit variable ID_TELECOMMANDE_ROBOT= %s",lit_var);
 
 	//configuration messagerie ipc systemV
         telecommande_robot = new Messager("/telecommande",5);
