@@ -25,15 +25,15 @@
 # define BUF_LEN 512
 
 Messager::Messager(char *nom, int taille) {
-	ssize_t len_recv;
-	char cle[50];
-	snprintf(cle,sizeof(cle),"/tmp%s",nom);//on crée la clé systemV dans le repertoitr /tmp"
-	key = ftok(".",(char) taille);
-	snprintf(nomqueue, sizeof(nomqueue), "%s", nom);
-	msgid = msgget(key, 0666 | IPC_CREAT);
+  //ssize_t len_recv;
+	//char cle[50];
+	//	snprintf(cle,sizeof(cle),"/tmp%s",nom);//on crée la clé systemV dans le repertoitr /tmp"
+	//key = ftok(".",(char) taille);
+	//snprintf(nomqueue, sizeof(nomqueue), "%s", nom);
+	//msgid = msgget(key, 0666 | IPC_CREAT);
 	//log_message(nomqueue,sizeof(nomqueue),"%s",nom);
-	calog.log_message("Creation messagerie nom : %s, key : %d  msgid : %d\r\n",
-		       cle, key, msgid);
+	//calog.log_message("Creation messagerie nom : %s, key : %d  msgid : %d\r\n",
+	//	       cle, key, msgid);
 } 
 
 Messager::~Messager() {
@@ -45,7 +45,7 @@ void Messager::setID(int id){
 int Messager::envoieMessage(AMessage *txMessage) {
 	txMessage->mesg_type = 1;
 	if(-1 == msgsnd(msgid, txMessage, BUF_LEN /*sizeof(txMessage)*/, 0)){
-            calog.log_error("probleme envoie message");
+            calog.log_error("Pprobleme envoie message");
 	  }
 	timespec taillemahout;
 	taillemahout.tv_sec = 4;

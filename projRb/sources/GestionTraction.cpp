@@ -49,6 +49,17 @@ void GestionTraction::dirige(){
 	 calog.log_teleco("commande , bon, on avance");
     }
 
+    if( commande_telecommande.find("AVANCE_GAUCHE")!=string::npos){
+         automate =    Robot_tourne_gauche_avant;
+	 calog.log_teleco("commande , bon, on avance");
+    }
+
+    if( commande_telecommande.find("AVANCE_DROITE")!=string::npos){
+         automate =    Robot_tourne_droite_avant;
+	 calog.log_teleco("commande , bon, on avance");
+    }
+    
+
     calog.log_teleco(commande_telecommande.c_str());
 
     if( commande_telecommande.find ("arret")!=string::npos){

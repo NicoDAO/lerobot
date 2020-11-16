@@ -313,15 +313,6 @@ void* handlerCapteurGyroscope1(void *pvParameters) {
 
 }
 
-
-
-
-
-
-
-
-
-
 int enregistreVariableEnvironnement(const char * variable, int cle){
 /*
 On génère les différents scrips qui seront appelé par la télécommande
@@ -336,7 +327,7 @@ Android et qui pilotent le robot
    std::ofstream myfile;
    myfile.open ("recule.sh");
    myfile << "#!/bin/sh\n\n\n";
-   myfile << "telecomande/teleco LOG=1024 IPC_ID="<< cle_teleco <<"  COMMANDE=RECULE";
+   myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=RECULE";
    myfile << "\n";
    myfile << "\n";
    myfile.close();
@@ -345,11 +336,41 @@ Android et qui pilotent le robot
    //on génère le script pour avancer
    myfile.open ("avance.sh");
    myfile << "#!/bin/sh\n\n\n";
-   myfile << "telecomande/teleco LOG=1024 IPC_ID="<< cle_teleco <<"  COMMANDE=AVANCE";
+   myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=AVANCE";
    myfile << "\n";
    myfile << "\n";
-  
    myfile.close();
+
+
+   
+   //on génère le script pour arreter
+   myfile.open ("arret.sh");
+   myfile << "#!/bin/sh\n\n\n";
+   myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=arret";
+   myfile << "\n";
+   myfile << "\n";
+   myfile.close();
+
+
+   
+   //on génère le script pour avancer en tournant gauche
+   myfile.open ("avancegauche.sh");
+   myfile << "#!/bin/sh\n\n\n";
+   myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=AVANCE_GAUCHE";
+   myfile << "\n";
+   myfile << "\n";
+   myfile.close();
+
+
+      
+   //on génère le script pour avancer en tournant droite
+   myfile.open ("avancedroite.sh");
+   myfile << "#!/bin/sh\n\n\n";
+   myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=AVANCE_DROITE";
+   myfile << "\n";
+   myfile << "\n";
+   myfile.close();
+
     
 }
 
