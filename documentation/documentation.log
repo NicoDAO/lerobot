@@ -1,0 +1,947 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  22 NOV 2020 10:49
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**documentation.tex
+(./documentation.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/02/14 3.40 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
+)
+
+! Package babel Error: Unknown option `french'. Either you misspelled it
+(babel)                or the language definition file french.ldf was not found
+.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.542 \ProcessOptions*
+                      
+Valid options are: shorthands=, KeepShorthandsActive,
+activeacute, activegrave, noconfigs, safe=, main=, math=
+headfoot=, strings=, config=, hyphenmap=, or a language name.
+
+Package babel Info: You haven't specified a language. I'll use 'nil'
+(babel)             as the main language. Reported on input line 572.
+(/usr/share/texlive/texmf-dist/tex/generic/babel/nil.ldf
+Language: nil 2020/02/14 3.40 Nil language
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count175
+\U@D=\dimen135
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count176
+)
+\l@nil=\language5
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen136
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen137
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count177
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count178
+\leftroot@=\count179
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count180
+\DOTSCASE@=\count181
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen138
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count182
+\c@MaxMatrixCols=\count183
+\dotsspace@=\muskip16
+\c@parentequation=\count184
+\dspbrk@lvl=\count185
+\tag@help=\toks17
+\row@=\count186
+\column@=\count187
+\maxfields@=\count188
+\andhelp@=\toks18
+\eqnshift@=\dimen139
+\alignsep@=\dimen140
+\tagshift@=\dimen141
+\tagwidth@=\dimen142
+\totwidth@=\dimen143
+\lineht@=\dimen144
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen145
+\Gin@req@width=\dimen146
+)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.sty
+File: lettrine.sty 2019-04-06 v2.22 (Daniel Flipo)
+
+(/usr/share/texlive/texmf-dist/tex/generic/minifp/minifp.sty
+Package: minifp 2013/12/30 v0.96. Macros for real number operations and a stack
+-based programing language.
+\MFP@loopctr=\count189
+)
+\c@DefaultLines=\count190
+\c@DefaultDepth=\count191
+\DefaultFindent=\dimen147
+\DefaultNindent=\dimen148
+\DefaultSlope=\dimen149
+\DiscardVskip=\dimen150
+\L@lbox=\box47
+\L@tbox=\box48
+\c@L@lines=\count192
+\c@L@depth=\count193
+\L@Pindent=\dimen151
+\L@Findent=\dimen152
+\L@Nindent=\dimen153
+\L@lraise=\dimen154
+\L@first=\dimen155
+\L@next=\dimen156
+\L@slope=\dimen157
+\L@height=\dimen158
+\L@novskip=\dimen159
+\L@target@ht=\dimen160
+\L@target@dp=\dimen161
+\L@target@tht=\dimen162
+\LettrineWidth=\dimen163
+\LettrineHeight=\dimen164
+\LettrineDepth=\dimen165
+\Llist@everypar=\toks22
+
+Loading lettrine.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-02-14 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count194
+\l__pdf_internal_box=\box49
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count195
+\g__xparse_grabber_int=\count196
+\l__xparse_m_args_int=\count197
+\l__xparse_v_nesting_int=\count198
+)
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+))
+(./documentation.aux (./introduction/introduction.aux) (./linux/linux.aux)
+(./logiciel/logiciel.aux) (./telecommande/telecommande.aux))
+\openout1 = `documentation.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+7.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count199
+\scratchdimen=\dimen166
+\scratchbox=\box50
+\nofMPsegments=\count266
+\nofMParguments=\count267
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count268
+\MPscratchDim=\dimen167
+\MPnumerator=\count269
+\makeMPintoPDFobject=\count270
+\everyMPtoPDFconversion=\toks24
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(./documentation.toc
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+.
+ (/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+4.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+4.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5 ...{subsection}{\numberline {2.2}Soft_zybo}{2}
+                                                  %
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\@dottedtocline ...\nobreak \hskip -\leftskip {#4}
+                                                  \nobreak \leaders \hbox {$...
+l.5 ...{subsection}{\numberline {2.2}Soft_zybo}{2}
+                                                  %
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5 ...{subsection}{\numberline {2.2}Soft_zybo}{2}
+                                                  %
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+)
+\tf@toc=\write3
+\openout3 = `documentation.toc'.
+
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.18 \tableofcontents
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\openout2 = `introduction/introduction.aux'.
+
+
+(./introduction/introduction.tex
+! Undefined control sequence.
+l.3 \chapter
+            {Intro}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package lettrine.sty Info: Targeted height = 16.98666pt
+(lettrine.sty)             (no accent, loversize=0),
+(lettrine.sty)             Lettrine height = 16.98672pt (L);
+(lettrine.sty)             reported on input line 6.
+
+Overfull \hbox (9.23077pt too wide) in paragraph at lines 6--7
+[][] \OT1/lmr/m/n/10 robot peut fonctionner soit en mode autonome, soit en mode
+ semi-autonoeme,
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+5.
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (2.6019pt too wide) in paragraph at lines 21--24
+\OT1/lmr/m/n/10 composant. Tous ce qui est gestion des p^^Seriph^^Seriques se f
+ait mat^^Seriellement,
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.37 \subsection{Soft_zybo}
+                           
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 37.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 37.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 37.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.37 \subsection{Soft_zybo}
+                           
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+) [2
+
+]
+\openout2 = `linux/linux.aux'.
+
+ (./linux/linux.tex
+! Undefined control sequence.
+l.4 \chapter
+            {Linux}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.10 ...-for-the-zynq-zc702-eval-kit-using-yocto/#
+                                                  &gid=1&pid=1
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Misplaced alignment tab character &.
+l.10 ...for-the-zynq-zc702-eval-kit-using-yocto/#&
+                                                  gid=1&pid=1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.10 ...e-zynq-zc702-eval-kit-using-yocto/#&gid=1&
+                                                  pid=1
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (7.33163pt too wide) in paragraph at lines 10--11
+\OT1/lmr/m/n/10 https://blog.mbedded.ninja/programming/embedded-linux/zynq/buil
+ding-linux-
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.18 /home/nicolas/vivado/vivado/FPGA_
+                                      xilinx/vivado2019_2/workspace/design_1...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Double subscript.
+l.18 ...GA_xilinx/vivado2019_2/workspace/design_1_
+                                                  wrapper_corona2/export/des...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.18 .../design_1_wrapper_corona2/export/design_1_
+                                                  wrapper_corona2/sw/design_...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.18 ...port/design_1_wrapper_corona2/sw/design_1_
+                                                  wrapper_corona2/boot/fsbl.elf
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.19 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (396.0479pt too wide) in paragraph at lines 18--19
+\OT1/lmr/m/n/10 /home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/10 ilinx=vivad
+o\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=design[][]rapper[]orona\OT1/
+lmr/m/n/10 2\OML/lmm/m/it/10 =export=design[][]rapper[]orona\OT1/lmr/m/n/10 2\O
+ML/lmm/m/it/10 =sw=design[][]rapper[]orona\OT1/lmr/m/n/10 2\OML/lmm/m/it/10 =bo
+ot=fsbl:elf$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.20 /home/nicolas/vivado/vivado/FPGA_
+                                      xilinx/vivado2019_2/workspace/dsfyoyo/...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.21 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (102.36868pt too wide) in paragraph at lines 20--21
+[]\OT1/lmr/m/n/10 /home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/10 ilinx=viv
+ado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=dsfyoyo=Debug=dsfyoyo:elf$
+ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.22 /home/nicolas/vivado/vivado/FPGA_
+                                      xilinx/vivado2019_2/workspace/design_1...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Double subscript.
+l.22 ...GA_xilinx/vivado2019_2/workspace/design_1_
+                                                  wrapper_corona2/bitstream/...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.22 ...sign_1_wrapper_corona2/bitstream/design_1_
+                                                  wrapper_corona2.bit
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.23 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (251.01396pt too wide) in paragraph at lines 22--23
+[]\OT1/lmr/m/n/10 /home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/10 ilinx=viv
+ado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=design[][]rapper[]orona\OT
+1/lmr/m/n/10 2\OML/lmm/m/it/10 =bitstream=design[][]rapper[]orona\OT1/lmr/m/n/1
+0 2\OML/lmm/m/it/10 :bit$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.30 ...//www.xilinx.com/support/documentation/sw_
+                                                  manuals/xilinx2019_2/ug128...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.31 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (23.02138pt too wide) in paragraph at lines 30--31
+\OT1/lmr/m/n/10 https://www.xilinx.com/support/documentation/sw$[]\OML/lmm/m/it
+/10 anuals=xilinx\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =ug\OT1/lmr/m/n/10 1283
+ \OMS/lmsy/m/n/10 ^^@
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 \fbox
+          {\begin{minipage}{0.9\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.50 \end{minipage}}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.50 \end{minipage}}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.50 \end{minipage}}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.50 \end{minipage}}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Double subscript.
+<argument> ...u-boot-zybo-zynq7.elf \par design_1_
+                                                  wrapper.bit \par } \par ni...
+l.50 \end{minipage}}
+                    
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.50 \end{minipage}}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.50 \end{minipage}}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]\OT1/lmr/m/n/10 nicolas@debianicolas: /yocto/lerobot/generation$[]\OML/lmm/m/
+it/10 oot$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+\OT1/lmr/m/n/10 /home/nicolas/Xilinx/Vivado/Vivado/2020.1/bin/bootgen -image
+ []
+
+! You can't use `macro parameter character #' in internal vertical mode.
+<argument> \begin {minipage}{0.9\textwidth } ##
+                                               !/bin/sh /home/nicolas/Xilinx...
+l.83 \end{minipage}}
+                    
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+[3
+
+
+] [4]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.239 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.241 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.243 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.247 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.256 the_
+          ROM_image:
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.257 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.260 ...tloader]/home/nicolas/vivado/vivado/FPGA_
+                                                  xilinx/vivado2019_2/worksp...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.261 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (154.6187pt too wide) in paragraph at lines 260--261
+[]\OT1/lmr/m/n/10 [bootloader]/home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/
+10 ilinx=vivado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=dsfyoyo=Debug=
+dsfyoyo:elf$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.262 /home/nicolas/vivado/vivado/FPGA_
+                                       xilinx/vivado2019_2/workspace/dsfyoyo...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Double subscript.
+l.262 ...orkspace/dsfyoyo/_ide/bitstream/design_1_
+                                                  wrapper_corona2.bit
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.263 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (201.05128pt too wide) in paragraph at lines 262--263
+[]\OT1/lmr/m/n/10 /home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/10 ilinx=viv
+ado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=dsfyoyo=[]de=bitstream=des
+ign[][]rapper[]orona\OT1/lmr/m/n/10 2\OML/lmm/m/it/10 :bit$ 
+ []
+
+
+Overfull \hbox (7.05591pt too wide) in paragraph at lines 264--265
+[]\OT1/lmr/m/n/10 /home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u
+-boot.elf 
+ []
+
+
+Overfull \hbox (21.22282pt too wide) in paragraph at lines 266--267
+[]\OT1/lmr/m/n/10 /home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u
+-boot-zybo-
+ []
+
+) [5]
+\openout2 = `logiciel/logiciel.aux'.
+
+ (./logiciel/logiciel.tex
+! Undefined control sequence.
+l.4 \chapter
+            {Logiiel}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package lettrine.sty Info: Targeted height = 16.98666pt
+(lettrine.sty)             (no accent, loversize=0),
+(lettrine.sty)             Lettrine height = 16.98672pt (L);
+(lettrine.sty)             reported on input line 6.
+
+Overfull \hbox (9.23077pt too wide) in paragraph at lines 6--8
+[][] \OT1/lmr/m/n/10 robot peut fonctionner soit en mode autonome, soit en mode
+ semi-autonoeme,
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 sh compile_
+                simone.sh
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.28 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+) [6
+
+
+]
+\openout2 = `telecommande/telecommande.aux'.
+
+ (./telecommande/telecommande.tex
+! Undefined control sequence.
+l.4 \chapter
+            {Télécommande Android}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package lettrine.sty Info: Targeted height = 16.98666pt
+(lettrine.sty)             (no accent, loversize=0),
+(lettrine.sty)             Lettrine height = 16.98672pt (L);
+(lettrine.sty)             reported on input line 6.
+<telecommande/page1.png, id=33, 395.4775pt x 849.1725pt>
+File: telecommande/page1.png Graphic file (type png)
+<use telecommande/page1.png>
+Package pdftex.def Info: telecommande/page1.png  used on input line 11.
+(pdftex.def)             Requested size: 113.81102pt x 244.37491pt.
+<telecommande/configuration.png, id=35, 392.46625pt x 833.1125pt>
+File: telecommande/configuration.png Graphic file (type png)
+<use telecommande/configuration.png>
+Package pdftex.def Info: telecommande/configuration.png  used on input line 17.
+
+(pdftex.def)             Requested size: 113.81102pt x 241.58372pt.
+[7
+
+
+ <./telecommande/page1.png>]
+<telecommande/telecommande.png, id=41, 388.45125pt x 855.195pt>
+File: telecommande/telecommande.png Graphic file (type png)
+<use telecommande/telecommande.png>
+Package pdftex.def Info: telecommande/telecommande.png  used on input line 23.
+(pdftex.def)             Requested size: 113.81102pt x 250.55785pt.
+
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.26  \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26  \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.26  \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+) [8 <./telecommande/configuration.png> <./telecommande/telecommande.png>]
+(./documentation.aux (./introduction/introduction.aux) (./linux/linux.aux)
+(./logiciel/logiciel.aux) (./telecommande/telecommande.aux)) ) 
+Here is how much of TeX's memory you used:
+ 4070 strings out of 483140
+ 62948 string characters out of 5965150
+ 475631 words of memory out of 5000000
+ 18979 multiletter control sequences out of 15000+600000
+ 577454 words of font info for 63 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 35i,5n,33p,272b,177s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf
+/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.en
+c}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/sh
+are/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on documentation.pdf (8 pages, 329341 bytes).
+PDF statistics:
+ 89 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+

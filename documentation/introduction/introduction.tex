@@ -1,0 +1,50 @@
+% !TEX encoding = UTF-8 Unicode
+
+\chapter{Intro}
+
+\section{Présentation Robot}
+\lettrine[lines=1]{L}e robot peut fonctionner soit en mode autonome, soit en mode semi-autonoeme, c'est à dire qu'il est piloté par une appli Android
+
+
+
+
+\section{Architecture du projet}
+
+Les axes de développement du projet sont
+\begin{itemize}
+\item  Le linux embarqué
+J'utilise Yocto Linux pour faire tourner le logiciel du robot. Le Linux est généré et claqué sur une carte SD.
+Son rôle est de lancer le logiciel du robot, communiquer de manière sécurisée sur le réseau avec un protocole sécurisé comme SSH, gérer les mises à jours.
+
+\item Logiciel du robot est constitué de programmes qui s'exécutent sur la cible et qui permettent de faire tourner le robot.
+Ces Logiciels permettent de piloter les moteurs, traiter les informations des différents capteurs, gérer le mode autonome du robot, et communiquer avec la télécommande.
+\item L'électronique et la gestion des couches basses se font dans la partie FPGA du composant.
+Tous ce qui est gestion des périphériques se fait matériellement, comme la gestion des signaux électriques, les protocoles d'échange avec les différents capteurs et actionneurs.
+Le logiciel communique avec le FPGA avec un protocole allégé.
+
+\item L'intégration mécanique est pour le moment hyper rudimentaire
+
+\end{itemize}
+
+
+
+
+L'arborescence contiendra donc les répertoires suivants : 
+
+
+
+
+\begin{itemize}
+
+
+\item 
+
+
+\subsection{Vivado}
+  : le projet vivado pour la partie FPGA
+
+\end{itemize}
+
+
+
+ 
