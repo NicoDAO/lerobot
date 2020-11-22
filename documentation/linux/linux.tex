@@ -22,10 +22,7 @@ https://www.yoctoproject.org/docs/2.4/dev-manual/dev-manual.html
 /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/design_1_wrapper_corona2/bitstream/design_1_wrapper_corona2.bit
 
 
-
-\subsection{creer bootgen depuis xilinx}
-
-\subsubsection{Génération boot.bin avec Vivado}
+\subsubsection{Génération boot.bin avec Xilinx Vivado}
 
 https://www.xilinx.com/support/documentation/sw_manuals/xilinx2019_2/ug1283-bootgen-user-guide.pdf
 
@@ -90,18 +87,22 @@ La carte doit être configurée en 2 partitions, celle contenant le boot, et cel
 La carte SD doit être bootable.
 
 \subsection{creer bootgen avec le script genere.sh}
+Afin de copier l'image Linux générée pat Yocto, on commence par formatter la carte SD avec la commande : 
 
-
-sudo dd if=/dev/zero of=/dev/mmcblk0 of=/dev/
-
-
-
-
+\textit{sudo dd if=/dev/zero of=/dev/mmcblk0 of=/dev/
+}
 \subsection{configuration des partitions}
 
-sudo fdisk /dev/mmcblk0
+La carte SD a besoin de 2 partitions, créées avec la commande : 
+
+\textit{sudo fdisk /dev/mmcblk0
+}
 
 
+Tapez les commandes suivantes : 
+
+
+\fbox{\begin{minipage}{0.9\textwidth}
 
 Command (m for help): n
 
@@ -112,6 +113,7 @@ Partition number (1-4, default 1): 1
 First sector (2048-15759359, default 2048): Using default value 2048
 
 Last sector, +sectors or +size{K,M,G} (2048-15759359, default 15759359): +200M
+
 
 
 
@@ -183,43 +185,58 @@ Périphérique Amorçage Début Fin Secteurs Taille Id Type
 
 Command (m for help): w
 
+\end{minipage}}
+
+\subsection{création des systèmes de fichier}
+
+Il faut créer les systèmes de fichiers avec les commandes suivantes : 
+
+
+\textit{sudo mkfs.vfat -F 32 -n boot /dev/mmcblk0p1}
+
+\textit{sudo mkfs.ext4 -L root /dev/mmcblk0p2}
 
 
 
-
-***************************** creer les sytemes de fichiers
-
-sudo mkfs.vfat -F 32 -n boot /dev/mmcblk0p1
-
-sudo mkfs.ext4 -L root /dev/mmcblk0p2
+\subsection{Copie des images disques sur  la carte SD}
 
 
+Il faut générer la distribution Linux, et ensuite la claquer sur la carte SD
 
-****************************** rajouter des trucs linux
+Si ce n'est pas fait, cloner le projet dans un répertoire
+\\
+
+\textit{git clone -b dunfell git://git.yoctoproject.org/poky.git}
+\\
+Aller dans le répertoire poky
+
+\textit{source oe-init-build-env}
+
+Dans le fichier \textit{local.conf} il faut rajouter : 
+\begin{itemize}
+\item ssh-server-openssh, afin de se connecter en ssh sur la cible
+\item tools-sdk, afin de compiler le logiciel sur la cible
+\item tools-debug, afin d'avoir les outils de debuf (gdb) sur la cible
+
+\end{itemize}
+
+\fbox{\begin{minipage}{0.9\textwidth}
+# Additional image features\\
+#\\
+EXTRA_IMAGE_FEATURES ?= "debug-tweaks"\\
+EXTRA_IMAGE_FEATURES += "ssh-server-openssh"\\
+EXTRA_IMAGE_FEATURES += "tools-sdk"\\
+EXTRA_IMAGE_FEATURES += "tools-debug"\\
+\textit{source oe-init-build-env} pour charger l'environnement de compilation
+
+\end{minipage}}
+
+\subsection{mettre le nouveau file system}
 
 
+\textit{sudo tar x -C /media/nicolas/root/ -f core-image-minimal-zybo-zynq7.tar.gz}
 
-dans local.conf ajouter le truc
-
-source oe-init-build-env
-
-
-
-dégager ce qu'il y a dans la carte sd root
-
-
-
-
-
-****************** mettre le nouveau file system
-
-
-
-sudo tar x -C /media/nicolas/root/ -f core-image-minimal-zybo-zynq7.tar.gz
-
-sudo tar x -C /mnt/mmcblk0p2/ -f core-image-minimal-zybo-zynq7.tar.gz
-
-
+\textit{sudo tar x -C /mnt/mmcblk0p2/ -f core-image-minimal-zybo-zynq7.tar.gz}
 
 
 
