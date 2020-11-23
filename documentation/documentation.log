@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  23 NOV 2020 00:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.21)  23 NOV 2020 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -242,8 +242,9 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
-(./documentation.aux (./introduction/introduction.aux) (./linux/linux.aux)
-(./logiciel/logiciel.aux) (./telecommande/telecommande.aux))
+(./documentation.aux (./introduction/introduction.aux) (./materiel/materiel.aux
+) (./linux/linux.aux) (./logiciel/logiciel.aux) (./fpga/fpga.aux)
+(./telecommande/telecommande.aux))
 \openout1 = `documentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -262,8 +263,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 5.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -289,35 +289,35 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 (./documentation.toc
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
 .
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-4.
+3.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-4.
+3.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 4.
+(Font)              <10> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 4.
+(Font)              <7> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 4.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+(Font)              <5> on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -342,26 +342,40 @@ and I'll forget about whatever was undefined.
 
 Package lettrine.sty Info: Targeted height = 16.98666pt
 (lettrine.sty)             (no accent, loversize=0),
-(lettrine.sty)             Lettrine height = 16.98672pt (L);
+(lettrine.sty)             Lettrine height = 16.98672pt (M);
 (lettrine.sty)             reported on input line 6.
-
-Overfull \hbox (9.23077pt too wide) in paragraph at lines 6--7
-[][] \OT1/lmr/m/n/10 robot peut fonc-tion-ner soit en mode au-tonome, soit en m
-ode semi-autonoeme,
- []
-
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-5.
+1.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )) [2
+
+]
+\openout2 = `materiel/materiel.aux'.
+
+ (./materiel/materiel.tex
+! Undefined control sequence.
+l.4 \chapter
+            {Matériel}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package lettrine.sty Info: Targeted height = 16.98666pt
+(lettrine.sty)             (no accent, loversize=0),
+(lettrine.sty)             Lettrine height = 16.98672pt (J);
+(lettrine.sty)             reported on input line 6.
+) [3
+
 
 ]
 \openout2 = `linux/linux.aux'.
 
  (./linux/linux.tex
 ! Undefined control sequence.
-l.4 \chapter
+l.3 \chapter
             {Linux}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -369,6 +383,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+Package lettrine.sty Info: Targeted height = 16.98666pt
+(lettrine.sty)             (no accent, loversize=0),
+(lettrine.sty)             Lettrine height = 16.98672pt (Y);
+(lettrine.sty)             reported on input line 6.
 ! You can't use `macro parameter character #' in horizontal mode.
 l.10 ...-for-the-zynq-zc702-eval-kit-using-yocto/#
                                                   &gid=1&pid=1
@@ -406,36 +424,36 @@ ding-linux-
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.18 /home/nicolas/vivado/vivado/FPGA_
+l.17 /home/nicolas/vivado/vivado/FPGA_
                                       xilinx/vivado2019_2/workspace/design_1...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Double subscript.
-l.18 ...GA_xilinx/vivado2019_2/workspace/design_1_
+l.17 ...GA_xilinx/vivado2019_2/workspace/design_1_
                                                   wrapper_corona2/export/des...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
-l.18 .../design_1_wrapper_corona2/export/design_1_
+l.17 .../design_1_wrapper_corona2/export/design_1_
                                                   wrapper_corona2/sw/design_...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
-l.18 ...port/design_1_wrapper_corona2/sw/design_1_
+l.17 ...port/design_1_wrapper_corona2/sw/design_1_
                                                   wrapper_corona2/boot/fsbl.elf
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.19 
+l.18 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (396.0479pt too wide) in paragraph at lines 18--19
+Overfull \hbox (396.0479pt too wide) in paragraph at lines 15--18
 \OT1/lmr/m/n/10 /home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/10 ilinx=vivad
 o\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=design[][]rapper[]orona\OT1/
 lmr/m/n/10 2\OML/lmm/m/it/10 =export=design[][]rapper[]orona\OT1/lmr/m/n/10 2\O
@@ -446,7 +464,7 @@ ot=fsbl:elf$
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.20 /home/nicolas/vivado/vivado/FPGA_
+l.19 /home/nicolas/vivado/vivado/FPGA_
                                       xilinx/vivado2019_2/workspace/dsfyoyo/...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -454,13 +472,13 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.21 
+l.20 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (102.36868pt too wide) in paragraph at lines 20--21
+Overfull \hbox (102.36868pt too wide) in paragraph at lines 19--20
 []\OT1/lmr/m/n/10 /home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/10 ilinx=viv
 ado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=dsfyoyo=Debug=dsfyoyo:elf$
  
@@ -469,31 +487,31 @@ ado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=dsfyoyo=Debug=dsfyoyo:elf$
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.22 /home/nicolas/vivado/vivado/FPGA_
+l.21 /home/nicolas/vivado/vivado/FPGA_
                                       xilinx/vivado2019_2/workspace/design_1...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Double subscript.
-l.22 ...GA_xilinx/vivado2019_2/workspace/design_1_
+l.21 ...GA_xilinx/vivado2019_2/workspace/design_1_
                                                   wrapper_corona2/bitstream/...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Double subscript.
-l.22 ...sign_1_wrapper_corona2/bitstream/design_1_
+l.21 ...sign_1_wrapper_corona2/bitstream/design_1_
                                                   wrapper_corona2.bit
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.23 
+l.22 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (251.01396pt too wide) in paragraph at lines 22--23
+Overfull \hbox (251.01396pt too wide) in paragraph at lines 21--22
 []\OT1/lmr/m/n/10 /home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/10 ilinx=viv
 ado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=design[][]rapper[]orona\OT
 1/lmr/m/n/10 2\OML/lmm/m/it/10 =bitstream=design[][]rapper[]orona\OT1/lmr/m/n/1
@@ -503,7 +521,7 @@ ado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=design[][]rapper[]orona\OT
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.27 ...//www.xilinx.com/support/documentation/sw_
+l.26 ...//www.xilinx.com/support/documentation/sw_
                                                   manuals/xilinx2019_2/ug128...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -511,13 +529,13 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.28 
+l.27 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (23.02138pt too wide) in paragraph at lines 27--28
+Overfull \hbox (23.02138pt too wide) in paragraph at lines 26--27
 \OT1/lmr/m/n/10 https://www.xilinx.com/support/documentation/sw$[]\OML/lmm/m/it
 /10 anuals=xilinx\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =ug\OT1/lmr/m/n/10 1283
  \OMS/lmsy/m/n/10 ^^@
@@ -530,7 +548,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.30 \fbox
+l.29 \fbox
           {\begin{minipage}{0.9\textwidth}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -539,7 +557,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.47 \end{minipage}}
+l.46 \end{minipage}}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -547,7 +565,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.47 \end{minipage}}
+l.46 \end{minipage}}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -555,7 +573,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.47 \end{minipage}}
+l.46 \end{minipage}}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -563,7 +581,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.47 \end{minipage}}
+l.46 \end{minipage}}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -571,14 +589,14 @@ you left one out. Proceed, with fingers crossed.
 ! Double subscript.
 <argument> ...u-boot-zybo-zynq7.elf \par design_1_
                                                   wrapper.bit \par } \par ni...
-l.47 \end{minipage}}
+l.46 \end{minipage}}
                     
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.47 \end{minipage}}
+l.46 \end{minipage}}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -586,44 +604,45 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.47 \end{minipage}}
+l.46 \end{minipage}}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--47
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
 []\OT1/lmr/m/n/10 nicolas@debianicolas: /yocto/lerobot/generation$[]\OML/lmm/m/
 it/10 oot$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--47
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
 \OT1/lmr/m/n/10 /home/nicolas/Xilinx/Vivado/Vivado/2020.1/bin/bootgen -image
  []
 
 ! You can't use `macro parameter character #' in internal vertical mode.
 <argument> \begin {minipage}{0.9\textwidth } ##
                                                !/bin/sh /home/nicolas/Xilinx...
-l.80 \end{minipage}}
+l.79 \end{minipage}}
                     
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-[3
+[4
 
 
-] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
 
  []
 
+[6]
 ! You can't use `macro parameter character #' in internal vertical mode.
 <argument> \begin {minipage}{0.9\textwidth } ##
                                                 Additional image features\\ ...
-l.232 \end{minipage}}
+l.231 \end{minipage}}
                      
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -633,7 +652,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! You can't use `macro parameter character #' in horizontal mode.
 <recently read> ##
                   
-l.232 \end{minipage}}
+l.231 \end{minipage}}
                      
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -643,7 +662,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.232 \end{minipage}}
+l.231 \end{minipage}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -651,15 +670,23 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.232 \end{minipage}}
+l.231 \end{minipage}}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--232
+Underfull \hbox (badness 10000) in paragraph at lines 231--231
 
  []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.254 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
@@ -680,7 +707,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.260 
+l.262 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -688,15 +715,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.264 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.273 the_
+l.271 the_
           ROM_image:
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -704,7 +723,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.274 
+l.272 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -712,10 +731,38 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.277 ...tloader]/home/nicolas/vivado/vivado/FPGA_
+l.275 ...tloader]/home/nicolas/vivado/vivado/FPGA_
                                                   xilinx/vivado2019_2/worksp...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.276 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (154.6187pt too wide) in paragraph at lines 275--276
+[]\OT1/lmr/m/n/10 [bootloader]/home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/
+10 ilinx=vivado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=dsfyoyo=Debug=
+dsfyoyo:elf$ 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.277 /home/nicolas/vivado/vivado/FPGA_
+                                       xilinx/vivado2019_2/workspace/dsfyoyo...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Double subscript.
+l.277 ...orkspace/dsfyoyo/_ide/bitstream/design_1_
+                                                  wrapper_corona2.bit
+I treat `x_1_2' essentially like `x_1{}_2'.
 
 ! Missing $ inserted.
 <inserted text> 
@@ -726,59 +773,31 @@ I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (154.6187pt too wide) in paragraph at lines 277--278
-[]\OT1/lmr/m/n/10 [bootloader]/home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/
-10 ilinx=vivado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=dsfyoyo=Debug=
-dsfyoyo:elf$ 
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.279 /home/nicolas/vivado/vivado/FPGA_
-                                       xilinx/vivado2019_2/workspace/dsfyoyo...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Double subscript.
-l.279 ...orkspace/dsfyoyo/_ide/bitstream/design_1_
-                                                  wrapper_corona2.bit
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.280 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (201.05128pt too wide) in paragraph at lines 279--280
+Overfull \hbox (201.05128pt too wide) in paragraph at lines 277--278
 []\OT1/lmr/m/n/10 /home/nicolas/vivado/vivado/FPGA$[]\OML/lmm/m/it/10 ilinx=viv
 ado\OT1/lmr/m/n/10 2019[]\OML/lmm/m/it/10 =workspace=dsfyoyo=[]de=bitstream=des
 ign[][]rapper[]orona\OT1/lmr/m/n/10 2\OML/lmm/m/it/10 :bit$ 
  []
 
 
-Overfull \hbox (7.05591pt too wide) in paragraph at lines 281--282
+Overfull \hbox (7.05591pt too wide) in paragraph at lines 279--280
 []\OT1/lmr/m/n/10 /home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u
 -boot.elf 
  []
 
 
-Overfull \hbox (21.22282pt too wide) in paragraph at lines 283--284
+Overfull \hbox (21.22282pt too wide) in paragraph at lines 281--282
 []\OT1/lmr/m/n/10 /home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u
 -boot-zybo-
  []
 
-[5]) [6]
+) [7]
 \openout2 = `logiciel/logiciel.aux'.
 
  (./logiciel/logiciel.tex
 ! Undefined control sequence.
 l.4 \chapter
-            {Logiiel}
+            {Logiciel}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -790,28 +809,32 @@ Package lettrine.sty Info: Targeted height = 16.98666pt
 (lettrine.sty)             Lettrine height = 16.98672pt (L);
 (lettrine.sty)             reported on input line 6.
 
-Overfull \hbox (9.23077pt too wide) in paragraph at lines 6--8
+Overfull \hbox (4.50848pt too wide) in paragraph at lines 6--7
 [][] \OT1/lmr/m/n/10 robot peut fonc-tion-ner soit en mode au-tonome, soit en m
-ode semi-autonoeme,
+ode semi-autonome,
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.27 sh compile_
-                simone.sh
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+) [8
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.28 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-) [7
+]
+\openout2 = `fpga/fpga.aux'.
+
+ (./fpga/fpga.tex
+! Undefined control sequence.
+l.4 \chapter
+            {FPGA}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package lettrine.sty Info: Targeted height = 16.98666pt
+(lettrine.sty)             (no accent, loversize=0),
+(lettrine.sty)             Lettrine height = 16.98672pt (L);
+(lettrine.sty)             reported on input line 6.
+) [9
 
 
 ]
@@ -831,22 +854,22 @@ Package lettrine.sty Info: Targeted height = 16.98666pt
 (lettrine.sty)             (no accent, loversize=0),
 (lettrine.sty)             Lettrine height = 16.98672pt (L);
 (lettrine.sty)             reported on input line 6.
-<telecommande/page1.png, id=37, 395.4775pt x 849.1725pt>
+<telecommande/page1.png, id=43, 395.4775pt x 849.1725pt>
 File: telecommande/page1.png Graphic file (type png)
 <use telecommande/page1.png>
 Package pdftex.def Info: telecommande/page1.png  used on input line 11.
 (pdftex.def)             Requested size: 113.81102pt x 244.37491pt.
-<telecommande/configuration.png, id=39, 392.46625pt x 833.1125pt>
+<telecommande/configuration.png, id=45, 392.46625pt x 833.1125pt>
 File: telecommande/configuration.png Graphic file (type png)
 <use telecommande/configuration.png>
 Package pdftex.def Info: telecommande/configuration.png  used on input line 17.
 
 (pdftex.def)             Requested size: 113.81102pt x 241.58372pt.
-[8
+[10
 
 
  <./telecommande/page1.png>]
-<telecommande/telecommande.png, id=44, 388.45125pt x 855.195pt>
+<telecommande/telecommande.png, id=50, 388.45125pt x 855.195pt>
 File: telecommande/telecommande.png Graphic file (type png)
 <use telecommande/telecommande.png>
 Package pdftex.def Info: telecommande/telecommande.png  used on input line 23.
@@ -880,32 +903,33 @@ l.26  \end{figure}
                   
 Things are pretty mixed up, but I think the worst is over.
 
-) [9 <./telecommande/configuration.png> <./telecommande/telecommande.png>]
-(./documentation.aux (./introduction/introduction.aux) (./linux/linux.aux)
-(./logiciel/logiciel.aux) (./telecommande/telecommande.aux)) ) 
+) [11 <./telecommande/configuration.png> <./telecommande/telecommande.png>]
+(./documentation.aux (./introduction/introduction.aux) (./materiel/materiel.aux
+) (./linux/linux.aux) (./logiciel/logiciel.aux) (./fpga/fpga.aux)
+(./telecommande/telecommande.aux)) ) 
 Here is how much of TeX's memory you used:
- 4049 strings out of 483140
- 62892 string characters out of 5965150
+ 4076 strings out of 483140
+ 63297 string characters out of 5965150
  476938 words of memory out of 5000000
- 18963 multiletter control sequences out of 15000+600000
+ 18974 multiletter control sequences out of 15000+600000
  581028 words of font info for 52 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 35i,7n,33p,272b,177s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf
-/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.en
-c}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/sh
-are/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
-Output written on documentation.pdf (9 pages, 349762 bytes).
+ 35i,7n,33p,382b,177s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mat
+hsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/
+enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/us
+r/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/fonts/type1/publ
+ic/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
+Output written on documentation.pdf (11 pages, 353496 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,17 +1,27 @@
 \babel@toc {english}{}
 \contentsline {section}{\numberline {1}Présentation du robot}{2}%
-\contentsline {section}{\numberline {2}Architecture du projet}{2}%
-\contentsline {subsection}{\numberline {2.1}Vivado}{2}%
-\contentsline {section}{\numberline {3}Liens utiles}{3}%
-\contentsline {section}{\numberline {4}Génération du bootloader FSBL}{3}%
-\contentsline {subsubsection}{\numberline {4.0.1}Génération boot.bin avec Xilinx Vivado}{3}%
-\contentsline {subsubsection}{\numberline {4.0.2}Résultat génération boot.bin}{3}%
-\contentsline {subsection}{\numberline {4.1}creer bootgen avec le script genere.sh}{3}%
-\contentsline {section}{\numberline {5}flash l’image sur la carte SD}{3}%
-\contentsline {subsection}{\numberline {5.1}creer bootgen avec le script genere.sh}{4}%
-\contentsline {subsection}{\numberline {5.2}configuration des partitions}{4}%
-\contentsline {subsection}{\numberline {5.3}création des systèmes de fichier}{4}%
-\contentsline {subsection}{\numberline {5.4}Copie des images disques sur la carte SD}{5}%
-\contentsline {subsection}{\numberline {5.5}mettre le nouveau file system}{5}%
-\contentsline {section}{\numberline {6}Présentation Robot}{7}%
-\contentsline {section}{\numberline {7}Présentation Télécommande}{8}%
+\contentsline {subsection}{\numberline {1.1}Architecture du projet}{2}%
+\contentsline {subsection}{\numberline {1.2}Vivado}{2}%
+\contentsline {section}{\numberline {2}Matériel utilisé}{3}%
+\contentsline {subsection}{\numberline {2.1}Le chassis}{3}%
+\contentsline {subsection}{\numberline {2.2}Les moteurs}{3}%
+\contentsline {subsection}{\numberline {2.3}Le capteur de distance}{3}%
+\contentsline {subsection}{\numberline {2.4}Le gyroscope}{3}%
+\contentsline {subsection}{\numberline {2.5}La carte mère }{3}%
+\contentsline {section}{\numberline {3}Linux}{4}%
+\contentsline {subsection}{\numberline {3.1}Liens utiles}{4}%
+\contentsline {subsection}{\numberline {3.2}Génération du bootloader FSBL}{4}%
+\contentsline {subsubsection}{\numberline {3.2.1}Génération boot.bin avec Xilinx Vivado}{4}%
+\contentsline {subsubsection}{\numberline {3.2.2}Résultat génération boot.bin}{4}%
+\contentsline {subsection}{\numberline {3.3}Génération du boot avec le script genere.sh}{5}%
+\contentsline {subsection}{\numberline {3.4}Flashage de l’image sur la carte SD}{5}%
+\contentsline {subsection}{\numberline {3.5}Génération bootgen avec le script genere.sh}{5}%
+\contentsline {subsection}{\numberline {3.6}configuration des partitions}{5}%
+\contentsline {subsection}{\numberline {3.7}création des systèmes de fichier}{6}%
+\contentsline {subsection}{\numberline {3.8}Copie des images disques sur la carte SD}{6}%
+\contentsline {subsection}{\numberline {3.9}mettre le nouveau file system}{7}%
+\contentsline {section}{\numberline {4}Logiciel}{8}%
+\contentsline {subsection}{\numberline {4.1}Compilation du logiciel}{8}%
+\contentsline {subsection}{\numberline {4.2}Execution du logiciel}{8}%
+\contentsline {section}{\numberline {5}FPGA}{9}%
+\contentsline {section}{\numberline {6}Présentation Télécommande}{10}%

@@ -1,20 +1,19 @@
 % !TEX encoding = UTF-8 Unicode
 \newpage
-
 \chapter{Linux}
+\section{Linux}
 
+\lettrine[lines=1]{Y}octo est utilisé pour créer la distribution Linux. J'aurais pu utiliser une distribution toute faire, comme Debian, mais je ne sais pas comment l'installer sur la carte. 
 
-
-\section{Liens utiles}
+\subsection{Liens utiles}
 
 https://blog.mbedded.ninja/programming/embedded-linux/zynq/building-linux-for-the-zynq-zc702-eval-kit-using-yocto/#&gid=1&pid=1
 
 https://www.yoctoproject.org/docs/2.4/dev-manual/dev-manual.html
 
-\section{Génération du bootloader FSBL}
-
-
-
+\subsection{Génération du bootloader FSBL}
+Le botloader permet est lancé au démarrage de la carte. Il contient le logiciel de démrarrage qui va permettre de configurer le système, comme les horloges internes, les entrées sorties du composant, et charger la couche matérielle avec le bitream du FPGA.
+\\
 /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/design_1_wrapper_corona2/export/design_1_wrapper_corona2/sw/design_1_wrapper_corona2/boot/fsbl.elf
 
 /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dsfyoyo/Debug/dsfyoyo.elf
@@ -69,7 +68,7 @@ le.elf est le fichier de boot généré par vitis, mais ici récupéré chez Xil
 
 
 
-\subsection{creer bootgen avec le script genere.sh}
+\subsection{Génération du boot avec le script genere.sh}
 
 
 \fbox{\begin{minipage}{0.9\textwidth}
@@ -80,13 +79,13 @@ bif -o boot.bin -w
 \end{minipage}}
 
 
-\section{flash l’image sur la carte SD}
+\subsection{Flashage de l’image sur la carte SD}
 
 La distribution Linux doit être flashée sur une carte SD, afin que la carte du Robot puisse booter dessus.
 La carte doit être configurée en 2 partitions, celle contenant le boot, et celle contenant le root.
 La carte SD doit être bootable.
 
-\subsection{creer bootgen avec le script genere.sh}
+\subsection{Génération bootgen avec le script genere.sh}
 Afin de copier l'image Linux générée pat Yocto, on commence par formatter la carte SD avec la commande : 
 
 \textit{sudo dd if=/dev/zero of=/dev/mmcblk0 of=/dev/
@@ -235,8 +234,7 @@ EXTRA_IMAGE_FEATURES += "tools-debug"\\
 
 
 \textit{sudo tar x -C /media/nicolas/root/ -f core-image-minimal-zybo-zynq7.tar.gz}
-
-\textit{sudo tar x -C /mnt/mmcblk0p2/ -f core-image-minimal-zybo-zynq7.tar.gz}
+\\\textit{sudo tar x -C /mnt/mmcblk0p2/ -f core-image-minimal-zybo-zynq7.tar.gz}
 
 
 

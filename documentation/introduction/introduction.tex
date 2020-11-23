@@ -3,17 +3,28 @@
 \chapter{Intro}
 
 \section{Présentation du robot}
-\lettrine[lines=1]{L}e robot peut fonctionner soit en mode autonome, soit en mode semi-autonoeme, c'est à dire qu'il est piloté par une appli Android
+\lettrine[lines=1]{M}on projet était à la base de faire un aspirateur robot de A à Z. Bon, finalement, j'ai acheté un aspi robot tout fait. Je n'ai pas abandonné mon projet de robot pour autant, et faire un projet à ma sauce de A à Z, sans chef, sans client, sans délai à tenir, ça me plaît.\\
+Le cahier des charges  de départ est alors :
+
+
+\begin{itemize}
+\item fonctionner en mode autonome, se balader dans la maison et dans le jardin
+\item pouvoir être commandé avec une télécommande, pour chasser le chat du voisin un peu trop intrusif.
+ 
+\item être assez malin pour ne pas se manger les murs, rester coincé sous une chaise etc.
+
+\end{itemize}
+ 
+ 
 
 
 
-
-\section{Architecture du projet}
+\subsection{Architecture du projet}
 
 Les axes de développement du projet sont : 
 \begin{itemize}
 \item  Le linux embarqué
-J'utilise Yocto Linux pour faire tourner le logiciel du robot. Le Linux est généré et claqué sur une carte SD.
+\\J'utilise Yocto Linux pour faire tourner le logiciel du robot. Le Linux est généré et claqué sur une carte SD.
 Son rôle est de lancer le logiciel du robot, communiquer de manière sécurisée sur le réseau avec un protocole sécurisé comme SSH, gérer les mises à jours.
 
 \item Le logiciel du robot qui est constitué de programmes qui s'exécutent sur la cible et qui permettent de faire tourner le robot.
@@ -41,7 +52,7 @@ L'arborescence contiendra donc les répertoires suivants :
 
 
 \subsection{Vivado}
-  : le projet vivado pour la partie FPGA
+ le projet vivado pour la partie FPGA
 
 \end{itemize}
 
