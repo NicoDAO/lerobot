@@ -3,7 +3,10 @@
 \chapter{Linux}
 \section{Linux}
 
-\lettrine[lines=1]{Y}octo est utilisé pour créer la distribution Linux. J'aurais pu utiliser une distribution toute faire, comme Debian, mais je ne sais pas comment l'installer sur la carte. 
+\lettrine[lines=1]{Y}octo est utilisé pour créer la distribution Linux.
+\\
+\textit{https://www.yoctoproject.org/docs/current/mega-manual/mega-manual.html}
+
 
 \subsection{Liens utiles}
 
@@ -12,13 +15,13 @@ https://blog.mbedded.ninja/programming/embedded-linux/zynq/building-linux-for-th
 https://www.yoctoproject.org/docs/2.4/dev-manual/dev-manual.html
 
 \subsection{Génération du bootloader FSBL}
-Le botloader permet est lancé au démarrage de la carte. Il contient le logiciel de démrarrage qui va permettre de configurer le système, comme les horloges internes, les entrées sorties du composant, et charger la couche matérielle avec le bitream du FPGA.
+Le bootloader permet est lancé au démarrage de la carte. Il contient le logiciel de démarrage qui va permettre de configurer le système, comme les horloges internes, les entrées sorties du composant, et charger la couche matérielle avec le bitream du FPGA.
 \\
 /home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/design_1_wrapper_corona2/export/design_1_wrapper_corona2/sw/design_1_wrapper_corona2/boot/fsbl.elf
 
-/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dsfyoyo/Debug/dsfyoyo.elf
+/home/nicolas/vivado/vivado/FPGA\_xilinx/vivado2019\_2/workspace/dsfyoyo/Debug/dsfyoyo.elf
 
-/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/design_1_wrapper_corona2/bitstream/design_1_wrapper_corona2.bit
+/home/nicolas/vivado/vivado/FPGA\_xilinx/vivado2019\_2/workspace/design_1_wrapper_corona2/bitstream/design\_1\_wrapper_corona2.bit
 
 
 \subsubsection{Génération boot.bin avec Xilinx Vivado}
@@ -75,6 +78,38 @@ le.elf est le fichier de boot généré par vitis, mais ici récupéré chez Xil
 #!/bin/sh                                                                       
 /home/nicolas/Xilinx/Vivado/Vivado/2020.1/bin/bootgen -arch zynq -image genere.\
 bif -o boot.bin -w
+
+\end{minipage}}
+
+
+\subsection{génération du Linux avec Yocto}
+Pour cloner yocto en local
+\textit{git://git.yoctoproject.org/poky.git}
+
+Il faut aussi cloner le repertoire meta-xilinx de la carte 
+\textit{https://github.com/Xilinx/meta-xilinx.git}
+
+On clone aussi le répertoire java
+\textit{git clone git://git.yoctoproject.org/meta-java}
+
+\\
+
+Ajout dans le fichier bblayers.conf
+\\
+\fbox{\begin{minipage}{0.9\textwidth}
+
+  /home/nicolas/yocto/poky/meta \
+  
+  /home/nicolas/yocto/poky/meta-poky \
+  
+  /home/nicolas/yocto/poky/meta-yocto-bsp \
+  
+  /home/nicolas/yocto/poky/meta-xilinx/meta-xilinx-bsp \
+  
+  /home/nicolas/yocto/poky/meta-xilinx/meta-java \
+  
+  
+  /"
 
 \end{minipage}}
 
@@ -197,94 +232,100 @@ Il faut créer les systèmes de fichiers avec les commandes suivantes :
 
 
 
-\subsection{Copie des images disques sur  la carte SD}
+\subsection{Génération du Linux avec Yocto}
+
 
 
 Il faut générer la distribution Linux, et ensuite la claquer sur la carte SD
 
-Si ce n'est pas fait, cloner le projet dans un répertoire
-\\
+Si ce n'est pas fait,
+\begin{itemize}
+\item 
+ cloner le projet dans un répertoire
 
-\textit{git clone -b dunfell git://git.yoctoproject.org/poky.git}
-\\
+
+\textit{git clone -b zeus git://git.yoctoproject.org/poky.git}
+
+\item 
 Aller dans le répertoire poky
 
 \textit{source oe-init-build-env}
 
 Dans le fichier \textit{local.conf} il faut rajouter : 
-\begin{itemize}
+
 \item ssh-server-openssh, afin de se connecter en ssh sur la cible
 \item tools-sdk, afin de compiler le logiciel sur la cible
 \item tools-debug, afin d'avoir les outils de debuf (gdb) sur la cible
 
-\end{itemize}
+
 
 \fbox{\begin{minipage}{0.9\textwidth}
 # Additional image features\\
 #\\
-EXTRA_IMAGE_FEATURES ?= "debug-tweaks"\\
-EXTRA_IMAGE_FEATURES += "ssh-server-openssh"\\
-EXTRA_IMAGE_FEATURES += "tools-sdk"\\
-EXTRA_IMAGE_FEATURES += "tools-debug"\\
+EXTRA\_IMAGE\_FEATURES ?= "debug-tweaks"\\
+EXTRA\_IMAGE\_FEATURES += "ssh-server-openssh"\\
+EXTRA\_IMAGE\_FEATURES += "tools-sdk"\\
+EXTRA\_IMAGE\_FEATURES += "tools-debug"\\
+\end{minipage}}
+\item 
 \textit{source oe-init-build-env} pour charger l'environnement de compilation
 
-\end{minipage}}
+\item 
+\textit{core-image-full-cmdline} pour générer le linux
 
-\subsection{mettre le nouveau file system}
 
 
+
+\end{itemize}
+
+\subsection{mettre le linux dans la carte SD}
+\begin{itemize}
+\item 
+aller dans le répertoire : 
+\textit{/home/nicolas/yocto/poky/build/tmp/deploy}
+\item 
+flasher la carte SD : 
 \textit{sudo tar x -C /media/nicolas/root/ -f core-image-minimal-zybo-zynq7.tar.gz}
 \\\textit{sudo tar x -C /mnt/mmcblk0p2/ -f core-image-minimal-zybo-zynq7.tar.gz}
 
-
-
+\item 
 copier le contenu du répertoire dans la partition boot
+\textit{cp * /media/nicolas/boot/}
+\textit{cp * /media/nicolas/boot/}
 
-cp * /media/nicolas/boot/
-
-sudo mount /dev/mmcblk0p2 /mnt/mmcblk0p2
-
-
+\textit{sudo mount /dev/mmcblk0p2 /mnt/mmcblk0p2}
 
 
+\item compiler
 
-**************compiler
+/poky/meta-xilinx/ \$ cd ..
 
-~/poky/meta-xilinx$ cd ..
+poky\$
 
-~/poky$
-
-bitbake-layers add-layer "$HOME/poky/meta-xilinx"
+bitbake-layers add-layer "\$HOME/poky/meta-xilinx"
 
 rajouter MACHINE ?= "zybo-zynq7" dans local.conf
 
-bitbake-layers add-layer "$HOME/yocto/poky/meta-xilinx"
+bitbake-layers add-layer "\$HOME/yocto/poky/meta-xilinx"
 
 
+\item Génération du boot.bin avec le bitstream
 
+arch = zynq; split = false; format = BIN
 
-
-**************generation du boot.bin avec le bitstream
-
-//arch = zynq; split = false; format = BIN
-
-the_ROM_image:
+the\_ROM\_image:
 
 {
 
-[bootloader]/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dsfyoyo/Debug/dsfyoyo.elf
+[bootloader]/home/nicolas/vivado/vivado/FPGA\_xilinx/vivado2019\_2/workspace/dsfyoyo/Debug/dsfyoyo.elf
 
-/home/nicolas/vivado/vivado/FPGA_xilinx/vivado2019_2/workspace/dsfyoyo/_ide/bitstream/design_1_wrapper_corona2.bit
+/home/nicolas/vivado/vivado/FPGA\_xilinx/vivado2019\_2/workspace/dsfyoyo/\_ide/bitstream/design\_1_wrapper_corona2.bit
 
 /home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u-boot.elf
 
 /home/nicolas/yocto/poky/build/tmp/deploy/images/zybo-zynq7/u-boot-zybo-zynq7.elf
 
 }
-
-
-
-
 
 cp *.bin /mnt/mmcblk0p1
 
@@ -297,14 +338,22 @@ cp *.elf /mnt/mmcblk0p1
 cp *.u-boot /mnt/mmcblk0p1
 
 
-
 bitbake -c menuconfig virtual/kernel
 
 
 
-
-
 http://openpowerlink.sourceforge.net/web/openPOWERLINK/Getting%20Started/Zynq%20/%20Petalinux.html
+\end{itemize}
+
+\subsection{Lancement du logiciel au démarrage}
+Pour lancer le robot au démarrage de Linux, il faut ajouter les lignes suivantes dans \textbf{/etc/inittab/} :
+\\
+
+\fbox{\begin{minipage}{0.9\textwidth}
+\\1:12345:respawn:/sbin/getty 38400 tty1
+\\nob:12345:once:su - nicolas -c "/home/nicolas/demarre\_robot.sh"
+
+\end{minipage}}
 
 
 
