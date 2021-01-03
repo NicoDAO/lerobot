@@ -73,6 +73,8 @@ le.elf est le fichier de boot généré par vitis, mais ici récupéré chez Xil
 
 \subsection{Génération du boot avec le script genere.sh}
 
+Le script permet de générer le boot.bin à partir du fichier fsbl et du bitstream.
+Le bitstream contient la configuration matérielle du FPGA, aussi appelée "accélération matérielle".
 
 \fbox{\begin{minipage}{0.9\textwidth}
 #!/bin/sh                                                                       
@@ -82,7 +84,7 @@ bif -o boot.bin -w
 \end{minipage}}
 
 
-\subsection{génération du Linux avec Yocto}
+\subsection{Génération du Linux avec Yocto}
 Pour cloner yocto en local
 \textit{git://git.yoctoproject.org/poky.git}
 
@@ -112,6 +114,12 @@ Ajout dans le fichier bblayers.conf
   /"
 
 \end{minipage}}
+\subsection{OpenDDS}
+
+\textit{https://opendds.org/}
+
+on ajoute la recipe dans yocto(presque) comme indiqué dans :
+\textit{https://github.com/oci-labs/meta-opendds}
 
 
 \subsection{Flashage de l’image sur la carte SD}
@@ -125,15 +133,13 @@ Afin de copier l'image Linux générée pat Yocto, on commence par formatter la 
 
 \textit{sudo dd if=/dev/zero of=/dev/mmcblk0 of=/dev/
 }
-\subsection{configuration des partitions}
+\subsection{Configuration des partitions}
 
 La carte SD a besoin de 2 partitions, créées avec la commande : 
 
 \textit{sudo fdisk /dev/mmcblk0
 }
-
-
-Tapez les commandes suivantes : 
+\\Utilisez fdisk comme indiquée ci-dessous : 
 
 
 \fbox{\begin{minipage}{0.9\textwidth}
@@ -235,7 +241,18 @@ Il faut créer les systèmes de fichiers avec les commandes suivantes :
 \subsection{Génération du Linux avec Yocto}
 
 
+\subsubsection{Ajout des composants dans la distribution}
 
+Il faut ajouter les composants à la distribution de base
+\begin{itemize}
+
+\item OpenDDS, qui permet d'échanger des données entre le Robot et la télécommande
+
+\item Git, permet de mettre à jour les logiciels sans avoir à recréer une distribution
+
+\end{itemize}
+
+\subsubsection{Génération de la distribution}
 Il faut générer la distribution Linux, et ensuite la claquer sur la carte SD
 
 Si ce n'est pas fait,
@@ -255,7 +272,7 @@ Dans le fichier \textit{local.conf} il faut rajouter :
 
 \item ssh-server-openssh, afin de se connecter en ssh sur la cible
 \item tools-sdk, afin de compiler le logiciel sur la cible
-\item tools-debug, afin d'avoir les outils de debuf (gdb) sur la cible
+\item tools-debug, afin d'avoir les outils de deboguage (gdb) sur la cible
 
 
 
@@ -267,11 +284,25 @@ EXTRA\_IMAGE\_FEATURES += "ssh-server-openssh"\\
 EXTRA\_IMAGE\_FEATURES += "tools-sdk"\\
 EXTRA\_IMAGE\_FEATURES += "tools-debug"\\
 \end{minipage}}
+
+Maintenant on peut générer le linux : 
 \item 
-\textit{source oe-init-build-env} pour charger l'environnement de compilation
+Se mettre dans le repertoire poky et lancer \textit{source oe-init-build-env} pour charger l'environnement de compilation
 
 \item 
 \textit{core-image-full-cmdline} pour générer le linux
+
+\item 
+\textit{runqemu qemuxarm} pour lancer l'émulateur.
+Attention à bien parametrer local.conf comme suit : 
+\\
+\fbox{\begin{minipage}{0.9\textwidth}
+\# Additional image features\\
+\#\\
+\# This sets the default machine to be qemux86 if no other machine is selected:
+\\MACHINE ??= "qemuarm"
+\\\#MACHINE ??= "zybo-zynq7"
+\end{minipage}}
 
 
 
