@@ -114,12 +114,34 @@ Ajout dans le fichier bblayers.conf
   /"
 
 \end{minipage}}
+
+
+
+Aller dans le répértoire poky, 
+
+\textit{ source oe-init-build-env}
+
+et aller dans le repertoire build +
+
+\textit{ bitbake core-image-full-cmdline} 
 \subsection{OpenDDS}
 
 \textit{https://opendds.org/}
 
 on ajoute la recipe dans yocto(presque) comme indiqué dans :
 \textit{https://github.com/oci-labs/meta-opendds}
+
+
+Pour compiler : 
+
+\textit{
+source ~/OpenDDS-3.15/setenv.sh} 
+
+\textit{
+perl \$MPC\_ROOT/mpc.pl MessengerMinimal.mpc -type gnuace}
+
+\textit{
+make -f GNUmakefile.Messenger_Publisher}
 
 
 \subsection{Flashage de l’image sur la carte SD}
@@ -293,7 +315,7 @@ Se mettre dans le repertoire poky et lancer \textit{source oe-init-build-env} po
 \textit{core-image-full-cmdline} pour générer le linux
 
 \item 
-\textit{runqemu qemuxarm} pour lancer l'émulateur.
+\textit{runqemu nographic qemuxarm} pour lancer l'émulateur.
 Attention à bien parametrer local.conf comme suit : 
 \\
 \fbox{\begin{minipage}{0.9\textwidth}
