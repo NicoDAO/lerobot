@@ -33,8 +33,8 @@ while(1)
 
 	$objet_commande = new Commande( "avance");
 	$objet_commande1 = new Commande( "recule");
-	$objet_commande2 = new Commande( "droite");
-	$objet_commande3 = new Commande( "gauche");
+	$objet_commande2 = new Commande( "avancedroite");
+	$objet_commande3 = new Commande( "avancegauche");
 	$objet_commande4 = new Commande( "arret");
 	$objet_commande5 = new Commande( "telemetrie");
 
