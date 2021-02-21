@@ -33,10 +33,19 @@ while(1)
     {
         my $data = "";
         $client_socket->recv($data, 1024);
-        print "received data: $data\n";
+        print "received data: ->$data<-\n";
+        my $posi= 0;
+	my $cherche = "voie";
+        $posi = index($data, $cherche);	
+        if($posi >= 0)
+        {
+            print "touvé :\"$cherche\" dans  $data , en position $posi\n";                    
+      
+        }
+
 
         # write response data to the connected client
-        $data = "ok";
+        $data = "recus : ";
         $client_socket->send($data);
 
         #notify client that response has been sent
