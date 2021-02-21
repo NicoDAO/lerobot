@@ -2,10 +2,13 @@ use IO::Socket::INET;
 
 # auto-flush on socket
 $| = 1;
+package serveur
+	
+sub bidule {
+    printf "hello"
+}
 
-
-
-
+sub tournicote{
 # creating a listening socket
 my $socket = new IO::Socket::INET (
     LocalHost => '0.0.0.0',
@@ -37,19 +40,21 @@ while(1)
         my $posi= 0;
 	my $cherche = "voie";
         $posi = index($data, $cherche);	
+      	
         if($posi >= 0)
-        {
-            print "touvé :\"$cherche\" dans  $data , en position $posi\n";                    
+       	    {
+      	        print "touvé :\"$cherche\" dans  $data , en position $posi\n";                    
       
-        }
-
-
-        # write response data to the connected client
-        $data = "recus : ";
-        $client_socket->send($data);
+	    }
+      	# write response data to the connected client
+	$data = "recus : ";
+	$client_socket->send($data);
 
         #notify client that response has been sent
-        #shutdown($client_socket, 1);
+       	#shutdown($client_socket, 1);
+        }
     }
 }
-$socket->close();
+sub ferme {
+	$socket->close();
+}
