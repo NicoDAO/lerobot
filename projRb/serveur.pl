@@ -52,6 +52,7 @@ while(1)
 		$objet_commande3->traiteCommande($data);
 		$objet_commande4->traiteCommande($data);
 
+		$objet_commande5->traiteCommande($data);
 		
 		# write response data to the connected client
 		$data = "recus : ";
