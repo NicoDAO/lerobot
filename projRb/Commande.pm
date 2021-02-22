@@ -1,15 +1,15 @@
 #!/usr/bin/perl 
-use threads;
+#use threads;
 
 package Commande;
 
 #https://www.tutorialspoint.com/perl/perl_oo_perl.htm
 
 sub boucle {
-    my $thread = shift;
+#    my $thread = shift;
     my $toto = 50;
     #while($toto--) { print "dans le thread $thread\n" }
-    threads->yield;
+#    threads->yield;
     $toto = 50;
     while($toto--) 
     	{
@@ -32,9 +32,9 @@ sub new {
 
 sub lanceThread {
 
-   my $thread1 = threads->new(\&boucle, 'premier');
-   my ( $self, $firstName ) = @_;
-   return $self->{_commande};
+#   my $thread1 = threads->new(\&boucle, 'premier');
+#   my ( $self, $firstName ) = @_;
+#   return $self->{_commande};
 }
 
 sub traiteCommande {
@@ -46,7 +46,7 @@ sub traiteCommande {
   if($posi >= 0)
     {
        print "trouvé :\"$_[0]\" dans  \"$data\" , en position $posi\n";  
-       $scriptalancer = "/home/nicolas/$self->{consigne}.sh";
+       $scriptalancer = "/home/robot/lerobot/projRb/$self->{consigne}.sh";
        print "trouvé :\"$_[0]\" dans  \"$self->{consigne}\" , en position $posi\n";  
        print "lance script :$scriptalancer";
       
