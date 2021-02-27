@@ -107,9 +107,9 @@ Ajout dans le fichier bblayers.conf
   /home/nicolas/yocto/poky/meta-yocto-bsp \
   
   /home/nicolas/yocto/poky/meta-xilinx/meta-xilinx-bsp \
+  /home/nicolas/yocto/poky/meta-opendds\
   
-  /home/nicolas/yocto/poky/meta-xilinx/meta-java \
-  
+  /home/nicolas/yocto/poky/meta-robot\
   
   /"
 
@@ -277,6 +277,9 @@ Il faut ajouter les composants à la distribution de base
 \subsubsection{Génération de la distribution}
 Il faut générer la distribution Linux, et ensuite la claquer sur la carte SD
 
+
+
+
 Si ce n'est pas fait,
 \begin{itemize}
 \item 
@@ -287,6 +290,13 @@ Si ce n'est pas fait,
 
 \item 
 Aller dans le répertoire poky
+
+\item récupérer la recette pour générer le robot et la placer au même niveau que les autres recettes.
+
+\item
+ajouter \textit{•IMAGE\_INSTALL\_append = " robot"} dans local.conf
+
+\textit{https://github.com/NicoDAO/meta-robot}
 
 \textit{source oe-init-build-env}
 
