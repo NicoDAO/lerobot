@@ -1,3 +1,5 @@
+#!/usr/bin/perl 
+
 use IO::Socket::INET;
 
 use Commande;
@@ -34,7 +36,7 @@ while(1)
 	$objet_commande2 = new Commande( "droite");
 	$objet_commande3 = new Commande( "gauche");
 	$objet_commande4 = new Commande( "arret");
-	$objet_commande5 = new Commande( "télémétrie");
+	$objet_commande5 = new Commande( "telemetrie");
 
 
 	
