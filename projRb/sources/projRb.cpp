@@ -371,6 +371,24 @@ Android et qui pilotent le robot
    myfile << "\n";
    myfile.close();
 
+
+ //on génère le script pour recule en tournant gauche
+   myfile.open ("reculegauche.sh");
+   myfile << "#!/bin/sh\n\n\n";
+   myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=RECULE_GAUCHE";
+   myfile << "\n";
+   myfile << "\n";
+   myfile.close();
+
+
+      
+   //on génère le script pour recule en tournant droite
+   myfile.open ("reculedroite.sh");
+   myfile << "#!/bin/sh\n\n\n";
+   myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=RECULE_DROITE";
+   myfile << "\n";
+   myfile << "\n";
+   myfile.close();
     
 }
 

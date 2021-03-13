@@ -58,6 +58,20 @@ void GestionTraction::dirige(){
          automate =    Robot_tourne_droite_avant;
 	 calog.log_teleco("commande , bon, on avance");
     }
+    if( commande_telecommande.find("RECULE")!=string::npos){
+         automate =    Robot_arriere_tranquilou;
+	 calog.log_teleco("commande , bon, on avance");
+    }
+
+    if( commande_telecommande.find("RECULE_GAUCHE")!=string::npos){
+         automate =    Robot_tourne_gauche_arriere;
+	 calog.log_teleco("commande , bon, on avance");
+    }
+
+    if( commande_telecommande.find("RECULE_DROITE")!=string::npos){
+         automate =    Robot_tourne_droite_arriere;
+	 calog.log_teleco("commande , bon, on avance");
+    }
     
 
     calog.log_teleco(commande_telecommande.c_str());
@@ -112,6 +126,12 @@ void GestionTraction::dirige(){
 		etat_traction = "robot tourne arriere droite";
 		puissance_moteur1 = 500;
 		puissance_moteur2 = 100;
+		//	automate++;
+	break;
+	case Robot_tourne_gauche_arriere:
+		etat_traction = "robot tourne arriere gauche";
+		puissance_moteur1 = 100;
+		puissance_moteur2 = 500;
 		//	automate++;
 	break;
         case Robot_tourne_gauche_avant:

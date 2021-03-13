@@ -21,7 +21,7 @@ enum{
 	Robot_tourne_gauche_avant,
 	Robot_tourne_droite_avant,
 	Robot_tourne_droite_arriere,
-	Robot_toourne_gauche_arriere
+	Robot_tourne_gauche_arriere
 
 };
 
