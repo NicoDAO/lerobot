@@ -4,7 +4,7 @@
 package Commande;
 
 #https://www.tutorialspoint.com/perl/perl_oo_perl.htm
-
+$repertoire_execution =  $ENV{'PERL5LIB'}; 
 sub boucle {
 #    my $thread = shift;
     my $toto = 50;
@@ -46,11 +46,13 @@ sub traiteCommande {
   if($posi >= 0)
     {
        print "trouvé :\"$_[0]\" dans  \"$data\" , en position $posi\n";  
-       $scriptalancer = "/home/robot/lerobot/projRb/$self->{consigne}.sh";
+       #$scriptalancer = "/home/robot/lerobot/projRb/$self->{consigne}.sh";
+       $scriptalancer = "$repertoire_execution/$self->{consigne}.sh";
+       print "trouvé :\"$_[0]\" dans  \"$self->{consigne}\" , en position $posi\n";  
        print "trouvé :\"$_[0]\" dans  \"$self->{consigne}\" , en position $posi\n";  
        print "lance script :$scriptalancer";
       
-        system($scriptalancer, "arg1");
+       system($scriptalancer, "arg1");
        if ( $? == -1 )
          {
 	   print "command failed: $!n";

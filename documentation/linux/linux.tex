@@ -124,7 +124,7 @@ Aller dans le répértoire poky,
 et aller dans le repertoire build +
 
 \textit{ bitbake core-image-full-cmdline} 
-\subsection{OpenDDS}
+\subsection{OpenDDS   Abandonné}
 
 \textit{https://opendds.org/}
 
@@ -142,6 +142,37 @@ perl \$MPC\_ROOT/mpc.pl MessengerMinimal.mpc -type gnuace}
 
 \textit{
 make -f GNUmakefile.Messenger_Publisher}
+
+
+\subsection{Serveur TCP}
+Remplace le DDS car trop prise de tête.
+
+serveur.pl = serveur tcp en perl qui est exécuté sur le robot ou sur le pc pour la simulation.
+
+
+Il fait la passerelle entre l'application android et le soft du robot.
+
+Pour lancer le serveur, il faut mettre le répertoire courant dans la variable d'environnement : export PERL5LIB=/home/nicolas/robot/logiciel/lerobot/projRb
+  
+pour tester en local, il faut : 
+
+
+\begin{itemize}
+
+\item Compiler les softs sur la cible (ARM ou x86\_64)
+
+\item Dans une console, lancer le script qui lance le robot ( en mode simulation ou réél), et qui va générer les scripts de la télécommande avec la configurations sysV
+
+\item Lancer le serveur tcp
+
+\item Lancer le client tcp (telnet 127.0.0.1 7777), ou l'application Android. Envoyer les commandes "avance", "recule" etc en ligne de commande ou avec les boutons de l'application.
+
+
+\end{itemize}
+
+
+
+un client tcp qui pointe vers le serveur, avec le port 7777 (voir le nuéro du port dans serveur.pl)
 
 
 \subsection{Flashage de l’image sur la carte SD}
@@ -268,7 +299,7 @@ Il faut créer les systèmes de fichiers avec les commandes suivantes :
 Il faut ajouter les composants à la distribution de base
 \begin{itemize}
 
-\item OpenDDS, qui permet d'échanger des données entre le Robot et la télécommande
+\item OpenDDS abandonné, qui permet d'échanger des données entre le Robot et la télécommande
 
 \item Git, permet de mettre à jour les logiciels sans avoir à recréer une distribution
 

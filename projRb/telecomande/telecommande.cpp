@@ -68,4 +68,4 @@ int main(int argc, char *argv[]) {
 	  	telecommande_robot->envoieMessage(&message);
 	  	exit(0);
 	}
-	
+}
