@@ -60,19 +60,12 @@ int main(int argc, char *argv[]) {
         telecommande_robot = new Messager("/telecommande",5);
         telecommande_robot->setID(msg_id);
 	int num = 0;
+
 	while(1){
 
-
-	  AMessage message;
-	  snprintf( message.message,sizeof(message.message)," %d %s",num++,commande.c_str());
-	  telecommande_robot->envoieMessage(&message);
-          //sleep(1);
-	  exit(0);
+		AMessage message;
+	  	snprintf( message.message,sizeof(message.message)," %d %s",num++,commande.c_str());
+	  	telecommande_robot->envoieMessage(&message);
+	  	exit(0);
 	}
-
-
 	
-	
-}
-
-
