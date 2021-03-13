@@ -13,4 +13,4 @@
 #LOG_MESSAGES,   //1024
 #LOG_INFOS,       //2048
 #LOG_TELECO       //4096
-./sorie LOG=4096 simuPC 
+./execute_robot LOG=128 simuPC 
