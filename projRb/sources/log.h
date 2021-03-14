@@ -16,8 +16,9 @@ enum
 	LOG_PWM,        //256
 	LOG_MEM,        //512
 	LOG_MESSAGES,   //1024
-        LOG_INFOS,       //2048
-    	LOG_TELECO       //4096
+        LOG_INFOS,      //2048
+    	LOG_TELECO,     //4096
+    	LOG_TELEMETRIE  //8192
 
 };
 
@@ -26,18 +27,6 @@ class selectionneLOg
 public :
 	selectionneLOg();
 	~selectionneLOg();
-   /* int activeLOG_RIEN;
-    int LOG_CAPTEUR_DISTANCE;
-	int LOG_TRACTION;
-	int LOG_GYROSCOPE;
-	int LOG_CALIBRE;
-	int LOG_FSIMU;
-	int LOG_MEMSIMU;
-	int LOG_MOTEUR;
-	int LOG_PWM;
-	int LOG_MEM;
-	int LOG_MESSAGES;
-	int LOG_INFOS;*/
 
 };
 
@@ -48,7 +37,6 @@ public:
 	GestionLog();
 	~GestionLog();
 
-	//void log_format(const char *tag, const char *message, va_list args);
 	void log_error(const char* message, ...);
 	void log_info(const char* message, ...);
 	void log_debug(const char* message, ...);
@@ -58,7 +46,6 @@ public:
 	void log_moteur(const char* message, ...);
 	void log_pwm(const char* message, ...);
 	void log_memoire(const char* message, ...);
-
 	void log_simucapteur(const char* message, ...);
 	void log_simutraction(const char* message, ...);
 	void log_simumoteur(const char* message, ...);
@@ -68,6 +55,7 @@ public:
 	void log_calibre(const char* message, ...);
 	void log_gyro(const char* message, ...);
         void log_teleco(const char* message, ...);
+        void log_telemetrie(const char* message, ...);
 
 	void setMode(int m);
 

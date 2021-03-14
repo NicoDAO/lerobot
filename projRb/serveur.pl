@@ -35,8 +35,10 @@ while(1)
 	$objet_commande1 = new Commande( "recule");
 	$objet_commande2 = new Commande( "avancedroite");
 	$objet_commande3 = new Commande( "avancegauche");
-	$objet_commande4 = new Commande( "arret");
-	$objet_commande5 = new Commande( "telemetrie");
+	$objet_commande4 = new Commande( "reculedroite");
+	$objet_commande5 = new Commande( "reculegauche");
+	$objet_commande6 = new Commande( "arret");
+	$objet_commande7 = new Commande( "telemetrie");
 
 
 	
@@ -51,6 +53,9 @@ while(1)
 	        $objet_commande2->traiteCommande($data);
 		$objet_commande3->traiteCommande($data);
 		$objet_commande4->traiteCommande($data);
+		$objet_commande5->traiteCommande($data);
+		$objet_commande6->traiteCommande($data);
+		$objet_commande7->traiteCommande($data);
 
 		$objet_commande5->traiteCommande($data);
 		

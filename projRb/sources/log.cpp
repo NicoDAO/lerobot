@@ -165,6 +165,16 @@ void GestionLog::log_teleco(const char *message, ...) {
 	}
 }
 
+void GestionLog::log_telemetrie(const char *message, ...) {
+	if((mode_log >> LOG_TELEMETRIE) & 1){
+		va_list args;
+		va_start(args, message);
+		log_format("resumé", message, args);
+		va_end(args);
+	}
+}
+
+
 void GestionLog::setMode(int m){
 	mode_log = m;
 	//logS.LOG_CALIBRE =1;
@@ -172,113 +182,5 @@ void GestionLog::setMode(int m){
 	//if(mode_log &&
 //	this->activeLOG_RIEN = 0;
 }
-/*void log_error(const char *message, ...) {
-	va_list args;
-	va_start(args, message);
-	log_format("error", message, args);
-	va_end(args);
-}*/
-//
-//void log_info(const char *message, ...) {
-//#if 0
-//    va_list args;
-//    va_start(args, message);
-//    log_format("info", message, args);
-//    va_end(args);
-//    #endif
-//}
-//
-//void log_debug(const char *message, ...) {
-//#ifdef LOG_DEBUG
-//    va_list args;
-//    va_start(args, message);
-//    log_format("debug", message, args);
-//    va_end(args);
-//    #endif
-//}
-//
-//void log_message(const char *message, ...) {
-//#if 0
-//    va_list args;
-//    va_start(args, message);
-//    log_format("message", message, args);
-//    va_end(args);
-//    #endif
-//}
-//void log_capteur(const char *message, ...) {
-//#if 0
-//	va_list args;
-//	va_start(args, message);
-//	log_format("capteur", message, args);
-//	va_end(args);
-//#endif
-//}
-//
-//void log_traction(const char *message, ...) {
-//#if 0
-//	va_list args;
-//	va_start(args, message);
-//	log_format("traction", message, args);
-//	va_end(args);
-//#endif
-//
-//}
-//void log_moteurdd(const char *message, ...) {
-//#if 0
-//	va_list args;
-//	va_start(args, message);
-//	log_format("moteur", message, args);
-//	va_end(args);
-//#endif
-//}
-//void log_pwm(const char *message, ...) {
-//#if 0
-//	va_list args;
-//	va_start(args, message);
-//	log_format("pwm", message, args);
-//	va_end(args);
-//#endif
-//}
-//void log_memoire(const char *message, ...) {
-//#if 0
-//	va_list args;
-//	va_start(args, message);
-//	log_format("mem", message, args);
-//	va_end(args);
-//#endif
-//}
-//void log_simumemoire(const char *message, ...) {
-//#if 0
-//    va_list args;
-//    va_start(args, message);
-//    log_format("simu mem", message, args);
-//    va_end(args);
-//#endif
-//}
-//
-//void log_fichiersimu(const char *message, ...) {
-//#if 0
-//    va_list args;
-//    va_start(args, message);
-//    log_format("fichierS", message, args);
-//    va_end(args);
-//#endif
-//}
-//void log_calibre(const char *message, ...) {
-//#if 0
-//    va_list args;
-//    va_start(args, message);
-//    log_format("calibre", message, args);
-//    va_end(args);
-//#endif
-//}
-//void log_gyro(const char *message, ...) {
-//#if 0
-//    va_list args;
-//    va_start(args, message);
-//    log_format("Gyro", message, args);
-//    va_end(args);
-//#endif
-//}
 
 

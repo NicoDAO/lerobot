@@ -149,8 +149,8 @@ void GestionTraction::dirige(){
 		automate = 0;
 	break;
     }
-    log = commande_telecommande + ":" +  etat_traction + "/ " + mesures_distance +  " !  " +  mesures_gyro;
-    calog.log_teleco(log.c_str(), strlen(log.c_str()));	    
+    log = commande_telecommande + ":" +  etat_traction + ", distance : " + mesures_distance +  ", gyro : " +  mesures_gyro+ ", moteur1 : " + std::to_string(puissance_moteur1)   + ", moteur2 :"  + std::to_string(puissance_moteur2) ;
+    calog.log_telemetrie(log.c_str(), strlen(log.c_str()));	    
 
 }
 void GestionTraction::handler() {

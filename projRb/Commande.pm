@@ -42,7 +42,8 @@ sub traiteCommande {
   
   my  $commande = shift;       # deux arguments attendus
   print "commande reçue ->$_[0]<-->$self->{consigne}<-\n" ;
-  $posi = index( $_[0],$self->{consigne});	
+  $posi = index( $_[0],$self->{consigne});
+  	
   if($posi >= 0)
     {
        print "trouvé :\"$_[0]\" dans  \"$data\" , en position $posi\n";  
