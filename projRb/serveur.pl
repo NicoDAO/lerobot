@@ -45,23 +45,37 @@ while(1)
 	while (1)
 	{
 		my $data = "";
+		my $retour1 = "";
+		my $retour2 = "";
+		my $retour3 = "";
+		my $retour4 = "";
+		my $retour5 = "";
+		my $retour6 = "";
 		$client_socket->recv($data, 1024);
 		print "received data: ->$data<-\n";
 		
-		$objet_commande->traiteCommande($data);
-		$objet_commande1->traiteCommande($data);
-	        $objet_commande2->traiteCommande($data);
-		$objet_commande3->traiteCommande($data);
-		$objet_commande4->traiteCommande($data);
-		$objet_commande5->traiteCommande($data);
-		$objet_commande6->traiteCommande($data);
-		$objet_commande7->traiteCommande($data);
+		$retour1= $objet_commande->traiteCommande($data);
+		$retour2= $objet_commande1->traiteCommande($data);
+	        $retour3= $objet_commande2->traiteCommande($data);
+		$retour4= $objet_commande3->traiteCommande($data);
+		$retour5= $objet_commande4->traiteCommande($data);
+		$retour6= $objet_commande5->traiteCommande($data);
+		#$objet_commande7->traiteCommande($data);
 
-		$objet_commande5->traiteCommande($data);
 		
 		# write response data to the connected client
-		$data = "recus : ";
-		$client_socket->send($data);
+		
+		#$data = "$objet_commande->retour $objet_commande1->retour $objet_commande2->retour $objet_commande3->retour $objet_commande4->retour $objet_commande5->retour  $objet_commande6->retour";
+		#$data = $objet_commande->retour;
+						
+		#$client_socket->send($objet_commande->retour);
+		$client_socket->send("avance $retour1 ");
+		$client_socket->send("recule $retour2 ");
+		$client_socket->send("avantdroite $retour3 ");
+		$client_socket->send("avantgauche $retour4 ");
+		$client_socket->send("arriere droite $retour5 ");
+		$client_socket->send("arriere gauche $retour6 ");
+		
 
 		#notify client that response has been sent
 		#shutdown($client_socket, 1);
