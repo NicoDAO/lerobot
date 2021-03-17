@@ -33,10 +33,10 @@ while(1)
 
 	$objet_commande = new Commande( "avance");
 	$objet_commande1 = new Commande( "recule");
-	$objet_commande2 = new Commande( "avancedroite");
-	$objet_commande3 = new Commande( "avancegauche");
-	$objet_commande4 = new Commande( "reculedroite");
-	$objet_commande5 = new Commande( "reculegauche");
+	$objet_commande2 = new Commande( "avantdroite");
+	$objet_commande3 = new Commande( "avantgauche");
+	$objet_commande4 = new Commande( "arrieredroite");
+	$objet_commande5 = new Commande( "arrieregauche");
 	$objet_commande6 = new Commande( "arret");
 	$objet_commande7 = new Commande( "telemetrie");
 
@@ -69,13 +69,12 @@ while(1)
 		#$data = $objet_commande->retour;
 						
 		#$client_socket->send($objet_commande->retour);
-		$client_socket->send("avance $retour1 ");
-		$client_socket->send("recule $retour2 ");
-		$client_socket->send("avantdroite $retour3 ");
-		$client_socket->send("avantgauche $retour4 ");
-		$client_socket->send("arriere droite $retour5 ");
-		$client_socket->send("arriere gauche $retour6 ");
-		
+		$client_socket->send("avance $retour1 \n");
+		$client_socket->send("recule $retour2 \n");
+		$client_socket->send("avantdroite $retour3 \n");
+		$client_socket->send("avantgauche $retour4 \n");
+		$client_socket->send("arriere droite $retour5 \n");
+		$client_socket->send("arriere gauche $retour6 \n\n");
 
 		#notify client that response has been sent
 		#shutdown($client_socket, 1);

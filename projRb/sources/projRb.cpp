@@ -31,7 +31,6 @@ ConfigureFIR_FPGA FIR3;
 ConfigureFIR_FPGA FIR4;
 
 ConfigureVolumes Volume1;
-
 GereMoteur mot1;
 GereMoteur mot2;
 GestionTraction traction;
@@ -40,7 +39,6 @@ GereCapteurDistance capteurDistance;
 GereGyroscope gyroscope1;
 GestionLog calog;
 
-char HWstring[15] = "Hello World";
 long RxtaskCntr = 0;
 
 void* handlerGereAXI2(void *pvParameters);
@@ -51,12 +49,6 @@ void* handlerGestionTraction(void *pvParameters);
 void* handlerCapteurDistance(void *pvParameters);
 void* handlerCapteurGyroscope1(void *pvParameters);
 
-/*Messager messageConsigneMoteur2("/ConsigneMoteur", 1);
-Messager messageMesureDistanceCapteur("/mesureDistance", 2);
-Messager messageConsigneMoteur1("/consigneMoteur1", 3);
-Messager messageGyro("/gyroscope1", 4);
-*/
-
 Messager *messageConsigneMoteur2;
 Messager *messageMesureDistanceCapteur;
 Messager *messageConsigneMoteur1;
@@ -66,7 +58,6 @@ Messager *messageTelecommande;
 
 //#define LANCE_FIR
 int enregistreVariableEnvironnement(const char *, int cle);
-
 
 int main(int argc, char *argv[]) {
 	//configuation des messages
@@ -354,7 +345,7 @@ Android et qui pilotent le robot
 
    
    //on génère le script pour avancer en tournant gauche
-   myfile.open ("avancegauche.sh");
+   myfile.open ("avantgauche.sh");
    myfile << "#!/bin/sh\n\n\n";
    myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=AVANCE_GAUCHE";
    myfile << "\n";
@@ -364,7 +355,7 @@ Android et qui pilotent le robot
 
       
    //on génère le script pour avancer en tournant droite
-   myfile.open ("avancedroite.sh");
+   myfile.open ("avantdroite.sh");
    myfile << "#!/bin/sh\n\n\n";
    myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=AVANCE_DROITE";
    myfile << "\n";
@@ -373,7 +364,7 @@ Android et qui pilotent le robot
 
 
  //on génère le script pour recule en tournant gauche
-   myfile.open ("reculegauche.sh");
+   myfile.open ("arrieregauche.sh");
    myfile << "#!/bin/sh\n\n\n";
    myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=RECULE_GAUCHE";
    myfile << "\n";
@@ -383,7 +374,7 @@ Android et qui pilotent le robot
 
       
    //on génère le script pour recule en tournant droite
-   myfile.open ("reculedroite.sh");
+   myfile.open ("arrieredroite.sh");
    myfile << "#!/bin/sh\n\n\n";
    myfile << "telecomande/teleco LOG=65535 IPC_ID="<< cle_teleco <<"  COMMANDE=RECULE_DROITE";
    myfile << "\n";
